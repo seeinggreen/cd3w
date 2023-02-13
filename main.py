@@ -1,52 +1,45 @@
-from ai2thor.controller import Controller;
-import cv2;
+from ithor_controller import Ithor_Controller;
 import os;
 
 local_build_path = "../ai2thor/unity/builds/thor-Linux64-local/thor-Linux64-local";
-image_dir = "/Images/";
-
-def name_to_object_id(name, controller):
-    objs = controller.last_event.metadata['objects'];
-    named_objs = [o for o in objs if o['name'] == name];
-    if len(named_objs) == 1:
-        return named_objs[0]['objectId'];
-    else:
-        return None;
-
-def pickup(name,controller):
-    object_id = name_to_object_id(name, controller.last_event);
-    controller.step(action="PickupObject",objectId=object_id);
-    controller.step(action="Done");
+image_dir = "Images/";
 
 if __name__ == "__main__":
-    controller = Controller(height=1200,width=1600,local_executable_path=local_build_path,
-                            fieldOfView=120,snapToGrid=False,image_dir=image_dir);
-    controller.step(action="Teleport",position=dict(x=0.25,y=1,z=0),rotation=dict(x=0,y=270,z=0),horizon=70,forceAction=True)
+    #Set up controller and move the view to the table
+    ic = Ithor_Controller(height=1200,width=1600,local_exec_path=local_build_path,field_of_view=120,image_dir=image_dir);
+    #ic.init_scene(pos=[0.25,1,0], rot=270, horizon=70);
 
-    #Place blue square
-    controller.step(action="PlaceObjectAtPoint",objectId="Undefined|-00.47|+01.14|+05.42",position={'x': -0.3, 'y': 1.3, 'z': 0.2},rotation={'x':0,'y':0,'z':0})
-    controller.step(action="PlaceObjectAtPoint",objectId="Undefined|-00.47|+01.14|+05.42",position={'x': -0.3, 'y': 1.3, 'z': 0.2},rotation={'x':0,'y':0,'z':0})
-    #Place red circle
-    controller.step(action="PlaceObjectAtPoint",objectId="Undefined|-00.47|+01.14|+05.91",position={'x': 0, 'y': 1.3, 'z': 0.5},rotation={'x':0,'y':0,'z':0})
-    controller.step(action="PlaceObjectAtPoint",objectId="Undefined|-00.47|+01.14|+05.91",position={'x': 0, 'y': 1.3, 'z': 0.5},rotation={'x':0,'y':0,'z':0})
-    #Place green apple
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.99",position={'x': 0.1, 'y': 1.3, 'z': -0.3},rotation={'x':0,'y':0,'z':0})
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.99",position={'x': 0.1, 'y': 1.3, 'z': -0.3},rotation={'x':0,'y':0,'z':0})
-    #Place red apple
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.52",position={'x': 0.3, 'y': 1.3, 'z': 0.6},rotation={'x':0,'y':0,'z':0})
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.52",position={'x': 0.3, 'y': 1.3, 'z': 0.6},rotation={'x':0,'y':0,'z':0})
 
+    #ic.place_object('Square1', 0, 0);
+    #ic.place_object('Circle1', 1, 0);
+    #ic.place_object('Apple1', 2, 0);
+    #ic.place_object('Apple3', 3, 0);
+    
     #Update display and save start image
-    controller.step(action="Done");
-    cv2.imwrite(os.path.join(image_dir,"start.png"),controller.last_event.cv2img);
+    #ic.save_img(os.path.join(image_dir,"start.png"));
     
-    #Move green apple
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.99",position={'x': -0.3, 'y': 1.3, 'z': 0.2},rotation={'x':0,'y':0,'z':0})
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.99",position={'x': -0.3, 'y': 1.3, 'z': 0.2},rotation={'x':0,'y':0,'z':0})
-    #Move red apple
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.52",position={'x': 0, 'y': 1.3, 'z': 0.5},rotation={'x':0,'y':0,'z':0})
-    controller.step(action="PlaceObjectAtPoint",objectId="Apple|-00.47|+01.14|+04.52",position={'x': 0, 'y': 1.3, 'z': 0.5},rotation={'x':0,'y':0,'z':0})
-    
+    #ic.place_object('Apple1', 0, 0);
+    #ic.place_object('Apple3', 1, 0);
+
     #Update display and save end image
-    controller.step(action="Done")
-    cv2.imwrite(os.path.join(image_dir,"end.png"),controller.last_event.cv2img);
+    #ic.controller.step(action="Done")
+    #ic.save_img(os.path.join(image_dir,"end.png"));
+    
+    #for x in range(6):
+    #    for y in range(3):
+    #        ic.place_object('Square3',x,y,True);
+    #        ic.place_object('Apple1', x, y,False);
+    #        ic.save_img(os.path.join(image_dir,"{}_{}.png".format(x,y)))
+            
+
+    import cv2;
+    event = ic.controller.step(action="AddThirdPartyCamera", position={'x': 1.2, 'y': 2.03, 'z': -0.026},rotation={'x': 45.93, 'y': -90, 'z': 0},orthographic=False,fieldOfView=60);
+
+    
+    for x in range(6):
+        for y in range(3):
+            ic.place_object('Square3',x,y,True);
+            ic.place_object('Apple1', x, y,False);
+            im_bgr = cv2.cvtColor(ic.controller.last_event.third_party_camera_frames[0], cv2.COLOR_RGB2BGR);
+            cv2.imwrite(os.path.join(image_dir,"{}_{}.png".format(x,y)),im_bgr);
+    ic.controller.stop();
