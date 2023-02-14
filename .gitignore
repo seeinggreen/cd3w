@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Ignore build files
-builds/
+builds/*
