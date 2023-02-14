@@ -7,16 +7,13 @@ Created on Mon Feb 13 10:47:11 2023
 """
 
 from ai2thor.controller import Controller;
-from table import Table;
+from exceptions import DuplicateAssetError;
 import cv2;
 import os;
 
-class DuplicateAssetError(Exception):
-    pass;
-
 class IthorController:
     
-    def __init__(self,height,width,local_exec_path,field_of_view,image_dir):
+    def __init__(self,height,width,local_exec_path,field_of_view,image_dir,table):
         """
         Constructor to set up the iTHOR controller.
 
@@ -44,7 +41,7 @@ class IthorController:
                                 local_executable_path=local_exec_path,
                                 fieldOfView=field_of_view,
                                 snapToGrid=False);
-        self.table = Table(); #Create a Table object to handle the object grid
+        self.table = table; #Create a Table object to handle the object grid
         self.image_dir = image_dir;
     
     def init_scene(self,pos,rot,horizon):
@@ -81,6 +78,11 @@ class IthorController:
         ----------
         name : string
             The asset name as specified in the Unity master scene.
+            
+        Raises
+        ------
+        DuplicateAssetError
+            Will raise a DuplicateAssetError if an asset name appears twice.
 
         Returns
         -------
@@ -115,8 +117,25 @@ class IthorController:
         object_id = self.name_to_object_id(name, self.controller.last_event);
         #Objects should be in front of the agent before calling this method
         self.controller.step(action="PickupObject",objectId=object_id);
+
+    def place_assets(self):
+        """
+        Places all assets specified in the table grid in their locations.
+
+        Returns
+        -------
+        None.
+
+        """
+        grid = self.table.grid;
+        for x,column in enumerate(grid):
+            for y,slot in enumerate(column):
+                if slot.has_mat():
+                    self.place_asset(slot.mat,x,y);
+                if slot.has_object():
+                    self.place_asset(slot.object,x,y);
         
-    def place_object(self,name,x,y):
+    def place_asset(self,name,x,y):
         """
         Wrapper function to place objects on the table grid.
 
@@ -129,12 +148,17 @@ class IthorController:
         y : int
             The vertical grid coordinate to move the object to.
 
+        Raises
+        ------
+        GridCoordinateError
+            Will raise a GridCoordinateError if specified coordinates is out of bounds.
+
         Returns
         -------
         None.
 
         """
-        #Convert the grid coordinates to iTHOR coordinates
+        #Convert the grid coordinates to iTHOR coordinates (can raise GridCoordinateError)
         pos = self.table.grid_to_coords(x,y);
         #Get the objectId using the asset name
         object_id = self.name_to_object_id(name);
