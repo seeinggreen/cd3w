@@ -1,10 +1,49 @@
 from ithor_controller import IthorController;
 from table import Table;
+import platform;
+import os;
+from exceptions import UnsupportedSystemError;
+from exceptions import MissingBuildFileError;
 
-local_build_path = "builds/thor-Linux64-local/thor-Linux64-local";
 image_dir = "images/";
 
+def get_local_build_path():
+    """
+    Checks the system in use and ensures appropriate local build files are present.
+
+    Raises
+    ------
+    MissingBuildFileError
+        Raises MissingBuildFileError if the system is Linux or MacOS but the build files are missing.
+    UnsupportedSystemError
+        Raises UnsupportedSystemError if the system is Windows or unrecognised.
+
+    Returns
+    -------
+    string
+        The filepath for the appropriate local build files.
+
+    """
+    system = platform.system();
+    if system == 'Darwin':
+        if not os.path.exists("builds/thor-OSXIntel64-local/thor-OSXIntel64-local"):
+            raise MissingBuildFileError("You do not have the local build files for MacOS, please download them and put them in the builds directory.");
+        else:
+            return "thor-OSXIntel64-local";
+    elif system == 'Linux':
+        if not os.path.exists("builds/thor-Linux64-local/thor-Linux64-local"):
+            raise MissingBuildFileError("You do not have the local build files for Linux, please download them and put them in the builds directory.");
+        else:
+            return "builds/thor-Linux64-local/thor-Linux64-local";
+    elif system == 'Windows':
+        raise UnsupportedSystemError("Windows is not supported by iTHOR, please use Linux or MacOS.")
+    else:
+        raise UnsupportedSystemError("The system you are using is unrecognised, please use Linux or MacOS.")
+
 if __name__ == "__main__":
+    
+    #Get local build path
+    local_build_path = get_local_build_path();
     
     #Get an empty list of positions and specify which mats go where
     mats = Table.get_empty_slots_list();
@@ -19,10 +58,10 @@ if __name__ == "__main__":
     
     #Get an empty list and specify goal object positions
     goal_objects = Table.get_empty_slots_list();
-    goal_objects[0][0] = "Apple1";
+    goal_objects[0][0] = "Apple1Slice";
     goal_objects[0][2] = "Apple3";
     goal_objects[1][0] = "Cup1";
-    goal_objects[3][0] = "Bowl2";
+    goal_objects[3][0] = "Bread2Slice";
     
     #Create a Table object with the mats and goal_objects specified
     table = Table(mats,goal_objects);
