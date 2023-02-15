@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # Ignore build files
-builds/*
+builds/thor-Linux64-local/
+builds/thor-OSXIntel64-local/

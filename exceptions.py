@@ -20,3 +20,9 @@ class NoObjectError(Exception):
     
 class NoMatError(Exception):
     pass;
+    
+class UnsupportedSystemError(Exception):
+    pass;
+    
+class MissingBuildFileError(Exception):
+    pass;
