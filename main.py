@@ -58,8 +58,8 @@ if __name__ == "__main__":
     
     #Get an empty list and specify goal object positions
     goal_objects = Table.get_empty_slots_list();
-    goal_objects[0][0] = "Apple1Slice";
-    goal_objects[0][2] = "Apple3";
+    goal_objects[0][0] = "Vase1";
+    goal_objects[0][2] = "Plate1";
     goal_objects[1][0] = "Cup1";
     goal_objects[3][0] = "Bread2Slice";
     
@@ -75,4 +75,4 @@ if __name__ == "__main__":
     
     #Save an image of the goal state and stop the controller
     ic.save_img("goal_state.png");
-    ic.controller.stop();
+    ic.stop();

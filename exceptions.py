@@ -8,6 +8,9 @@ Created on Tue Feb 14 14:44:05 2023
 
 class DuplicateAssetError(Exception):
     pass;
+    
+class MissingAssetError(Exception):
+    pass;
 
 class GridCoordinateError(Exception):
     pass;
