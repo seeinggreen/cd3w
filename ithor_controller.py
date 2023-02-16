@@ -8,6 +8,8 @@ Created on Mon Feb 13 10:47:11 2023
 
 from ai2thor.controller import Controller;
 from exceptions import DuplicateAssetError;
+from exceptions import MissingAssetError;
+from items import Items;
 import cv2;
 import os;
 
@@ -82,7 +84,10 @@ class IthorController:
         Raises
         ------
         DuplicateAssetError
-            Will raise a DuplicateAssetError if an asset name appears twice.
+            Will raise a DuplicateAssetError if an asset name appears more than once.
+            
+        MissingAssetError
+            Will raise a MissingAssetError if the asset name cannot be found.
 
         Returns
         -------
@@ -95,10 +100,11 @@ class IthorController:
         #Get all the objects with that asset name
         named_objs = [o for o in objs if o['name'] == name];
         #Should be a singleton list, so return the objectId of the first entry
-        if len(named_objs) == 1:
-            return named_objs[0]['objectId'];
-        else:
+        if len(named_objs) > 1:
             raise DuplicateAssetError("{} objects were found for {}, expected just one.".format(len(named_objs),name));
+        if len(named_objs) == 0:
+            raise MissingAssetError("Could not find the asset called {}.",format(name));
+        return named_objs[0]['objectId'];
         
     def pickup(self,name):
         """
@@ -183,5 +189,40 @@ class IthorController:
 
         """
         #iTHOR provides a BGR image to use direct with CV2
-        cv2.imwrite(os.path.join(self.image_dir,fn),
-                    self.controller.last_event.cv2img);
+        cv2.imwrite(os.path.join(self.image_dir,fn),self.controller.last_event.cv2img);
+        
+    def hide_asset(self,name):
+        """
+        Puts the named asset back in its home position.
+
+        Parameters
+        ----------
+        name : string
+            The name of the asset to move.
+
+        Returns
+        -------
+        None.
+
+        """
+        items = Items();
+        #Get the home position of the asset
+        pos = items.get_home_position(name);
+        #Get the objectId using the asset name
+        object_id = self.name_to_object_id(name);
+        #Place the object out of sight
+        self.controller.step(action="PlaceObjectAtPoint",
+                             objectId=object_id,
+                             position=pos,
+                             rotation={'x':0,'y':0,'z':0});
+        
+    def stop(self):
+        """
+        Stops the underlying iTHOR controller.
+
+        Returns
+        -------
+        None.
+
+        """
+        self.controller.stop();
