@@ -5,10 +5,10 @@ Created on Mon Feb 13 12:46:11 2023
 
 @author: dan
 """
-from slot import Slot;
-from exceptions import DuplicateAssetError;
-from exceptions import GridCoordinateError;
-from exceptions import NoMatError;
+from src.slot import Slot;
+from src.exceptions import DuplicateAssetError;
+from src.exceptions import GridCoordinateError;
+from src.exceptions import NoMatError;
 
 #The areas at the top/bottom and left/right to keep clear
 TOP_MARGIN = 0.035;

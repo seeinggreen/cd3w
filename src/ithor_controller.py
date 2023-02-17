@@ -7,9 +7,9 @@ Created on Mon Feb 13 10:47:11 2023
 """
 
 from ai2thor.controller import Controller;
-from exceptions import DuplicateAssetError;
-from exceptions import MissingAssetError;
-from items import Items;
+from src.exceptions import DuplicateAssetError;
+from src.exceptions import MissingAssetError;
+from src.items import Items;
 import cv2;
 import os;
 

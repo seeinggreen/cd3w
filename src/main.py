@@ -1,9 +1,9 @@
-from ithor_controller import IthorController;
-from table import Table;
+from src.ithor_controller import IthorController;
+from src.table import Table;
 import platform;
 import os;
-from exceptions import UnsupportedSystemError;
-from exceptions import MissingBuildFileError;
+from src.exceptions import UnsupportedSystemError;
+from src.exceptions import MissingBuildFileError;
 
 image_dir = "images/";
 
