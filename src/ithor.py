@@ -1,10 +1,17 @@
 class IthorManager:
-    def __init__(self, leader_controller, follower_controller, level, variant):
-        self.leader_controller = leader_controller
-        self.follower_controller = follower_controller
+    def __init__(self, level, variant):
+        self.leader_controller, self.follower_controller = self.initialise_scenes()
+        self.level = level
+        self.variant = variant
         self.follower_path = f'follower_{level}_{variant}'
         self.follower_path = f'leader_{level}_{variant}'
         self.steps = 0
+
+    def initialise_scenes(self):
+        # IMPLEMENT THIS METHOD
+        leader_controller = None
+        follower_controller = None
+        return leader_controller, follower_controller
 
     def update_follower_ithor_scene(self, command):
         self.steps += 1
@@ -20,9 +27,3 @@ class IthorManager:
         # IMPLEMENT CREATION OF IMAGE USING SOME OF THE CODE IN THE CURRENT main.py
         image_url = f'{base_path}_{self.steps}'
         return image_url
-        
-def initialise_ithor_scenes(level, variant):
-    leader_controller = None # ADAPT THE CODE IN THE CURRENT main.py FOR THIS
-    follower_controller = None # ADAPT THE CODE IN THE CURRENT main.py FOR THIS
-    ithor_manager = IthorManager(leader_controller, follower_controller, level, variant)
-    return ithor_manager
