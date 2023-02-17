@@ -6,8 +6,8 @@ Created on Tue Feb 14 11:39:57 2023
 @author: dan
 """
 
-from exceptions import NoObjectError;
-from exceptions import SlotFullError;
+from src.exceptions import NoObjectError;
+from src.exceptions import SlotFullError;
 
 class Slot:
     

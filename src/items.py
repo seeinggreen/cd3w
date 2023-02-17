@@ -6,8 +6,8 @@ Created on Thu Feb 16 11:30:42 2023
 @author: dan
 """
 
-from exceptions import DuplicateAssetError;
-from exceptions import MissingAssetError;
+from src.exceptions import DuplicateAssetError;
+from src.exceptions import MissingAssetError;
 import os;
 import cv2;
 
