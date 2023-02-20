@@ -2,7 +2,11 @@ from ithor import IthorManager
 from slurk import SlurkBot
 from argparsing import get_args
 
-token, user, level, variant = get_args()
+args = get_args()
+token = args["token"]
+user = args["variant"]
+level = args["level"]
+variant = args["variant"]
 
 ithor_manager = IthorManager(level, variant)
 

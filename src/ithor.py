@@ -1,10 +1,13 @@
+from src.ithor_controller import IthorController
+from src.table import Table
+
 class IthorManager:
     def __init__(self, level, variant):
         self.leader_controller, self.follower_controller = self.initialise_scenes()
         self.level = level
         self.variant = variant
-        self.follower_path = f'follower_{level}_{variant}'
-        self.follower_path = f'leader_{level}_{variant}'
+        self.follower_path = f'images/follower_{level}_{variant}'
+        self.follower_path = f'images/leader_{level}_{variant}'
         self.steps = 0
 
     def initialise_scenes(self):

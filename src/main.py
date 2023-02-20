@@ -1,11 +1,10 @@
-from src.ithor_controller import IthorController;
-from src.table import Table;
+
 import platform;
 import os;
 from src.exceptions import UnsupportedSystemError;
 from src.exceptions import MissingBuildFileError;
 
-image_dir = "images/";
+image_dir = "images/"
 
 def get_local_build_path():
     """
