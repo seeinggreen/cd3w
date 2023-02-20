@@ -23,33 +23,33 @@ def get_main_headers(admin_token):
 def exec_req(req_fun, urlPath="", qparams=None, data_dict=None, hdrs=None):
 
     headers = get_main_headers(admin_token)
-    
+
     if hdrs:
         header_dict = hdrs | headers
     else:
         header_dict = headers
-    
+
     try:
         url = baseUrl + "/slurk/api/" + urlPath
-        
+
         response = req_fun(
             url,
             json=json.dumps(data_dict),
             headers=hdrs,
             params=qparams
         )
-        
-        
+
+
         return response.json()
-            
+
     except:
         print("ERROR")
         return None
-    
-    return None
-    
 
-    
+    return None
+
+
+
 # HTTP request functions
 
 def _get(urlPath="", qparams=None, hdrs=None):
@@ -65,25 +65,25 @@ def _patch(urlPath="", qparams=None, data_dict=None, hdrs=None):
     return exec_req(patch, urlPath, qparams, data_dict=data_dict, hdrs=hdrs)
 
 
-    
+
 # API generic operation functions
 
 joinPaths = lambda l,r: l + "/" + r
 getInstancePath = lambda path, instance_id: joinPaths(
-    path, 
+    path,
     str(instance_id)
 )
 
 def getMultipleInstances(routeName, qparams=None, hdrs=None):
     return _get(
-        routeName, 
-        qparams=None, 
+        routeName,
+        qparams=None,
         hdrs=None
     )
 
 def createInstance(routeName, data_dict=None, qparams=None, hdrs=None):
     return _post(
-        routeName, 
+        routeName,
         data_dict=None,
         qparams=None,
         hdrs=None
@@ -91,28 +91,28 @@ def createInstance(routeName, data_dict=None, qparams=None, hdrs=None):
 
 def getInstance(routeName, instance_id, hdrs=None):
     return _get(
-        getInstancePath(routeName, instance_id), 
-        qparams=None, 
+        getInstancePath(routeName, instance_id),
+        qparams=None,
         hdrs=None
     )
 
 def updateInstance(routeName, instance_id, data_dict=None, hdrs=None):
     return _patch(
-        getInstancePath(routeName, instance_id), 
-        data_dict=None, 
-        qparams=None, 
+        getInstancePath(routeName, instance_id),
+        data_dict=None,
+        qparams=None,
         hdrs=None
     )
 
 def deleteInstance(routeName, instance_id, hdrs=None):
     return _delete(
-        getInstancePath(routeName, instance_id), 
-        qparams=None, 
+        getInstancePath(routeName, instance_id),
+        qparams=None,
         hdrs=None
     )
-    
 
-    
+
+
 
 # INIT ENTITIES DATA HELPER FUNCTIONS
 
@@ -134,11 +134,10 @@ def init_default_openvidu_session_data(merging_dict={}):
     } | merging_dict
 
 
-def init_default_room_data(layout_id, openvidu_session_id, merging_dict={}):
+def init_default_room_data(layout_id, merging_dict={}):
     return {
       "layout_id": layout_id,
-      "read_only": False,
-      "openvidu_session_id": openvidu_session_id
+      "read_only": False
     } | merging_dict
 
 
@@ -175,8 +174,8 @@ def init_default_token_data(permissions_id, room_id, task_id, merging_dict={}):
 
 def init_default_user_data(name, token_id, merging_dict={}):
     return {
-      "name": "ipsum ",
-      "token_id": "8f969f52-64a9-db95-cadf-8598f5b24da4"
+      "name": name,
+      "token_id": token_id
     } | merging_dict
 
 
@@ -218,30 +217,12 @@ def deleteLayout(instance_id, hdrs=None):
     return deleteInstance("layouts", instance_id, hdrs=hdrs)
 
 
-# OPENVIDU SESSIONS
-def getMultipleOpenviduSessions(qparams=None, hdrs=None):
-    return getMultipleInstances("openvidu/sessions", qparams=qparams, hdrs=hdrs)
-
-def createOpenviduSession(data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_openvidu_session_data()
-    return createInstance("openvidu/sessions", data_dict=init_data, qparams=qparams, hdrs=hdrs)
-
-def getOpenviduSession(instance_id, hdrs=None):
-    return getInstance("openvidu/sessions", instance_id, hdrs=hdrs)
-
-def updateOpenviduSession(instance_id, data_dict=None, hdrs=None):
-    return updateInstance("openvidu/sessions", instance_id, data_dict=data_dict, hdrs=hdrs)
-
-def deleteOpenviduSession(instance_id, hdrs=None):
-    return deleteInstance("openvidu/sessions", instance_id, hdrs=hdrs)
-
-
 # ROOMS
 def getMultipleRooms(qparams=None, hdrs=None):
     return getMultipleInstances("rooms", qparams=qparams, hdrs=hdrs)
 
-def createRoom(layout_id, openvidu_session_id, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_room_data(layout_id, openvidu_session_id)
+def createRoom(layout_id, data_dict=None, qparams=None, hdrs=None):
+    init_data = init_default_room_data(layout_id)
     return createInstance("rooms", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getRoom(instance_id, hdrs=None):
