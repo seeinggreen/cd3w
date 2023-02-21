@@ -8,7 +8,7 @@
             ],
             [
                 "Square12",
-                "Circle13",
+                "Circle9",
                 "Circle7"
             ],
             [
@@ -35,27 +35,27 @@
         "objects": [
             [
                 "Vase1",
-                "Vase1",
+                null,
                 "Plate1"
             ],
             [
                 "Cup1",
-                "Cup2",
+                "Apple2",
                 "Apple1"
             ],
             [
-                "Plate1",
-                "Cup1",
+                null,
+                null,
                 null
             ],
             [
                 "Bread2Slice",
-                "Cup2",
+                null,
                 null
             ],
             [
-                "Apple1",
-                "Bread2Slice",
+                null,
+                null,
                 null
             ],
             [
@@ -74,7 +74,7 @@
             ],
             [
                 "Square12",
-                "Circle13",
+                "Circle9",
                 "Circle7"
             ],
             [
@@ -101,7 +101,7 @@
         "objects": [
             [
                 null,
-                null,
+                "Vase1",
                 null
             ],
             [
@@ -110,18 +110,18 @@
                 null
             ],
             [
-                null,
-                null,
+                "Plate1",
+                "Cup1",
                 null
             ],
             [
                 null,
-                null,
+                "Cup2",
                 null
             ],
             [
-                null,
-                null,
+                "Apple2",
+                "Bread2Slice",
                 null
             ],
             [

@@ -59,7 +59,7 @@ print(url)
 print(os.listdir(f"{os.getcwd()}/images"))
 print("*"*20)
 
-commands = ["\done", "\discard Cup1", "\request Apple2", "\put Apple2 on Circle9"]
+commands = ["\done", "\discard Cup2", "\request Apple1", "\put Apple2 on Circle9"]
 for c in commands:
     print("Updating scene and creating image file")
     ithor_service.update_ithor_scene(c)
