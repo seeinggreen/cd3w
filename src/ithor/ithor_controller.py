@@ -1,15 +1,15 @@
-from ai2thor.controller import Controller
-from utils.exceptions import DuplicateAssetError
-from utils.exceptions import MissingAssetError
-from utils.items import Items
-from utils.builds import get_local_build_path
-import cv2
 import os
-import numpy as np
+
+import cv2
+from ai2thor.controller import Controller
+from utils.builds import get_local_build_path
+from utils.exceptions import DuplicateAssetError, MissingAssetError
+from utils.items import Items
 from utils.tables import Table
 
 LOCAL_BUILD_PATH = get_local_build_path()
 IMAGE_DIR = "images/"
+
 
 class IthorController:
     def __init__(
@@ -26,6 +26,8 @@ class IthorController:
 
         Parameters
         ----------
+        config : dict
+            The scene config (mats / objects in grid slots)
         height : int
             The height of the Unity window.
         width : int
@@ -79,8 +81,8 @@ class IthorController:
         # Physically move the agent to the specified position
         self.controller.step(
             action="Teleport",
-            position=dict(x=pos[0], y=pos[1], z=pos[2]),
-            rotation=dict(x=0, y=rot, z=0),
+            position={"x": pos[0], "y": pos[1], "z": pos[2]},
+            rotation={"x": 0, "y": rot, "z": 0},
             horizon=horizon,
             forceAction=True,
         )
@@ -115,12 +117,10 @@ class IthorController:
         # Should be a singleton list, so return the objectId of the first entry
         if len(named_objs) > 1:
             raise DuplicateAssetError(
-                "{} objects were found for {}, expected just one.".format(
-                    len(named_objs), name
-                )
+                f"{len(named_objs)} objects were found for {name}, expected just one."
             )
         if len(named_objs) == 0:
-            raise MissingAssetError("Could not find the asset called {}.", format(name))
+            raise MissingAssetError(f"Could not find the asset called {name}.")
         return named_objs[0]["objectId"]
 
     def pickup(self, name):
@@ -137,7 +137,7 @@ class IthorController:
         None.
 
         """
-        object_id = self.name_to_object_id(name, self.controller.last_event)
+        object_id = self.name_to_object_id(name)
         # Objects should be in front of the agent before calling this method
         self.controller.step(action="PickupObject", objectId=object_id)
 
@@ -192,7 +192,7 @@ class IthorController:
             position=pos,
             rotation={"x": 0, "y": 0, "z": 0},
         )
-    
+
     def place_asset_at_empty_location(self, name):
         grid = self.table.grid
         for x, column in enumerate(grid):
