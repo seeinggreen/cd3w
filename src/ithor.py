@@ -2,12 +2,10 @@ from src.ithor_controller import IthorController
 from src.table import Table
 
 class IthorManager:
-    def __init__(self, level, variant):
+    def __init__(self, config, root_path):
         self.leader_controller, self.follower_controller = self.initialise_scenes()
-        self.level = level
-        self.variant = variant
-        self.follower_path = f'images/follower_{level}_{variant}'
-        self.follower_path = f'images/leader_{level}_{variant}'
+        self.config = config
+        self.root_path = root_path
         self.steps = 0
 
     def initialise_scenes(self):
@@ -22,11 +20,9 @@ class IthorManager:
 
     def snapshot_scene(self, agent_type):
         if agent_type == 'leader':
-            base_path = self.leader_path
             controller = self.leader_controller
         else:
-            base_path = self.follower_path
-            controller = self.follower_controller            
+            controller = self.follower_controller     
+        snapshot_path = f'{self.root_path}_{agent_type}_{self.steps}' # 0 represents initial scenes       
         # IMPLEMENT CREATION OF IMAGE USING SOME OF THE CODE IN THE CURRENT main.py
-        image_url = f'{base_path}_{self.steps}'
-        return image_url
+        return snapshot_path
