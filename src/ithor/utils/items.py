@@ -652,7 +652,7 @@ class Items:
 
         for asset in self.assets:
             name = asset["name"]
-            blank_scene_controller.place_asset(name, 2, 1)
+            blank_scene_controller.place_asset_at_location(name, 2, 1)
             img = blank_scene_controller.controller.last_event.cv2img
             cropped_img = img[425:625, 600:800]
             cv2.imwrite(os.path.join(thumb_dir, "{}.png".format(name)), cropped_img)

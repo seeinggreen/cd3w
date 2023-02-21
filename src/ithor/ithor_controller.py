@@ -5,6 +5,7 @@ from utils.items import Items
 from utils.builds import get_local_build_path
 import cv2
 import os
+import numpy as np
 from utils.tables import Table
 
 LOCAL_BUILD_PATH = get_local_build_path()
@@ -153,11 +154,11 @@ class IthorController:
         for x, column in enumerate(grid):
             for y, slot in enumerate(column):
                 if slot.has_mat():
-                    self.place_asset(slot.mat, x, y)
+                    self.place_asset_at_location(slot.mat, x, y)
                 if slot.has_object():
-                    self.place_asset(slot.object, x, y)
+                    self.place_asset_at_location(slot.object, x, y)
 
-    def place_asset(self, name, x, y):
+    def place_asset_at_location(self, name, x, y):
         """
         Wrapper function to place objects on the table grid.
 
@@ -191,6 +192,20 @@ class IthorController:
             position=pos,
             rotation={"x": 0, "y": 0, "z": 0},
         )
+    
+    def place_asset_at_empty_location(self, name):
+        grid = self.table.grid
+        for x, column in enumerate(grid):
+            for y, slot in enumerate(column):
+                if slot.check_empty():
+                    self.place_asset_at_location(name, x, y)
+
+    def place_object_on_mat(self, object_name, mat_name):
+        grid = self.table.grid
+        for x, column in enumerate(grid):
+            for y, slot in enumerate(column):
+                if slot.mat == mat_name:
+                    self.place_asset_at_location(object_name, x, y)
 
     def save_img(self, fn):
         """

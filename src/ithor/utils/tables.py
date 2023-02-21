@@ -171,3 +171,4 @@ class Table:
             for y in range(VERTICAL_SLOTS):
                 mats[-1].append(None)
         return mats
+    
