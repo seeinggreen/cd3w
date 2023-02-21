@@ -1,17 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 14 11:39:57 2023
-
-@author: dan
-"""
-
-from src.exceptions import NoObjectError;
-from src.exceptions import SlotFullError;
+from exceptions import NoObjectError
+from exceptions import SlotFullError
 
 class Slot:
-    
-    def __init__(self,x,y,mat):
+    def __init__(self, x, y, mat):
         """
         Constructor for new slots.
 
@@ -29,12 +20,12 @@ class Slot:
         A new slot (possibly with a mat).
 
         """
-        self.x = x;
-        self.y = y;
-        self.mat = mat;
-        self.object = None;
-        
-    def check_empty(self,name):
+        self.x = x
+        self.y = y
+        self.mat = mat
+        self.object = None
+
+    def check_empty(self, name):
         """
         Checks if the slot is empty for adding a new object.
 
@@ -55,12 +46,20 @@ class Slot:
 
         """
         if self.has_object():
-            raise SlotFullError("Cannot place object ({}) here as there is already an object ({}) in this slot ({},{}).".format(name,self.mat,self.x,self.y));
+            raise SlotFullError(
+                "Cannot place object ({}) here as there is already an object ({}) in this slot ({},{}).".format(
+                    name, self.mat, self.x, self.y
+                )
+            )
         if self.is_full():
-            raise SlotFullError("Cannot place object ({}) here as there is already a mat ({}) and an object ({}) in this slot ({},{}).".format(name,self.mat,self.object,self.x,self.y));
-        return True;
-        
-    def place_object(self,name):
+            raise SlotFullError(
+                "Cannot place object ({}) here as there is already a mat ({}) and an object ({}) in this slot ({},{}).".format(
+                    name, self.mat, self.object, self.x, self.y
+                )
+            )
+        return True
+
+    def place_object(self, name):
         """
         Place an object into this slot.
 
@@ -68,7 +67,7 @@ class Slot:
         ----------
         name : string
             The object to place into this slot.
-            
+
         Raises
         ------
         SlotFullError
@@ -79,11 +78,11 @@ class Slot:
         None.
 
         """
-        #Check to see if the slot is empty first
-        self.check_empty(name);
-        #If no exception thrown, add the object
-        self.object = name;
-        
+        # Check to see if the slot is empty first
+        self.check_empty(name)
+        # If no exception thrown, add the object
+        self.object = name
+
     def remove_object(self):
         """
         Remove the object in this slot.
@@ -99,10 +98,14 @@ class Slot:
 
         """
         if not self.has_object():
-            raise NoObjectError("There is no object to remove from this slot ({},{})".format(self.x,self.y));
+            raise NoObjectError(
+                "There is no object to remove from this slot ({},{})".format(
+                    self.x, self.y
+                )
+            )
         else:
-            self.object = None;
-        
+            self.object = None
+
     def is_empty(self):
         """
         True if there is nothing in this slot.
@@ -114,10 +117,10 @@ class Slot:
 
         """
         if self.mat is None and self.object is None:
-            return True;
+            return True
         else:
-            return False;
-        
+            return False
+
     def has_mat(self):
         """
         True if there is a mat in this slot.
@@ -129,10 +132,10 @@ class Slot:
 
         """
         if self.mat is not None:
-            return True;
+            return True
         else:
-            return False;
-        
+            return False
+
     def has_object(self):
         """
         True if the slot has an object.
@@ -144,10 +147,10 @@ class Slot:
 
         """
         if self.object is not None:
-            return True;
+            return True
         else:
-            return False;
-        
+            return False
+
     def is_full(self):
         """
         True if slot has both an object and a mat.
@@ -159,6 +162,6 @@ class Slot:
 
         """
         if self.mat is not None and self.object is not None:
-            return True;
+            return True
         else:
-            return False;
+            return False
