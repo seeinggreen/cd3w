@@ -2,13 +2,13 @@
 # THIS IS A SKELETON WITH THE USE CASE SPECIF FUNCTIONALITY MAPPED OUT
 # IT'S LIKELY STILL INCOMPLETE (e.g., CREATING SEPARATE ROOMS FOR LEADER AND FOLLOWER)
 class SlurkBot:
-    def __init__(self, token, user, host, port, ithor_manager):
+    def __init__(self, token, user, host, port, ithor_service):
         self.token = token # THIS WILL COME FROM THE OUTPUT OF slurk_startup.sh
         self.user = user # ??? NOT SURE HOW THIS WORKS
         self.host = host # SHOULD BE 'http://localhost'
         self.port = port # SHOULD BE 5000
         
-        self.ithor_manager = ithor_manager # WILL BE IMPORTED FROM ithor.py IN main.py
+        self.ithor_service = ithor_service # WILL BE IMPORTED FROM ithor.py IN main.py
 
         self.register_callbacks()
 
@@ -31,8 +31,8 @@ class SlurkBot:
         def text_message(data):
             command = self._parse_message(data.message) # SEE PLACEHOLDER METHOD BELOW (STILL MISSING FUNCTIONALITY)
             if command:
-                self.ithor_manager.update_ithor_scene(command)
-                follower_image_url = self.ithor_manager.snapshot_scene("follower")
+                self.ithor_service.update_ithor_scene(command)
+                follower_image_url = self.ithor_service.snapshot_scene("follower")
                 # FOR BELOW SEE SLURK DOCUMENTATION 7.3.2
                 self.sio.emit(
                     "image",
@@ -44,7 +44,7 @@ class SlurkBot:
                 )
     
     def _send_initial_scene_images(self):
-        leader_image_url = self.ithor_manager.snapshot_scene("leader")
+        leader_image_url = self.ithor_service.snapshot_scene("leader")
         # FOR BELOW SEE SLURK DOCUMENTATION 7.3.2
         # FOR LEADER'S ROOM
         self.sio.emit(
@@ -56,7 +56,7 @@ class SlurkBot:
             }
         )
         # FOR FOLLOWER'S ROOM
-        follower_image_url = self.ithor_manager.snapshot_scene("follower")
+        follower_image_url = self.ithor_service.snapshot_scene("follower")
         self.sio.emit(
             "image",
             {
@@ -66,6 +66,9 @@ class SlurkBot:
             }
         )
     
-    def _parse_message(self, data.message):
-        command = None # UPDATE THIS TO RETURN THE USER COMMAND IF PATTERN "/\.*" (OR SIMILAR), ELSE RETURN None
+    def _parse_message(self, message):
+        if "\\" in message:
+            command = message
+        else:
+            command = None
         return command

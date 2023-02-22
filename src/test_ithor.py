@@ -1,9 +1,9 @@
 import json
+import os
 
-from .argparsing import get_args
-from .ithor.ithor_controller import IthorController
-from .ithor.ithor_service import IthorService
-from .slurk.slurk_bot import SlurkBot
+from argparsing import get_args
+from ithor.ithor_controller import IthorController
+from ithor.ithor_service import IthorService
 
 # Get the experiment arguments from the command line
 args = get_args()
@@ -12,17 +12,29 @@ user = args["user"]
 level = args["level"]
 variant = args["variant"]
 
+print("Args")
+print(f"{token}\n{user}\n{level}\{variant}")
+print("*" * 20)
+
 # Check if run as test or experiment and retrieve leader and follower configs from json file
 if level == "t" or variant == "t":
-    with open("ithor/test_configs.json", encoding="utf-8") as json_file:
+    print("Using test configs")
+    print("*" * 20)
+    with open("ithor/test_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs["leader"]
     follower_config = configs["follower"]
 else:
-    with open("ithor/scene_configs.json", encoding="utf-8") as json_file:
+    print("WARNING - Using regular configs - SHOULD NOT HAPPEN")
+    with open("ithor/scene_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs[level][variant]["leader"]
     follower_config = configs[level][variant]["follower"]
+
+print("Configs - keys")
+print(leader_config.keys())
+print(follower_config.keys())
+print("*" * 20)
 
 # Create a filename base for saving scene
 image_filename_base = f"{level}_{variant}"
@@ -41,6 +53,27 @@ ithor_service = IthorService(
     leader_controller, follower_controller, image_filename_base
 )
 
-# Instantiate and start up SlurkBot with the IthorService
-slurk_bot = SlurkBot(token, user, "localhost", 5000, ithor_service)
-slurk_bot.run()
+print("Taking snapshots of initial scenes")
+url = ithor_service.snapshot_scene("leader")
+print(url)
+print(os.listdir("../images"))
+url = ithor_service.snapshot_scene("follower")
+print(url)
+print(os.listdir(f"{os.getcwd()}/images"))
+print("*" * 20)
+
+commands = [
+    "\\done",
+    "\\discard #8",
+    "\\request #1",
+    "\\put #3 on #V",
+    "put #3 on #table",
+]
+for c in commands:
+    print("Updating scene and creating image file")
+    ithor_service.update_ithor_scene(c)
+    url = ithor_service.snapshot_scene("follower")
+    print(url)
+    print(os.listdir(f"{os.getcwd()}/images"))
+    print("-" * 10)
+print("*" * 20)
