@@ -1,5 +1,5 @@
-from exceptions import NoObjectError
-from exceptions import SlotFullError
+from exceptions import NoObjectError, SlotFullError
+
 
 class Slot:
     def __init__(self, x, y, mat):

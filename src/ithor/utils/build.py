@@ -1,7 +1,8 @@
-from exceptions import UnsupportedSystemError
-from exceptions import MissingBuildFileError
 import os
 import platform
+
+from exceptions import MissingBuildFileError, UnsupportedSystemError
+
 
 def get_local_build_path():
     """

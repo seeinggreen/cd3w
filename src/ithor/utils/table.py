@@ -1,7 +1,5 @@
+from exceptions import DuplicateAssetError, GridCoordinateError, NoMatError
 from slots import Slot
-from exceptions import DuplicateAssetError
-from exceptions import GridCoordinateError
-from exceptions import NoMatError
 
 # The areas at the top/bottom and left/right to keep clear
 TOP_MARGIN = 0.035
@@ -171,4 +169,3 @@ class Table:
             for y in range(VERTICAL_SLOTS):
                 mats[-1].append(None)
         return mats
-    

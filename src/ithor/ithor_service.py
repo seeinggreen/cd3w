@@ -1,5 +1,7 @@
-import re
 import os
+import re
+
+from utils.items import Items
 
 
 class IthorService:
@@ -13,28 +15,41 @@ class IthorService:
         self.steps += 1
 
         # Examples of expected commands:
-        # "\done", "\discard Cup2", "\request Apple1", "\put Apple2 on Circle9"
+        # "\\done", "\\discard #8", "\\request #1", "\\put #3 on #V", "put #3 on #table"
 
         if "done" in command.lower():
             self.follower_controller.stop()
+            print("done")
         else:
-            asset_slurk_ids = [o.capitalize() for o in re.findall("#.*", command)]
-            assets = 
+            object_slurk_id = re.findall("#\d+", command)
+            assert (
+                len(object_slurk_id) == 1
+            ), "Used an incorrect identifier, please try again"
+            object_slurk_id = object_slurk_id[0]
+            object = Items().get_name_by_slurkid(object_slurk_id)
             if "discard" in command.lower():
-                self.follower_controller.hide_asset(assets[0])
-            if "request" in command.lower():
-                self.follower_controller.place_asset_at_empty_location(assets[0])
+                self.follower_controller.hide_asset(object)
+                print(f"discarding {object}")
+            elif "request" in command.lower():
+                self.follower_controller.place_asset_at_empty_location(object)
+                print(f"requesting {object}")
             else:
                 # Pick up the specified object
-                self.follower_controller.pickup(assets[0])
+                self.follower_controller.pickup(object)
+                print(f"picking up {object}")
                 # Place object on the specified mat's slot or the table
-                if "table" in command.lower():
-                    self.follower_controller.place_asset_at_empty_location(assets[0])
+                if "#table" in command.lower():
+                    self.follower_controller.place_asset_at_empty_location(object)
+                    print(f"placing {object} on table")
                 else:
+                    mat_slurk_id = re.findall("#[A-Z]", command)
                     assert (
-                        len(assets) == 2
-                    ), "Specify the object and where you want to put it"
-                    self.follower_controller.place_asset_on_mat(assets[0], assets[1])
+                        len(mat_slurk_id) == 1
+                    ), "Used an incorrect identifier, please try again"
+                    mat_slurk_id = mat_slurk_id[0]
+                    mat = Items().get_name_by_slurkid(mat_slurk_id)
+                    self.follower_controller.place_asset_on_mat(object, mat)
+                    print(f"placing {object} on {mat}")
 
     def snapshot_scene(self, agent_type):
         if agent_type == "leader":

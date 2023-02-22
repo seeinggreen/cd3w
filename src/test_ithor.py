@@ -1,8 +1,9 @@
+import json
+import os
+
 from argparsing import get_args
 from ithor.ithor_controller import IthorController
 from ithor.ithor_service import IthorService
-import json
-import os
 
 # Get the experiment arguments from the command line
 args = get_args()
@@ -13,12 +14,12 @@ variant = args["variant"]
 
 print("Args")
 print(f"{token}\n{user}\n{level}\{variant}")
-print("*"*20)
+print("*" * 20)
 
 # Check if run as test or experiment and retrieve leader and follower configs from json file
 if level == "t" or variant == "t":
     print("Using test configs")
-    print("*"*20)
+    print("*" * 20)
     with open("ithor/test_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs["leader"]
@@ -33,7 +34,7 @@ else:
 print("Configs - keys")
 print(leader_config.keys())
 print(follower_config.keys())
-print("*"*20)
+print("*" * 20)
 
 # Create a filename base for saving scene
 image_filename_base = f"{level}_{variant}"
@@ -48,7 +49,9 @@ follower_controller.init_scene(pos=[0.25, 1, 0], rot=270, horizon=70)
 follower_controller.place_assets()
 
 # Instantiate IthorService with the leader and follower controllers
-ithor_service = IthorService(leader_controller, follower_controller, image_filename_base)
+ithor_service = IthorService(
+    leader_controller, follower_controller, image_filename_base
+)
 
 print("Taking snapshots of initial scenes")
 url = ithor_service.snapshot_scene("leader")
@@ -57,14 +60,20 @@ print(os.listdir("../images"))
 url = ithor_service.snapshot_scene("follower")
 print(url)
 print(os.listdir(f"{os.getcwd()}/images"))
-print("*"*20)
+print("*" * 20)
 
-commands = ["\done", "\discard Cup2", "\request Apple1", "\put Apple2 on Circle9"]
+commands = [
+    "\\done",
+    "\\discard #8",
+    "\\request #1",
+    "\\put #3 on #V",
+    "put #3 on #table",
+]
 for c in commands:
     print("Updating scene and creating image file")
     ithor_service.update_ithor_scene(c)
     url = ithor_service.snapshot_scene("follower")
     print(url)
     print(os.listdir(f"{os.getcwd()}/images"))
-    print("-"*10)
-print("*"*20)
+    print("-" * 10)
+print("*" * 20)

@@ -1,7 +1,9 @@
-from tables import Table
 import json
 
+from table import Table
+
 # TO DO: Implement for experiments (permutations) to save in scene_configs.json
+
 
 def save_test_configs():
     # Get an empty list of positions and specify which mats go where
@@ -38,5 +40,6 @@ def save_test_configs():
 
     with open("src/ithor/test_configs.json", "w") as outfile:
         json.dump(configs, outfile)
+
 
 save_test_configs()

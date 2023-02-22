@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 14 14:44:05 2023
-
-@author: dan
-"""
-
-
 class DuplicateAssetError(Exception):
     pass
 

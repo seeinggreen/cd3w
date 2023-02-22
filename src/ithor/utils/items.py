@@ -1,7 +1,8 @@
-from src.ithor.utils.exceptions import DuplicateAssetError
-from src.ithor.utils.exceptions import MissingAssetError
 import os
+
 import cv2
+
+from ithor.utils.exceptions import DuplicateAssetError, MissingAssetError
 
 assets = [
     {
@@ -707,3 +708,7 @@ class Items:
             cv2.imwrite(os.path.join(thumb_dir, "{}.png".format(name)), cropped_img)
             blank_scene_controller.hide_asset(name)
         blank_scene_controller.stop()
+
+    def get_name_by_slurkid(self, slurk_id):
+        name = [a["name"] for a in assets if a["slurk_id"] == slurk_id]
+        return name[0]
