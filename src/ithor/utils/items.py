@@ -6,6 +6,7 @@ import cv2
 assets = [
     {
         "name": "Square1",
+        "slurk_id": "#A",
         "colour": "Blue",
         "is_mat": True,
         "home_pos": {
@@ -16,6 +17,7 @@ assets = [
     },
     {
         "name": "Square2",
+        "slurk_id": "#B",
         "colour": "Blue",
         "is_mat": True,
         "home_pos": {
@@ -26,6 +28,7 @@ assets = [
     },
     {
         "name": "Square3",
+        "slurk_id": "#C",
         "colour": "Red",
         "is_mat": True,
         "home_pos": {
@@ -36,6 +39,7 @@ assets = [
     },
     {
         "name": "Square4",
+        "slurk_id": "#D",
         "colour": "Red",
         "is_mat": True,
         "home_pos": {
@@ -46,6 +50,7 @@ assets = [
     },
     {
         "name": "Square5",
+        "slurk_id": "#E",
         "colour": "Yellow",
         "is_mat": True,
         "home_pos": {
@@ -56,6 +61,7 @@ assets = [
     },
     {
         "name": "Square6",
+        "slurk_id": "#F",
         "colour": "Yellow",
         "is_mat": True,
         "home_pos": {
@@ -66,6 +72,7 @@ assets = [
     },
     {
         "name": "Square7",
+        "slurk_id": "#G",
         "colour": "Orange",
         "is_mat": True,
         "home_pos": {
@@ -76,6 +83,7 @@ assets = [
     },
     {
         "name": "Square8",
+        "slurk_id": "#H",
         "colour": "Orange",
         "is_mat": True,
         "home_pos": {
@@ -86,6 +94,7 @@ assets = [
     },
     {
         "name": "Square9",
+        "slurk_id": "#I",
         "colour": "Green",
         "is_mat": True,
         "home_pos": {
@@ -96,6 +105,7 @@ assets = [
     },
     {
         "name": "Square10",
+        "slurk_id": "#J",
         "colour": "Green",
         "is_mat": True,
         "home_pos": {
@@ -106,6 +116,7 @@ assets = [
     },
     {
         "name": "Square11",
+        "slurk_id": "#K",
         "colour": "Violet",
         "is_mat": True,
         "home_pos": {
@@ -116,6 +127,7 @@ assets = [
     },
     {
         "name": "Square12",
+        "slurk_id": "#L",
         "colour": "Indigo",
         "is_mat": True,
         "home_pos": {
@@ -126,6 +138,7 @@ assets = [
     },
     {
         "name": "Square13",
+        "slurk_id": "#M",
         "colour": "Iris",
         "is_mat": True,
         "home_pos": {
@@ -136,6 +149,7 @@ assets = [
     },
     {
         "name": "Circle1",
+        "slurk_id": "#N",
         "colour": "Blue",
         "is_mat": True,
         "home_pos": {
@@ -146,6 +160,7 @@ assets = [
     },
     {
         "name": "Circle2",
+        "slurk_id": "#O",
         "colour": "Blue",
         "is_mat": True,
         "home_pos": {
@@ -156,6 +171,7 @@ assets = [
     },
     {
         "name": "Circle3",
+        "slurk_id": "#P",
         "colour": "Red",
         "is_mat": True,
         "home_pos": {
@@ -166,6 +182,7 @@ assets = [
     },
     {
         "name": "Circle4",
+        "slurk_id": "#Q",
         "colour": "Red",
         "is_mat": True,
         "home_pos": {
@@ -176,6 +193,7 @@ assets = [
     },
     {
         "name": "Circle5",
+        "slurk_id": "#R",
         "colour": "Yellow",
         "is_mat": True,
         "home_pos": {
@@ -186,6 +204,7 @@ assets = [
     },
     {
         "name": "Circle6",
+        "slurk_id": "#S",
         "colour": "Yellow",
         "is_mat": True,
         "home_pos": {
@@ -196,6 +215,7 @@ assets = [
     },
     {
         "name": "Circle7",
+        "slurk_id": "#T",
         "colour": "Orange",
         "is_mat": True,
         "home_pos": {
@@ -206,6 +226,7 @@ assets = [
     },
     {
         "name": "Circle8",
+        "slurk_id": "#U",
         "colour": "Orange",
         "is_mat": True,
         "home_pos": {
@@ -216,6 +237,7 @@ assets = [
     },
     {
         "name": "Circle9",
+        "slurk_id": "#V",
         "colour": "Green",
         "is_mat": True,
         "home_pos": {
@@ -226,6 +248,7 @@ assets = [
     },
     {
         "name": "Circle10",
+        "slurk_id": "#W",
         "colour": "Green",
         "is_mat": True,
         "home_pos": {
@@ -236,6 +259,7 @@ assets = [
     },
     {
         "name": "Circle11",
+        "slurk_id": "#X",
         "colour": "Violet",
         "is_mat": True,
         "home_pos": {
@@ -246,6 +270,7 @@ assets = [
     },
     {
         "name": "Circle12",
+        "slurk_id": "#Y",
         "colour": "Indigo",
         "is_mat": True,
         "home_pos": {
@@ -256,6 +281,7 @@ assets = [
     },
     {
         "name": "Circle13",
+        "slurk_id": "#Z",
         "colour": "Iris",
         "is_mat": True,
         "home_pos": {
@@ -266,6 +292,7 @@ assets = [
     },
     {
         "name": "Apple1",
+        "slurk_id": "#1",
         "colour": "Red",
         "is_mat": False,
         "home_pos": {
@@ -276,6 +303,7 @@ assets = [
     },
     {
         "name": "Apple1Slice",
+        "slurk_id": "#2",
         "colour": "Red",
         "is_mat": False,
         "home_pos": {
@@ -286,6 +314,7 @@ assets = [
     },
     {
         "name": "Apple2",
+        "slurk_id": "#3",
         "colour": "Green",
         "is_mat": False,
         "home_pos": {
@@ -296,6 +325,7 @@ assets = [
     },
     {
         "name": "Apple2Slice",
+        "slurk_id": "#4",
         "colour": "Green",
         "is_mat": False,
         "home_pos": {
@@ -306,6 +336,7 @@ assets = [
     },
     {
         "name": "Apple3",
+        "slurk_id": "#5",
         "colour": "Yellow",
         "is_mat": False,
         "home_pos": {
@@ -316,6 +347,7 @@ assets = [
     },
     {
         "name": "Apple3Slice",
+        "slurk_id": "#6",
         "colour": "Yellow",
         "is_mat": False,
         "home_pos": {
@@ -326,6 +358,7 @@ assets = [
     },
     {
         "name": "Cup1",
+        "slurk_id": "#7",
         "colour": "Green",
         "is_mat": False,
         "home_pos": {
@@ -336,6 +369,7 @@ assets = [
     },
     {
         "name": "Cup2",
+        "slurk_id": "#8",
         "colour": "Orange",
         "is_mat": False,
         "home_pos": {
@@ -346,6 +380,7 @@ assets = [
     },
     {
         "name": "Bowl1",
+        "slurk_id": "#9",
         "colour": "Black",
         "is_mat": False,
         "home_pos": {
@@ -356,6 +391,7 @@ assets = [
     },
     {
         "name": "Bowl2",
+        "slurk_id": "#10",
         "colour": "Brown",
         "is_mat": False,
         "home_pos": {
@@ -366,6 +402,7 @@ assets = [
     },
     {
         "name": "Bowl3",
+        "slurk_id": "#11",
         "colour": "Grey",
         "is_mat": False,
         "home_pos": {
@@ -376,6 +413,7 @@ assets = [
     },
     {
         "name": "Bread1",
+        "slurk_id": "#12",
         "colour": "White",
         "is_mat": False,
         "home_pos": {
@@ -386,6 +424,7 @@ assets = [
     },
     {
         "name": "Bread1Slice",
+        "slurk_id": "#13",
         "colour": "White",
         "is_mat": False,
         "home_pos": {
@@ -396,6 +435,7 @@ assets = [
     },
     {
         "name": "Bread2",
+        "slurk_id": "#14",
         "colour": "Brown",
         "is_mat": False,
         "home_pos": {
@@ -406,6 +446,7 @@ assets = [
     },
     {
         "name": "Bread2Slice",
+        "slurk_id": "#15",
         "colour": "Brown",
         "is_mat": False,
         "home_pos": {
@@ -416,6 +457,7 @@ assets = [
     },
     {
         "name": "Egg1",
+        "slurk_id": "#16",
         "colour": "Brown",
         "is_mat": False,
         "home_pos": {
@@ -426,6 +468,7 @@ assets = [
     },
     {
         "name": "Egg2",
+        "slurk_id": "#17",
         "colour": "White",
         "is_mat": False,
         "home_pos": {
@@ -436,6 +479,7 @@ assets = [
     },
     {
         "name": "Pan1",
+        "slurk_id": "#18",
         "colour": "Silver",
         "is_mat": False,
         "home_pos": {
@@ -446,6 +490,7 @@ assets = [
     },
     {
         "name": "Pan2",
+        "slurk_id": "#19",
         "colour": "Black",
         "is_mat": False,
         "home_pos": {
@@ -456,6 +501,7 @@ assets = [
     },
     {
         "name": "Plate1",
+        "slurk_id": "#20",
         "colour": "White",
         "is_mat": False,
         "home_pos": {
@@ -466,6 +512,7 @@ assets = [
     },
     {
         "name": "Plate2",
+        "slurk_id": "#21",
         "colour": "Blue",
         "is_mat": False,
         "home_pos": {
@@ -476,6 +523,7 @@ assets = [
     },
     {
         "name": "Vase1",
+        "slurk_id": "#22",
         "colour": "Red",
         "is_mat": False,
         "home_pos": {
@@ -486,6 +534,7 @@ assets = [
     },
     {
         "name": "Vase2",
+        "slurk_id": "#23",
         "colour": "Yellow",
         "is_mat": False,
         "home_pos": {

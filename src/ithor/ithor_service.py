@@ -18,7 +18,8 @@ class IthorService:
         if "done" in command.lower():
             self.follower_controller.stop()
         else:
-            assets = [o.capitalize() for o in re.findall("\w+\d+", command)]
+            asset_slurk_ids = [o.capitalize() for o in re.findall("#.*", command)]
+            assets = 
             if "discard" in command.lower():
                 self.follower_controller.hide_asset(assets[0])
             if "request" in command.lower():
