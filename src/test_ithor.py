@@ -62,22 +62,26 @@ print("Taking snapshots of initial scenes")
 url = ithor_service.snapshot_scene("leader")
 print(url)
 print(os.listdir(f"{os.getcwd()}/images"))
+ithor_service.leader_controller.stop()
+
 url = ithor_service.snapshot_scene("follower")
 print(url)
 print(os.listdir(f"{os.getcwd()}/images"))
 print("*" * 20)
 
 commands = [
-    "\\done",
-    "\\discard #8",
+    "\\discard #6",
     "\\request #1",
     "\\put #3 on #V",
-    "put #3 on #table",
+    "\\put #3 on #table",
+    "\\done",
 ]
 for c in commands:
-    print("Updating scene and creating image file")
     ithor_service.update_follower_ithor_scene(c)
+    if "done" in c:
+        continue
     url = ithor_service.snapshot_scene("follower")
+    print("Updating scene and creating image file:")
     print(url)
     print(os.listdir(f"{os.getcwd()}/images"))
     print("-" * 10)

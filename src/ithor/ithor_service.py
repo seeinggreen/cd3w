@@ -19,7 +19,7 @@ class IthorService:
 
         if "done" in command.lower():
             self.follower_controller.stop()
-            print("done")
+            print("successfully stopped experiment")
         else:
             item_slurk_id = re.findall("#\d+", command)
             assert (
@@ -29,18 +29,18 @@ class IthorService:
             item = Items().get_name_by_slurkid(item_slurk_id)
             if "discard" in command.lower():
                 self.follower_controller.hide_asset(item)
-                print(f"discarding {item}")
+                print(f"successfully discarded {item}")
             elif "request" in command.lower():
                 self.follower_controller.place_asset_at_empty_location(item)
-                print(f"requesting {item}")
+                print(f"successfully requested {item}")
             else:
                 # Pick up the specified item
                 self.follower_controller.pickup(item)
-                print(f"picking up {item}")
+                print(f"successfully picked up {item}")
                 # Place item on the specified mat's slot or the table
                 if "#table" in command.lower():
                     self.follower_controller.place_asset_at_empty_location(item)
-                    print(f"placing {item} on table")
+                    print(f"successfully placed {item} on table")
                 else:
                     mat_slurk_id = re.findall("#[A-Z]", command)
                     assert (
@@ -48,8 +48,8 @@ class IthorService:
                     ), "Used an incorrect identifier, please try again"
                     mat_slurk_id = mat_slurk_id[0]
                     mat = Items().get_name_by_slurkid(mat_slurk_id)
-                    self.follower_controller.place_asset_on_mat(item, mat)
-                    print(f"placing {item} on {mat}")
+                    self.follower_controller.place_object_on_mat(item, mat)
+                    print(f"successfully placed {item} on {mat}")
 
     def snapshot_scene(self, agent_type):
         if agent_type == "leader":

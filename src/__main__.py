@@ -21,12 +21,12 @@ if __name__ == "__main__":
 
     # Check if run as test or experiment and retrieve leader and follower configs from json file
     if level == "t" or variant == "t":
-        with open("ithor/test_configs.json", encoding="utf-8") as json_file:
+        with open("src/ithor/test_configs.json", encoding="utf-8") as json_file:
             configs = json.load(json_file)
         leader_config = configs["leader"]
         follower_config = configs["follower"]
     else:
-        with open("ithor/scene_configs.json", encoding="utf-8") as json_file:
+        with open("src/ithor/scene_configs.json", encoding="utf-8") as json_file:
             configs = json.load(json_file)
         leader_config = configs[level][variant]["leader"]
         follower_config = configs[level][variant]["follower"]
