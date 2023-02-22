@@ -1,7 +1,3 @@
-import os
-
-import cv2
-
 from ithor.utils.exceptions import DuplicateAssetError, MissingAssetError
 
 assets = [
@@ -691,23 +687,6 @@ class Items:
 
         """
         return self.get_asset(name)["home_pos"]
-
-    def generate_thumbnails(self, blank_scene_controller):
-        thumb_dir = os.path.join(blank_scene_controller.image_dir, "thumbnails")
-
-        try:
-            os.makedirs(thumb_dir)
-        except FileExistsError:
-            pass
-
-        for asset in self.assets:
-            name = asset["name"]
-            blank_scene_controller.place_asset_at_location(name, 2, 1)
-            img = blank_scene_controller.controller.last_event.cv2img
-            cropped_img = img[425:625, 600:800]
-            cv2.imwrite(os.path.join(thumb_dir, "{}.png".format(name)), cropped_img)
-            blank_scene_controller.hide_asset(name)
-        blank_scene_controller.stop()
 
     def get_name_by_slurkid(self, slurk_id):
         name = [a["name"] for a in assets if a["slurk_id"] == slurk_id]
