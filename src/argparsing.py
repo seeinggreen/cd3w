@@ -12,6 +12,6 @@ def get_args():
                         help='the variant of the mission level v0-19, or test for test configuration')
     
     args = parser.parse_args()
-    print(f'running experiment for mission level {args[2]} variant {args[3]}')
+    print(f"running experiment for mission level {args.level} variant {args.variant}")
 
     return vars(args)

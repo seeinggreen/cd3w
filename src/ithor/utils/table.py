@@ -1,5 +1,5 @@
-from exceptions import DuplicateAssetError, GridCoordinateError, NoMatError
-from slots import Slot
+from .exceptions import DuplicateAssetError, GridCoordinateError, NoMatError
+from .slots import Slot
 
 # The areas at the top/bottom and left/right to keep clear
 TOP_MARGIN = 0.035

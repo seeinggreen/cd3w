@@ -2,10 +2,10 @@ import os
 
 import cv2
 from ai2thor.controller import Controller
-from utils.build import get_local_build_path
-from utils.exceptions import DuplicateAssetError, MissingAssetError
-from utils.items import Items
-from utils.table import Table
+from .utils.build import get_local_build_path
+from .utils.exceptions import DuplicateAssetError, MissingAssetError
+from .utils.items import Items
+from .utils.table import Table
 
 LOCAL_BUILD_PATH = get_local_build_path()
 IMAGE_DIR = "images/"

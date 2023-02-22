@@ -1,7 +1,7 @@
 import os
 import re
 
-from utils.items import Items
+from .utils.items import Items
 
 
 class IthorService:
