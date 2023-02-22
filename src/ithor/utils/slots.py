@@ -1,4 +1,4 @@
-from exceptions import NoObjectError, SlotFullError
+from .exceptions import NoObjectError, SlotFullError
 
 
 class Slot:
