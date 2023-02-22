@@ -1,4 +1,4 @@
-from .exceptions import NoObjectError, SlotFullError
+from src.ithor.utils.exceptions import NoObjectError, SlotFullError
 
 
 class Slot:

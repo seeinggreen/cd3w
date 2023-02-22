@@ -1,5 +1,9 @@
-from .exceptions import DuplicateAssetError, GridCoordinateError, NoMatError
-from .slots import Slot
+from src.ithor.utils.exceptions import (
+    DuplicateAssetError,
+    GridCoordinateError,
+    NoMatError,
+)
+from src.ithor.utils.slots import Slot
 
 # The areas at the top/bottom and left/right to keep clear
 TOP_MARGIN = 0.035
@@ -154,7 +158,7 @@ class Table:
         Z = LEFT_EDGE + SIDE_MARGIN + x * SLOT_DIM + x * HORIZONTAL_PAD + (SLOT_DIM / 2)
         return {"x": X, "y": Y, "z": Z}
 
-    def get_empty_slots_list():
+    def get_empty_slots_list(self):
         """
         Returns an empty list of lists for specifying mat/object positions.
 

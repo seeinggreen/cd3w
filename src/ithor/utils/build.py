@@ -1,7 +1,7 @@
 import os
 import platform
 
-from .exceptions import MissingBuildFileError, UnsupportedSystemError
+from src.ithor.utils.exceptions import MissingBuildFileError, UnsupportedSystemError
 
 
 def get_local_build_path():

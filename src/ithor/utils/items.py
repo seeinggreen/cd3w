@@ -1,4 +1,4 @@
-from ithor.utils.exceptions import DuplicateAssetError, MissingAssetError
+from src.ithor.utils.exceptions import DuplicateAssetError, MissingAssetError
 
 assets = [
     {

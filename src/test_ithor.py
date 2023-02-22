@@ -1,9 +1,9 @@
 import json
 import os
 
-from argparsing import get_args
-from ithor.ithor_controller import IthorController
-from ithor.ithor_service import IthorService
+from src.argparsing import get_args
+from src.ithor.ithor_controller import IthorController
+from src.ithor.ithor_service import IthorService
 
 # Get the experiment arguments from the command line
 args = get_args()
@@ -71,7 +71,7 @@ commands = [
 ]
 for c in commands:
     print("Updating scene and creating image file")
-    ithor_service.update_ithor_scene(c)
+    ithor_service.update_follower_ithor_scene(c)
     url = ithor_service.snapshot_scene("follower")
     print(url)
     print(os.listdir(f"{os.getcwd()}/images"))
