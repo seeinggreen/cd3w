@@ -28,3 +28,10 @@ class UnsupportedSystemError(Exception):
 
 class MissingBuildFileError(Exception):
     pass
+
+
+class ExistingThumbnailFolderError(Exception):
+    pass
+    
+class MissingThumbnailsError(Exception):
+    pass
