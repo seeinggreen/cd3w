@@ -31,7 +31,7 @@ if level == "t" or variant == "t":
     follower_config = configs["follower"]
 else:
     print("WARNING - Using regular configs - SHOULD NOT HAPPEN")
-    with open("ithor/scene_configs.json") as json_file:
+    with open("src/ithor/scene_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs[level][variant]["leader"]
     follower_config = configs[level][variant]["follower"]
@@ -61,7 +61,7 @@ ithor_service = IthorService(
 print("Taking snapshots of initial scenes")
 url = ithor_service.snapshot_scene("leader")
 print(url)
-print(os.listdir("../images"))
+print(os.listdir(f"{os.getcwd()}/images"))
 url = ithor_service.snapshot_scene("follower")
 print(url)
 print(os.listdir(f"{os.getcwd()}/images"))

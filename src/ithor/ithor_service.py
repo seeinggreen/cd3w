@@ -56,7 +56,7 @@ class IthorService:
             controller = self.leader_controller
         else:
             controller = self.follower_controller
-        snapshot_filename = f"{self.image_filename_base}_{agent_type}_{self.steps}"  # 0 represents initial scenes
+        snapshot_filename = f"{self.image_filename_base}_{agent_type}_{self.steps}.jpg"  # 0 represents initial scenes
         controller.save_img(snapshot_filename)
         snapshot_path = os.path.join(controller.image_dir, snapshot_filename)
         return snapshot_path
