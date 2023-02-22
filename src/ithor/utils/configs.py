@@ -1,6 +1,6 @@
 import json
 
-from src.ithor.utils.table import Table
+from ithor.utils.table import Table
 
 # TO DO: Implement for experiments (permutations) to save in scene_configs.json
 

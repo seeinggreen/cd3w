@@ -1,9 +1,15 @@
 import json
+import os
+import sys
 
-from src.argparsing import get_args
-from src.ithor.ithor_controller import IthorController
-from src.ithor.ithor_service import IthorService
-from src.slurk.slurk_bot import SlurkBot
+basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
+if not basepath in sys.path:
+    sys.path.append(basepath)
+
+from argparsing import get_args
+from ithor.ithor_controller import IthorController
+from ithor.ithor_service import IthorService
+from slurk.slurk_bot import SlurkBot
 
 if __name__ == "__main__":
     # Get the experiment arguments from the command line

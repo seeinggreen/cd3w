@@ -1,9 +1,9 @@
-from src.ithor.utils.exceptions import (
+from ithor.utils.exceptions import (
     DuplicateAssetError,
     GridCoordinateError,
     NoMatError,
 )
-from src.ithor.utils.slots import Slot
+from ithor.utils.slots import Slot
 
 # The areas at the top/bottom and left/right to keep clear
 TOP_MARGIN = 0.035
@@ -77,12 +77,12 @@ class Table:
                 self.grid[x].append(Slot(x, y, mats[x][y]))
                 if objects[x][y] is not None:
                     go = objects[x][y]
-                    if mats[x][y] is None:
-                        raise NoMatError(
-                            "Tried to place {} at position ({},{}) but there's no mat there.".format(
-                                go, x, y
-                            )
-                        )
+                    # if mats[x][y] is None:
+                    # raise NoMatError(
+                    #     "Tried to place {} at position ({},{}) but there's no mat there.".format(
+                    #         go, x, y
+                    #     )
+                    # )
                     self.grid[x][y].place_object(go)
         # Check that there are no assests used more than once
         self.check_for_duplicates()

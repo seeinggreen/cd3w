@@ -1,7 +1,7 @@
 import os
 import re
 
-from src.ithor.utils.items import Items
+from ithor.utils.items import Items
 
 
 class IthorService:

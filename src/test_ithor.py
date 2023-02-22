@@ -1,9 +1,14 @@
 import json
 import os
+import sys
 
-from src.argparsing import get_args
-from src.ithor.ithor_controller import IthorController
-from src.ithor.ithor_service import IthorService
+basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
+if not basepath in sys.path:
+    sys.path.append(basepath)
+
+from argparsing import get_args
+from ithor.ithor_controller import IthorController
+from ithor.ithor_service import IthorService
 
 # Get the experiment arguments from the command line
 args = get_args()
@@ -13,14 +18,14 @@ level = args["level"]
 variant = args["variant"]
 
 print("Args")
-print(f"{token}\n{user}\n{level}\{variant}")
+print(f"{token}\n{user}\n{level}\n{variant}")
 print("*" * 20)
 
 # Check if run as test or experiment and retrieve leader and follower configs from json file
 if level == "t" or variant == "t":
     print("Using test configs")
     print("*" * 20)
-    with open("ithor/test_configs.json") as json_file:
+    with open("src/ithor/test_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs["leader"]
     follower_config = configs["follower"]

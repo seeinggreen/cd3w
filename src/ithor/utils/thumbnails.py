@@ -4,11 +4,11 @@ import os
 import cv2
 import numpy as np
 
-from src.ithor.utils.exceptions import (
+from ithor.utils.exceptions import (
     ExistingThumbnailFolderError,
     MissingThumbnailsError,
 )
-from src.ithor.utils.items import Items
+from ithor.utils.items import Items
 
 THUMB_DIM = 200
 # The (square) thumbnail size
