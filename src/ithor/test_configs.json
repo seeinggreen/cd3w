@@ -34,14 +34,14 @@
         ],
         "objects": [
             [
-                "Pan1",
+                "Plate2",
                 null,
                 "Apple3Slice"
             ],
             [
-                "Bread1",
-                "Apple2",
-                "Apple1"
+                "Cup1",
+                "Vase1",
+                "Egg1"
             ],
             [
                 null,
@@ -101,7 +101,7 @@
         "objects": [
             [
                 null,
-                "Pan1",
+                "Cup1",
                 null
             ],
             [
@@ -111,16 +111,16 @@
             ],
             [
                 "Apple3Slice",
-                "Bread1",
+                "Vase1",
                 null
             ],
             [
                 null,
-                "Pan2",
+                "Plate2",
                 null
             ],
             [
-                "Apple2",
+                "Egg1",
                 "Bread2Slice",
                 null
             ],
