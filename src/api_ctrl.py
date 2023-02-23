@@ -1,6 +1,6 @@
 import json
 
-from requests import post, get, patch, put, delete
+from requests import post, get, patch, delete
 
 
 
@@ -35,7 +35,7 @@ def exec_req(req_fun, urlPath="", qparams=None, data_dict=None, hdrs=None):
         response = req_fun(
             url,
             json=json.dumps(data_dict),
-            headers=hdrs,
+            headers=header_dict,
             params=qparams
         )
 
@@ -45,8 +45,6 @@ def exec_req(req_fun, urlPath="", qparams=None, data_dict=None, hdrs=None):
     except:
         print("ERROR")
         return None
-
-    return None
 
 
 
@@ -77,38 +75,35 @@ getInstancePath = lambda path, instance_id: joinPaths(
 def getMultipleInstances(routeName, qparams=None, hdrs=None):
     return _get(
         routeName,
-        qparams=None,
-        hdrs=None
+        qparams=qparams,
+        hdrs=hdrs
     )
 
 def createInstance(routeName, data_dict=None, qparams=None, hdrs=None):
     return _post(
         routeName,
-        data_dict=None,
-        qparams=None,
-        hdrs=None
+        data_dict=data_dict,
+        qparams=qparams,
+        hdrs=hdrs
     )
 
 def getInstance(routeName, instance_id, hdrs=None):
     return _get(
         getInstancePath(routeName, instance_id),
-        qparams=None,
-        hdrs=None
+        hdrs=hdrs
     )
 
 def updateInstance(routeName, instance_id, data_dict=None, hdrs=None):
     return _patch(
         getInstancePath(routeName, instance_id),
-        data_dict=None,
-        qparams=None,
-        hdrs=None
+        data_dict=data_dict,
+        hdrs=hdrs
     )
 
 def deleteInstance(routeName, instance_id, hdrs=None):
     return _delete(
         getInstancePath(routeName, instance_id),
-        qparams=None,
-        hdrs=None
+        hdrs=hdrs
     )
 
 
@@ -187,7 +182,7 @@ def init_default_task_data(name, layout_id, num_users=2, merging_dict={}):
     } | merging_dict
 
 
-def init_default_log_data(event_name, user_id, room_id, receiver_id, num_users=2, merging_dict={}):
+def init_default_log_data(event_name, user_id, room_id, receiver_id, merging_dict={}):
     return {
       "event": event_name,
       "user_id": user_id,
@@ -199,12 +194,47 @@ def init_default_log_data(event_name, user_id, room_id, receiver_id, num_users=2
 # ENTITIES API calls
 
 
+
+# Experimental!!!!
+def get_entity_functions(routePath):
+
+    def getMultipleXs(qparams=None, hdrs=None):
+        return getMultipleInstances("layouts", qparams=qparams, hdrs=hdrs)
+
+
+
+    def createX(title, subtitle, data_dict=None, qparams=None, hdrs=None):
+
+        init_data = init_default_data(title, subtitle) | data_dict
+
+        return createInstance("layouts", data_dict=init_data, qparams=qparams, hdrs=hdrs)
+
+
+
+    def getX(instance_id, hdrs=None):
+        return getInstance("layouts", instance_id, hdrs=hdrs)
+
+    def updateX(instance_id, data_dict=None, hdrs=None):
+        return updateInstance("layouts", instance_id, data_dict=data_dict, hdrs=hdrs)
+
+    def deleteX(instance_id, hdrs=None):
+        return deleteInstance("layouts", instance_id, hdrs=hdrs)
+
+    return (
+        getMultipleXs,
+        createX,
+        getX,
+        updateX,
+        deleteX
+    )
+
+
 # LAYOUTS
 def getMultipleLayouts(qparams=None, hdrs=None):
     return getMultipleInstances("layouts", qparams=qparams, hdrs=hdrs)
 
-def createLayout(title, subtitle, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_layout_data(title, subtitle)
+def createLayout(title, subtitle, data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_layout_data(title, subtitle) | data_dict
     return createInstance("layouts", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getLayout(instance_id, hdrs=None):
@@ -221,8 +251,8 @@ def deleteLayout(instance_id, hdrs=None):
 def getMultipleRooms(qparams=None, hdrs=None):
     return getMultipleInstances("rooms", qparams=qparams, hdrs=hdrs)
 
-def createRoom(layout_id, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_room_data(layout_id)
+def createRoom(layout_id, data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_room_data(layout_id) | data_dict
     return createInstance("rooms", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getRoom(instance_id, hdrs=None):
@@ -239,8 +269,8 @@ def deleteRoom(instance_id, hdrs=None):
 def getMultiplePermissions(qparams=None, hdrs=None):
     return getMultipleInstances("permissions", qparams=qparams, hdrs=hdrs)
 
-def createPermission(data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_permission_data()
+def createPermission(data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_permission_data() | data_dict
     return createInstance("permissions", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getPermission(instance_id, hdrs=None):
@@ -257,8 +287,8 @@ def deletePermission(instance_id, hdrs=None):
 def getMultipleTokens(qparams=None, hdrs=None):
     return getMultipleInstances("tokens", qparams=qparams, hdrs=hdrs)
 
-def createToken(permissions_id, room_id, task_id, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_token_data(permissions_id, room_id, task_id)
+def createToken(permissions_id, room_id, task_id, data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_token_data(permissions_id, room_id, task_id) | data_dict
     return createInstance("tokens", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getToken(instance_id, hdrs=None):
@@ -275,8 +305,8 @@ def deleteToken(instance_id, hdrs=None):
 def getMultipleUsers(qparams=None, hdrs=None):
     return getMultipleInstances("users", qparams=qparams, hdrs=hdrs)
 
-def createUser(name, token_id, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_user_data(name, token_id)
+def createUser(name, token_id, data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_user_data(name, token_id) | data_dict
     return createInstance("users", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getUser(instance_id, hdrs=None):
@@ -293,8 +323,8 @@ def deleteUser(instance_id, hdrs=None):
 def getMultipleTasks(qparams=None, hdrs=None):
     return getMultipleInstances("tasks", qparams=qparams, hdrs=hdrs)
 
-def createTask(name, layout_id, num_users=2, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_task_data(name, layout_id, num_users=num_users)
+def createTask(name, layout_id, num_users=2, data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_task_data(name, layout_id, num_users=num_users) | data_dict
     return createInstance("tasks", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getTask(instance_id, hdrs=None):
@@ -311,8 +341,8 @@ def deleteTask(instance_id, hdrs=None):
 def getMultipleLogs(qparams=None, hdrs=None):
     return getMultipleInstances("logs", qparams=qparams, hdrs=hdrs)
 
-def createLog(event_name, user_id, room_id, receiver_id, num_users=2, data_dict=None, qparams=None, hdrs=None):
-    init_data = init_default_log_data(event_name, user_id, room_id, receiver_id, num_users=num_users)
+def createLog(event_name, user_id, room_id, receiver_id, data_dict=dict(), qparams=None, hdrs=None):
+    init_data = init_default_log_data(event_name, user_id, room_id, receiver_id) | data_dict
     return createInstance("logs", data_dict=init_data, qparams=qparams, hdrs=hdrs)
 
 def getLog(instance_id, hdrs=None):
