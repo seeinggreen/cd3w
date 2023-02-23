@@ -2,10 +2,10 @@ import os
 
 import cv2
 from ai2thor.controller import Controller
-from .utils.build import get_local_build_path
-from .utils.exceptions import DuplicateAssetError, MissingAssetError
-from .utils.items import Items
-from .utils.table import Table
+from ithor.utils.build import get_local_build_path
+from ithor.utils.exceptions import DuplicateAssetError, MissingAssetError
+from ithor.utils.items import Items
+from ithor.utils.table import Table
 
 LOCAL_BUILD_PATH = get_local_build_path()
 IMAGE_DIR = "images/"
@@ -195,10 +195,18 @@ class IthorController:
 
     def place_asset_at_empty_location(self, name):
         grid = self.table.grid
+        asset_placed = False
         for x, column in enumerate(grid):
+            if asset_placed:
+                break
             for y, slot in enumerate(column):
-                if slot.check_empty():
+                if asset_placed:
+                    break
+                if y == 2 and (x == 2 or x == 3):
+                    continue
+                if slot.is_empty():
                     self.place_asset_at_location(name, x, y)
+                    asset_placed = True
 
     def place_object_on_mat(self, object_name, mat_name):
         grid = self.table.grid

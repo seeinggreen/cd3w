@@ -32,6 +32,7 @@ class MissingBuildFileError(Exception):
 
 class ExistingThumbnailFolderError(Exception):
     pass
-    
+
+
 class MissingThumbnailsError(Exception):
     pass

@@ -1,4 +1,4 @@
-from .exceptions import NoObjectError, SlotFullError
+from ithor.utils.exceptions import NoObjectError, SlotFullError
 
 
 class Slot:
@@ -48,7 +48,7 @@ class Slot:
         if self.has_object():
             raise SlotFullError(
                 "Cannot place object ({}) here as there is already an object ({}) in this slot ({},{}).".format(
-                    name, self.mat, self.x, self.y
+                    name, self.object, self.x, self.y
                 )
             )
         if self.is_full():

@@ -1,5 +1,10 @@
 import json
 import os
+import sys
+
+basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
+if not basepath in sys.path:
+    sys.path.append(basepath)
 
 from argparsing import get_args
 from ithor.ithor_controller import IthorController
@@ -13,20 +18,20 @@ level = args["level"]
 variant = args["variant"]
 
 print("Args")
-print(f"{token}\n{user}\n{level}\{variant}")
+print(f"{token}\n{user}\n{level}\n{variant}")
 print("*" * 20)
 
 # Check if run as test or experiment and retrieve leader and follower configs from json file
 if level == "t" or variant == "t":
     print("Using test configs")
     print("*" * 20)
-    with open("ithor/test_configs.json") as json_file:
+    with open("src/ithor/test_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs["leader"]
     follower_config = configs["follower"]
 else:
     print("WARNING - Using regular configs - SHOULD NOT HAPPEN")
-    with open("ithor/scene_configs.json") as json_file:
+    with open("src/ithor/scene_configs.json") as json_file:
         configs = json.load(json_file)
     leader_config = configs[level][variant]["leader"]
     follower_config = configs[level][variant]["follower"]
@@ -56,23 +61,27 @@ ithor_service = IthorService(
 print("Taking snapshots of initial scenes")
 url = ithor_service.snapshot_scene("leader")
 print(url)
-print(os.listdir("../images"))
+print(os.listdir(f"{os.getcwd()}/images"))
+ithor_service.leader_controller.stop()
+
 url = ithor_service.snapshot_scene("follower")
 print(url)
 print(os.listdir(f"{os.getcwd()}/images"))
 print("*" * 20)
 
 commands = [
-    "\\done",
-    "\\discard #8",
+    "\\discard #6",
     "\\request #1",
     "\\put #3 on #V",
-    "put #3 on #table",
+    "\\put #3 on #table",
+    "\\done",
 ]
 for c in commands:
-    print("Updating scene and creating image file")
-    ithor_service.update_ithor_scene(c)
+    ithor_service.update_follower_ithor_scene(c)
+    if "done" in c:
+        continue
     url = ithor_service.snapshot_scene("follower")
+    print("Updating scene and creating image file:")
     print(url)
     print(os.listdir(f"{os.getcwd()}/images"))
     print("-" * 10)

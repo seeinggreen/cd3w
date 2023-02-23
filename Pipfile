@@ -7,6 +7,7 @@ name = "pypi"
 black = "*"
 ai2thor = "*"
 opencv-python = "*"
+numpy = "*"
 
 [dev-packages]
 
