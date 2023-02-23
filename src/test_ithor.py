@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import time
 
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
@@ -71,11 +72,13 @@ print("*" * 20)
 
 commands = [
     "\\discard #6",
+    "\\slice #12",
     "\\request #16",
     "\\put #22 on #V",
     "\\put #22 on #table",
     "\\done",
 ]
+
 for c in commands:
     ithor_service.update_follower_ithor_scene(c)
     if "done" in c:
