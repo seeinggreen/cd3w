@@ -1,31 +1,38 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 14 14:44:05 2023
-
-@author: dan
-"""
-
 class DuplicateAssetError(Exception):
-    pass;
-    
+    pass
+
+
 class MissingAssetError(Exception):
-    pass;
+    pass
+
 
 class GridCoordinateError(Exception):
-    pass;
-    
+    pass
+
+
 class SlotFullError(Exception):
-    pass;
-    
+    pass
+
+
 class NoObjectError(Exception):
-    pass;
-    
+    pass
+
+
 class NoMatError(Exception):
-    pass;
-    
+    pass
+
+
 class UnsupportedSystemError(Exception):
-    pass;
-    
+    pass
+
+
 class MissingBuildFileError(Exception):
-    pass;
+    pass
+
+
+class ExistingThumbnailFolderError(Exception):
+    pass
+
+
+class MissingThumbnailsError(Exception):
+    pass
