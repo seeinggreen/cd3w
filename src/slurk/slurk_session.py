@@ -1,17 +1,9 @@
-from api_ctrls.api_ctrl import *
+from python_utils import import_
+from apis_ctrls.slurk_api_ctrl import *
 
 
-def upload_file_img(image_data):
+from apis_ctrls.image_api_ctrl import upload_file_img
 
-    """
-    replace this with an imported function that uploads to:
-    - google drive public folder
-    - localhost
-
-    based on environmental variables
-    """
-
-    return "url"
 
 
 class SlurkSession:
