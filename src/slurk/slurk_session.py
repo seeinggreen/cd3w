@@ -1,4 +1,17 @@
+from api_ctrls.api_ctrl import *
 
+
+def upload_file_img(image_data):
+
+    """
+    replace this with an imported function that uploads to:
+    - google drive public folder
+    - localhost
+
+    based on environmental variables
+    """
+
+    return "url"
 
 
 class SlurkSession:
@@ -11,73 +24,73 @@ class SlurkSession:
         reference to this flow: 
             
             1. https://clp-research.github.io/slurk/slurk_gettingstarted.html
-            2. 
+            2. https://clp-research.github.io/slurk/slurk_multibots.html
+            3. https://clp-research.github.io/slurk/slurk_layouts.html
+
         """
 
         # create layout
         # get layout id
-        self.layout_id = self.createLayout()
+        self.__layout_id = self.__createLayout()
 
 
         # create room
         # get room id
-        self.room_id =  self.createRoom()
+        self.__room_id =  self.__createRoom()
 
         
         # for each agent
             # create permissions for the agent
             # get agents token
-        self.instanciateAgent()
+        self.__instanciateAgent()
 
 
-
-
-        # get image from ai2thor
-        self.getImageFromAI2thor()
-        # host image (locally or in google drive)
-        # get function
-        self.publishImage()
+        # get current AI2thor image and publish it
+        self.__publishImage()
 
 
         # initialise log collection
-        self.initLogCollection()
+        self.__initLogCollection()
 
 
 
     # Private methods
-    def createLayout(self):
-
+    def __createLayout(self):
         pass
 
 
-    def createRoom(self):
+    def __createRoom(self):
         pass
 
 
-    def instanciateAgent(self):
+    def __instanciateAgent(self):
         pass
 
 
-    def getImageFromAI2thor(self):
+    def __getImageFromAI2thor(self):
         pass
 
 
-    def publishImage(self):
-        pass
+    def __publishImage(self):
+        # get image from ai2thor
+        img = self.__getImageFromAI2thor()
+        # host image (locally or in google drive)
+        
+        self.__img_url = upload_file_img(img)
 
 
-    def initLogCollection(self):
+    def __initLogCollection(self):
         pass
 
 
 
     # PUBLIC methods
     def getImageURL(self):
-        pass
+        return self.__img_url
 
     def publishAndGetImageURL(self):
-        self.getImageFromAI2thor()
-        self.publishImage()
+        self.__getImageFromAI2thor()
+        self.__publishImage()
         
         return self.getImageURL()
 
