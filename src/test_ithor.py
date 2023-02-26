@@ -1,7 +1,6 @@
 import json
 import os
 import sys
-import time
 
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
