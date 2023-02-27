@@ -1,23 +1,24 @@
 import json
 import os
+import random
 import re
 import sys
 from itertools import combinations
+
 import numpy as np
 from numpy.random import default_rng
 
 from ithor.utils.items import Items
-from ithor.utils.table import Table, VERTICAL_SLOTS, HORIZONTAL_SLOTS
+from ithor.utils.table import HORIZONTAL_SLOTS, VERTICAL_SLOTS, Table
 
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
     sys.path.append(basepath)
 
 
-class Scene:
-    def __init__(self, level, n_scenes=10):
+class SceneConfigurator:
+    def __init__(self, level):
         self.level = level
-        self.n_scenes = n_scenes
         self.items = Items()
         self.assets = self.items.assets
         self.mats = [asset for asset in self.assets if self.items.is_mat(asset["name"])]
@@ -47,7 +48,7 @@ class Scene:
                 "mat_rules": [self._sample_n_random_mats(6)],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -62,7 +63,7 @@ class Scene:
                 ],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -78,7 +79,7 @@ class Scene:
                 ],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -94,7 +95,7 @@ class Scene:
                 ],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -113,7 +114,7 @@ class Scene:
                     self._sample_n_random_objects(4),
                 ],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -133,7 +134,7 @@ class Scene:
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -141,28 +142,28 @@ class Scene:
                     "follower": self._keep_all_objects,
                 },
             },
-            "l6": {
-                "mat_rules": [
-                    self._sample_from_mats(self.mats_same_colour_different_type),
-                    self._sample_from_mats(self.mats_same_colour_same_type),
-                    self._sample_from_mats(self.mats_similar_colour_same_type),
-                ],
-                "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
-                    self._sample_n_random_objects(
-                        3
-                    ),  # need to account for this by adding 1 position (7 objects)
-                ],
-                "position_rules": [
-                    self._generate_position_combos,
-                    self._only_empty_positions,
-                ],
-                "inclusion_rules": {
-                    "leader": self._delete_whole_object,
-                    "follower": self._delete_sliced_object,
-                },  # need to implement this
-            },
+            # "l6": {
+            #     "mat_rules": [
+            #         self._sample_from_mats(self.mats_same_colour_different_type),
+            #         self._sample_from_mats(self.mats_same_colour_same_type),
+            #         self._sample_from_mats(self.mats_similar_colour_same_type),
+            #     ],
+            #     "object_rules": [
+            #         self._sample_from_objects(self.obj_same_type_different_colour),
+            #         self._sample_from_objects(self.obj_same_colour_different_state),
+            #         self._sample_n_random_objects(
+            #             3
+            #         ),
+            #     ],
+            #     "position_rules": [
+            #         self._sample_from_positions,
+            #         self._only_empty_positions,
+            #     ],
+            #     "inclusion_rules": {
+            #         "leader": self._delete_whole_object,
+            #         "follower": self._delete_sliced_object,
+            #     },  # need to implement this
+            # },
             "l7": {
                 "mat_rules": [
                     self._sample_from_mats(self.mats_same_colour_different_type),
@@ -175,7 +176,7 @@ class Scene:
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -217,7 +218,7 @@ class Scene:
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -239,7 +240,7 @@ class Scene:
                     ),  # need to account for this by adding 1 position (7 objects)
                 ],
                 "position_rules": [
-                    self._generate_position_combos,
+                    self._sample_from_positions,
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -348,11 +349,14 @@ class Scene:
 
         return list(combinations(available_positions, n_positions))
 
-    def _sample_from_mats(self, mat_combos):
+    def _sample_from_mats(
+        self, mat_combos
+    ):  # TO DO INCLUDE CHECK FOR DUPLICATE OBJECTS
         def execute(selected_mats):
-            sample = np.random.choice(mat_combos, 1)
-            while sample in selected_mats:
-                sample = np.random.choice(mat_combos, 1)
+            sample = None
+            while (not sample) or (sample in selected_mats):
+                random_id = self.rng.integers(len(mat_combos))
+                sample = mat_combos[random_id]
             return sample
 
         return execute
@@ -361,9 +365,10 @@ class Scene:
         def execute(selected_mats):
             samples = []
             for i in range(n_random):
-                sample = np.random.choice(self.mats, 1)
-                while sample in selected_mats:
-                    sample = np.random.choice(self.mat, 1)
+                sample = None
+                while (not sample) or (sample in selected_mats):
+                    random_id = self.rng.integers(len(self.mats))
+                    sample = self.mats[random_id]
                 samples.append(sample)
             return samples
 
@@ -371,9 +376,10 @@ class Scene:
 
     def _sample_from_objects(self, object_combos):
         def execute(selected_objects):
-            sample = np.random.choice(object_combos, 1)
-            while sample in selected_objects:
-                sample = np.random.choice(object_combos, 1)
+            sample = None
+            while (not sample) or (sample in selected_objects):
+                random_id = self.rng.integers(len(object_combos))
+                sample = object_combos[random_id]
             return sample
 
         return execute
@@ -382,16 +388,18 @@ class Scene:
         def execute(selected_objects):
             samples = []
             for i in range(n_random):
-                sample = np.random.choice(self.objects, 1)
-                while sample in selected_objects:
-                    sample = np.random.choice(self.objects, 1)
+                sample = None
+                while (not sample) or (sample in selected_objects):
+                    random_id = self.rng.integers(len(self.objects))
+                    sample = self.objects[random_id]
                 samples.append(sample)
             return samples
 
         return execute
 
     def _sample_from_positions(self):
-        sample = np.random.choice(self.position_combos, 1)
+        random_id = self.rng.integers(len(self.position_combos))
+        sample = self.position_combos[random_id]
 
         return sample
 
@@ -401,58 +409,46 @@ class Scene:
             for y in range(VERTICAL_SLOTS):
                 if y == 2 and (x == 2 or x == 3):
                     continue
-                if [x, y] in selected_positions:
+                if str([x, y]) in str(selected_positions):
                     continue
                 else:
                     empty_positions.append([x, y])
+        random.shuffle(empty_positions)
+        return empty_positions[: len(selected_positions)]
+
+    def _only_empty_positions(self, selected_positions):
+        empty_positions = self._get_empty_positions(selected_positions)
         return empty_positions
 
-    def _only_empty_positions(self):
-        def execute(selected_positions):
-            empty_positions = self._get_empty_positions(selected_positions)
-            return empty_positions
+    def _include_mat_position(self, selected_positions):
+        empty_positions = self._get_empty_positions(selected_positions)
+        random_id = self.rng.integers(len(empty_positions))
+        positions_incl_mat = empty_positions
+        positions_incl_mat[random_id] = selected_positions[random_id]
+        return positions_incl_mat
 
-        return execute
+    def _keep_all_objects(self, selected_objects):
+        return selected_objects
 
-    def _include_mat_position(self):
-        def execute(selected_positions):
-            empty_positions = self._get_empty_positions(selected_positions)
-            random_mat_position = np.random.choice(selected_positions, 1)
-            random_id = self.rng.randint(len(empty_positions))
-            positions_incl_mat = empty_positions
-            positions_incl_mat[random_id] = random_mat_position
-            return positions_incl_mat
-
-        return execute
-
-    def _keep_all_objects(self):
-        def execute(selected_objects):
-            return selected_objects
-
-        return execute
-
-    def _delete_object(self):
-        def execute(selected_objects):
-            random_id = self.rng.randint(len(selected_objects))
-            final_objects = selected_objects
-            final_objects[random_id] = None
-            return final_objects
-
-        return execute
+    def _delete_object(self, selected_objects):
+        random_id = self.rng.integers(len(selected_objects))
+        final_objects = selected_objects
+        final_objects[random_id] = None
+        return final_objects
 
     # ================
 
     def get_configs(self):
-        leve_rules = self.rules[self.level]
+        level_rules = self.rules[self.level]
 
         selected_mats = []
         for funct in level_rules["mat_rules"]:
-            selected_mats.append(funct(selected_mats))
+            selected_mats.extend(funct(selected_mats))
         self.selected_mats = selected_mats
 
         selected_objects = []
         for funct in level_rules["object_rules"]:
-            selected_objects.append(funct(selected_objects))
+            selected_objects.extend(funct(selected_objects))
         self.selected_leader_objects = level_rules["inclusion_rules"]["leader"](
             selected_objects
         )
@@ -460,8 +456,8 @@ class Scene:
             selected_objects
         )
 
-        self.selected_positions = level_rules["position_rules"][0]
-        self.selected_follower_object_positions = level_rules["positions_rules"][1](
+        self.selected_positions = level_rules["position_rules"][0]()
+        self.selected_follower_object_positions = level_rules["position_rules"][1](
             self.selected_positions
         )
 
@@ -491,9 +487,9 @@ config = {}
 for level in ["l1", "l2"]:
     config[level] = {}
     for variant in range(2):
-        scene = Scene(level)
-        scene.get_configs()
-        config[level][variant] = scene.make_table()
+        scene_configurator = SceneConfigurator(level)
+        scene_configurator.get_configs()
+        config[level][variant] = scene_configurator.make_table()
 
 with open(f"src/ithor/configs.json", "w") as outfile:
     json.dump(config, outfile)
