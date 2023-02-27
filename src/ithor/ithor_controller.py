@@ -205,14 +205,17 @@ class IthorController:
                 if y == 2 and (x == 2 or x == 3):
                     continue
                 if slot.is_empty():
+                    slot.place_object(name)
                     self.place_asset_at_location(name, x, y)
                     asset_placed = True
+                    print(f"{name} placed at {x}{y}")
 
     def place_object_on_mat(self, object_name, mat_name):
         grid = self.table.grid
         for x, column in enumerate(grid):
             for y, slot in enumerate(column):
                 if slot.mat == mat_name:
+                    slot.place_object(object_name)
                     self.place_asset_at_location(object_name, x, y)
 
     def save_img(self, fn):
@@ -258,6 +261,10 @@ class IthorController:
             position=pos,
             rotation={"x": 0, "y": 0, "z": 0},
         )
+        for column in self.table.grid:
+            for slot in column:
+                if slot.object == name:
+                    slot.remove_object()
 
     def stop(self):
         """

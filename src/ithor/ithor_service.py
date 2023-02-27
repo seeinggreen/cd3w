@@ -1,5 +1,6 @@
 import os
 import re
+import time
 
 from ithor.utils.items import Items
 
@@ -18,6 +19,7 @@ class IthorService:
         # "\\done", "\\discard #8", "\\request #1", "\\put #3 on #V", "put #3 on #table"
 
         if "done" in command.lower():
+            time.sleep(10)
             self.follower_controller.stop()
             print("successfully stopped experiment")
         else:
@@ -33,6 +35,17 @@ class IthorService:
             elif "request" in command.lower():
                 self.follower_controller.place_asset_at_empty_location(item)
                 print(f"successfully requested {item}")
+            elif "slice" in command.lower():
+                sliced_item_slurk_id = "#" + str(
+                    int(re.findall("\d+", item_slurk_id)[0]) + 1
+                )
+                sliced_item = Items().get_name_by_slurkid(sliced_item_slurk_id)
+                assert (
+                    "Slice" in sliced_item
+                ), "The object denoted by this id can't be sliced. Try again with another!"
+                self.follower_controller.hide_asset(item)
+                self.follower_controller.place_asset_at_empty_location(sliced_item)
+                print(f"successfully sliced {item}")
             else:
                 # Pick up the specified item
                 self.follower_controller.pickup(item)

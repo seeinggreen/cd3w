@@ -71,11 +71,13 @@ print("*" * 20)
 
 commands = [
     "\\discard #6",
-    "\\request #1",
-    "\\put #3 on #V",
-    "\\put #3 on #table",
+    "\\slice #12",
+    "\\request #16",
+    "\\put #22 on #V",
+    "\\put #22 on #table",
     "\\done",
 ]
+
 for c in commands:
     ithor_service.update_follower_ithor_scene(c)
     if "done" in c:
