@@ -131,3 +131,6 @@ dmypy.json
 # Ignore build files
 builds/thor-Linux64-local/
 builds/thor-OSXIntel64-local/
+
+# Ignore image files
+images/*
