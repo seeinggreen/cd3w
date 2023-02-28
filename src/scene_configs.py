@@ -255,14 +255,12 @@ class SceneConfigurator:
     def _get_type(self, asset):
         return re.sub(
             "\d+\w*", "", asset["name"]
-        ).lower()  # Discard the number (and state - for objects only)
+        )  # Discard the number (and state - for objects only)
 
     def _get_state(self, asset):
-        state = re.sub(
-            "\w*\d+", "", asset["name"]
-        ).lower()  # Discard the name and number
+        state = re.sub("\w*\d+", "", asset["name"])  # Discard the name and number
         if state == "":
-            return "whole"
+            return "NotSliced"
         else:
             return state
 
@@ -354,7 +352,19 @@ class SceneConfigurator:
     ):  # TO DO INCLUDE CHECK FOR DUPLICATE OBJECTS
         def execute(selected_mats):
             sample = None
-            while (not sample) or (sample in selected_mats):
+            while (
+                (not sample)
+                or ((str(sample[0]) or str(sample[1])) in str(selected_mats))
+                or (
+                    (str(sample[0]["colour"]) or str(sample[0]["colour"]))
+                    in str(selected_mats)
+                )
+                or (
+                    (str(sample[0]["colour"]) in ["Violet", "Indigo", "Iris"])
+                    or (str(sample[0]["colour"]) in ["Violet", "Indigo", "Iris"])
+                    and (("Violet" or "Indigo" or "Iris") in str(selected_mats))
+                )
+            ):
                 random_id = self.rng.integers(len(mat_combos))
                 sample = mat_combos[random_id]
             return sample
@@ -366,7 +376,19 @@ class SceneConfigurator:
             samples = []
             for i in range(n_random):
                 sample = None
-                while (not sample) or (sample in selected_mats):
+                # Catching exact duplicates
+                while (
+                    (not sample)
+                    or (str(sample["name"]) in (str(selected_mats) or str(samples)))
+                    or (str(sample["colour"]) in (str(selected_mats) or str(samples)))
+                    or (
+                        (str(sample["colour"]) in ["Violet", "Indigo", "Iris"])
+                        and (
+                            ("Violet" or "Indigo" or "Iris")
+                            in (str(selected_mats) or str(samples))
+                        )
+                    )
+                ):
                     random_id = self.rng.integers(len(self.mats))
                     sample = self.mats[random_id]
                 samples.append(sample)
@@ -377,7 +399,18 @@ class SceneConfigurator:
     def _sample_from_objects(self, object_combos):
         def execute(selected_objects):
             sample = None
-            while (not sample) or (sample in selected_objects):
+            # Catching exact duplicates and unwanted sliced/not_sliced object combos
+            while (
+                (not sample)
+                or (
+                    (str(sample[0]["name"]) or str(sample[1]["name"]))
+                    in str(selected_objects)
+                )
+                or (
+                    (str(self._get_type(sample[0])) or str(self._get_type(sample[1])))
+                    in str(selected_objects)
+                )
+            ):
                 random_id = self.rng.integers(len(object_combos))
                 sample = object_combos[random_id]
             return sample
@@ -389,7 +422,15 @@ class SceneConfigurator:
             samples = []
             for i in range(n_random):
                 sample = None
-                while (not sample) or (sample in selected_objects):
+                # Catching exact duplicates and unwanted sliced/not_sliced object combos
+                while (
+                    (not sample)
+                    or (str(sample["name"]) in (str(samples) or str(selected_objects)))
+                    or (
+                        str(self._get_type(sample))
+                        in (str(samples) or str(selected_objects))
+                    )
+                ):
                     random_id = self.rng.integers(len(self.objects))
                     sample = self.objects[random_id]
                 samples.append(sample)
@@ -409,7 +450,8 @@ class SceneConfigurator:
             for y in range(VERTICAL_SLOTS):
                 if y == 2 and (x == 2 or x == 3):
                     continue
-                if str([x, y]) in str(selected_positions):
+                position = [x, y]
+                if position in selected_positions:
                     continue
                 else:
                     empty_positions.append([x, y])
@@ -444,14 +486,18 @@ class SceneConfigurator:
         selected_mats = []
         for funct in level_rules["mat_rules"]:
             selected_mats.extend(funct(selected_mats))
-        self.selected_mats = selected_mats
+        self.selected_mats = [mat["name"] for mat in selected_mats]
+        print(self.selected_mats)
 
         selected_objects = []
         for funct in level_rules["object_rules"]:
             selected_objects.extend(funct(selected_objects))
+        selected_objects = [obj["name"] for obj in selected_objects]
         self.selected_leader_objects = level_rules["inclusion_rules"]["leader"](
             selected_objects
         )
+        print(selected_objects)
+
         self.selected_follower_objects = level_rules["inclusion_rules"]["follower"](
             selected_objects
         )
@@ -485,11 +531,13 @@ class SceneConfigurator:
 
 config = {}
 for level in ["l1", "l2"]:
+    print(f"level: {level}")
     config[level] = {}
-    for variant in range(2):
+    for variant in range(10):
         scene_configurator = SceneConfigurator(level)
         scene_configurator.get_configs()
         config[level][variant] = scene_configurator.make_table()
+    print("==" * 5)
 
 with open(f"src/ithor/configs.json", "w") as outfile:
     json.dump(config, outfile)
