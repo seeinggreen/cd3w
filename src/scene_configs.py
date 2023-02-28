@@ -143,26 +143,26 @@ class SceneConfigurator:
                     "follower": self._keep_all_objects,
                 },
             },
-            # "l6": {
-            #     "mat_rules": [
-            #         self._sample_from_mats(self.mats_same_colour_different_type),
-            #         self._sample_from_mats(self.mats_same_colour_same_type),
-            #         self._sample_from_mats(self.mats_similar_colour_same_type),
-            #     ],
-            #     "object_rules": [
-            #         self._sample_from_objects(self.obj_same_type_different_colour),
-            #         self._sample_from_objects(self.obj_same_colour_different_state),
-            #         self._sample_n_random_objects(3),
-            #     ],
-            #     "position_rules": [
-            #         self._sample_from_positions(6),
-            #         self._only_empty_positions,
-            #     ],
-            #     "inclusion_rules": {
-            #         "leader": self._delete_object_notsliced,
-            #         "follower": self._delete_object_sliced,
-            #     },
-            # },
+            "l6": {
+                "mat_rules": [
+                    self._sample_from_mats(self.mats_same_colour_different_type),
+                    self._sample_from_mats(self.mats_same_colour_same_type),
+                    self._sample_from_mats(self.mats_similar_colour_same_type),
+                ],
+                "object_rules": [
+                    self._sample_from_objects(self.obj_same_type_different_colour),
+                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_n_random_objects(3),
+                ],
+                "position_rules": [
+                    self._sample_from_positions(6),
+                    self._only_empty_positions,
+                ],
+                "inclusion_rules": {
+                    "leader": self._delete_object_notsliced,
+                    "follower": self._delete_object_sliced,
+                },
+            },
             "l7": {
                 "mat_rules": [
                     self._sample_from_mats(self.mats_same_colour_different_type),
@@ -192,9 +192,7 @@ class SceneConfigurator:
                 "object_rules": [
                     self._sample_from_objects(self.obj_same_type_different_colour),
                     self._sample_from_objects(self.obj_same_colour_different_state),
-                    self._sample_n_random_objects(
-                        3
-                    ),  # need to account for this by adding 1 position (7 objects)
+                    self._sample_n_random_objects(3),
                 ],
                 "position_rules": [
                     self._sample_from_positions(7),
@@ -203,7 +201,7 @@ class SceneConfigurator:
                 "inclusion_rules": {
                     "leader": self._delete_object,
                     "follower": self._keep_all_objects,
-                },  # when deleting object, also delete position
+                },
             },
             "l9": {
                 "mat_rules": [
@@ -223,7 +221,7 @@ class SceneConfigurator:
                 "inclusion_rules": {
                     "leader": self._keep_all_objects,
                     "follower": self._delete_object,
-                },  # when deleting object, also delete position
+                },
             },
             "l10": {
                 "mat_rules": [
@@ -234,9 +232,7 @@ class SceneConfigurator:
                 "object_rules": [
                     self._sample_from_objects(self.obj_same_type_different_colour),
                     self._sample_from_objects(self.obj_same_colour_different_state),
-                    self._sample_n_random_objects(
-                        3
-                    ),  # need to account for this by adding 1 position (7 objects)
+                    self._sample_n_random_objects(3),
                 ],
                 "position_rules": [
                     self._sample_from_positions(6),
@@ -249,7 +245,7 @@ class SceneConfigurator:
             },
         }
 
-    # Helper functions
+    # HELPER METHODS
     # ================
     def _get_type(self, asset):
         return re.sub(
@@ -497,6 +493,25 @@ class SceneConfigurator:
         final_objects[random_id] = None
         return final_objects
 
+    def _delete_object_sliced(self, selected_objects):
+        final_objects = copy.deepcopy(selected_objects)
+        for i, obj in enumerate(selected_objects):
+            if "Slice" in obj and i in [2, 3]:
+                final_objects[i] = None
+            else:
+                continue
+        return final_objects
+
+    def _delete_object_notsliced(self, selected_objects):
+        final_objects = copy.deepcopy(selected_objects)
+        for i, obj in enumerate(selected_objects):
+            if not "Slice" in obj and i in [2, 3]:
+                final_objects[i] = None
+            else:
+                continue
+        return final_objects
+
+    # EXTERNAL METHODS
     # ================
 
     def get_configs(self):
@@ -524,20 +539,20 @@ class SceneConfigurator:
             self.selected_positions
         )
 
-        print("MATS")
-        print("LEADER -> FOLLOWER")
-        print(self.selected_mats)
-        print(self.selected_mats)
+        # print("MATS")
+        # print("LEADER -> FOLLOWER")
+        # print(self.selected_mats)
+        # print(self.selected_mats)
 
-        print("OBJECTS")
-        print("LEADER -> FOLLOWER")
-        print(self.selected_leader_objects)
-        print(self.selected_follower_objects)
+        # print("OBJECTS")
+        # print("LEADER -> FOLLOWER")
+        # print(self.selected_leader_objects)
+        # print(self.selected_follower_objects)
 
-        print("POSITIONS")
-        print("LEADER -> FOLLOWER")
-        print(self.selected_positions)
-        print(self.selected_follower_object_positions)
+        # print("POSITIONS")
+        # print("LEADER -> FOLLOWER")
+        # print(self.selected_positions)
+        # print(self.selected_follower_object_positions)
 
     def make_table(self):
         mats = Table.get_empty_slots_list()
@@ -564,19 +579,25 @@ class SceneConfigurator:
         return self.configs
 
 
-config = {}
-levels = [f"l{i}" for i in range(0, 11)]
-# not working: l4, l5,
-for level in levels:
-    print(f"level: {level}")
-    if level == "l6":
-        continue
-    config[level] = {}
-    for variant in range(1):
-        scene_configurator = SceneConfigurator(level)
-        scene_configurator.get_configs()
-        config[level][variant] = scene_configurator.make_table()
-    print("==" * 5)
+if __name__ == "__main__":
+    config = {}
+    levels = [f"l{i}" for i in range(0, 11)]
+    variants = [f"v{j}" for j in range(1, 11)]
+    for level in levels:
+        print(f"Level {level}")
+        config[level] = {}
+        for variant in variants:
+            print(f"Variant {variant}")
+            scene_configurator = SceneConfigurator(level)
+            scene_configurator.get_configs()
+            current_config = None
+            while current_config is None or str(current_config) in str(config):
+                if current_config:
+                    print("Created duplicate - trying again")
+                current_config = scene_configurator.make_table()
+            config[level][variant] = current_config
 
-with open(f"src/ithor/scene_configs.json", "w") as outfile:
-    json.dump(config, outfile)
+        print("==" * 5)
+
+    with open(f"src/ithor/scene_configs.json", "w") as outfile:
+        json.dump(config, outfile)
