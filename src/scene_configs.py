@@ -6,7 +6,6 @@ import sys
 from itertools import combinations
 import copy
 
-import numpy as np
 from numpy.random import default_rng
 
 from ithor.utils.items import Items
