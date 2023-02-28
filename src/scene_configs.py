@@ -4,6 +4,7 @@ import random
 import re
 import sys
 from itertools import combinations
+import copy
 
 import numpy as np
 from numpy.random import default_rng
@@ -35,8 +36,8 @@ class SceneConfigurator:
             self.obj_same_type_different_colour,
             self.obj_same_type_different_colour_state,
         ) = self._generate_object_combos()
-        self.n_positions = 6
-        self.position_combos = self._generate_position_combos()
+        self.position_combos_6_pos = self._generate_position_combos(6)
+        self.position_combos_7_pos = self._generate_position_combos(7)
         self.rng = default_rng()
         self.selected_mats = None
         self.selected_leader_objects = None
@@ -48,7 +49,7 @@ class SceneConfigurator:
                 "mat_rules": [self._sample_n_random_mats(6)],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -63,7 +64,7 @@ class SceneConfigurator:
                 ],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -79,7 +80,7 @@ class SceneConfigurator:
                 ],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -95,7 +96,7 @@ class SceneConfigurator:
                 ],
                 "object_rules": [self._sample_n_random_objects(6)],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -114,7 +115,7 @@ class SceneConfigurator:
                     self._sample_n_random_objects(4),
                 ],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -134,7 +135,7 @@ class SceneConfigurator:
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -151,18 +152,16 @@ class SceneConfigurator:
             #     "object_rules": [
             #         self._sample_from_objects(self.obj_same_type_different_colour),
             #         self._sample_from_objects(self.obj_same_colour_different_state),
-            #         self._sample_n_random_objects(
-            #             3
-            #         ),
+            #         self._sample_n_random_objects(3),
             #     ],
             #     "position_rules": [
-            #         self._sample_from_positions,
+            #         self._sample_from_positions(6),
             #         self._only_empty_positions,
             #     ],
             #     "inclusion_rules": {
-            #         "leader": self._delete_whole_object,
-            #         "follower": self._delete_sliced_object,
-            #     },  # need to implement this
+            #         "leader": self._delete_object_notsliced,
+            #         "follower": self._delete_object_sliced,
+            #     },
             # },
             "l7": {
                 "mat_rules": [
@@ -176,7 +175,7 @@ class SceneConfigurator:
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -198,7 +197,7 @@ class SceneConfigurator:
                     ),  # need to account for this by adding 1 position (7 objects)
                 ],
                 "position_rules": [
-                    self._generate_position_combos(7),
+                    self._sample_from_positions(7),
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -218,7 +217,7 @@ class SceneConfigurator:
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -240,7 +239,7 @@ class SceneConfigurator:
                     ),  # need to account for this by adding 1 position (7 objects)
                 ],
                 "position_rules": [
-                    self._sample_from_positions,
+                    self._sample_from_positions(6),
                     self._include_mat_position,
                 ],
                 "inclusion_rules": {
@@ -290,6 +289,7 @@ class SceneConfigurator:
             if len(combos) == 1:
                 for mat in mats_by_colour[colour]:
                     temp_similar_colour_same_type.append(mat)
+                continue
             counter = 0
             for combo in combos:
                 if self._same_type(combo[0], combo[1]):
@@ -336,7 +336,7 @@ class SceneConfigurator:
         )
 
     # Positioning (for mats and leader objects)
-    def _generate_position_combos(self, n_positions=6):
+    def _generate_position_combos(self, n_positions):
         available_positions = []
         for x in range(HORIZONTAL_SLOTS):
             for y in range(VERTICAL_SLOTS):
@@ -417,7 +417,7 @@ class SceneConfigurator:
             sample = None
             # Catching exact duplicates and unwanted sliced/not_sliced object combos
             while (
-                sample is None
+                not sample
                 or str(sample[0]["name"]) in str(selected_objects)
                 or str(sample[1]["name"]) in str(selected_objects)
                 or str(self._get_type(sample[0])) in str(selected_objects)
@@ -449,9 +449,13 @@ class SceneConfigurator:
 
         return execute
 
-    def _sample_from_positions(self):
-        random_id = self.rng.integers(len(self.position_combos))
-        sample = self.position_combos[random_id]
+    def _sample_from_positions(self, n_positions):
+        if n_positions == 6:
+            position_combos = self.position_combos_6_pos
+        else:
+            position_combos = self.position_combos_7_pos
+        random_id = self.rng.integers(len(position_combos))
+        sample = position_combos[random_id]
 
         return sample
 
@@ -476,7 +480,7 @@ class SceneConfigurator:
     def _include_mat_position(self, selected_positions):
         empty_positions = self._get_empty_positions(selected_positions)
         random_id = self.rng.integers(len(empty_positions))
-        positions_incl_mat = empty_positions
+        positions_incl_mat = copy.deepcopy(empty_positions)
         positions_incl_mat[random_id] = selected_positions[random_id]
         return positions_incl_mat
 
@@ -484,8 +488,12 @@ class SceneConfigurator:
         return selected_objects
 
     def _delete_object(self, selected_objects):
-        random_id = self.rng.integers(len(selected_objects))
-        final_objects = selected_objects
+        random_id = None
+        # The first two pairs of objects should be the same across leader and follower scenes
+        # as these are the objects corresponding to the obj_prop skills
+        while not random_id or random_id < 4:
+            random_id = self.rng.integers(len(selected_objects))
+        final_objects = copy.deepcopy(selected_objects)
         final_objects[random_id] = None
         return final_objects
 
@@ -503,15 +511,15 @@ class SceneConfigurator:
         for funct in level_rules["object_rules"]:
             selected_objects.extend(funct(selected_objects))
         selected_objects = [obj["name"] for obj in selected_objects]
+
         self.selected_leader_objects = level_rules["inclusion_rules"]["leader"](
             selected_objects
         )
-
         self.selected_follower_objects = level_rules["inclusion_rules"]["follower"](
             selected_objects
         )
 
-        self.selected_positions = level_rules["position_rules"][0]()
+        self.selected_positions = level_rules["position_rules"][0]
         self.selected_follower_object_positions = level_rules["position_rules"][1](
             self.selected_positions
         )
@@ -534,7 +542,10 @@ class SceneConfigurator:
     def make_table(self):
         mats = Table.get_empty_slots_list()
         for i, pos in enumerate(self.selected_positions):
-            mats[pos[0]][pos[1]] = self.selected_mats[i]
+            try:
+                mats[pos[0]][pos[1]] = self.selected_mats[i]
+            except:
+                mats[pos[0]][pos[1]] = None
 
         # Get an empty list and specify goal object positions
         leader_objects = Table.get_empty_slots_list()
@@ -555,9 +566,11 @@ class SceneConfigurator:
 
 config = {}
 levels = [f"l{i}" for i in range(0, 11)]
-levels.pop(7)
+# not working: l4, l5,
 for level in levels:
     print(f"level: {level}")
+    if level == "l6":
+        continue
     config[level] = {}
     for variant in range(1):
         scene_configurator = SceneConfigurator(level)
@@ -565,5 +578,5 @@ for level in levels:
         config[level][variant] = scene_configurator.make_table()
     print("==" * 5)
 
-with open(f"src/ithor/configs.json", "w") as outfile:
+with open(f"src/ithor/scene_configs.json", "w") as outfile:
     json.dump(config, outfile)
