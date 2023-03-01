@@ -1,10 +1,11 @@
+import copy
 import json
 import os
 import random
 import re
 import sys
+from datetime import date
 from itertools import combinations
-import copy
 
 from numpy.random import default_rng
 
@@ -598,5 +599,8 @@ if __name__ == "__main__":
 
         print("==" * 5)
 
-    with open(f"src/ithor/scene_configs.json", "w") as outfile:
+    # Returns the current local date
+    today = date.today()
+
+    with open(f"src/ithor/scene_configs{today}.json", "w") as outfile:
         json.dump(config, outfile)
