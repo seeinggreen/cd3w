@@ -57,12 +57,14 @@ stories:
   - action: utter_goodbye
 
 
-- story: receptacles
+- story: receptacle not empty
   - intent: greet
   - action: utter_greet
-  - action: utter_do_you_have_obj
-  - intent: affirm
-  - action: utter_put_obj_in_recp
+  - action: utter_put_obj_in_recp_
+  - intent: deny
+  - action: utter_is_recp_empty
+  - intent: deny
+  - action: utter_remove_obj_from_recp__and_place_anywhere_on_table
   - or:
     - intent: affirm
     - intent: ask_next_step
