@@ -28,3 +28,18 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+
+
+
+# NEW
+
+- story: simple path 1
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_obj
+  - intent: affirm
+  - action: utter_put_obj_in_recp
+  - or:
+
+  - action: utter_goodbye
