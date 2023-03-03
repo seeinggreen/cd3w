@@ -71,3 +71,19 @@ stories:
   - action: utter_confirm_obj_in_recp
   - intent: affirm
   - action: utter_goodbye
+
+
+- story: object already in receptacle
+  - intent: greet
+  - action: utter_greet
+  - action: utter_put_obj_in_recp_
+  - or:
+    - intent: confirm_obj_in_rcp
+    - intent: rcp_not_empty
+  - action: utter_remove_obj_from_recp__and_place_anywhere_on_table
+  - or:
+    - intent: affirm
+    - intent: ask_next_step
+  - action: utter_confirm_obj_in_recp
+  - intent: affirm
+  - action: utter_goodbye
