@@ -46,3 +46,12 @@ stories:
   - action: utter_confirm_obj_in_recp
   - intent: affirm
   - action: utter_goodbye
+
+
+
+- story: no unused objs recps
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_any_unused_obj_recp
+  - intent: deny
+  - action: utter_goodbye
