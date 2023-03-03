@@ -49,9 +49,23 @@ stories:
 
 
 
-- story: no unused objs recps
+- story: no unused objects or receptacles
   - intent: greet
   - action: utter_greet
   - action: utter_do_you_have_any_unused_obj_recp
   - intent: deny
+  - action: utter_goodbye
+
+
+- story: receptacles
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_obj
+  - intent: affirm
+  - action: utter_put_obj_in_recp
+  - or:
+    - intent: affirm
+    - intent: ask_next_step
+  - action: utter_confirm_obj_in_recp
+  - intent: affirm
   - action: utter_goodbye
