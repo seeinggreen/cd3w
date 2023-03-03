@@ -90,6 +90,16 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
+- intent: confirm_obj_in_rcp
+  examples: |
+    - _object_ is already in _receptacle_
 
+- intent: rcp_not_empty
+  examples: |
+    - _receptacle_ is not empty
+
+- intent: ask_next_step
+  examples: |
+    - Give me the next step
 
   # follower 
