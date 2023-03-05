@@ -1,5 +1,8 @@
 import os
 
+from datetime import date
+import json
+
 import cv2
 from ai2thor.controller import Controller
 from ithor.utils.build import get_local_build_path
@@ -7,27 +10,24 @@ from ithor.utils.exceptions import DuplicateAssetError, MissingAssetError
 from ithor.utils.items import Items
 from ithor.utils.table import Table
 
+import base64
+
 LOCAL_BUILD_PATH = get_local_build_path()
-IMAGE_DIR = "images/"
 
 
 class IthorController:
     def __init__(
         self,
-        config,
         height=1200,
         width=1600,
         local_exec_path=LOCAL_BUILD_PATH,
         field_of_view=120,
-        image_dir=IMAGE_DIR,
     ):
         """
         Constructor to set up the iTHOR controller.
 
         Parameters
         ----------
-        config : dict
-            The scene config (mats / objects in grid slots)
         height : int
             The height of the Unity window.
         width : int
@@ -36,8 +36,6 @@ class IthorController:
             The filepath for the local Unity build.
         field_of_view : int
             The agents field of view.
-        image_dir : string
-            The filepath for the directory to store output images.
 
         Returns
         -------
@@ -45,8 +43,7 @@ class IthorController:
 
         """
 
-        # Create a Table object to handle the object grid
-        self.table = Table(config["mats"], config["objects"])
+        self.table = None
 
         # Set up a standard iTHOR controller
         self.controller = Controller(
@@ -56,8 +53,6 @@ class IthorController:
             fieldOfView=field_of_view,
             snapToGrid=False,
         )
-
-        self.image_dir = image_dir
 
     def init_scene(self, pos, rot, horizon):
         """
@@ -78,6 +73,7 @@ class IthorController:
         None.
 
         """
+
         # Physically move the agent to the specified position
         self.controller.step(
             action="Teleport",
@@ -141,15 +137,23 @@ class IthorController:
         # Objects should be in front of the agent before calling this method
         self.controller.step(action="PickupObject", objectId=object_id)
 
-    def place_assets(self):
+    def place_assets(self, config):
         """
         Places all assets specified in the table grid in their locations.
+
+        Parameters
+        ----------
+        config : dict
+            The scene config (mats / objects in grid slots)
 
         Returns
         -------
         None.
 
         """
+
+        self.table = Table(config["mats"], config["objects"])
+
         grid = self.table.grid
         for x, column in enumerate(grid):
             for y, slot in enumerate(column):
@@ -218,22 +222,16 @@ class IthorController:
                     slot.place_object(object_name)
                     self.place_asset_at_location(object_name, x, y)
 
-    def save_img(self, fn):
+    def snapshot_scene(self):
         """
-        Saves an image of the current state of the scene.
-
-        Parameters
-        ----------
-        fn : string
-            The filename to save the image under.
-
         Returns
         -------
-        None.
+        A base64 encoded image url for the current state of the scene.
 
         """
         # iTHOR provides a BGR image to use direct with CV2
-        cv2.imwrite(os.path.join(self.image_dir, fn), self.controller.last_event.cv2img)
+        _, buffer = cv2.imencode(".jpg", self.controller.last_event.cv2img)
+        return f"data:image/jpg;base64,{base64.b64encode(buffer).decode()}"
 
     def hide_asset(self, name):
         """
@@ -276,3 +274,21 @@ class IthorController:
 
         """
         self.controller.stop()
+
+    def save_table_state(self, level, variant):
+        grid = self.table.grid
+        mats = Table.get_empty_slots_list()
+        objects = Table.get_empty_slots_list()
+        for x, column in enumerate(grid):
+            for y, slot in enumerate(column):
+                if slot.has_mat():
+                    mats[x][y] = slot.mat
+                if slot.has_object():
+                    objects[x][y] = slot.object
+
+        config = {str(date.today()): {"mats": mats, "objects": objects}}
+
+        with open(
+            f"{os.path.abspath('')}/output/final_states/{level}_{variant}.json", "w+"
+        ) as outfile:
+            json.dump(config, outfile)

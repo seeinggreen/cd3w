@@ -602,5 +602,5 @@ if __name__ == "__main__":
     # Returns the current local date
     today = date.today()
 
-    with open(f"src/ithor/scene_configs{today}.json", "w") as outfile:
+    with open(f"src/ithor/scene_configs{str(today)}.json", "w") as outfile:
         json.dump(config, outfile)

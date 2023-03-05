@@ -1,44 +1,152 @@
 # cd3w
 
-## Builds
+## 1 Builds
 
 To run with the local build download the apropriate build zip file from Teams and extract it to the builds directory. You should then be able to run the main.py script.
 
-## Install Slurk (without Docker)
+## 2 Setting up Ithor
+
+TBC
+
+## 3 Setting up Slurk (without Docker)
+
 Slurk should be installed on any host machines (machines from which we start an experiment)
 The below steps can also be found in https://clp-research.github.io/slurk/slurk_prerequisites.html 2.4 and 2.6 (Steps 1.-2.).
-### 1. Generate a ssh key pair (with defaults):
-$ ssh-keygen
 
-### 2. Upload or copy the generated public key to your github SSH settings
+### 3.1 Generate a ssh key pair
 
-### 3. Clone the repository.
-$ git clone git@github.com:clp-research/slurk.git
+```sh
+ssh-keygen
+```
 
-### 4. Go into the slurk top directory.
+Copy the generated public key to your github SSH settings
 
-### (Optional) Create and activate a virtual environment.
+### 3.2 Clone the Slurk Github repository
 
-### 6. Install dependencies:
-$ pip install -r requirements.txt
+```sh
+git clone git@github.com:clp-research/slurk.git
+```
 
-## Running experiments
-Note that the implementation of this is still a WIP
+### 3.3 Install dependencies
 
-### 1. Open a terminal and run the slurk start_server bash script (from the Slurk top directory)
-This was imported when installing Slurk (see above). The below step corresponds to https://clp-research.github.io/slurk/slurk_prerequisites.html 2.6 (Step 3.).
-$ scripts/start_server.sh
+```sh
+sudo apt  install jq curl
+pip install -r requirements.txt
+```
 
-### 2. Copy the admin token at the end of the resulting output
-This should look similar to the below (but the token will be a different one, so do not simply copy the below example):
+## 4 Running experiments
 
-admin token:
-01234567-89ab-cdef-0123-456789abcdef
+# 4.0 Start up the Slurk server 
 
-### 3. Open a second terminal and run the main Python script, specifying the parameters for admin token (see step 2.) and optionally the mission level and scene variant (if level and variant aren't specified, the script will run the test configuration).
+From the top level directory, run:
 
-$ python main.py --token --user --level --variant
+```sh
+cd slurk
+scripts/start_server.sh
+```
 
-e.g.
+**Note:** You may need to kill any Slurk processes running in the background by running the below command to get the id(s) of the running process(es)
 
-$ python main.py -token "01234567-89ab-cdef-0123-456789abcdef" --user "1" --level "l0" --version "v0"
+```sh
+lsof -i :5000 | grep LISTEN
+```
+
+and then running the following to kill any processes still running:
+
+```sh
+kill -9 {PROCESS_ID} 
+```
+
+### 4.1 Running without Concierge Bot
+
+#### 4.1.1 Create a room and task
+
+In a second terminal, from the top level directory, run:
+
+```sh
+TASK_LAYOUT_ID=$(slurk/scripts/create_layout.sh slurk/examples/simple_layout.json | jq .id)
+TASK_ROOM_ID=$(slurk/scripts/create_room.sh $TASK_LAYOUT_ID | jq .id)
+echo "TASK_ROOM_ID=$TASK_ROOM_ID"
+```
+
+
+#### 4.1.1 Run IthorBot
+
+In a third terminal, from the top level directory, copy over `TASK_ROOM_ID=<value-from-second-terminal>` and run:
+
+```sh
+ITHOR_TOKEN=$(slurk/scripts/create_room_token.sh $TASK_ROOM_ID src/slurk/permissions/ithor_bot_permissions.json | jq -r .id)
+ITHOR_USER=$(slurk/scripts/create_user.sh "IthorBot" $ITHOR_TOKEN | jq .id)
+python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER
+```
+
+#### 4.1.4 Create user tokens for the room
+
+Back in the second terminal, let’s create two user tokens (run the command twice):
+
+```sh
+slurk/scripts/create_room_token.sh $TASK_ROOM_ID src/slurk/permissions/user_permissions.json 1 | jq .id
+```
+
+Share the output with a particpicant to be used to log into the slurk room.
+
+### 4.2 Running with Concierge Bot
+#### 4.2.1 Create a waiting room
+
+**Note:** you may need to run `sudo apt  install jq curl` before the next steps...
+
+In a second terminal, from the top level directory, run:
+
+```sh
+WAITING_ROOM_LAYOUT_ID=$(slurk/scripts/create_layout.sh src/slurk/layouts/waiting_room_layout.json | jq .id)
+WAITING_ROOM_ID=$(slurk/scripts/create_room.sh $WAITING_ROOM_LAYOUT_ID | jq .id)
+echo "WAITING_ROOM_LAYOUT_ID=$WAITING_ROOM_LAYOUT_ID"
+```
+
+#### 4.2.2 Create a task
+
+In the same terminal, from the top level directory, run:
+
+```sh
+TASK_LAYOUT_ID=$(slurk/scripts/create_layout.sh slurk/examples/simple_layout.json | jq .id)
+TASK_ID=$(slurk/scripts/create_task.sh  "Data Collection Task" 2 $TASK_LAYOUT_ID | jq .id)
+echo "TASK_ID=$TASK_ID"
+```
+
+**Note:** this sets up a task called "Data Collection Task" which is meant for 2 participants
+
+#### 4.2.3 Run ConciergeBot
+
+In a third terminal, from the top level directory, run:
+
+```sh
+WAITING_ROOM_ID=<value-from-other-terminal>
+CONCIERGE_TOKEN=$(slurk/scripts/create_room_token.sh $WAITING_ROOM_ID src/slurk/bots/conciergebot/concierge_bot_permissions.json | jq -r .id)
+CONCIERGE_USER=$(slurk/scripts/create_user.sh "ConciergeBot" $CONCIERGE_TOKEN | jq .id)
+SLURK_TOKEN=$CONCIERGE_TOKEN SLURK_USER=$CONCIERGE_USER SLURK_PORT=5000 python src/slurk/bots/conciergebot/concierge_bot.py
+```
+
+**Note:** you may have to run `chmod +x src/slurk/bots/conciergebot/concierge_bot.py`
+
+
+#### 4.2.4 Run IthorBot
+
+In a fourth terminal, from the top level directory, run:
+
+```sh
+WAITING_ROOM_ID=<value-from-other-terminal>
+TASK_ID=<value-from-other-terminal>
+ITHOR_TOKEN=$(slurk/scripts/create_room_token.sh $WAITING_ROOM_ID src/slurk/permissions/ithor_bot_permissions.json | jq -r .id)
+ITHOR_USER=$(slurk/scripts/create_user.sh "IthorBot" $ITHOR_TOKEN | jq .id)
+python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER --task $TASK_ID
+```
+
+#### 4.2.5 Create user tokens for the task
+
+Back in the second terminal, let’s create two user tokens (run the command twice):
+
+```sh
+slurk/scripts/create_room_token.sh $TASK_ROOM_ID src/slurk/permissions/user_permissions.json 1 | jq .id
+```
+
+Share the output with a particpicant to be used to log into the slurk room.
