@@ -292,3 +292,15 @@ class IthorController:
             f"{os.path.abspath('')}/output/final_states/{level}_{variant}.json", "w+"
         ) as outfile:
             json.dump(config, outfile)
+
+    def get_current_table_items(self):
+        grid = self.table.grid
+        items = {"mats": [], "objects": []}
+        for column in grid:
+            for slot in column:
+                if slot.has_mat():
+                    items["mats"].append(slot.mat)
+                if slot.has_object():
+                    items["objects"].append(slot.object)
+
+        return items
