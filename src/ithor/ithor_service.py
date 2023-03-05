@@ -87,3 +87,7 @@ class IthorService:
         else:
             controller = self.follower_controller
         return controller.snapshot_scene()
+
+    def get_follower_lookup_sheet(self):
+        # TODO: Generate a lookup sheet instead of snapshotting the scene
+        return self.follower_controller.snapshot_scene()

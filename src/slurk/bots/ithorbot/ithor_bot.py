@@ -1,7 +1,6 @@
 import json
 import logging
 import os
-import time
 from datetime import date
 
 import requests
@@ -45,7 +44,6 @@ class IthorBot:
                 f"{self.host}:{self.port}/slurk/api/users/{self.user}/rooms/{data['room']}",
                 headers={"Authorization": f"Bearer {self.token}"},
             )
-            self.request_feedback(response, f"let {self.__class__.__name__}  join room")
 
         return join
 
@@ -69,12 +67,10 @@ class IthorBot:
                 self.message_log.append(
                     {"user": data["user"]["name"], "command": data["command"]}
                 )
-            # command = self._parse_message(data["message"])
-            # if command:
-            if data["command"] == "ready":
-                if "leader" in data["user"]["name"]:
+            if data["command"].lower() == "ready":
+                if "leader" in data["user"]["name"].lower():
                     self.leader = data["user"]
-                if "follower" in data["user"]["name"]:
+                if "follower" in data["user"]["name"].lower():
                     self.follower = data["user"]
                 if self.leader and self.follower:
                     if self.round_in_progress:
@@ -93,26 +89,34 @@ class IthorBot:
                         level=self.level, variant=self.variant
                     )
 
+                    requests.patch(
+                        f"{self.host}:{self.port}/slurk/api/rooms/{data['room']}/attribute/id/current-image",
+                        headers={"Authorization": f"Bearer {self.token}"},
+                        json={
+                            "receiver_id": self.leader["id"],
+                            "value": self.ithor_service.snapshot_scene("leader"),
+                            "attribute": "src",
+                        },
+                    )
                     self.sio.emit(
                         "text",
                         {
                             "room": data["room"],
                             "receiver_id": self.leader["id"],
-                            "message": f"Okay, here's the target scene...",
+                            "message": f"Okay, here's the target scene >>>",
                         },
                     )
-                    self.sio.emit(
-                        "image",
-                        {
-                            "room": data["room"],
-                            "url": self.ithor_service.snapshot_scene("leader"),
-                            "receiver_id": self.leader["id"],
-                            "width": 700,
-                            "height": 350,
-                        },
-                    )
-                    self.ithor_service.leader_controller.stop()  # We only need this for the                                                                    initial snapshop
+                    self.ithor_service.leader_controller.stop()  # We only need this for the initial snapshop
 
+                    requests.patch(
+                        f"{self.host}:{self.port}/slurk/api/rooms/{data['room']}/attribute/id/current-image",
+                        headers={"Authorization": f"Bearer {self.token}"},
+                        json={
+                            "receiver_id": self.follower["id"],
+                            "value": self.ithor_service.get_follower_lookup_sheet(),
+                            "attribute": "src",
+                        },
+                    )
                     self.sio.emit(
                         "text",
                         {
@@ -133,7 +137,8 @@ class IthorBot:
                     )
                 return
             elif (
-                data["command"] == "done" and data["user"]["id"] == self.follower["id"]
+                data["command"].lower() == "done"
+                and data["user"]["id"] == self.follower["id"]
             ):
                 self.ithor_service.follower_controller.save_table_state(
                     self.level, self.variant
@@ -187,23 +192,3 @@ class IthorBot:
                 self.message_log.append(
                     {"user": data["user"]["name"], "message": data["message"]}
                 )
-
-    # def _parse_message(self, message):
-    #     if "\\" in message:
-    #         command = message
-    #     else:
-    #         command = None
-    #     return command
-
-    @staticmethod
-    def request_feedback(response, action):
-        """Verify whether a request was successful.
-        :param response: Response to request
-        :type response: requests.models.Response
-        :param action: Action meant to be performed
-        :type action: str
-        """
-        if not response.ok:
-            logging.error(f"`{action}` unsuccessful: {response.status_code}")
-            response.raise_for_status()
-        logging.debug(f"`{action}` successful.")

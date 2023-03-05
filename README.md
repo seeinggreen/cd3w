@@ -30,7 +30,7 @@ git clone git@github.com:clp-research/slurk.git
 ### 3.3 Install dependencies
 
 ```sh
-sudo apt  install jq curl
+sudo apt-get install jq curl
 pip install -r requirements.txt
 ```
 
@@ -64,11 +64,10 @@ kill -9 {PROCESS_ID}
 In a second terminal, from the top level directory, run:
 
 ```sh
-TASK_LAYOUT_ID=$(slurk/scripts/create_layout.sh slurk/examples/simple_layout.json | jq .id)
+TASK_LAYOUT_ID=$(slurk/scripts/create_layout.sh src/slurk/layouts/task_room_layout.json | jq .id)
 TASK_ROOM_ID=$(slurk/scripts/create_room.sh $TASK_LAYOUT_ID | jq .id)
 echo "TASK_ROOM_ID=$TASK_ROOM_ID"
 ```
-
 
 #### 4.1.1 Run IthorBot
 
@@ -77,7 +76,7 @@ In a third terminal, from the top level directory, copy over `TASK_ROOM_ID=<valu
 ```sh
 ITHOR_TOKEN=$(slurk/scripts/create_room_token.sh $TASK_ROOM_ID src/slurk/permissions/ithor_bot_permissions.json | jq -r .id)
 ITHOR_USER=$(slurk/scripts/create_user.sh "IthorBot" $ITHOR_TOKEN | jq .id)
-python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER
+python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER --level <level> --variant <variant>
 ```
 
 #### 4.1.4 Create user tokens for the room
@@ -138,7 +137,7 @@ WAITING_ROOM_ID=<value-from-other-terminal>
 TASK_ID=<value-from-other-terminal>
 ITHOR_TOKEN=$(slurk/scripts/create_room_token.sh $WAITING_ROOM_ID src/slurk/permissions/ithor_bot_permissions.json | jq -r .id)
 ITHOR_USER=$(slurk/scripts/create_user.sh "IthorBot" $ITHOR_TOKEN | jq .id)
-python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER --task $TASK_ID
+python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER --task $TASK_ID --level <level> --variant <variant>
 ```
 
 #### 4.2.5 Create user tokens for the task
@@ -150,3 +149,15 @@ slurk/scripts/create_room_token.sh $TASK_ROOM_ID src/slurk/permissions/user_perm
 ```
 
 Share the output with a particpicant to be used to log into the slurk room.
+
+### 5.2 Ngrok access
+
+Sign up for an ngrok account: https://ngrok.com/. Then run the following in a separate terminal:
+
+```sh
+snap install ngrok
+ngrok config add-authtoken <your-access-token>
+ngrok http 5000
+```
+
+Then share the link with participants.
