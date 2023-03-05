@@ -1,5 +1,4 @@
 import json
-import logging
 import os
 from datetime import date
 
@@ -28,6 +27,7 @@ class IthorBot:
         self.task_id = task
         self.sio.on("new_task_room", self.join_task_room())
 
+        self.register_user_welcome_handler()
         self.register_command_handler()
         self.register_message_handler()
 
@@ -57,6 +57,33 @@ class IthorBot:
         # wait until the connection with the server ends
         self.sio.wait()
 
+    def register_user_welcome_handler(self):
+        @self.sio.event
+        def status(data):
+            if data["type"] == "join":
+                self.sio.emit(
+                    "text",
+                    {
+                        "message": f"### Hello and welcome! "
+                        "Are you ready to play The Imitation Game? "
+                        "To win the game, a leader and a follwer need to collaborate with one another for the follower to recreate the leader's scene. "
+                        f"You are the {data['user']['name']}. "
+                        "Neither of you can see what the other's scene looks like, so to achieve this, you'll have to talk talk talk... "
+                        "You can assume that your tables have the same placemats, in the same positions. "
+                        "However, the objects you can see may be different, and they're most likely in different positions on the table.",
+                        "receiver_id": data["user"]["id"],
+                        "room": data["room"],
+                    },
+                )
+                self.sio.emit(
+                    "text",
+                    {
+                        "message": "READY???? Then type /ready to start the game",
+                        "receiver_id": data["user"]["id"],
+                        "room": data["room"],
+                    },
+                )
+
     def register_command_handler(self):
         @self.sio.event
         def command(data):
@@ -81,7 +108,25 @@ class IthorBot:
                         "text",
                         {
                             "room": data["room"],
-                            "message": f"It's level {self.level.replace('l', '')}. Hold on a sec while I get things set up. This might take a little while...",
+                            "message": f"We're playing level {self.level.replace('l', '')}. Hold on a sec while I get things set up. This might take a little while...",
+                        },
+                    )
+
+                    self.sio.emit(
+                        "text",
+                        {
+                            "room": data["room"],
+                            "receiver_id": self.follower["id"],
+                            "message": "Meanwhile, here are the rules: "
+                            "1. You can type messages to your chat partner, "
+                            "2. You can type one of the following commands to change your table: "
+                            "/put -> for putting objects on mats, "
+                            "/request -> for requesting objects you don't currently have, "
+                            "/discard -> for throwing away objects you don't need, "
+                            "/slice -> for slicing an object, "
+                            "/done ->  at the end of the game, if you think you have successfully recreated your chat partner's table. "
+                            "You can specify mats and objects using the lookup sheet (e.g., in the format /put #2 on #V, /request #2, /slice #2). "
+                            "If you want to put something on the table, use #table (e.g., /put #2 on #table).",
                         },
                     )
 
@@ -103,7 +148,7 @@ class IthorBot:
                         {
                             "room": data["room"],
                             "receiver_id": self.leader["id"],
-                            "message": f"Okay, here's the target scene >>>",
+                            "message": f"Okay, here's what your table looks like >>>",
                         },
                     )
                     self.ithor_service.leader_controller.stop()  # We only need this for the initial snapshop
@@ -122,7 +167,7 @@ class IthorBot:
                         {
                             "room": data["room"],
                             "receiver_id": self.follower["id"],
-                            "message": f"Okay, here's the initial scene...",
+                            "message": f"Okay, here's what your table looks like...",
                         },
                     )
                     self.sio.emit(
