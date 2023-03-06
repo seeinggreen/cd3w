@@ -134,3 +134,6 @@ builds/thor-OSXIntel64-local/
 
 # Ignore image files
 images/*
+
+#Ignore slurk repo
+slurk/
