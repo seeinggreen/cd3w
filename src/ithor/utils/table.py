@@ -158,7 +158,8 @@ class Table:
         Z = LEFT_EDGE + SIDE_MARGIN + x * SLOT_DIM + x * HORIZONTAL_PAD + (SLOT_DIM / 2)
         return {"x": X, "y": Y, "z": Z}
 
-    def get_empty_slots_list(self):
+    @staticmethod
+    def get_empty_slots_list():
         """
         Returns an empty list of lists for specifying mat/object positions.
 

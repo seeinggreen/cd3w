@@ -8,6 +8,9 @@ black = "*"
 ai2thor = "*"
 opencv-python = "*"
 numpy = "*"
+requests = "*"
+python-socketio-client = "*"
+python-socketio = {extras = ["client"], version = "*"}
 
 [dev-packages]
 
