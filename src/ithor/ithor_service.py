@@ -49,27 +49,25 @@ class IthorService:
         object = Items().get_name_by_slurkid(object_slurk_id)
         if "discard" in command.lower():
             if object not in current_follower_items["objects"]:
-                raise Exception("You can't throw away an object you don't have!")
+                raise Exception("ERROR: Specified object does not exist in scene")
             self.follower_controller.hide_asset(object)
         elif "request" in command.lower():
             self.follower_controller.place_asset_at_empty_location(object)
         elif "slice" in command.lower():
             if object not in current_follower_items["objects"]:
-                raise Exception("You can't slice an object you don't have!")
+                raise Exception("ERROR: Specified object does not exit in scene")
             sliced_object_slurk_id = "#" + str(
                 int(re.findall("\d+", object_slurk_id)[0]) + 1
             )
             sliced_object = Items().get_name_by_slurkid(sliced_object_slurk_id)
             if "Slice" not in sliced_object:
-                raise Exception("This object can't be sliced. Try again with another!")
+                raise Exception("ERROR: Specified object can't be sliced")
             self.follower_controller.hide_asset(object)
             self.follower_controller.place_asset_at_empty_location(sliced_object)
         else:
             # Pick up the specified object
             if object not in current_follower_items["objects"]:
-                raise Exception(
-                    "You can't place an object you don't have, you need to request it first."
-                )
+                raise Exception("ERROR: Specified object does not exist in scene")
             self.follower_controller.pickup(object)
             # Place object on the specified mat's slot or the table
             if "#table" in command.lower():
@@ -78,12 +76,12 @@ class IthorService:
                 mat_slurk_id = re.findall("#[A-Z]", command)
                 if len(mat_slurk_id) != 1:
                     raise Exception(
-                        "You used an incorrect identifier for the mat or the object, please refer to the lookup sheet and try again. Objects should be numbers, mats letters. And don't forget the hash key"
+                        "ERROR: Incorrect identifier format used to specify mat or object"
                     )
                 mat_slurk_id = mat_slurk_id[0]
                 mat = Items().get_name_by_slurkid(mat_slurk_id)
                 if mat not in current_follower_items["mats"]:
-                    raise Exception("You can't place an object on a mat you don't have")
+                    raise Exception("ERROR: Specified non-existing mat")
                 self.follower_controller.place_object_on_mat(object, mat)
 
     def snapshot_scene(self, agent_type):
