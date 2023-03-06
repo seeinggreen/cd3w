@@ -8,31 +8,24 @@ To run with the local build download the apropriate build zip file from Teams an
 
 TBC
 
-## 3 Setting up Slurk (without Docker)
+## 3 Setting up Slurk
 
 Slurk should be installed on any host machines (machines from which we start an experiment)
 The below steps can also be found in https://clp-research.github.io/slurk/slurk_prerequisites.html 2.4 and 2.6 (Steps 1.-2.).
 
-### 3.1 Generate a ssh key pair
+### 3.1 Clone the Slurk Github repository
 
-```sh
-ssh-keygen
-```
+Add the slurk repo (https://github.com/clp-research/slurk/) to the project folder (resulting in ```/cd3w/slurk```) either by downloading and unziping the repo into the correct folder or running a ```git clone``` command from the ```cd3w``` folder.
 
-Copy the generated public key to your github SSH settings
+### 3.2 Install dependencies
 
-### 3.2 Clone the Slurk Github repository
-
-```sh
-git clone git@github.com:clp-research/slurk.git
-```
-
-### 3.3 Install dependencies
+```cd``` (or open a terminal directly) into the ```/cd3w/slurk``` folder and run the following commands*:
 
 ```sh
 sudo apt-get install jq curl
 pip install -r requirements.txt
 ```
+*If you have jq and/or curl already installed you can skip installing them
 
 ## 4 Running experiments
 
