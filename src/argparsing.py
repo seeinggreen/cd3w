@@ -24,6 +24,13 @@ def get_args():
         default="v1",
         help="the variant of the mission level v1-v10, or t for test configuration",
     )
+    
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=5000,
+        help="the port number the SLURK server is running on"
+        )
 
     args = parser.parse_args()
 

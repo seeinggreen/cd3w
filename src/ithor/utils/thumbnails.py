@@ -1,8 +1,8 @@
-import math
 import os
 
 import cv2
 import numpy as np
+import random
 
 from ithor.utils.exceptions import (
     ExistingThumbnailFolderError,
@@ -33,6 +33,14 @@ TEXT_HEIGHT = 39
 LABEL_HEIGHT = 20
 # The height of the smaller asset labels
 
+
+HEIGHT = 1200
+WIDTH = 1600
+HORIZONTAL_MARGIN = 75
+HORIZONTAL_PAD = 50
+VERTICAL_MARGIN = 0
+TEXT_PAD = 4
+LABEL_PAD = 2
 
 class Thumbnails:
     def __init__(self, image_dir, controller=None):
@@ -95,7 +103,7 @@ class Thumbnails:
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-    def generate_grid(self, objects, mats, display_names=False):
+    def generate_grid(self, leader_table, follower_table, display_names=False):
         """
         Generates a grid of objects and mats in the scene.
 
@@ -114,20 +122,20 @@ class Thumbnails:
             A numpy array with the image data for the grid.
         """
         # Get the various dimensions needed to set up the grid according to the number of items
-        self.get_grid_size(objects, mats)
+        #self.get_grid_size(objects, mats)
         # Create a blank image array and set the pixels to white by default
-        grid = np.ones((self.height, self.width, 3), dtype=np.uint8) * 255
+        #grid = np.ones((self.height, self.width, 3), dtype=np.uint8) * 255
+        
+        grid = np.ones((HEIGHT,WIDTH,3),dtype=np.uint8) * 255
+        
+        self.mat_text_pos = (HORIZONTAL_MARGIN, VERTICAL_MARGIN + TEXT_HEIGHT)
+        self.obj_text_pos = (
+            HORIZONTAL_MARGIN,
+            VERTICAL_MARGIN
+            + TEXT_HEIGHT * 2 + TEXT_PAD
+            + (THUMB_DIM + LABEL_HEIGHT + LABEL_PAD) * 3)
 
         # Add text for the objects and mats using the larger font size
-        cv2.putText(
-            img=grid,
-            text="Objects:",
-            org=self.obj_text_pos,
-            fontFace=FONT_FACE,
-            fontScale=TEXT_SCALE,
-            color=FONT_COLOUR,
-            thickness=FONT_THICKNESS,
-        )
         cv2.putText(
             img=grid,
             text="Mats:",
@@ -135,25 +143,68 @@ class Thumbnails:
             fontFace=FONT_FACE,
             fontScale=TEXT_SCALE,
             color=FONT_COLOUR,
-            thickness=FONT_THICKNESS,
+            thickness=FONT_THICKNESS
         )
-
-        # Add the object thumbnails
-        for i, obj in enumerate(objects):
-            # Position gets calculated in the get_grid_size method
-            left, top = self.obj_grid[i]
-            # Right and bottom edges are just offsets according to the thumbnail size
+        cv2.putText(
+            img=grid,
+            text="Objects:",
+            org=self.obj_text_pos,
+            fontFace=FONT_FACE,
+            fontScale=TEXT_SCALE,
+            color=FONT_COLOUR,
+            thickness=FONT_THICKNESS
+        )
+        
+        for x,column in enumerate(leader_table.grid):
+            for y,slot in enumerate(column):
+                if leader_table.grid[x][y].has_mat():
+                    mat = slot.mat
+                    left, top = self.mat_coords_to_pixels(x, y)
+                    right = left + THUMB_DIM
+                    bottom = top + THUMB_DIM
+        
+                    grid[top:bottom, left:right] = self.imgs[mat]
+                    if display_names:
+                        label = mat
+                    else:
+                        label = self.items.get_asset(mat)["slurk_id"]
+                    cv2.putText(
+                        img=grid,
+                        text=label,
+                        org=(left, bottom + LABEL_HEIGHT),
+                        fontFace=FONT_FACE,
+                        fontScale=LABEL_SCALE,
+                        color=FONT_COLOUR,
+                        thickness=FONT_THICKNESS
+            )
+                    
+        objects = set()
+        for x,column in enumerate(leader_table.grid):
+            for y,slot_l in enumerate(column):           
+                slot_f = follower_table.grid[x][y]
+                if slot_l.has_object():
+                    objects.add(slot_l.object)
+                if slot_f.has_object():
+                    objects.add(slot_f.object)
+                    
+        items = Items()
+        all_objs = [obj['name'] for obj in items.objects]
+        while(len(objects) < 12):
+            objects.add(random.choice(all_objs))
+        
+        objects = list(objects)
+        random.shuffle(objects)
+        
+        for i,obj in enumerate(objects):
+            left, top = self.obj_index_to_pixels(i)
             right = left + THUMB_DIM
             bottom = top + THUMB_DIM
 
-            # Set the appropriate grid pixels to the thumbnail pixels
             grid[top:bottom, left:right] = self.imgs[obj]
-            # Either keep the asset name as is or replace it with the slurk_id
             if display_names:
                 label = obj
             else:
                 label = self.items.get_asset(obj)["slurk_id"]
-            # Add the text label in the smaller font size
             cv2.putText(
                 img=grid,
                 text=label,
@@ -161,109 +212,18 @@ class Thumbnails:
                 fontFace=FONT_FACE,
                 fontScale=LABEL_SCALE,
                 color=FONT_COLOUR,
-                thickness=FONT_THICKNESS,
-            )
-
-        # As above, but for mats
-        for i, mat in enumerate(mats):
-            left, top = self.mat_grid[i]
-            right = left + THUMB_DIM
-            bottom = top + THUMB_DIM
-
-            grid[top:bottom, left:right] = self.imgs[mat]
-            if display_names:
-                label = mat
-            else:
-                label = self.items.get_asset(mat)["slurk_id"]
-            cv2.putText(
-                img=grid,
-                text=label,
-                org=(left, bottom + LABEL_HEIGHT),
-                fontFace=FONT_FACE,
-                fontScale=LABEL_SCALE,
-                color=FONT_COLOUR,
-                thickness=FONT_THICKNESS,
-            )
-
+                thickness=FONT_THICKNESS)
         return grid
 
-    def get_grid_size(self, objects, mats):
-        """
-        Calculates the dimensions and positions of the grid according to the number of thumbnails.
-
-        Parameters
-        ----------
-        objects : list
-            A list of the objects (only the length of the list matters).
-        mats : list
-            A list of the mats (only the length of the list matters)..
-
-        Returns
-        -------
-        None.
-
-        """
-        # We only care about how many thumbnails
-        objects = len(objects)
-        mats = len(mats)
-
-        # Tile the thumbnails in rows of 4 when there is more than 4
-        if objects >= 4 or mats >= 4:
-            width = 4
-        else:
-            # If the number of thumbnails is less than 4, the grid width is the widest of the two
-            width = max(objects, mats)
-
-        # Convert to actual pixel widths with padding
-        self.width = THUMB_DIM * width + PAD * (width + 1)
-
-        # Calculate the number of (possibly incomplete) rows of 4 thumbnails
-        obj_height = math.ceil(objects / 4)
-        mat_height = math.ceil(mats / 4)
-
-        # The total height of the grid, made up of the text, the images and the padding
-        self.height = (
-            PAD
-            + TEXT_HEIGHT
-            + (THUMB_DIM + LABEL_HEIGHT) * obj_height
-            + PAD * (obj_height + 1)
-        )
-        self.height += (
-            TEXT_HEIGHT
-            + (THUMB_DIM + LABEL_HEIGHT) * mat_height
-            + PAD * (mat_height + 1)
-        )
-
-        # The position of the two main text labels
-        self.obj_text_pos = (PAD, PAD + TEXT_HEIGHT)
-        self.mat_text_pos = (
-            PAD,
-            PAD
-            + TEXT_HEIGHT * 2
-            + PAD * (obj_height + 1)
-            + (THUMB_DIM + LABEL_HEIGHT) * obj_height,
-        )
-
-        # Calculate the position of each of the object images
-        self.obj_grid = []
-        for o in range(objects):
-            # Positions in coordinate space
-            x = o % 4
-            y = o // 4
-            # Convert to actual pixel positions
-            x = PAD * (x + 1) + THUMB_DIM * x
-            y = self.obj_text_pos[1] + PAD * (y + 1) + (THUMB_DIM + LABEL_HEIGHT) * y
-            # Save as a tuple
-            self.obj_grid.append((x, y))
-
-        # As above, but for mats
-        self.mat_grid = []
-        for m in range(mats):
-            x = m % 4
-            y = m // 4
-            x = PAD * (x + 1) + THUMB_DIM * x
-            y = self.mat_text_pos[1] + PAD * (y + 1) + (THUMB_DIM + LABEL_HEIGHT) * y
-            self.mat_grid.append((x, y))
+    def mat_coords_to_pixels(self,x,y):
+        xp = HORIZONTAL_MARGIN + (THUMB_DIM + HORIZONTAL_PAD) * x
+        yp = VERTICAL_MARGIN + (TEXT_HEIGHT + TEXT_PAD) + (THUMB_DIM + LABEL_HEIGHT + LABEL_PAD) * y
+        return (xp,yp)
+    
+    def obj_index_to_pixels(self,i):
+        xp = HORIZONTAL_MARGIN + (THUMB_DIM + HORIZONTAL_PAD) * (i % 6)
+        yp = VERTICAL_MARGIN + (TEXT_HEIGHT + TEXT_PAD) * 2 + (THUMB_DIM + LABEL_HEIGHT + LABEL_PAD) * (3 + i//6)
+        return (xp,yp)
 
     def generate_thumbnails(self, blank_scene_controller):
         """
