@@ -176,8 +176,8 @@ class IthorBot:
                             "room": data["room"],
                             "receiver_id": self.follower["id"],
                             "url": self.ithor_service.snapshot_scene("follower"),
-                            "width": 700,
-                            "height": 395,
+                            "width": 525,
+                            "height": 296,
                         },
                     )
                 return
@@ -214,8 +214,8 @@ class IthorBot:
                             "room": data["room"],
                             "url": self.ithor_service.snapshot_scene("follower"),
                             "receiver_id": self.follower["id"],
-                            "width": 700,
-                            "height": 395,
+                            "width": 525,
+                            "height": 296,
                         },
                     )
                 except Exception as e:

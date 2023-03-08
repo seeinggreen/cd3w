@@ -33,7 +33,7 @@ class Tokens:
         self.create_ithor_user()
         self.get_human_user_tokens()
         
-        print(f'User1:{self.user1}\nUser2:{self.user2}')
+        print(f'{self.user1}\n{self.user2}')
     
     def get_url(self,sub_url):
         return f'{base_url}:{self.port}/slurk/api/{sub_url}'
