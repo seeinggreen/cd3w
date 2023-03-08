@@ -32,9 +32,9 @@ class SceneConfigurator:
             self.mats_similar_colour_same_type,
         ) = self._generate_mat_combos()
         (
-            self.obj_same_colour_different_state,
-            self.obj_same_type_different_colour,
-            self.obj_same_type_different_colour_state,
+            self.same_type_same_colour_different_state,
+            self.same_type_different_colour_same_state,
+            self.same_type_different_colour_different_state,
         ) = self._generate_object_combos()
         self.position_combos_6_pos = self._generate_position_combos(6)
         self.position_combos_7_pos = self._generate_position_combos(7)
@@ -111,7 +111,9 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_similar_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
                     self._sample_n_random_objects(4),
                 ],
                 "position_rules": [
@@ -130,8 +132,12 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_similar_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
+                    self._sample_from_objects(
+                        self.same_type_same_colour_different_state
+                    ),
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
@@ -150,8 +156,12 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_similar_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
+                    self._sample_from_objects(
+                        self.same_type_same_colour_different_state
+                    ),
                     self._sample_n_random_objects(3),
                 ],
                 "position_rules": [
@@ -170,8 +180,12 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_similar_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
+                    self._sample_from_objects(
+                        self.same_type_same_colour_different_state
+                    ),
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
@@ -190,8 +204,12 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_similar_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
+                    self._sample_from_objects(
+                        self.same_type_same_colour_different_state
+                    ),
                     self._sample_n_random_objects(3),
                 ],
                 "position_rules": [
@@ -210,8 +228,12 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_similar_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
+                    self._sample_from_objects(
+                        self.same_type_same_colour_different_state
+                    ),
                     self._sample_n_random_objects(2),
                 ],
                 "position_rules": [
@@ -230,8 +252,12 @@ class SceneConfigurator:
                     self._sample_from_mats(self.mats_same_colour_same_type),
                 ],
                 "object_rules": [
-                    self._sample_from_objects(self.obj_same_type_different_colour),
-                    self._sample_from_objects(self.obj_same_colour_different_state),
+                    self._sample_from_objects(
+                        self.same_type_different_colour_same_state
+                    ),
+                    self._sample_from_objects(
+                        self.same_type_same_colour_different_state
+                    ),
                     self._sample_n_random_objects(3),
                 ],
                 "position_rules": [
@@ -311,24 +337,26 @@ class SceneConfigurator:
     def _generate_object_combos(self):
         types = {self._get_type(obj) for obj in self.objects}
         objs_by_type = {}
-        same_colour_different_state = []
-        same_type_different_colour = []
-        same_type_different_colour_state = []
+        same_type_same_colour_different_state = []
+        same_type_different_colour_same_state = []
+        same_type_different_colour_different_state = []
         for t in types:
             objs_by_type[t] = [obj for obj in self.objects if self._get_type(obj) == t]
             combos = list(combinations(objs_by_type[t], 2))
             for i, combo in enumerate(combos):
                 if combo[0]["colour"] == combo[1]["colour"]:
-                    same_colour_different_state.append(combo)
+                    if not self._same_state(combo[0], combo[1]):
+                        same_type_same_colour_different_state.append(combo)
                 else:
-                    if self._same_state(combo[0], combo[1]):
-                        same_type_different_colour.append(combo)
+                    if not self._same_state(combo[0], combo[1]):
+                        same_type_different_colour_different_state.append(combo)
                     else:
-                        same_type_different_colour_state.append(combo)
+                        same_type_different_colour_same_state.append(combo)
+
         return (
-            same_colour_different_state,
-            same_type_different_colour,
-            same_type_different_colour_state,
+            same_type_same_colour_different_state,
+            same_type_different_colour_same_state,
+            same_type_different_colour_different_state,
         )
 
     # Positioning (for mats and leader objects)

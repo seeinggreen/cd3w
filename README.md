@@ -50,7 +50,7 @@ and then running the following to kill any processes still running:
 kill -9 {PROCESS_ID} 
 ```
 
-### 4.1 Running without Concierge Bot
+### 4.1 Recommended: Running without Concierge Bot
 
 #### 4.1.1 Create a room and task
 
@@ -62,7 +62,7 @@ TASK_ROOM_ID=$(slurk/scripts/create_room.sh $TASK_LAYOUT_ID | jq .id)
 echo "TASK_ROOM_ID=$TASK_ROOM_ID"
 ```
 
-#### 4.1.1 Run IthorBot
+#### 4.1.2 Run IthorBot
 
 In a third terminal, from the top level directory, copy over `TASK_ROOM_ID=<value-from-second-terminal>` and run:
 
@@ -72,7 +72,7 @@ ITHOR_USER=$(slurk/scripts/create_user.sh "IthorBot" $ITHOR_TOKEN | jq .id)
 python src/main.py --token $ITHOR_TOKEN --user $ITHOR_USER --level <level> --variant <variant>
 ```
 
-#### 4.1.4 Create user tokens for the room
+#### 4.1.3 Create user tokens for the room
 
 Back in the second terminal, let’s create two user tokens (run the command twice):
 
@@ -82,7 +82,7 @@ slurk/scripts/create_room_token.sh $TASK_ROOM_ID src/slurk/permissions/user_perm
 
 Share the output with a particpicant to be used to log into the slurk room.
 
-### 4.2 Running with Concierge Bot
+### 4.2 Optional: Running with Concierge Bot
 #### 4.2.1 Create a waiting room
 
 **Note:** you may need to run `sudo apt  install jq curl` before the next steps...
@@ -153,4 +153,6 @@ ngrok config add-authtoken <your-access-token>
 ngrok http 5000
 ```
 
-Then share the link with participants.
+e.g.
+
+$ python main.py -token "01234567-89ab-cdef-0123-456789abcdef" --user "1" --level "l0" --version "v0"
