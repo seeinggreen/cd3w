@@ -4,8 +4,11 @@ import time
 import json
 
 from ithor.utils.items import Items
+from ithor.utils.thumbnails import Thumbnails
 from ithor.ithor_controller import IthorController
 
+import base64
+import cv2
 
 class IthorService:
     def __init__(self):
@@ -33,6 +36,8 @@ class IthorService:
         self.follower_controller = IthorController()
         self.follower_controller.init_scene(pos=[0.25, 1, 0], rot=270, horizon=70)
         self.follower_controller.place_assets(follower_config)
+        
+        self.thumbnails = Thumbnails('images')
 
     def update_follower_ithor_scene(self, command):
         # Examples of expected commands:
@@ -92,5 +97,8 @@ class IthorService:
         return controller.snapshot_scene()
 
     def get_follower_lookup_sheet(self):
-        # TODO: Generate a lookup sheet instead of snapshotting the scene
-        return self.follower_controller.snapshot_scene()
+        leader_table = self.leader_controller.table
+        follower_table = self.follower_controller.table
+        thumbnails = self.thumbnails.generate_grid(leader_table,follower_table)
+        _, buffer = cv2.imencode(".jpg", thumbnails)
+        return f"data:image/jpg;base64,{base64.b64encode(buffer).decode()}"
