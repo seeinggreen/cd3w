@@ -12,7 +12,7 @@
     },
     {
       "user": "leader",
-      "message": "The [wooden]{"entity": "colour_obj"} [bowl]{"entity": "obj"} needs to be on the [blue]{"entity": "colour_rcpt"} [circle]{"entity": "shape_rcpt"}",
+      "message": "The [wooden]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} needs to be on the [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "user": "leader",
-      "message": "The [yellow]{"entity": "colour_rcpt"} [vase]{"entity": ""}, just underneath the [bowl]{"entity": "obj"}",
+      "message": "The [yellow]{\"entity\": \"colour_rcpt\"} [vase]{\"entity\": \"\"}, just underneath the [bowl]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "on the [brown]{"entity": "colour_rcpt"} [circle]{"entity": "rcpt"}",
+      "message": "on the [brown]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"rcpt\"}",
       "label": "confirm_rcpt_Q"
     },
     {
@@ -42,7 +42,7 @@
     },
     {
       "user": "leader",
-      "message": "The [orange]{"entity": "colour_rcpt"} [circle]{"entity": "shape_rcpt"}, yeah",
+      "message": "The [orange]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}, yeah",
       "label": "confirm_rcpt_A"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "user": "leader",
-      "message": "Great - the [green]{"entity": "colour_obj"} [cup]{"entity": "obj"} goes on the [yellow]{"entity": "colour_rcpt"} [square]{"entity": "shape_rcpt"}",
+      "message": "Great - the [green]{\"entity\": \"colour_obj\"} [cup]{\"entity\": \"obj\"} goes on the [yellow]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -72,7 +72,7 @@
     },
     {
       "user": "leader",
-      "message": "The [pan]{"entity": "obj"} goes next to that",
+      "message": "The [pan]{\"entity\": \"obj\"} goes next to that",
       "label": "<label>"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "user": "leader",
-      "message": "The [purple]{"entity": "colour_rcpt"} [square]{"entity": "shape_rcpt"} gets the [egg]{"entity": "obj"}",
+      "message": "The [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} gets the [egg]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -97,12 +97,12 @@
     },
     {
       "user": "Follower",
-      "message": "[egg]{"entity": "obj"} is on the [purple]{"entity": "colour_rcpt"} [square]{"entity": "rcpt"}",
+      "message": "[egg]{\"entity\": \"obj\"} is on the [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "And the [white]{"entity": "colour_obj"} [plate]{"entity": "obj"} goes on the final [mat]{"entity": "rcpt"}",
+      "message": "And the [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} goes on the final [mat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {

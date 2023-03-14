@@ -22,7 +22,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have [glass]{"entity": ""}",
+      "message": "do you have [glass]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -32,12 +32,12 @@
     },
     {
       "user": "Leader",
-      "message": "great put [that]{"entity": ""} on [pink]{"entity": ""} ",
+      "message": "great put [that]{\"entity\": \"\"} on [pink]{\"entity\": \"\"} ",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "I have two [pink]{"entity": ""} [placemats]{"entity": ""}, which [one]{"entity": ""} are you referring to?",
+      "message": "I have two [pink]{\"entity\": \"\"} [placemats]{\"entity\": \"\"}, which [one]{\"entity\": \"\"} are you referring to?",
       "label": "<label>"
     },
     {
@@ -47,27 +47,27 @@
     },
     {
       "user": "Follower",
-      "message": "Do you mean the [purple]{"entity": ""} [one]{"entity": ""}?",
+      "message": "Do you mean the [purple]{\"entity\": \"\"} [one]{\"entity\": \"\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "no [pink]{"entity": ""} [one]{"entity": ""} ",
+      "message": "no [pink]{\"entity\": \"\"} [one]{\"entity\": \"\"} ",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "you can choose any [pink]{"entity": ""}",
+      "message": "you can choose any [pink]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "So the [pink]{"entity": ""} you are referring to is the color of the [placemats]{"entity": ""} that are identical?",
+      "message": "So the [pink]{\"entity\": \"\"} you are referring to is the color of the [placemats]{\"entity\": \"\"} that are identical?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "yes we have two identical [pink]{"entity": ""} [placements]{"entity": ""}",
+      "message": "yes we have two identical [pink]{\"entity\": \"\"} [placements]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -77,17 +77,17 @@
     },
     {
       "user": "Follower",
-      "message": "on which [one]{"entity": ""} should I put the [glass]{"entity": ""} on?",
+      "message": "on which [one]{\"entity\": \"\"} should I put the [glass]{\"entity\": \"\"} on?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "both of [them]{"entity": "review"} are identical you can put it one any of [both]{"entity": "review"}",
+      "message": "both of [them]{\"entity\": \"review\"} are identical you can put it one any of [both]{\"entity\": \"review\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "[one]{"entity": ""} in the [center]{"entity": ""}",
+      "message": "[one]{\"entity\": \"\"} in the [center]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -107,32 +107,32 @@
     },
     {
       "user": "Leader",
-      "message": "great do you have an [apple]{"entity": ""}",
+      "message": "great do you have an [apple]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "yes I have two [apples]{"entity": ""}",
+      "message": "yes I have two [apples]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "can you describe the [color]{"entity": ""}",
+      "message": "can you describe the [color]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "I have a [red]{"entity": ""} [apple]{"entity": ""} and a [gold]{"entity": ""} [apple]{"entity": ""}",
+      "message": "I have a [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"} and a [gold]{\"entity\": \"\"} [apple]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "yeah [red]{"entity": ""} [apple]{"entity": ""}",
+      "message": "yeah [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "do you have [square]{"entity": ""} [yellow]{"entity": ""} [placement]{"entity": ""}",
+      "message": "do you have [square]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placement]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "user": "Leader",
-      "message": "can you put [red]{"entity": ""} [apple]{"entity": ""} on [square]{"entity": ""} [yellow]{"entity": ""} [placement]{"entity": ""}",
+      "message": "can you put [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on [square]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placement]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -157,7 +157,7 @@
     },
     {
       "user": "Leader",
-      "message": "great thank u do you have [plate]{"entity": ""}",
+      "message": "great thank u do you have [plate]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -167,7 +167,7 @@
     },
     {
       "user": "Leader",
-      "message": "can you put [plate]{"entity": ""} on [pink]{"entity": ""} [placement]{"entity": ""} ",
+      "message": "can you put [plate]{\"entity\": \"\"} on [pink]{\"entity\": \"\"} [placement]{\"entity\": \"\"} ",
       "label": "<label>"
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have [yellow]{"entity": ""} [circle]{"entity": ""} [placement]{"entity": ""} ",
+      "message": "do you have [yellow]{\"entity\": \"\"} [circle]{\"entity\": \"\"} [placement]{\"entity\": \"\"} ",
       "label": "<label>"
     },
     {
@@ -192,7 +192,7 @@
     },
     {
       "user": "Leader",
-      "message": "can you place [yellow]{"entity": ""} [apple]{"entity": ""} on [yellow]{"entity": ""} [circle]{"entity": ""} [placement]{"entity": ""} ",
+      "message": "can you place [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on [yellow]{\"entity\": \"\"} [circle]{\"entity\": \"\"} [placement]{\"entity\": \"\"} ",
       "label": "put_obj_in_rcp"
     },
     {
@@ -207,7 +207,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have [egg]{"entity": ""}",
+      "message": "do you have [egg]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -217,7 +217,7 @@
     },
     {
       "user": "Leader",
-      "message": "can you place [egg]{"entity": ""} on [purple]{"entity": ""} [placemat]{"entity": ""} on [right]{"entity": ""} ",
+      "message": "can you place [egg]{\"entity\": \"\"} on [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} on [right]{\"entity\": \"\"} ",
       "label": "<label>"
     },
     {
@@ -237,12 +237,12 @@
     },
     {
       "user": "Follower",
-      "message": "I have a [vase]{"entity": ""} left",
+      "message": "I have a [vase]{\"entity\": \"\"} left",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "yeap can you please put on [purple]{"entity": ""} [placement]{"entity": ""} ",
+      "message": "yeap can you please put on [purple]{\"entity\": \"\"} [placement]{\"entity\": \"\"} ",
       "label": "<label>"
     },
     {

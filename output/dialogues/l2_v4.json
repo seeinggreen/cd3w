@@ -12,7 +12,7 @@
     },
     {
       "user": "leader",
-      "message": "Put the [green]{"entity": ""} [glass]{"entity": ""} on the [square]{"entity": ""} [red]{"entity": ""} [mat]{"entity": ""}",
+      "message": "Put the [green]{\"entity\": \"\"} [glass]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [red]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "user": "leader",
-      "message": "Grand, and now the [red]{"entity": ""} [apple]{"entity": ""} on the [top]{"entity": ""} [yellow]{"entity": ""} [mat]{"entity": ""}",
+      "message": "Grand, and now the [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [top]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "follower",
-      "message": "The [one]{"entity": ""} further [left]{"entity": ""}?",
+      "message": "The [one]{\"entity\": \"\"} further [left]{\"entity\": \"\"}?",
       "label": "<label>"
     },
     {
@@ -62,12 +62,12 @@
     },
     {
       "user": "leader",
-      "message": "Fab, now the [egg]{"entity": ""} on the other [yellow]{"entity": ""} [place]{"entity": ""} [mat]{"entity": ""}",
+      "message": "Fab, now the [egg]{\"entity\": \"\"} on the other [yellow]{\"entity\": \"\"} [place]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "follower",
-      "message": "Is it a [white]{"entity": ""} [egg]{"entity": ""}?",
+      "message": "Is it a [white]{\"entity\": \"\"} [egg]{\"entity\": \"\"}?",
       "label": "<label>"
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       "user": "leader",
-      "message": "Okay, next place the [pan]{"entity": ""} on the remaining [red]{"entity": ""} [mat]{"entity": ""}",
+      "message": "Okay, next place the [pan]{\"entity\": \"\"} on the remaining [red]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "user": "leader",
-      "message": "Fantastic, next move the [bread]{"entity": ""} onto the [green]{"entity": ""} [mat]{"entity": ""}",
+      "message": "Fantastic, next move the [bread]{\"entity\": \"\"} onto the [green]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -127,7 +127,7 @@
     },
     {
       "user": "leader",
-      "message": "Okay, last one! Put the [plate]{"entity": ""} on the [blue]{"entity": ""} [mat]{"entity": ""}",
+      "message": "Okay, last one! Put the [plate]{\"entity\": \"\"} on the [blue]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {

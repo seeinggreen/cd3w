@@ -27,7 +27,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have an [egg]{"entity": ""}?",
+      "message": "do you have an [egg]{\"entity\": \"\"}?",
       "label": "<label>"
     },
     {
@@ -37,17 +37,17 @@
     },
     {
       "user": "Leader",
-      "message": "put it on the [purple]{"entity": ""} [placemat]{"entity": ""}",
+      "message": "put it on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "the [purple]{"entity": ""} or [lilac]{"entity": ""}?",
+      "message": "the [purple]{\"entity\": \"\"} or [lilac]{\"entity\": \"\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "I don't know what [lilac]{"entity": ""} is",
+      "message": "I don't know what [lilac]{\"entity\": \"\"} is",
       "label": "<label>"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "user": "Leader",
-      "message": "the [centred]{"entity": ""} [one]{"entity": ""}",
+      "message": "the [centred]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -77,12 +77,12 @@
     },
     {
       "user": "Leader",
-      "message": "put the [white]{"entity": ""} [plate]{"entity": ""} on the [lilac]{"entity": ""} [placemat]{"entity": ""} now",
+      "message": "put the [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on the [lilac]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} now",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "i thought you didnt know what [lilac]{"entity": ""} was",
+      "message": "i thought you didnt know what [lilac]{\"entity\": \"\"} was",
       "label": "<label>"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have [vases]{"entity": ""}?",
+      "message": "do you have [vases]{\"entity\": \"\"}?",
       "label": "<label>"
     },
     {
@@ -122,12 +122,12 @@
     },
     {
       "user": "Leader",
-      "message": "put the [red]{"entity": ""} [one]{"entity": ""} on the [square]{"entity": ""} [blue]{"entity": ""} [placemat]{"entity": ""} and the [yellow]{"entity": ""} [one]{"entity": ""} on the [circle]{"entity": ""} [blue]{"entity": ""} [placemat]{"entity": ""}",
+      "message": "put the [red]{\"entity\": \"\"} [one]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} and the [yellow]{\"entity\": \"\"} [one]{\"entity\": \"\"} on the [circle]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "i only have a [yellow]{"entity": ""} [one]{"entity": ""}",
+      "message": "i only have a [yellow]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "user": "Leader",
-      "message": "then get a [red]{"entity": ""} [one]{"entity": ""} as well",
+      "message": "then get a [red]{\"entity\": \"\"} [one]{\"entity\": \"\"} as well",
       "label": "<label>"
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "user": "Leader",
-      "message": "cool! put the [cup]{"entity": ""} on the [red]{"entity": ""} [square]{"entity": ""} [placemat]{"entity": ""}",
+      "message": "cool! put the [cup]{\"entity\": \"\"} on the [red]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "user": "Follower",
-      "message": "2 [red]{"entity": ""} [square]{"entity": ""} [placemats]{"entity": ""}",
+      "message": "2 [red]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placemats]{\"entity\": \"\"}",
       "label": "<label>"
     },
     {
