@@ -1,1 +1,309 @@
-{"2023-03-08": [{"user": "Leader", "message": "i've got places to be. Lets be quick ", "label": "<label>"}, {"user": "Follower", "message": "okay ..", "label": "affirm"}, {"user": "Follower", "message": "awaiting your commands", "label": "next_step"}, {"user": "Leader", "message": "put the [orange]{"entity": ""} [cup]{"entity": ""} on the [yellow]{"entity": ""} [circular]{"entity": ""} [mat]{"entity": ""}", "label": "put_obj_in_rcp"}, {"user": "Leader", "message": "right you are", "label": "<label>"}, {"user": "Follower", "command": "put #8 on #T", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "Leader", "message": "put the [yellow]{"entity": ""} [vase]{"entity": ""} on the [yellow]{"entity": ""} [square]{"entity": ""} [mat]{"entity": ""}", "label": "put_obj_in_rcp"}, {"user": "Leader", "message": "tell me when you are doen", "label": "<label>"}, {"user": "Follower", "command": "put #23 on #E", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "Leader", "message": "put the [yellow]{"entity": ""} [sliced]{"entity": ""} [apple]{"entity": ""} on the [square]{"entity": ""} [green]{"entity": ""} [placemat]{"entity": ""} ", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "I don't have a [yellow]{"entity": ""} [sliced]{"entity": ""} [apple]{"entity": ""}", "label": "<label>"}, {"user": "Leader", "message": "the get [one]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "message": "I have a [white]{"entity": ""} [one]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "message": "sorry mb", "label": "<label>"}, {"user": "Leader", "message": "yeah damn right", "label": "affirm"}, {"user": "Follower", "message": "btw which [placemat]{"entity": ""}?", "label": "<label>"}, {"user": "Leader", "message": "on the [square]{"entity": ""} [green]{"entity": ""} [placemat]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "message": "I have two [square]{"entity": ""} [green]{"entity": ""} [placemats]{"entity": ""}", "label": "<label>"}, {"user": "Leader", "message": "oh, the left [one]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "command": "put #6 on #1", "label": "CMD"}, {"user": "Leader", "message": "is it done?", "label": "<label>"}, {"user": "Leader", "message": "have you broken [it]{"entity": ""}?", "label": "<label>"}, {"user": "Follower", "command": "put #6 on #I", "label": "CMD"}, {"user": "Follower", "message": "lol wait", "label": "<label>"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "Follower", "message": "waiting ..", "label": "next_step"}, {"user": "Follower", "message": "are you still there?", "label": "<label>"}, {"user": "Leader", "message": "sorry i was playing chess", "label": "<label>"}, {"user": "Follower", "message": "are you winning?", "label": "<label>"}, {"user": "Leader", "message": "put the [sliced]{"entity": ""} [bread]{"entity": ""} on the other [green]{"entity": ""} [mat]{"entity": ""}", "label": "put_obj_in_rcp"}, {"user": "Leader", "message": "im stockfish 16 so obviously ", "label": "<label>"}, {"user": "Follower", "command": "put #15 #J", "label": "CMD"}, {"user": "Follower", "message": "haha noob", "label": "<label>"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "Leader", "message": "easy boy", "label": "<label>"}, {"user": "Leader", "message": "put the [pan]{"entity": ""} on the [orange]{"entity": ""} [mat]{"entity": ""}", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "The [orange]{"entity": ""} [one]{"entity": ""} already has a [glass]{"entity": ""} on top", "label": "<label>"}, {"user": "Follower", "message": "should I remove the [glass]{"entity": ""}?", "label": "<label>"}, {"user": "Leader", "message": "oh dear, put the [cup]{"entity": ""} on the [table]{"entity": ""} then put the [pan]{"entity": ""} on the [orange]{"entity": ""} [mat]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "command": "put #8 on #table", "label": "CMD"}, {"user": "Follower", "command": "put #16 on #T", "label": "CMD"}, {"user": "Follower", "command": "put #18 on #T", "label": "CMD"}, {"user": "Leader", "message": "do it now.", "label": "<label>"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "Leader", "message": "put the [orange]{"entity": ""} [cup]{"entity": ""} on the [yellow]{"entity": ""} [circle]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "command": "put #8 on #R", "label": "<label>"}, {"user": "Follower", "message": "done", "label": "<label>"}, {"user": "Leader", "message": "put the [yellow]{"entity": ""} [vase]{"entity": ""} on the [yellow]{"entity": ""} [square]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "message": "it's already there", "label": "<label>"}, {"user": "Leader", "message": "nice", "label": "<label>"}, {"user": "Leader", "message": "put the [blue]{"entity": ""} [plate]{"entity": ""} on the [blue]{"entity": ""} [mat]{"entity": ""}", "label": "<label>"}, {"user": "Follower", "command": "put #20 on #B", "label": "<label>"}, {"user": "Follower", "message": "done ", "label": "<label>"}, {"user": "Follower", "message": "are we done now?", "label": "<label>"}, {"user": "Leader", "message": "have you used every [object]{"entity": ""}?", "label": "<label>"}, {"user": "Follower", "message": "can I go?", "label": "<label>"}, {"user": "Follower", "message": "yes", "label": "<label>"}, {"user": "Leader", "message": "then type /done", "label": "<label>"}, {"user": "Follower", "command": "done", "label": "affirm"}]}
+{
+  "2023-03-08": [
+    {
+      "user": "Leader",
+      "message": "i've got places to be. Lets be quick ",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "okay ..",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "message": "awaiting your commands",
+      "label": "next_step"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [orange]{"entity": ""} [cup]{"entity": ""} on the [yellow]{"entity": ""} [circular]{"entity": ""} [mat]{"entity": ""}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Leader",
+      "message": "right you are",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #8 on #T",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [yellow]{"entity": ""} [vase]{"entity": ""} on the [yellow]{"entity": ""} [square]{"entity": ""} [mat]{"entity": ""}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Leader",
+      "message": "tell me when you are doen",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #23 on #E",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [yellow]{"entity": ""} [sliced]{"entity": ""} [apple]{"entity": ""} on the [square]{"entity": ""} [green]{"entity": ""} [placemat]{"entity": ""} ",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "I don't have a [yellow]{"entity": ""} [sliced]{"entity": ""} [apple]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "the get [one]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "I have a [white]{"entity": ""} [one]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "sorry mb",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "yeah damn right",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "message": "btw which [placemat]{"entity": ""}?",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "on the [square]{"entity": ""} [green]{"entity": ""} [placemat]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "I have two [square]{"entity": ""} [green]{"entity": ""} [placemats]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "oh, the left [one]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #6 on #1",
+      "label": "CMD"
+    },
+    {
+      "user": "Leader",
+      "message": "is it done?",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "have you broken [it]{"entity": ""}?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #6 on #I",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "lol wait",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "message": "waiting ..",
+      "label": "next_step"
+    },
+    {
+      "user": "Follower",
+      "message": "are you still there?",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "sorry i was playing chess",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "are you winning?",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [sliced]{"entity": ""} [bread]{"entity": ""} on the other [green]{"entity": ""} [mat]{"entity": ""}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Leader",
+      "message": "im stockfish 16 so obviously ",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #15 #J",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "haha noob",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "easy boy",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [pan]{"entity": ""} on the [orange]{"entity": ""} [mat]{"entity": ""}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "The [orange]{"entity": ""} [one]{"entity": ""} already has a [glass]{"entity": ""} on top",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "should I remove the [glass]{"entity": ""}?",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "oh dear, put the [cup]{"entity": ""} on the [table]{"entity": ""} then put the [pan]{"entity": ""} on the [orange]{"entity": ""} [mat]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #8 on #table",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "command": "put #16 on #T",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "command": "put #18 on #T",
+      "label": "CMD"
+    },
+    {
+      "user": "Leader",
+      "message": "do it now.",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [orange]{"entity": ""} [cup]{"entity": ""} on the [yellow]{"entity": ""} [circle]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #8 on #R",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [yellow]{"entity": ""} [vase]{"entity": ""} on the [yellow]{"entity": ""} [square]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "it's already there",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "nice",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [blue]{"entity": ""} [plate]{"entity": ""} on the [blue]{"entity": ""} [mat]{"entity": ""}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #20 on #B",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "done ",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "are we done now?",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "have you used every [object]{"entity": ""}?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "can I go?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "yes",
+      "label": "<label>"
+    },
+    {
+      "user": "Leader",
+      "message": "then type /done",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "done",
+      "label": "affirm"
+    }
+  ]
+}

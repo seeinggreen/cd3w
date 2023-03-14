@@ -1,1 +1,154 @@
-{"2023-03-08": [{"user": "Follower", "message": "Hi", "label": "greet"}, {"user": "leader", "message": "Hey! Ready?", "label": "greet"}, {"user": "Follower", "message": "Yup", "label": "affirm"}, {"user": "leader", "message": "Can you put the [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [round]{\"entity\": \"\"} [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}?", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "yup. Gimme a sec", "label": "<label>"}, {"user": "Follower", "message": "ohh it is already on the [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}", "label": "<label>"}, {"user": "leader", "message": "okay, all the better!", "label": "<label>"}, {"user": "leader", "message": "next, put the [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the other [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}", "label": "affirm"}, {"user": "Follower", "command": "put #1 on #C", "label": "CMD"}, {"user": "leader", "message": "how are you getting on?", "label": "<label>"}, {"user": "Follower", "message": "What is the next step", "label": "next_step"}, {"user": "Follower", "message": "We are good", "label": "<label>"}, {"user": "leader", "message": "Grand! Put the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [bottom]{\"entity\": \"\"} [one]{\"entity\": \"\"} of the two [yellow]{\"entity\": \"\"} [placemats]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "message": "on it", "label": "affirm"}, {"user": "Follower", "command": "put #13 on #S", "label": "CMD"}, {"user": "Follower", "message": "we are on a roll", "label": "<label>"}, {"user": "leader", "message": "fab! now the [whole]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [top]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "command": "put #12 on #R", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "leader", "message": "okay next, we'll put the [egg]{\"entity\": \"\"} on the [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "command": "put 16 on #Y", "label": "CMD"}, {"user": "Follower", "command": "put #16 on #Y", "label": "CMD"}, {"user": "Follower", "message": "let's move on to the next action", "label": "next_step"}, {"user": "leader", "message": "okay sure, this is the last one - the [pan]{\"entity\": \"\"} on the [light]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "command": "put #19 on #X", "label": "CMD"}, {"user": "Follower", "message": "done ", "label": "affirm"}, {"user": "leader", "message": "amazing! well done", "label": "<label>"}, {"user": "Follower", "message": "cool. On to the next game. See ya", "label": "goodbye"}, {"user": "leader", "message": "see ya", "label": "goodbye"}, {"user": "Follower", "command": "done", "label": "affirm"}]}
+{
+  "2023-03-08": [
+    {
+      "user": "Follower",
+      "message": "Hi",
+      "label": "greet"
+    },
+    {
+      "user": "leader",
+      "message": "Hey! Ready?",
+      "label": "greet"
+    },
+    {
+      "user": "Follower",
+      "message": "Yup",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Can you put the [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [round]{\"entity\": \"\"} [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}?",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "yup. Gimme a sec",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "ohh it is already on the [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "okay, all the better!",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "next, put the [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the other [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "command": "put #1 on #C",
+      "label": "CMD"
+    },
+    {
+      "user": "leader",
+      "message": "how are you getting on?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "What is the next step",
+      "label": "next_step"
+    },
+    {
+      "user": "Follower",
+      "message": "We are good",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Grand! Put the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [bottom]{\"entity\": \"\"} [one]{\"entity\": \"\"} of the two [yellow]{\"entity\": \"\"} [placemats]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "on it",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "command": "put #13 on #S",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "we are on a roll",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "fab! now the [whole]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [top]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "command": "put #12 on #R",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "okay next, we'll put the [egg]{\"entity\": \"\"} on the [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "command": "put 16 on #Y",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "command": "put #16 on #Y",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "let's move on to the next action",
+      "label": "next_step"
+    },
+    {
+      "user": "leader",
+      "message": "okay sure, this is the last one - the [pan]{\"entity\": \"\"} on the [light]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "command": "put #19 on #X",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done ",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "amazing! well done",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "cool. On to the next game. See ya",
+      "label": "goodbye"
+    },
+    {
+      "user": "leader",
+      "message": "see ya",
+      "label": "goodbye"
+    },
+    {
+      "user": "Follower",
+      "command": "done",
+      "label": "affirm"
+    }
+  ]
+}

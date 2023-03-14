@@ -1,1 +1,194 @@
-{"2023-03-08": [{"user": "leader", "message": "Okay - let's start", "label": "greet"}, {"user": "Follower", "message": "sure", "label": "affirm"}, {"user": "leader", "message": "Can you put the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "which [blue]{\"entity\": \"\"} dark or [light]{\"entity\": \"\"}", "label": "<label>"}, {"user": "leader", "message": "Do you have more than one [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"}?", "label": "<label>"}, {"user": "Follower", "message": "i have two [square]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placement]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "message": "[one]{\"entity\": \"\"} [dark]{\"entity\": \"\"} and [one]{\"entity\": \"\"} [light]{\"entity\": \"\"}", "label": "<label>"}, {"user": "leader", "message": "Ah - the [one]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} is [blue]{\"entity\": \"\"}, the [one]{\"entity\": \"\"} on the [right]{\"entity\": \"\"} is a [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"}", "label": "<label>"}, {"user": "leader", "message": "So the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} goes on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"} on the [left]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "command": "put #20 on #A", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "leader", "message": "The [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} then needs to go on the [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "command": "put #21 on#N", "label": "CMD"}, {"user": "Follower", "message": "ddone", "label": "affirm"}, {"user": "leader", "message": "The [whole]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} needs to go on the [lower]{\"entity\": \"\"} [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}, the [one]{\"entity\": \"\"} further [left]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "command": "put #5 on #J", "label": "CMD"}, {"user": "Follower", "message": "done ", "label": "affirm"}, {"user": "leader", "message": "Then put the [slice]{\"entity\": \"\"} of [apple]{\"entity\": \"\"} on the other [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "command": "put ##6 on #I", "label": "CMD"}, {"user": "Follower", "command": "put #6 on #I", "label": "CMD"}, {"user": "Follower", "command": "put #6 on #I", "label": "CMD"}, {"user": "Follower", "message": "its not placing i don't have any object their", "label": "<label>"}, {"user": "leader", "message": "Okay, let's just move on", "label": "<label>"}, {"user": "leader", "message": "Can you put the [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [square]{\"entity\": \"\"}?", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "do you mean dard [purple]{\"entity\": \"\"} on far [left]{\"entity\": \"\"}", "label": "<label>"}, {"user": "leader", "message": "On the [right]{\"entity\": \"\"} edge of the [table]{\"entity\": \"\"} there are two [purple]{\"entity\": \"\"} [squares]{\"entity\": \"\"}, put the [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} [one]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "command": "put #11 on #L", "label": "CMD"}, {"user": "Follower", "message": "done ", "label": "affirm"}, {"user": "leader", "message": "Then the [glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} goes on the final [mat]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "command": "put #18 on #K", "label": "CMD"}, {"user": "Follower", "message": "done ", "label": "affirm"}, {"user": "leader", "message": "Do you have any objects left over?", "label": "any_unused_objRcp"}, {"user": "Follower", "message": "but i swapped [pan]{\"entity\": \"\"} with [bowl]{\"entity\": \"\"} because of [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} command it think", "label": "<label>"}, {"user": "Follower", "message": "no ", "label": "deny"}, {"user": "leader", "message": "Okay - I think we are done then", "label": "did_it"}, {"user": "Follower", "message": "yep", "label": "affirm"}, {"user": "leader", "command": "done", "label": "affirm"}, {"user": "Follower", "command": "done", "label": "affirm"}]}
+{
+  "2023-03-08": [
+    {
+      "user": "leader",
+      "message": "Okay - let's start",
+      "label": "greet"
+    },
+    {
+      "user": "Follower",
+      "message": "sure",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Can you put the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "which [blue]{\"entity\": \"\"} dark or [light]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Do you have more than one [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"}?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "i have two [square]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placement]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "[one]{\"entity\": \"\"} [dark]{\"entity\": \"\"} and [one]{\"entity\": \"\"} [light]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Ah - the [one]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} is [blue]{\"entity\": \"\"}, the [one]{\"entity\": \"\"} on the [right]{\"entity\": \"\"} is a [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "So the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} goes on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"} on the [left]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #20 on #A",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "The [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} then needs to go on the [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "command": "put #21 on#N",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "ddone",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "The [whole]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} needs to go on the [lower]{\"entity\": \"\"} [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}, the [one]{\"entity\": \"\"} further [left]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #5 on #J",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done ",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Then put the [slice]{\"entity\": \"\"} of [apple]{\"entity\": \"\"} on the other [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "command": "put ##6 on #I",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "command": "put #6 on #I",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "command": "put #6 on #I",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "its not placing i don't have any object their",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Okay, let's just move on",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Can you put the [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [square]{\"entity\": \"\"}?",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "do you mean dard [purple]{\"entity\": \"\"} on far [left]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "On the [right]{\"entity\": \"\"} edge of the [table]{\"entity\": \"\"} there are two [purple]{\"entity\": \"\"} [squares]{\"entity\": \"\"}, put the [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #11 on #L",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done ",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Then the [glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} goes on the final [mat]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #18 on #K",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done ",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Do you have any objects left over?",
+      "label": "any_unused_objRcp"
+    },
+    {
+      "user": "Follower",
+      "message": "but i swapped [pan]{\"entity\": \"\"} with [bowl]{\"entity\": \"\"} because of [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} command it think",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "no ",
+      "label": "deny"
+    },
+    {
+      "user": "leader",
+      "message": "Okay - I think we are done then",
+      "label": "did_it"
+    },
+    {
+      "user": "Follower",
+      "message": "yep",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "command": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "command": "done",
+      "label": "affirm"
+    }
+  ]
+}

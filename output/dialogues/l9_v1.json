@@ -1,1 +1,164 @@
-{"2023-03-08": [{"user": "Follower", "message": "let's go", "label": "greet"}, {"user": "leader", "message": "Okay - let's go", "label": "<label>"}, {"user": "leader", "message": "Can you put the [glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the [orange]{\"entity\": \"\"} [circle]{\"entity\": \"\"}?", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "yep, one moment", "label": "<label>"}, {"user": "Follower", "command": "put #11 on #T", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "leader", "message": "Great - and the [wooden]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the other [orange]{\"entity\": \"\"} [mat]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "oki", "label": "affirm"}, {"user": "Follower", "command": "put #10 on #G", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "leader", "message": "The [whole]{\"entity\": \"\"} [bread]{\"entity\": \"\"} goes on the [top]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}", "label": "put_obj_in_rcp"}, {"user": "Follower", "message": "okay, give me a sec", "label": "<label>"}, {"user": "Follower", "command": "put #14 on #N", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "leader", "message": "Great - the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} then goes just [beneath]{\"entity\": \"\"} tha", "label": "<label>"}, {"user": "leader", "message": "*that", "label": "<label>"}, {"user": "Follower", "message": "it's already there", "label": "<label>"}, {"user": "leader", "message": "Oh perfect", "label": "<label>"}, {"user": "leader", "message": "The [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} goes [underneath]{\"entity\": \"\"} that then", "label": "<label>"}, {"user": "Follower", "command": "put #20 on #X", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "leader", "message": "Perfect, do you have a [sliced]{\"entity\": \"\"} [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"}?", "label": "<label>"}, {"user": "Follower", "message": "no", "label": "deny"}, {"user": "leader", "message": "Do you have a [whole]{\"entity\": \"\"} [one]{\"entity\": \"\"}?", "label": "did_it"}, {"user": "Follower", "message": "no", "label": "deny"}, {"user": "leader", "message": "Can you request the [sliced]{\"entity\": \"\"} version then?", "label": "<label>"}, {"user": "Follower", "command": "request #4", "label": "CMD"}, {"user": "Follower", "message": "yep", "label": "affirm"}, {"user": "leader", "message": "And then put it on the final [mat]{\"entity\": \"\"}", "label": "<label>"}, {"user": "Follower", "command": "put #4 on #Y", "label": "CMD"}, {"user": "Follower", "message": "done", "label": "affirm"}, {"user": "Follower", "command": "done", "label": "affirm"}]}
+{
+  "2023-03-08": [
+    {
+      "user": "Follower",
+      "message": "let's go",
+      "label": "greet"
+    },
+    {
+      "user": "leader",
+      "message": "Okay - let's go",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Can you put the [glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the [orange]{\"entity\": \"\"} [circle]{\"entity\": \"\"}?",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "yep, one moment",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #11 on #T",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Great - and the [wooden]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the other [orange]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "oki",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "command": "put #10 on #G",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "The [whole]{\"entity\": \"\"} [bread]{\"entity\": \"\"} goes on the [top]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "label": "put_obj_in_rcp"
+    },
+    {
+      "user": "Follower",
+      "message": "okay, give me a sec",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #14 on #N",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Great - the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} then goes just [beneath]{\"entity\": \"\"} tha",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "*that",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "it's already there",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "Oh perfect",
+      "label": "<label>"
+    },
+    {
+      "user": "leader",
+      "message": "The [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} goes [underneath]{\"entity\": \"\"} that then",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #20 on #X",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "Perfect, do you have a [sliced]{\"entity\": \"\"} [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"}?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "message": "no",
+      "label": "deny"
+    },
+    {
+      "user": "leader",
+      "message": "Do you have a [whole]{\"entity\": \"\"} [one]{\"entity\": \"\"}?",
+      "label": "did_it"
+    },
+    {
+      "user": "Follower",
+      "message": "no",
+      "label": "deny"
+    },
+    {
+      "user": "leader",
+      "message": "Can you request the [sliced]{\"entity\": \"\"} version then?",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "request #4",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "yep",
+      "label": "affirm"
+    },
+    {
+      "user": "leader",
+      "message": "And then put it on the final [mat]{\"entity\": \"\"}",
+      "label": "<label>"
+    },
+    {
+      "user": "Follower",
+      "command": "put #4 on #Y",
+      "label": "CMD"
+    },
+    {
+      "user": "Follower",
+      "message": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Follower",
+      "command": "done",
+      "label": "affirm"
+    }
+  ]
+}
