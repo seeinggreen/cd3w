@@ -62,7 +62,7 @@
     },
     {
       "user": "Leader",
-      "message": "position the [brown]{\"entity\": \"colour_rcpt\"} [bowl]{\"entity\": \"obj\"}, such that it appears upon the [orange]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}.",
+      "message": "position the [brown]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"}, such that it appears upon the [orange]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}.",
       "label": "put_obj_in_rcp"
     },
     {

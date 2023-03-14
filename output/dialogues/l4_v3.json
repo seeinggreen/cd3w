@@ -27,7 +27,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have an [egg]{\"entity\": \"\"}?",
+      "message": "do you have an [egg]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
@@ -37,17 +37,17 @@
     },
     {
       "user": "Leader",
-      "message": "put it on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "put it on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "the [purple]{\"entity\": \"\"} or [lilac]{\"entity\": \"\"}?",
+      "message": "the [purple]{\"entity\": \"colour_rcpt\"} or [lilac]{\"entity\": \"colour_rcpt\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "I don't know what [lilac]{\"entity\": \"\"} is",
+      "message": "I don't know what [lilac]{\"entity\": \"colour_rcpt\"} is",
       "label": "<label>"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "user": "Leader",
-      "message": "the [centred]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
+      "message": "the [centred]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -77,12 +77,12 @@
     },
     {
       "user": "Leader",
-      "message": "put the [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on the [lilac]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} now",
+      "message": "put the [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on the [lilac]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} now",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "i thought you didnt know what [lilac]{\"entity\": \"\"} was",
+      "message": "i thought you didnt know what [lilac]{\"entity\": \"colour_rcpt\"} was",
       "label": "<label>"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have [vases]{\"entity\": \"\"}?",
+      "message": "do you have [vases]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
@@ -122,12 +122,12 @@
     },
     {
       "user": "Leader",
-      "message": "put the [red]{\"entity\": \"\"} [one]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} and the [yellow]{\"entity\": \"\"} [one]{\"entity\": \"\"} on the [circle]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "put the [red]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} and the [yellow]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"} on the [circle]{\"entity\": \"shape_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "i only have a [yellow]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
+      "message": "i only have a [yellow]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "user": "Leader",
-      "message": "then get a [red]{\"entity\": \"\"} [one]{\"entity\": \"\"} as well",
+      "message": "then get a [red]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"} as well",
       "label": "<label>"
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "user": "Leader",
-      "message": "cool! put the [cup]{\"entity\": \"\"} on the [red]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "cool! put the [cup]{\"entity\": \"obj\"} on the [red]{\"entity\": \"colour_obj\"} [square]{\"entity\": \"shape_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -177,12 +177,12 @@
     },
     {
       "user": "Follower",
-      "message": "2 [red]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placemats]{\"entity\": \"\"}",
+      "message": "2 [red]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [placemats]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "I thought you meant you had two [cups]{\"entity\": \"\"}",
+      "message": "I thought you meant you had two [cups]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -192,12 +192,12 @@
     },
     {
       "user": "Leader",
-      "message": "put the [orange]{\"entity\": \"\"} [cup]{\"entity\": \"\"} on the [red]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} that is in the [centre]{\"entity\": \"\"}",
+      "message": "put the [orange]{\"entity\": \"colour_obj\"} [cup]{\"entity\": \"obj\"} on the [red]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [placemat]{\"entity\": \"rcpt\"} that is in the [centre]{\"entity\": \"pos_rcpt\"}",
       "label": "did_it"
     },
     {
       "user": "Follower",
-      "message": "i have 1 [cup]{\"entity\": \"\"}",
+      "message": "i have 1 [cup]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -227,7 +227,7 @@
     },
     {
       "user": "Leader",
-      "message": "do you have a [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"}",
+      "message": "do you have a [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -247,7 +247,7 @@
     },
     {
       "user": "Leader",
-      "message": "put that on the last [placemat]{\"entity\": \"\"}",
+      "message": "put that on the last [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {

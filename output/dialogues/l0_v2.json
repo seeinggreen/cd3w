@@ -27,7 +27,7 @@
     },
     {
       "user": "leader",
-      "message": "The [yellow]{\"entity\": \"colour_rcpt\"} [vase]{\"entity\": \"\"}, just underneath the [bowl]{\"entity\": \"obj\"}",
+      "message": "The [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"}, just underneath the [blue]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {

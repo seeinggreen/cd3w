@@ -22,17 +22,17 @@
     },
     {
       "user": "Leader",
-      "message": "let's start with the [vase]{\"entity\": \"\"}. Put it on the [round]{\"entity\": \"\"} [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "let's start with the [vase]{\"entity\": \"obj\"}. Put it on the [round]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "follower",
-      "message": "which [vase]{\"entity\": \"\"} do you mean?",
+      "message": "which [vase]{\"entity\": \"obj\"} do you mean?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "ohh do you have more than [one]{\"entity\": \"\"}",
+      "message": "ohh do you have more than [one]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -42,12 +42,12 @@
     },
     {
       "user": "Leader",
-      "message": "cool, it is the [yellow]{\"entity\": \"\"} [vase]{\"entity\": \"\"}",
+      "message": "cool, it is the [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "follower",
-      "message": "I have a [yellow]{\"entity\": \"\"} [one]{\"entity\": \"\"} and a [red]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
+      "message": "I have a [yellow]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"} and a [red]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "user": "Leader",
-      "message": "put the [yellow]{\"entity\": \"\"} [vase]{\"entity\": \"\"} on the [round]{\"entity\": \"\"} [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "put the [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"} on the [round]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -72,12 +72,12 @@
     },
     {
       "user": "follower",
-      "message": "do we need the [red]{\"entity\": \"\"} [vase]{\"entity\": \"\"}?",
+      "message": "do we need the [red]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "yes, lets move that to the [square]{\"entity\": \"\"} [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "yes, lets move that to the [square]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -102,27 +102,27 @@
     },
     {
       "user": "Leader",
-      "message": "nice. If you have anything on the [top]{\"entity\": \"\"} [dark]{\"entity\": \"\"} [brown]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}, put it on the [table]{\"entity\": \"\"} ",
+      "message": "nice. If you have anything on the [top]{\"entity\": \"pos_rcpt\"} [dark brown]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}, put it on the [table]{\"entity\": \"rcpt\"} ",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "That [placemat]{\"entity\": \"\"} should be [empty]{\"entity\": \"\"}",
+      "message": "That [placemat]{\"entity\": \"rcpt\"} should be [empty]{\"entity\": \"state_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "[empty]{\"entity\": \"\"}",
+      "message": "[empty]{\"entity\": \"state_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "follower",
-      "message": "eh yeah it's [empty]{\"entity\": \"\"}",
+      "message": "eh yeah it's [empty]{\"entity\": \"state_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "cool. Let's move to the [sliced]{\"entity\": \"\"} [apple]{\"entity\": \"\"} then. Put the [sliced]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [brown]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} which is in the [middle]{\"entity\": \"\"} row",
+      "message": "cool. Let's move to the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} then. Put the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [brown]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} which is in the [middle]{\"entity\": \"pos_rcpt\"} row",
       "label": "<label>"
     },
     {
@@ -132,12 +132,12 @@
     },
     {
       "user": "follower",
-      "message": "Actually, my [apple]{\"entity\": \"\"} is [whole]{\"entity\": \"\"}",
+      "message": "Actually, my [apple]{\"entity\": \"obj\"} is [whole]{\"entity\": \"state_obj\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "then please [slice]{\"entity\": \"\"} it first",
+      "message": "then please slice it first",
       "label": "<label>"
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "user": "Leader",
-      "message": "great. Let's put the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on the light [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "great. Let's put the [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on the light [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -187,7 +187,7 @@
     },
     {
       "user": "Leader",
-      "message": "Now the last task, Put the [sliced]{\"entity\": \"\"} [loaf]{\"entity\": \"\"} of [bread]{\"entity\": \"\"} on the [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "Now the last task, Put the [sliced]{\"entity\": \"state_obj\"} [loaf bread]{\"entity\": \"obj\"} on the [dark purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -217,12 +217,12 @@
     },
     {
       "user": "follower",
-      "message": "I still have an [empty]{\"entity\": \"\"} [mat]{\"entity\": \"\"} is that [normal]{\"entity\": \"\"}?",
+      "message": "I still have an [empty]{\"entity\": \"state_rcpt\"} [mat]{\"entity\": \"rcpt\"} is that normal?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "yeah, Top [brown]{\"entity\": \"\"} [mat]{\"entity\": \"\"} is [empty]{\"entity\": \"\"}",
+      "message": "yeah, Top [brown]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"} is [empty]{\"entity\": \"state_rcpt\"}",
       "label": "<label>"
     },
     {

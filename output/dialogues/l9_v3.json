@@ -12,7 +12,7 @@
     },
     {
       "user": "Leader",
-      "message": "move the [bread]{\"entity\": \"\"} onto the [lilac]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "move the [bread]{\"entity\": \"obj\"} onto the [lilac]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -27,22 +27,22 @@
     },
     {
       "user": "follower",
-      "message": "are you sure you mean [lilac]{\"entity\": \"\"}?",
+      "message": "are you sure you mean [lilac]{\"entity\": \"colour_rcpt\"}?",
       "label": "<label>"
     },
     {
       "user": "follower",
-      "message": "There's two [purple]{\"entity\": \"\"} [mats]{\"entity\": \"\"} - the [lighter]{\"entity\": \"\"} [one]{\"entity\": \"\"}?",
+      "message": "There's two [purple]{\"entity\": \"colour_rcpt\"} [mats]{\"entity\": \"rcpt\"} - the [lighter]{\"entity\": \"colour_rcpt\"} [one]{\"entity\": \"rcpt\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "it is [lilac]{\"entity\": \"\"}.",
+      "message": "it is [lilac]{\"entity\": \"colour_rcpt\"}.",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "its it the [bottom]{\"entity\": \"\"} most [mat]{\"entity\": \"\"}",
+      "message": "its it the [bottom]{\"entity\": \"pos_rcpt\"} most [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -57,12 +57,12 @@
     },
     {
       "user": "follower",
-      "message": "I've got a [bread]{\"entity\": \"\"} there already",
+      "message": "I've got a [bread]{\"entity\": \"obj\"} there already",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "amazing, put the [plate]{\"entity\": \"\"} on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "amazing, put the [plate]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -72,12 +72,12 @@
     },
     {
       "user": "follower",
-      "message": "I don't have a [plate]{\"entity\": \"\"} I think",
+      "message": "I don't have a [plate]{\"entity\": \"obj\"} I think",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "yes that is fine, request a [plate]{\"entity\": \"\"} ",
+      "message": "yes that is fine, request a [plate]{\"entity\": \"obj\"} ",
       "label": "<label>"
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "user": "Leader",
-      "message": "[blue]{\"entity\": \"\"}",
+      "message": "[blue]{\"entity\": \"colour_obj\"}",
       "label": "<label>"
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "user": "follower",
-      "message": "okay I've got the [plate]{\"entity\": \"\"}, will place it now",
+      "message": "okay I've got the [plate]{\"entity\": \"obj\"}, will place it now",
       "label": "<label>"
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "user": "Leader",
-      "message": "nice, next step put the [brown]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "nice, next step put the [brown]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "user": "Leader",
-      "message": "[glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the remaining [orange]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "[glass]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the remaining [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -177,7 +177,7 @@
     },
     {
       "user": "Leader",
-      "message": "and the [sliced]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [right]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "and the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [right]{\"entity\": \"pos_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -192,7 +192,7 @@
     },
     {
       "user": "Leader",
-      "message": "put the [apple]{\"entity\": \"\"} on the last [placemat]{\"entity\": \"\"}",
+      "message": "put the [apple]{\"entity\": \"obj\"} on the last [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {

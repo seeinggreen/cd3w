@@ -22,7 +22,7 @@
     },
     {
       "user": "Leader",
-      "message": "good. Put the [cup]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [brown]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "good. Put the [cup]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [brown]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "user": "Leader",
-      "message": "great. Let's move the [egg]{\"entity\": \"\"} on the other [brown]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "great. Let's move the [egg]{\"entity\": \"obj\"} on the other [brown]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -52,17 +52,17 @@
     },
     {
       "user": "Leader",
-      "message": "nice job. We are flying through this. Let's put the [pan]{\"entity\": \"\"} on the [top]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "nice job. We are flying through this. Let's put the [pan]{\"entity\": \"obj\"} on the [top]{\"entity\": \"pos_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "can you specify the [placement]{\"entity\": \"\"} ",
+      "message": "can you specify the [placement]{\"entity\": \"rcpt\"} ",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "[top right corner]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "[top right corner]{\"entity\": \"pos_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "user": "Leader",
-      "message": "cool. Put the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} in the [middle row]{\"entity\": \"\"}",
+      "message": "cool. Put the [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} in the [middle row]{\"entity\": \"pos_rcpt\"}",
       "label": "<label>"
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "user": "Leader",
-      "message": "Put the [vase]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} in the [bottom row]{\"entity\": \"\"}",
+      "message": "Put the [vase]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} in the [bottom row]{\"entity\": \"pos_rcpt\"}",
       "label": "<label>"
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "user": "Leader",
-      "message": "now the final step, Please put the [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} in the [bottom row]{\"entity\": \"\"}",
+      "message": "now the final step, Please put the [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} in the [bottom]{\"entity\": \"pos_rcpt\"} row",
       "label": "<label>"
     },
     {

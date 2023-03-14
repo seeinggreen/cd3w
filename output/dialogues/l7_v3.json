@@ -17,42 +17,42 @@
     },
     {
       "user": "Leader",
-      "message": "put your [brown]{\"entity\": \"\"} [loaf]{\"entity\": \"\"} on the [circular]{\"entity\": \"\"} [green]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "put your [brown]{\"entity\": \"colour_obj\"} [loaf]{\"entity\": \"obj\"} on the [circular]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "is it the small or the large [loaf]{\"entity\": \"\"}?",
+      "message": "is it the small or the large [loaf]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "it is the [unsliced]{\"entity\": \"\"} [loaf]{\"entity\": \"\"}",
+      "message": "it is the [unsliced]{\"entity\": \"state_obj\"} [loaf]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "both looks [unsliced]{\"entity\": \"\"}",
+      "message": "both looks [unsliced]{\"entity\": \"state_obj\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "the [brow]{\"entity\": \"\"} [bread]{\"entity\": \"\"}",
+      "message": "the [brown]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "[brown]{\"entity\": \"\"}*",
+      "message": "[brown]{\"entity\": \"colour_obj\"}*",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "I have 2 [green]{\"entity\": \"\"} [placemats]{\"entity\": \"\"} as well",
+      "message": "I have 2 [green]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"} as well",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "the [circular]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "the [circular]{\"entity\": \"shape_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -77,7 +77,7 @@
     },
     {
       "user": "Leader",
-      "message": "lets put the [white]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [square]{\"entity\": \"\"} [green]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "lets put the [white]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -92,12 +92,12 @@
     },
     {
       "user": "Leader",
-      "message": "is the [white]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [top]{\"entity\": \"\"} [green]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "is the [white]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"} on the [top]{\"entity\": \"pos_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "yup. looks like a [white]{\"entity\": \"\"} [bread]{\"entity\": \"\"} [loaf]{\"entity\": \"\"}",
+      "message": "yup. looks like a [white]{\"entity\": \"colour_obj\"} [bread loaf]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "user": "Leader",
-      "message": "put the [sliced]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [rightmost]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "put the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [rightmost]{\"entity\": \"pos_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -132,7 +132,7 @@
     },
     {
       "user": "Leader",
-      "message": "now the [full]{\"entity\": \"\"} [apple]{\"entity\": \"\"} goes on the [leftmost]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "now the [full]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} goes on the [leftmost]{\"entity\": \"pos_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -197,32 +197,32 @@
     },
     {
       "user": "Leader",
-      "message": "Sorry user! Now time to put the [egg]{\"entity\": \"\"} on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "Sorry user! Now time to put the [egg]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "which [one]{\"entity\": \"\"}?",
+      "message": "which [one]{\"entity\": \"rcpt\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "define \"[one]{\"entity\": \"\"}\" ",
+      "message": "define \"[one]{\"entity\": \"rcpt\"}\" ",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "which [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}?",
+      "message": "which [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "ah ha! the centre most [rightmost]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "ah ha! the [centre]{\"entity\": \"pos_rcpt\"} most [rightmost]{\"entity\": \"pos_rcpt\"} [purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "closer to the [blue]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}?",
+      "message": "closer to the [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
       "label": "<label>"
     },
     {
@@ -232,7 +232,7 @@
     },
     {
       "user": "Follower",
-      "message": "are you a [bot]{\"entity\": \"\"}?",
+      "message": "are you a bot?",
       "label": "<label>"
     },
     {
@@ -242,12 +242,12 @@
     },
     {
       "user": "Leader",
-      "message": "lets put the [plate]{\"entity\": \"\"} on the [indigo]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "lets put the [plate]{\"entity\": \"obj\"} on the [indigo]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "no idea what an [indigo]{\"entity\": \"\"} is?",
+      "message": "no idea what an [indigo]{\"entity\": \"colour_rcpt\"} is?",
       "label": "<label>"
     },
     {
@@ -257,7 +257,7 @@
     },
     {
       "user": "Leader",
-      "message": "* [indigo]{\"entity\": \"\"} is a colour",
+      "message": "* [indigo]{\"entity\": \"colour_rcpt\"} is a colour",
       "label": "<label>"
     },
     {
@@ -272,22 +272,22 @@
     },
     {
       "user": "Leader",
-      "message": "is the [plate]{\"entity\": \"\"} on the [indigo]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}?",
+      "message": "is the [plate]{\"entity\": \"obj\"} on the [indigo]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "I know [indigo]{\"entity\": \"\"} is a color but no idea how it looks like. Can you define any other way",
+      "message": "I know [indigo]{\"entity\": \"colour_rcpt\"} is a color but no idea how it looks like. Can you define any other way",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "rgb(75,0,130)",
+      "message": "[rgb(75,0,130)]{\"entity\": \"colour_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "the furthest [right]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "the furthest [right]{\"entity\": \"pos_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -337,12 +337,12 @@
     },
     {
       "user": "Leader",
-      "message": "can you put the [egg]{\"entity\": \"\"} on the [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} sir?",
+      "message": "can you put the [egg]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} sir?",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "[Egg]{\"entity\": \"\"} is on a [purple]{\"entity\": \"\"} [placemat]{\"entity\": \"\"} and [plate]{\"entity\": \"\"} on the other",
+      "message": "[Egg]{\"entity\": \"obj\"} is on a [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} and [plate]{\"entity\": \"obj\"} on the other",
       "label": "<label>"
     },
     {
@@ -352,17 +352,17 @@
     },
     {
       "user": "Leader",
-      "message": "[plate]{\"entity\": \"\"} on the furtherest [left]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "[plate]{\"entity\": \"obj\"} on the furtherest [left]{\"entity\": \"pos_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "[egg]{\"entity\": \"\"} on the [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "[egg]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "[plate]{\"entity\": \"\"} on the [right]{\"entity\": \"\"} most [placemat]{\"entity\": \"\"} right?",
+      "message": "[plate]{\"entity\": \"obj\"} on the [right]{\"entity\": \"pos_rcpt\"} most [placemat]{\"entity\": \"rcpt\"} right?",
       "label": "<label>"
     },
     {

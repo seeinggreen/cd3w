@@ -12,7 +12,7 @@
     },
     {
       "user": "leader",
-      "message": "There is a [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"} - can you put that there?",
+      "message": "There is a [green]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on the [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} - can you put that there?",
       "label": "put_obj_in_rcp"
     },
     {
@@ -32,12 +32,12 @@
     },
     {
       "user": "leader",
-      "message": "The [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"} has a [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} [slice]{\"entity\": \"\"}",
+      "message": "The [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"} has a [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} [slice]{\"entity\": \"state_obj\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "Do you have the [slice]{\"entity\": \"\"} already?",
+      "message": "Do you have the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} already?",
       "label": "<label>"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "user": "follower",
-      "message": "I'll put it on the [mat]{\"entity\": \"\"} now",
+      "message": "I'll put it on the [mat]{\"entity\": \"rcpt\"} now",
       "label": "<label>"
     },
     {
@@ -62,17 +62,17 @@
     },
     {
       "user": "leader",
-      "message": "Great - the [square]{\"entity\": \"\"} below it has a full loaf of [white]{\"entity\": \"\"} [bread]{\"entity\": \"\"}",
+      "message": "Great - the [square]{\"entity\": \"shape_rcpt\"} below it has a full loaf of [white]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "follower",
-      "message": "The [square]{\"entity\": \"\"} below the one with the [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"}?",
+      "message": "The [square]{\"entity\": \"shape_rcpt\"} below the one with the [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "Yes, the [green]{\"entity\": \"\"} [square]{\"entity\": \"\"} below the [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "message": "Yes, the [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} below the [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "<label>"
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "user": "leader",
-      "message": "Great. [Next]{\"entity\": \"\"} to that, directly to the [right]{\"entity\": \"\"}, the [red]{\"entity\": \"\"} [vase]{\"entity\": \"\"} needs to go on the [purple]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "message": "Great. Next to that, directly to the [right]{\"entity\": \"pos_rcpt\"}, the [red]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"} needs to go on the [purple]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "user": "leader",
-      "message": "And then [above]{\"entity\": \"\"} that, the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} goes on the other [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}",
+      "message": "And then [above]{\"entity\": \"pos_rcpt\"} that, the [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} goes on the other [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -127,17 +127,17 @@
     },
     {
       "user": "leader",
-      "message": "And then the final [placemat]{\"entity\": \"\"} gets an [egg]{\"entity\": \"\"}",
+      "message": "And then the final [placemat]{\"entity\": \"rcpt\"} gets an [egg]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "follower",
-      "message": "okay I don't have an [egg]{\"entity\": \"\"}",
+      "message": "okay I don't have an [egg]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "Can you get [one]{\"entity\": \"\"}?",
+      "message": "Can you get [one]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
@@ -147,7 +147,7 @@
     },
     {
       "user": "leader",
-      "message": "It's a [white]{\"entity\": \"\"} [egg]{\"entity\": \"\"} that you need",
+      "message": "It's a [white]{\"entity\": \"colour_obj\"} [egg]{\"entity\": \"obj\"} that you need",
       "label": "<label>"
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "user": "follower",
-      "message": "okay all objects are on [mats]{\"entity\": \"\"} now",
+      "message": "okay all objects are on [mats]{\"entity\": \"rcpt\"} now",
       "label": "<label>"
     },
     {

@@ -17,7 +17,7 @@
     },
     {
       "user": "leader",
-      "message": "Can you put the [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the [round]{\"entity\": \"\"} [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}?",
+      "message": "Can you put the [green]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on the [round]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
       "label": "put_obj_in_rcp"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "user": "Follower",
-      "message": "ohh it is already on the [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "ohh it is already on the [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "user": "leader",
-      "message": "next, put the [red]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on the other [red]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "next, put the [red]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on the other [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "affirm"
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "user": "leader",
-      "message": "Grand! Put the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [bottom]{\"entity\": \"\"} [one]{\"entity\": \"\"} of the two [yellow]{\"entity\": \"\"} [placemats]{\"entity\": \"\"}",
+      "message": "Grand! Put the [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} on the [bottom]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"pos_rcpt\"} of the two [yellow]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "user": "leader",
-      "message": "fab! now the [whole]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on the [top]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [placemat]{\"entity\": \"\"}",
+      "message": "fab! now the [whole]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} on the [top]{\"entity\": \"pos_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       "user": "leader",
-      "message": "okay next, we'll put the [egg]{\"entity\": \"\"} on the [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "okay next, we'll put the [egg]{\"entity\": \"obj\"} on the [dark purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "user": "leader",
-      "message": "okay sure, this is the last one - the [pan]{\"entity\": \"\"} on the [light]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "okay sure, this is the last one - the [pan]{\"entity\": \"obj\"} on the [light purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {

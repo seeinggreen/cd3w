@@ -22,7 +22,7 @@
     },
     {
       "user": "Leader",
-      "message": "oky great we just have to put the same [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} on [yellow]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "message": "oky great we just have to put the same [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on [yellow]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "user": "Leader",
-      "message": "great! put the [brown]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the [yellow]{\"entity\": \"\"} [square]{\"entity\": \"\"} ",
+      "message": "great! put the [brown]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} ",
       "label": "put_obj_in_rcp"
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "user": "Leader",
-      "message": "good let put [brown]{\"entity\": \"\"} [bread]{\"entity\": \"\"} on [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}",
+      "message": "good let put [brown]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"} on [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "user": "Leader",
-      "message": "great job let do [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placement]{\"entity\": \"\"}",
+      "message": "great job let do [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [placement]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -82,12 +82,12 @@
     },
     {
       "user": "Leader",
-      "message": "good now lets put [yellow]{\"entity\": \"\"} [vase]{\"entity\": \"\"} on [purple]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "message": "good now lets put [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"} on [purple]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "strange looking [vase]{\"entity\": \"\"}",
+      "message": "strange looking [vase]{\"entity\": \"obj\"}",
       "label": "<label>"
     },
     {
@@ -112,12 +112,12 @@
     },
     {
       "user": "Leader",
-      "message": "lets put [pan]{\"entity\": \"\"} on [pink]{\"entity\": \"\"} [circle]{\"entity\": \"\"} [placement]{\"entity\": \"\"}",
+      "message": "lets put [pan]{\"entity\": \"obj\"} on [pink]{\"entity\": \"colour_obj\"} [circle]{\"entity\": \"shape_rcpt\"} [placement]{\"entity\": \"rcpt\"}",
       "label": "did_it"
     },
     {
       "user": "Follower",
-      "message": "the [fuchsia]{\"entity\": \"\"} [mat]{\"entity\": \"\"}? ",
+      "message": "the [fuchsia]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}? ",
       "label": "<label>"
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "user": "Follower",
-      "message": "every [object]{\"entity\": \"\"} has a [placemat]{\"entity\": \"\"} now!",
+      "message": "every object has a [placemat]{\"entity\": \"rcpt\"} now!",
       "label": "<label>"
     },
     {
@@ -152,12 +152,12 @@
     },
     {
       "user": "Follower",
-      "message": "i havent touched the [egg]{\"entity\": \"\"} or [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} though",
+      "message": "i havent touched the [egg]{\"entity\": \"obj\"} or [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} though",
       "label": "<label>"
     },
     {
       "user": "Leader",
-      "message": "you haven't place [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"} [placement]{\"entity\": \"\"} ",
+      "message": "you haven't placed [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [placement]{\"entity\": \"rcpt\"} ",
       "label": "<label>"
     },
     {

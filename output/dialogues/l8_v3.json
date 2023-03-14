@@ -12,37 +12,37 @@
     },
     {
       "user": "leader",
-      "message": "Can you put the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"}",
+      "message": "Can you put the [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on the [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "which [blue]{\"entity\": \"\"} dark or [light]{\"entity\": \"\"}",
+      "message": "which [blue]{\"entity\": \"colour_obj\"} dark or [light]{\"entity\": \"colour_obj\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "Do you have more than one [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"}?",
+      "message": "Do you have more than one [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "i have two [square]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [placement]{\"entity\": \"\"}",
+      "message": "i have two [square]{\"entity\": \"shape_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "Follower",
-      "message": "[one]{\"entity\": \"\"} [dark]{\"entity\": \"\"} and [one]{\"entity\": \"\"} [light]{\"entity\": \"\"}",
+      "message": "[one]{\"entity\": \"rcpt\"} [dark]{\"entity\": \"colour_rcpt\"} and [one]{\"entity\": \"rcpt\"} [light]{\"entity\": \"colour_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "Ah - the [one]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} is [blue]{\"entity\": \"\"}, the [one]{\"entity\": \"\"} on the [right]{\"entity\": \"\"} is a [dark]{\"entity\": \"\"} [purple]{\"entity\": \"\"}",
+      "message": "Ah - the [one]{\"entity\": \"rcpt\"} on the [left]{\"entity\": \"pos_rcpt\"} is [blue]{\"entity\": \"colour_rcpt\"}, the [one]{\"entity\": \"rcpt\"} on the [right]{\"entity\": \"pos_rcpt\"} is a [dark purple]{\"entity\": \"colour_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "So the [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} goes on the [blue]{\"entity\": \"\"} [square]{\"entity\": \"\"} on the [left]{\"entity\": \"\"}",
+      "message": "So the [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} goes on the [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} on the [left]{\"entity\": \"pos_rcpt\"}",
       "label": "<label>"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "user": "leader",
-      "message": "The [white]{\"entity\": \"\"} [plate]{\"entity\": \"\"} then needs to go on the [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "message": "The [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} then needs to go on the [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -72,7 +72,7 @@
     },
     {
       "user": "leader",
-      "message": "The [whole]{\"entity\": \"\"} [yellow]{\"entity\": \"\"} [apple]{\"entity\": \"\"} needs to go on the [lower]{\"entity\": \"\"} [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}, the [one]{\"entity\": \"\"} further [left]{\"entity\": \"\"}",
+      "message": "The [whole]{\"entity\": \"state_obj\"} [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} needs to go on the [lower]{\"entity\": \"pos_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}, the [one]{\"entity\": \"rcpt\"} further [left]{\"entity\": \"pos_rcpt\"}",
       "label": "<label>"
     },
     {
@@ -87,7 +87,7 @@
     },
     {
       "user": "leader",
-      "message": "Then put the [slice]{\"entity\": \"\"} of [apple]{\"entity\": \"\"} on the other [green]{\"entity\": \"\"} [square]{\"entity\": \"\"}",
+      "message": "Then put the [slice]{\"entity\": \"state_obj\"} of [apple]{\"entity\": \"obj\"} on the other [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -117,17 +117,17 @@
     },
     {
       "user": "leader",
-      "message": "Can you put the [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} [purple]{\"entity\": \"\"} [square]{\"entity\": \"\"}?",
+      "message": "Can you put the [white]{\"entity\": \"colour_obj\"} [pan]{\"entity\": \"obj\"} on the [left]{\"entity\": \"pos_rcpt\"} [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}?",
       "label": "put_obj_in_rcp"
     },
     {
       "user": "Follower",
-      "message": "do you mean dard [purple]{\"entity\": \"\"} on far [left]{\"entity\": \"\"}",
+      "message": "do you mean [dard purple]{\"entity\": \"colour_rcpt\"} on far [left]{\"entity\": \"pos_rcpt\"}",
       "label": "<label>"
     },
     {
       "user": "leader",
-      "message": "On the [right]{\"entity\": \"\"} edge of the [table]{\"entity\": \"\"} there are two [purple]{\"entity\": \"\"} [squares]{\"entity\": \"\"}, put the [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} on the [left]{\"entity\": \"\"} [one]{\"entity\": \"\"}",
+      "message": "On the [right]{\"entity\": \"pos_rcpt\"} edge of the [table]{\"entity\": \"rcpt\"} there are two [purple]{\"entity\": \"colour_rcpt\"} [squares]{\"entity\": \"shape_rcpt\"}, put the [white]{\"entity\": \"colour_rcpt\"} [pan]{\"entity\": \"obj\"} on the [left]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "user": "leader",
-      "message": "Then the [glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} goes on the final [mat]{\"entity\": \"\"}",
+      "message": "Then the [glass]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} goes on the final [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "user": "Follower",
-      "message": "but i swapped [pan]{\"entity\": \"\"} with [bowl]{\"entity\": \"\"} because of [white]{\"entity\": \"\"} [pan]{\"entity\": \"\"} command it think",
+      "message": "but i swapped [pan]{\"entity\": \"obj\"} with [bowl]{\"entity\": \"obj\"} because of [white]{\"entity\": \"colour_obj\"} [pan]{\"entity\": \"obj\"} command it think",
       "label": "<label>"
     },
     {

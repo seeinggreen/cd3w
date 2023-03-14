@@ -12,7 +12,7 @@
     },
     {
       "user": "leader",
-      "message": "Can you put the [glass]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the [orange]{\"entity\": \"\"} [circle]{\"entity\": \"\"}?",
+      "message": "Can you put the [glass]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the [orange]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}?",
       "label": "put_obj_in_rcp"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "user": "leader",
-      "message": "Great - and the [wooden]{\"entity\": \"\"} [bowl]{\"entity\": \"\"} on the other [orange]{\"entity\": \"\"} [mat]{\"entity\": \"\"}",
+      "message": "Great - and the [wooden]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the other [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -52,7 +52,7 @@
     },
     {
       "user": "leader",
-      "message": "The [whole]{\"entity\": \"\"} [bread]{\"entity\": \"\"} goes on the [top]{\"entity\": \"\"} [blue]{\"entity\": \"\"} [circle]{\"entity\": \"\"}",
+      "message": "The [whole]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} goes on the [top]{\"entity\": \"pos_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
       "label": "put_obj_in_rcp"
     },
     {
@@ -72,7 +72,7 @@
     },
     {
       "user": "leader",
-      "message": "Great - the [sliced]{\"entity\": \"\"} [bread]{\"entity\": \"\"} then goes just [beneath]{\"entity\": \"\"} tha",
+      "message": "Great - the [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} then goes just [beneath]{\"entity\": \"pos_rcpt\"} tha",
       "label": "<label>"
     },
     {
@@ -92,7 +92,7 @@
     },
     {
       "user": "leader",
-      "message": "The [blue]{\"entity\": \"\"} [plate]{\"entity\": \"\"} goes [underneath]{\"entity\": \"\"} that then",
+      "message": "The [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} goes [underneath]{\"entity\": \"pos_rcpt\"} that then",
       "label": "<label>"
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "user": "leader",
-      "message": "Perfect, do you have a [sliced]{\"entity\": \"\"} [green]{\"entity\": \"\"} [apple]{\"entity\": \"\"}?",
+      "message": "Perfect, do you have a [sliced]{\"entity\": \"state_obj\"} [green]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}?",
       "label": "<label>"
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "user": "leader",
-      "message": "Do you have a [whole]{\"entity\": \"\"} [one]{\"entity\": \"\"}?",
+      "message": "Do you have a [whole]{\"entity\": \"state_obj\"} [one]{\"entity\": \"obj\"}?",
       "label": "did_it"
     },
     {
@@ -127,7 +127,7 @@
     },
     {
       "user": "leader",
-      "message": "Can you request the [sliced]{\"entity\": \"\"} version then?",
+      "message": "Can you request the [sliced]{\"entity\": \"state_obj\"} [version]{\"entity\": \"obj\"} then?",
       "label": "<label>"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "user": "leader",
-      "message": "And then put it on the final [mat]{\"entity\": \"\"}",
+      "message": "And then put it on the final [mat]{\"entity\": \"rcpt\"}",
       "label": "<label>"
     },
     {
