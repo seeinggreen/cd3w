@@ -13,7 +13,7 @@
     {
       "user": "Leader",
       "message": "lets start",
-      "label": "<label>"
+      "label": "greet"
     },
     {
       "user": "Follower",
@@ -23,7 +23,7 @@
     {
       "user": "Leader",
       "message": "do you have [glass]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -33,42 +33,42 @@
     {
       "user": "Leader",
       "message": "great put [that]{\"entity\": \"obj\"} on [pink]{\"entity\": \"colour_rcpt\"} ",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "I have two [pink]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"}, which [one]{\"entity\": \"rcpt\"} are you referring to?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
-      "message": "dark one",
-      "label": "<label>"
+      "message": "dark [one]{\"entity\": \"rcpt\"}",
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "Do you mean the [purple]{\"entity\": \"colour_rcpt\"} [one]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "no [pink]{\"entity\": \"colour_rcpt\"} [one]{\"entity\": \"rcpt\"} ",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Leader",
       "message": "you can choose any [pink]{\"entity\": \"colour_rcpt\"}",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
       "message": "So the [pink]{\"entity\": \"colour_rcpt\"} you are referring to is the color of the [placemats]{\"entity\": \"rcpt\"} that are identical?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "yes we have two identical [pink]{\"entity\": \"colour_rcpt\"} [placements]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
@@ -78,17 +78,17 @@
     {
       "user": "Follower",
       "message": "on which [one]{\"entity\": \"rcpt\"} should I put the [glass]{\"entity\": \"obj\"} on?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "both of [them]{\"entity\": \"rcpt\"} are identical you can put it one any of [both]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Leader",
       "message": "[one]{\"entity\": \"rcpt\"} in the [center]{\"entity\": \"pos_rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
@@ -108,32 +108,32 @@
     {
       "user": "Leader",
       "message": "great do you have an [apple]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
       "message": "yes I have two [apples]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "i_have_number_obj"
     },
     {
       "user": "Leader",
       "message": "can you describe the [color]{\"entity\": \"colour_obj\"}",
-      "label": "<label>"
+      "label": "colour_obj"
     },
     {
       "user": "Follower",
       "message": "I have a [red]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} and a [gold]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "i_have_obj"
     },
     {
       "user": "Leader",
       "message": "yeah [red]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "describe_obj"
     },
     {
       "user": "Leader",
       "message": "do you have [square]{\"entity\": \"shape_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placement]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
@@ -143,7 +143,7 @@
     {
       "user": "Leader",
       "message": "can you put [red]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on [square]{\"entity\": \"shape_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placement]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -158,7 +158,7 @@
     {
       "user": "Leader",
       "message": "great thank u do you have [plate]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -168,7 +168,7 @@
     {
       "user": "Leader",
       "message": "can you put [plate]{\"entity\": \"obj\"} on [pink]{\"entity\": \"colour_rcpt\"} [placement]{\"entity\": \"rcpt\"} ",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -183,7 +183,7 @@
     {
       "user": "Leader",
       "message": "do you have [yellow]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"} [placement]{\"entity\": \"rcpt\"} ",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
@@ -193,7 +193,7 @@
     {
       "user": "Leader",
       "message": "can you place [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on [yellow]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"} [placement]{\"entity\": \"rcpt\"} ",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -208,7 +208,7 @@
     {
       "user": "Leader",
       "message": "do you have [egg]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -218,7 +218,7 @@
     {
       "user": "Leader",
       "message": "can you place [egg]{\"entity\": \"obj\"} on [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} on [right]{\"entity\": \"pos_rcpt\"} ",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -233,17 +233,17 @@
     {
       "user": "Leader",
       "message": "what item you are left with ",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
       "message": "I have a [vase]{\"entity\": \"obj\"} left",
-      "label": "<label>"
+      "label": "i_have_obj"
     },
     {
       "user": "Leader",
       "message": "yeap can you please put on [purple]{\"entity\": \"colour_rcpt\"} [placement]{\"entity\": \"rcpt\"} ",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -263,7 +263,7 @@
     {
       "user": "Leader",
       "message": "great",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",

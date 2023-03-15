@@ -13,27 +13,27 @@
     {
       "user": "Follower",
       "message": "i got a lot of stuff",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "leader",
       "message": "let's start sorting this! Put the [egg]{\"entity\": \"obj\"} on the [lavender]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
-      "message": "is [lavendar]{\"entity\": \"colour_rcpt\"} closer tho [heather]{\"entity\": \"colour_rcpt\"} than [amathyst]{\"entity\": \"colour_rcpt\"}? ",
-      "label": "<label>"
+      "message": "is [lavendar]{\"entity\": \"colour_rcpt\"} closer to [heather]{\"entity\": \"colour_rcpt\"} or [amathyst]{\"entity\": \"colour_rcpt\"}? ",
+      "label": "rcpt_is_colour"
     },
     {
       "user": "Follower",
       "message": "closer to*",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "leader",
       "message": "yeah? It's the [bottom]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"} of the [purple]{\"entity\": \"colour_rcpt\"} [mats]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
@@ -53,7 +53,7 @@
     {
       "user": "leader",
       "message": "Fab! Now put the [plate]{\"entity\": \"obj\"} on the [darker purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -73,22 +73,22 @@
     {
       "user": "leader",
       "message": "Done?",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
       "message": "done, eventually...",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "leader",
       "message": "okay next, put the [brown]{\"entity\": \"colour_obj\"} [loaf]{\"entity\": \"obj\"} on the [round]{\"entity\": \"shape_rcpt\"} [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "is the [brown]{\"entity\": \"colour_obj\"} [loaf]{\"entity\": \"obj\"} [sliced]{\"entity\": \"state_obj\"}?",
-      "label": "<label>"
+      "label": "obj_in_state"
     },
     {
       "user": "leader",
@@ -98,12 +98,12 @@
     {
       "user": "Follower",
       "message": "actually mine is affected parallax",
-      "label": "did_it"
+      "label": "general_chat"
     },
     {
       "user": "leader",
       "message": "cool",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
@@ -113,12 +113,12 @@
     {
       "user": "leader",
       "message": "did it work?",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
       "message": "i have done it ",
-      "label": "deny"
+      "label": "did_it"
     },
     {
       "user": "Follower",
@@ -128,7 +128,7 @@
     {
       "user": "leader",
       "message": "Great job! Now there's also a [white]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"} which is [sliced]{\"entity\": \"state_obj\"}. Is yours [sliced]{\"entity\": \"state_obj\"}?",
-      "label": "<label>"
+      "label": "state_obj"
     },
     {
       "user": "Follower",
@@ -138,12 +138,12 @@
     {
       "user": "Follower",
       "message": "it is now",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "leader",
       "message": "okay, that needs to go on the other [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -153,17 +153,17 @@
     {
       "user": "Follower",
       "message": "done it!",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
       "message": "[red]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"} lets go",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "leader",
       "message": "Fab, now we need to put the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [bottom]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"} of the [round]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [mats]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -188,17 +188,17 @@
     {
       "user": "Follower",
       "message": "i am out of objects ",
-      "label": "<label>"
+      "label": "i_have_number_obj"
     },
     {
       "user": "leader",
       "message": "That's it actually! The other [red]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"} is [empty]{\"entity\": \"state_rcpt\"}",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "leader",
       "message": "Is yours [empty]{\"entity\": \"state_rcpt\"} too?",
-      "label": "<label>"
+      "label": "is_rcpt_empty"
     },
     {
       "user": "Follower",

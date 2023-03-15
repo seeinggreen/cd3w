@@ -13,7 +13,7 @@
     {
       "user": "leader",
       "message": "Grand! Can you please put the [cup]{\"entity\": \"obj\"} on the [oval]{\"entity\": \"shape_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}?",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -28,17 +28,17 @@
     {
       "user": "leader",
       "message": "Great! Now place the [apple]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "there are two [yellow]{\"entity\": \"colour_rcpt\"} [placemates]{\"entity\": \"rcpt\"} here, which one are you referring to",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "leader",
       "message": "Sorry, of course - the [top]{\"entity\": \"pos_rcpt\"} one please",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
@@ -53,7 +53,7 @@
     {
       "user": "leader",
       "message": "Okay! Do you have a [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -63,7 +63,7 @@
     {
       "user": "leader",
       "message": "Can you please move [that]{\"entity\": \"obj\"} onto the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -78,7 +78,7 @@
     {
       "user": "leader",
       "message": "Fab, now put the [bowl]{\"entity\": \"obj\"} on the other [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -93,12 +93,12 @@
     {
       "user": "leader",
       "message": "And now the [plate]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "I don't have a [plate]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "not_have_obj"
     },
     {
       "user": "Follower",
@@ -113,7 +113,7 @@
     {
       "user": "Follower",
       "message": "I have one",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
@@ -128,7 +128,7 @@
     {
       "user": "leader",
       "message": "Cool, lastly put the [vase]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",

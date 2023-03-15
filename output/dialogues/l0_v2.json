@@ -13,7 +13,7 @@
     {
       "user": "leader",
       "message": "The [wooden]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} needs to be on the [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -28,17 +28,17 @@
     {
       "user": "leader",
       "message": "The [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"}, just underneath the [blue]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "ununsed"
     },
     {
       "user": "Follower",
-      "message": "on the [brown]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"rcpt\"}",
+      "message": "on the [brown]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"rcpt\"}?",
       "label": "confirm_rcpt_Q"
     },
     {
       "user": "Follower",
       "message": "?",
-      "label": "<label>"
+      "label": "ununsed"
     },
     {
       "user": "leader",
@@ -58,7 +58,7 @@
     {
       "user": "leader",
       "message": "Great - the [green]{\"entity\": \"colour_obj\"} [cup]{\"entity\": \"obj\"} goes on the [yellow]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -73,17 +73,17 @@
     {
       "user": "leader",
       "message": "The [pan]{\"entity\": \"obj\"} goes next to that",
-      "label": "<label>"
+      "label": "ununsed"
     },
     {
       "user": "Follower",
       "message": "this is an easy game level",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "leader",
       "message": "The [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} gets the [egg]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -98,12 +98,12 @@
     {
       "user": "Follower",
       "message": "[egg]{\"entity\": \"obj\"} is on the [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "obj_in_rcpt"
     },
     {
       "user": "leader",
       "message": "And the [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} goes on the final [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -118,7 +118,7 @@
     {
       "user": "leader",
       "message": "That's everything I think - do you have any other objects?",
-      "label": "any_unused_objRcp"
+      "label": "any_unused_obj"
     },
     {
       "user": "Follower",

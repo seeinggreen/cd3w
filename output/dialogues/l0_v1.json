@@ -108,7 +108,7 @@
     {
       "user": "Leader",
       "message": "have you operated on all of your objects?",
-      "label": "any_unused_objRcp"
+      "label": "any_unused_obj"
     },
     {
       "user": "follower",

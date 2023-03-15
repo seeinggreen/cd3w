@@ -3,7 +3,7 @@
     {
       "user": "Leader",
       "message": "i've got places to be. Lets be quick ",
-      "label": "<label>"
+      "label": "greet"
     },
     {
       "user": "Follower",
@@ -18,12 +18,12 @@
     {
       "user": "Leader",
       "message": "put the [orange]{\"entity\": \"colour_obj\"} [cup]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [circular]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Leader",
       "message": "right you are",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
@@ -38,12 +38,12 @@
     {
       "user": "Leader",
       "message": "put the [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Leader",
-      "message": "tell me when you are doen",
-      "label": "<label>"
+      "message": "tell me when you are done",
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
@@ -58,27 +58,27 @@
     {
       "user": "Leader",
       "message": "put the [yellow]{\"entity\": \"colour_obj\"} [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} ",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "I don't have a [yellow]{\"entity\": \"colour_obj\"} [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "not_have_obj"
     },
     {
       "user": "Leader",
       "message": "then get [one]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "help_spawn_obj"
     },
     {
       "user": "Follower",
       "message": "I have a [white]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "i_have_obj"
     },
     {
       "user": "Follower",
       "message": "sorry mb",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Leader",
@@ -87,23 +87,23 @@
     },
     {
       "user": "Follower",
-      "message": "btw which [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "message": "by the way which [placemat]{\"entity\": \"rcpt\"}?",
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "on the [square]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "I have two [square]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
-      "message": "oh, the left [one]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "message": "oh, the [left]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"}",
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
@@ -113,12 +113,12 @@
     {
       "user": "Leader",
       "message": "is it done?",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Leader",
       "message": "have you broken [it]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
@@ -128,7 +128,7 @@
     {
       "user": "Follower",
       "message": "lol wait",
-      "label": "<label>"
+      "label": "wait"
     },
     {
       "user": "Follower",
@@ -143,27 +143,27 @@
     {
       "user": "Follower",
       "message": "are you still there?",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "Leader",
       "message": "sorry i was playing chess",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
       "message": "are you winning?",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Leader",
       "message": "put the [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} on the other [green]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Leader",
       "message": "im stockfish 16 so obviously ",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
@@ -173,7 +173,7 @@
     {
       "user": "Follower",
       "message": "haha noob",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Follower",
@@ -183,27 +183,27 @@
     {
       "user": "Leader",
       "message": "easy boy",
-      "label": "<label>"
+      "label": "deny"
     },
     {
       "user": "Leader",
       "message": "put the [pan]{\"entity\": \"obj\"} on the [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "The [orange]{\"entity\": \"colour_rcpt\"} [one]{\"entity\": \"rcpt\"} already has a [glass]{\"entity\": \"obj\"} on top",
-      "label": "<label>"
+      "label": "rcpt_not_empty"
     },
     {
       "user": "Follower",
       "message": "should I remove the [glass]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "Leader",
       "message": "oh dear, put the [cup]{\"entity\": \"obj\"} on the [table]{\"entity\": \"rcpt\"} then put the [pan]{\"entity\": \"obj\"} on the [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "take_obj_from_rcpt_to_table"
     },
     {
       "user": "Follower",
@@ -223,7 +223,7 @@
     {
       "user": "Leader",
       "message": "do it now.",
-      "label": "<label>"
+      "label": "do_it"
     },
     {
       "user": "Follower",
@@ -233,37 +233,37 @@
     {
       "user": "Leader",
       "message": "put the [orange]{\"entity\": \"colour_obj\"} [cup]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "command": "put #8 on #R",
-      "label": "<label>"
+      "label": "CMD"
     },
     {
       "user": "Follower",
       "message": "done",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Leader",
       "message": "put the [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
-      "message": "it's already there",
-      "label": "<label>"
+      "message": "[it's]{\"entity\": \"obj\"} already [there]{\"entity\": \"rcpt\"}",
+      "label": "rcpt_not_empty"
     },
     {
       "user": "Leader",
       "message": "nice",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Leader",
       "message": "put the [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on the [blue]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -273,32 +273,32 @@
     {
       "user": "Follower",
       "message": "done ",
-      "label": "<label>"
+      "label": "help_done"
     },
     {
       "user": "Follower",
       "message": "are we done now?",
-      "label": "<label>"
+      "label": "ask_done"
     },
     {
       "user": "Leader",
       "message": "have you used every object?",
-      "label": "<label>"
+      "label": "used_all_obj_Q"
     },
     {
       "user": "Follower",
       "message": "can I go?",
-      "label": "<label>"
+      "label": "ask_done"
     },
     {
       "user": "Follower",
       "message": "yes",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Leader",
       "message": "then type /done",
-      "label": "<label>"
+      "label": "help_done"
     },
     {
       "user": "Follower",

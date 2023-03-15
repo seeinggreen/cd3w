@@ -8,52 +8,52 @@
     {
       "user": "Follower",
       "message": "looking at the rules. Gimme a min",
-      "label": "<label>"
+      "label": "wait"
     },
     {
       "user": "Leader",
       "message": "ok lets go",
-      "label": "<label>"
+      "label": "greet"
     },
     {
       "user": "Leader",
       "message": "put your [brown]{\"entity\": \"colour_obj\"} [loaf]{\"entity\": \"obj\"} on the [circular]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "is it the small or the large [loaf]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "it is the [unsliced]{\"entity\": \"state_obj\"} [loaf]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "describe_obj"
     },
     {
       "user": "Follower",
       "message": "both looks [unsliced]{\"entity\": \"state_obj\"}",
-      "label": "<label>"
+      "label": "obj_in_state"
     },
     {
       "user": "Leader",
       "message": "the [brown]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "colour_obj"
     },
     {
       "user": "Leader",
       "message": "[brown]{\"entity\": \"colour_obj\"}*",
-      "label": "<label>"
+      "label": "colour_obj"
     },
     {
       "user": "Follower",
       "message": "I have 2 [green]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"} as well",
-      "label": "<label>"
+      "label": "i_have_number_rcpt"
     },
     {
       "user": "Leader",
       "message": "the [circular]{\"entity\": \"shape_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
@@ -63,7 +63,7 @@
     {
       "user": "Leader",
       "message": "how did it go?",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
@@ -73,12 +73,12 @@
     {
       "user": "Leader",
       "message": "nice!",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Leader",
       "message": "lets put the [white]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -93,12 +93,12 @@
     {
       "user": "Leader",
       "message": "is the [white]{\"entity\": \"colour_obj\"} [bread]{\"entity\": \"obj\"} on the [top]{\"entity\": \"pos_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "yup. looks like a [white]{\"entity\": \"colour_obj\"} [bread loaf]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "obj_is_colour"
     },
     {
       "user": "Leader",
@@ -108,7 +108,7 @@
     {
       "user": "Leader",
       "message": "put the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [rightmost]{\"entity\": \"pos_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -127,13 +127,13 @@
     },
     {
       "user": "Leader",
-      "message": "Good work solider ",
-      "label": "<label>"
+      "message": "Good work soldier ",
+      "label": "goodbye"
     },
     {
       "user": "Leader",
       "message": "now the [full]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} goes on the [leftmost]{\"entity\": \"pos_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -143,17 +143,17 @@
     {
       "user": "Leader",
       "message": "please tell me you have completed that task:)",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Leader",
       "message": "please tell me you have completed that task:)",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Leader",
       "message": "please tell me you have completed that task:)",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
@@ -163,17 +163,17 @@
     {
       "user": "Leader",
       "message": "please tell me you have completed that task:)",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
       "message": "gimme a minute",
-      "label": "<label>"
+      "label": "wait"
     },
     {
       "user": "Leader",
       "message": "of course player",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
@@ -188,117 +188,117 @@
     {
       "user": "Leader",
       "message": "incredible performance ",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
       "message": "waiting ....",
-      "label": "<label>"
+      "label": "wait"
     },
     {
       "user": "Leader",
       "message": "Sorry user! Now time to put the [egg]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "which [one]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "define \"[one]{\"entity\": \"rcpt\"}\" ",
-      "label": "<label>"
+      "label": "describe_rcpt"
     },
     {
       "user": "Follower",
       "message": "which [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "ah ha! the [centre]{\"entity\": \"pos_rcpt\"} most [rightmost]{\"entity\": \"pos_rcpt\"} [purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "closer to the [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "does not compute",
-      "label": "<label>"
+      "label": "deny"
     },
     {
       "user": "Follower",
       "message": "are you a bot?",
-      "label": "<label>"
+      "label": "ask_bot"
     },
     {
       "user": "Follower",
       "message": "probabl need new hardware",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Leader",
       "message": "lets put the [plate]{\"entity\": \"obj\"} on the [indigo]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "no idea what an [indigo]{\"entity\": \"colour_rcpt\"} is?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
-      "message": "are u dumb?",
-      "label": "<label>"
+      "message": "are u dumb, mate?",
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Leader",
       "message": "* [indigo]{\"entity\": \"colour_rcpt\"} is a colour",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
       "message": "sometimes i feel like colorblind. Are you moking ",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Leader",
       "message": "does not compute",
-      "label": "<label>"
+      "label": "deny"
     },
     {
       "user": "Leader",
       "message": "is the [plate]{\"entity\": \"obj\"} on the [indigo]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_obj_rcpt"
     },
     {
       "user": "Follower",
       "message": "I know [indigo]{\"entity\": \"colour_rcpt\"} is a color but no idea how it looks like. Can you define any other way",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "[rgb(75,0,130)]{\"entity\": \"colour_rcpt\"}",
-      "label": "<label>"
+      "label": "colour_rcpt"
     },
     {
       "user": "Leader",
       "message": "the furthest [right]{\"entity\": \"pos_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "see, finally some English.  ",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Leader",
       "message": "i speak in machine code",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
@@ -313,17 +313,17 @@
     {
       "user": "Leader",
       "message": "is that done?",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
       "message": "one min",
-      "label": "<label>"
+      "label": "wait"
     },
     {
       "user": "Leader",
       "message": "but of course ",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
@@ -338,12 +338,12 @@
     {
       "user": "Leader",
       "message": "can you put the [egg]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} sir?",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "[Egg]{\"entity\": \"obj\"} is on a [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} and [plate]{\"entity\": \"obj\"} on the other",
-      "label": "<label>"
+      "label": "obj_in_rcpt"
     },
     {
       "user": "Leader",
@@ -353,17 +353,17 @@
     {
       "user": "Leader",
       "message": "[plate]{\"entity\": \"obj\"} on the furtherest [left]{\"entity\": \"pos_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Leader",
       "message": "[egg]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "[plate]{\"entity\": \"obj\"} on the [right]{\"entity\": \"pos_rcpt\"} most [placemat]{\"entity\": \"rcpt\"} right?",
-      "label": "<label>"
+      "label": "obj_in_rcpt"
     },
     {
       "user": "Leader",
@@ -373,16 +373,11 @@
     {
       "user": "Leader",
       "message": "im dyslexic ",
-      "label": "<label>"
+      "label": "apologise"
     },
     {
       "user": "Follower",
       "message": "done",
-      "label": "affirm"
-    },
-    {
-      "user": "Leader",
-      "command": "don",
       "label": "affirm"
     },
     {
@@ -392,7 +387,12 @@
     },
     {
       "user": "Leader",
-      "message": "doen",
+      "command": "done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "done",
       "label": "affirm"
     },
     {
@@ -408,7 +408,7 @@
     {
       "user": "Leader",
       "message": "tell us that you are done using the /done cmd",
-      "label": "<label>"
+      "label": "help_done"
     },
     {
       "user": "Follower",
