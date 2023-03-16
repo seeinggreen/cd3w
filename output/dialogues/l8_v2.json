@@ -13,12 +13,12 @@
     {
       "user": "Leader",
       "message": "let's start",
-      "label": "<label>"
+      "label": "greet"
     },
     {
       "user": "Leader",
       "message": "do you have an [egg]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -28,12 +28,12 @@
     {
       "user": "Follower",
       "message": "I cant see one",
-      "label": "did_it"
+      "label": "deny"
     },
     {
       "user": "Leader",
       "message": "okay then get [one]{\"entity\": \"obj\"} ",
-      "label": "<label>"
+      "label": "help_spawn_obj"
     },
     {
       "user": "Follower",
@@ -43,72 +43,72 @@
     {
       "user": "Leader",
       "message": "still waiting ...",
-      "label": "<label>"
+      "label": "tell_me_when_done"
     },
     {
       "user": "Follower",
       "message": "got one",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
       "message": "what to do with the [egg]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "Follower",
       "message": "waiting .. Looks like a slow bot",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "Leader",
       "message": "place the [egg]{\"entity\": \"obj\"} on the [pink]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Leader",
       "message": "don't call me slow",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Leader",
       "message": "I waited 5 mins for you",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
       "message": "which [pink]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "the [lighter pink]{\"entity\": \"colour_rcpt\"} shade",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "this bot doesn't know to measure time as well..",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Follower",
       "message": "is it [round]{\"entity\": \"shape_rcpt\"} or [square]{\"entity\": \"shape_rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "hey look I am the leader, you do as I say",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Leader",
-      "message": "it's round",
-      "label": "<label>"
+      "message": "[it's]{\"entity\": \"rcpt\"} [round]{\"entity\": \"shape_rcpt\"}",
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Leader",
       "message": "obviously",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Follower",
@@ -123,7 +123,7 @@
     {
       "user": "Leader",
       "message": "finally! do you have a [golden]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -133,22 +133,22 @@
     {
       "user": "Leader",
       "message": "place the [golden]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} on the [round]{\"entity\": \"shape_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "I have 2 [round]{\"entity\": \"shape_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "i_have_number_rcpt"
     },
     {
       "user": "Leader",
       "message": "yeah you're right, on the [lower]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "should i slice the [apple]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "Leader",
@@ -163,27 +163,27 @@
     {
       "user": "Follower",
       "message": "done with the step",
-      "label": "next_step"
+      "label": "did_it"
     },
     {
       "user": "Leader",
       "message": "oki, do you have a [sliced]{\"entity\": \"state_obj\"} [golden]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
       "message": "yup, I can see one",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "Leader",
-      "message": "okay place that on the other [yellow]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "message": "okay place that on the other [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Leader",
       "message": "[placemat]{\"entity\": \"rcpt\"}*",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Follower",
@@ -203,7 +203,7 @@
     {
       "user": "Leader",
       "message": "do you have a [see through]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "do_you_have_obj"
     },
     {
       "user": "Follower",
@@ -213,87 +213,82 @@
     {
       "user": "Leader",
       "message": "place that on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "which [one]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "the [one]{\"entity\": \"rcpt\"} that's [empty]{\"entity\": \"state_rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "both are [empty]{\"entity\": \"state_rcpt\"}",
-      "label": "<label>"
+      "label": "rcpt_is_empty"
     },
     {
       "user": "Leader",
       "message": "dude one of them should have an [egg]{\"entity\": \"obj\"} [on top]{\"entity\": \"state_rcpt\"}",
-      "label": "<label>"
+      "label": "obj_should_be_on_rcpt"
     },
     {
       "user": "Follower",
-      "message": "you said [pink]{\"entity\": \"colour_rcpt\"} ",
-      "label": "<label>"
-    },
-    {
-      "user": "Follower",
-      "message": "put an [egg]{\"entity\": \"obj\"} on [pink]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "message": "you said [pink]{\"entity\": \"colour_rcpt\"} put an [egg]{\"entity\": \"obj\"} on [pink]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
-      "message": "well yeah that's [pink]{\"entity\": \"colour_rcpt\"} for me",
-      "label": "<label>"
+      "message": "well yeah [that's]{\"entity\": \"rcpt\"} [pink]{\"entity\": \"colour_rcpt\"} for me",
+      "label": "call_colour_this"
     },
     {
       "user": "Follower",
       "message": "so is it [pink]{\"entity\": \"colour_rcpt\"} or [purple]{\"entity\": \"colour_rcpt\"}?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
-      "message": "I define it as [pink]{\"entity\": \"colour_rcpt\"}",
-      "label": "<label>"
+      "message": "I define [it]{\"entity\": \"rcpt\"} as [pink]{\"entity\": \"colour_rcpt\"}",
+      "label": "call_colour_this"
     },
     {
       "user": "Follower",
       "message": "then use [pink]{\"entity\": \"colour_rcpt\"}, dont switch between [pink]{\"entity\": \"colour_rcpt\"} and [purple]{\"entity\": \"colour_rcpt\"}",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Leader",
       "message": "so why do you say which [purple]{\"entity\": \"colour_rcpt\"}?",
-      "label": "<label>"
+      "label": "unused"
     },
     {
       "user": "Leader",
       "message": "there's only one [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "let's start from top",
-      "label": "<label>"
+      "label": "next_step"
     },
     {
       "user": "Follower",
       "message": "[egg]{\"entity\": \"obj\"} on [dark purple]{\"entity\": \"colour_rcpt\"} right?",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "Leader",
       "message": "no [lighter purple]{\"entity\": \"colour_rcpt\"} shade",
-      "label": "<label>"
+      "label": "confirm_rcpt_A"
     },
     {
       "user": "Follower",
       "message": "correcting it now. Give me a min",
-      "label": "<label>"
+      "label": "wait"
     },
     {
       "user": "Follower",
@@ -303,7 +298,7 @@
     {
       "user": "Follower",
       "message": "[egg]{\"entity\": \"obj\"} is on",
-      "label": "<label>"
+      "label": "did_it"
     },
     {
       "user": "Follower",
@@ -313,7 +308,7 @@
     {
       "user": "Leader",
       "message": "now put the [bowl]{\"entity\": \"obj\"} on the [dark purple]{\"entity\": \"colour_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -333,17 +328,17 @@
     {
       "user": "Leader",
       "message": "how many [vases]{\"entity\": \"obj\"} do you have",
-      "label": "<label>"
+      "label": "number_obj"
     },
     {
       "user": "Follower",
       "message": "2",
-      "label": "<label>"
+      "label": "i_have_number_obj"
     },
     {
       "user": "Leader",
       "message": "put the [red]{\"entity\": \"colour_obj\"} one on the [square]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -358,7 +353,7 @@
     {
       "user": "Leader",
       "message": "and the other one on the [circle]{\"entity\": \"shape_rcpt\"} [red]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -373,7 +368,7 @@
     {
       "user": "Follower",
       "message": "what about the [bread]{\"entity\": \"obj\"}",
-      "label": "<label>"
+      "label": "not_used_obj"
     },
     {
       "user": "Leader",
@@ -383,7 +378,7 @@
     {
       "user": "Leader",
       "message": "discard that",
-      "label": "<label>"
+      "label": "help_delete_obj"
     },
     {
       "user": "Follower",

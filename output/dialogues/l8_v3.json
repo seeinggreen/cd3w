@@ -13,37 +13,37 @@
     {
       "user": "leader",
       "message": "Can you put the [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on the [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "which [blue]{\"entity\": \"colour_obj\"} dark or [light]{\"entity\": \"colour_obj\"}",
-      "label": "<label>"
+      "label": "which_obj"
     },
     {
       "user": "leader",
       "message": "Do you have more than one [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"}?",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "i have two [square]{\"entity\": \"shape_rcpt\"} [blue]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "i_have_number_rcpt"
     },
     {
       "user": "Follower",
       "message": "[one]{\"entity\": \"rcpt\"} [dark]{\"entity\": \"colour_rcpt\"} and [one]{\"entity\": \"rcpt\"} [light]{\"entity\": \"colour_rcpt\"}",
-      "label": "<label>"
+      "label": "i_have_number_rcpt"
     },
     {
       "user": "leader",
       "message": "Ah - the [one]{\"entity\": \"rcpt\"} on the [left]{\"entity\": \"pos_rcpt\"} is [blue]{\"entity\": \"colour_rcpt\"}, the [one]{\"entity\": \"rcpt\"} on the [right]{\"entity\": \"pos_rcpt\"} is a [dark purple]{\"entity\": \"colour_rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "leader",
       "message": "So the [blue]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} goes on the [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} on the [left]{\"entity\": \"pos_rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -58,7 +58,7 @@
     {
       "user": "leader",
       "message": "The [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} then needs to go on the [blue]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -73,7 +73,7 @@
     {
       "user": "leader",
       "message": "The [whole]{\"entity\": \"state_obj\"} [yellow]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"} needs to go on the [lower]{\"entity\": \"pos_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}, the [one]{\"entity\": \"rcpt\"} further [left]{\"entity\": \"pos_rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -88,7 +88,7 @@
     {
       "user": "leader",
       "message": "Then put the [slice]{\"entity\": \"state_obj\"} of [apple]{\"entity\": \"obj\"} on the other [green]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -108,27 +108,27 @@
     {
       "user": "Follower",
       "message": "its not placing i don't have any object their",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "leader",
       "message": "Okay, let's just move on",
-      "label": "<label>"
+      "label": "affirm"
     },
     {
       "user": "leader",
       "message": "Can you put the [white]{\"entity\": \"colour_obj\"} [pan]{\"entity\": \"obj\"} on the [left]{\"entity\": \"pos_rcpt\"} [purple]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}?",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
       "message": "do you mean [dard purple]{\"entity\": \"colour_rcpt\"} on far [left]{\"entity\": \"pos_rcpt\"}",
-      "label": "<label>"
+      "label": "confirm_rcpt_Q"
     },
     {
       "user": "leader",
       "message": "On the [right]{\"entity\": \"pos_rcpt\"} edge of the [table]{\"entity\": \"rcpt\"} there are two [purple]{\"entity\": \"colour_rcpt\"} [squares]{\"entity\": \"shape_rcpt\"}, put the [white]{\"entity\": \"colour_rcpt\"} [pan]{\"entity\": \"obj\"} on the [left]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -143,7 +143,7 @@
     {
       "user": "leader",
       "message": "Then the [glass]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} goes on the final [mat]{\"entity\": \"rcpt\"}",
-      "label": "<label>"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "Follower",
@@ -158,12 +158,12 @@
     {
       "user": "leader",
       "message": "Do you have any objects left over?",
-      "label": "any_unused_objRcp"
+      "label": "used_all_obj_Q"
     },
     {
       "user": "Follower",
       "message": "but i swapped [pan]{\"entity\": \"obj\"} with [bowl]{\"entity\": \"obj\"} because of [white]{\"entity\": \"colour_obj\"} [pan]{\"entity\": \"obj\"} command it think",
-      "label": "<label>"
+      "label": "general_chat"
     },
     {
       "user": "Follower",
@@ -173,7 +173,7 @@
     {
       "user": "leader",
       "message": "Okay - I think we are done then",
-      "label": "did_it"
+      "label": "affirm"
     },
     {
       "user": "Follower",
