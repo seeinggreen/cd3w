@@ -18,7 +18,7 @@
     {
       "user": "Leader",
       "message": "put the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [red]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "follower",
@@ -33,7 +33,7 @@
     {
       "user": "Leader",
       "message": "put the [white]{\"entity\": \"colour_obj\"} [plate]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "follower",
@@ -48,7 +48,7 @@
     {
       "user": "Leader",
       "message": "put the [orange]{\"entity\": \"colour_obj\"} [cup]{\"entity\": \"obj\"} on the [blue]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"}",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "follower",
@@ -63,7 +63,7 @@
     {
       "user": "Leader",
       "message": "position the [brown]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"}, such that it appears upon the [orange]{\"entity\": \"colour_rcpt\"} [square]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}.",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "follower",
@@ -78,7 +78,7 @@
     {
       "user": "Leader",
       "message": "place the [pan]{\"entity\": \"obj\"} atop the [green]{\"entity\": \"colour_rcpt\"} [circular]{\"entity\": \"shape_rcpt\"} [receptacle]{\"entity\": \"rcpt\"} ",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "follower",
@@ -93,7 +93,7 @@
     {
       "user": "Leader",
       "message": "and to conclude, we shall plop the [slice]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"} onto the [yellow]{\"entity\": \"colour_rcpt\"} [circle]{\"entity\": \"rcpt\"}.",
-      "label": "put_obj_in_rcp"
+      "label": "put_obj_in_rcpt"
     },
     {
       "user": "follower",
