@@ -3,6 +3,7 @@ version: "3.1"
 
 nlu:
 
+<<<<<<< HEAD
 - intent:  general_chat	
   examples: |
   - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
@@ -42,6 +43,36 @@ nlu:
   - I've got a [bread]{"entity": "obj"} [there]{"entity": "rcpt"} already
   - [Egg]{"entity": "obj"} is on a [purple]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"} and [plate]{"entity": "obj"} on the other
   - nah, there is a [grey]{"entity": "colour_obj"} [bowl]{"entity": "obj"} on it
+=======
+- intent: general_chat
+  examples: |
+    - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
+    - haha noob
+    - google it
+    - closer to*
+    - see, finally some English.  
+    - are you winning?
+    - chill bro
+    - its not placing i don't have any obj their
+    - but i swapped [pan] {"entity": "obj"} with [bowl]{"entity": "obj"} because of [white]{"entity": "colour_obj"} [pan]{"entity": "obj"} command it think
+    - then use [pink]{"entity": "colour_rcpt"}, dont switch between [pink]{"entity": "colour_rcpt"} and [purple]{"entity": "colour_rcpt"}
+    - probabl need new hardware
+    - I still have an [empty]{"entity": "state_rcpt"} [mat]{"entity": "rcpt"} is that normal?
+    - i got a lot of stuff
+    - sorry mb
+    - strange looking [vase]{"entity": "obj"}
+    - ok there is a spawn item
+    - i thought you didnt know what [lilac]{"entity": "colour_rcpt"} was
+    - this bot doesn't know to measure time as well..
+    - my bad
+    - sometimes i feel like colorblind. Are you moking 
+    - we are on a roll
+    - actually mine is affected parallax
+    - nah im goofing 
+    - thats was lucky
+    - not sure if that matters?
+    - this is an easy game level
+>>>>>>> 8794bfde1eb491ab6e3d9d14514a2ec16d4fa5e8
 
 - intent: greet
   examples: |
