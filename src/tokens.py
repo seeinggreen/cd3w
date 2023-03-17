@@ -24,6 +24,7 @@ headers = {
 
 layout_file = "src/slurk/layouts/task_room_layout.json"
 ithor_bot_file = "src/slurk/permissions/ithor_bot_permissions.json"
+leader_bot_file = "src/slurk/permissions/leader_bot_permissions.json"
 human_user_file = "src/slurk/permissions/user_permissions.json"
 
 
@@ -39,6 +40,8 @@ class Tokens:
         self.create_room()
         self.get_ithor_token()
         self.create_ithor_user()
+        self.get_leader_bot_token()
+        self.create_leader_bot_user()
         self.get_human_user_tokens()
 
         print(f"{self.user1}\n{self.user2}")
@@ -89,6 +92,19 @@ class Tokens:
             permission_data = json.load(f)
         self.ithor_token = self.get_user_token(permission_data)
 
+    def create_leader_bot_user(self):
+        if not self.leader_bot_token:
+            raise MissingInfoError("LeaderBot token is missing.")
+        data = {"name": "LeaderBot", "token_id": self.leader_bot_token}
+        url = self.get_url("users")
+        r = self.req(url, data)
+        self.leader_bot_user = r.json()["id"]
+
+    def get_leader_bot_token(self):
+        with open(leader_bot_file) as f:
+            permission_data = json.load(f)
+        self.leader_bot_token = self.get_user_token(permission_data)
+
     def get_human_user_tokens(self):
         with open(human_user_file) as f:
             permission_data = json.load(f)
@@ -105,8 +121,8 @@ if __name__ == "__main__":
     ithor_token = tokens.ithor_token
     ithor_user = tokens.ithor_user
     # Need to implement this in Tokens class
-    leader_token = None
-    leader_user = None
+    leader_bot_token = tokens.leader_bot_token
+    leader_bot_user = tokens.leader_bot_user
     task = args["task"]
     level = args["level"]
     variant = args["variant"]
@@ -128,8 +144,8 @@ if __name__ == "__main__":
     rasa_service = RasaService()
 
     leader_bot = LeaderBot(
-        leader_token,
-        leader_user,
+        leader_bot_token,
+        leader_bot_user,
         "http://localhost",
         port,
         task,

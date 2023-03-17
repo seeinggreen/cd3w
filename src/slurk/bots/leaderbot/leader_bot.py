@@ -15,7 +15,6 @@ class LeaderBot:
         self.variant = variant
 
         self.follower = None
-        self.round_in_progress = False
 
         self.sio = socketio.Client(logger=True)
 
@@ -52,24 +51,25 @@ class LeaderBot:
                 return
 
             if data["command"].lower() == "ready":
-                if "follower" in data["user"]["name"].lower():
+                if not self.follower:
                     self.follower = data["user"]
-                if self.follower:
-                    if self.round_in_progress:
-                        return
-
-                    self.round_in_progress = True
+                self.sio.emit(
+                    "message_command",
+                    {
+                        "room": data["room"],
+                        "command": "/ready",
+                    },
+                )
             elif (
                 data["command"].lower() == "done"
                 and data["user"]["id"] == self.follower["id"]
             ):
                 self.rasa_service.reset()
                 self.follower = None
-                self.round_in_progress = False
 
     def register_message_handler(self):
         @self.sio.event
-        def message(data):
+        def text_message(data):
             if data["user"]["id"] == self.user:
                 return
 

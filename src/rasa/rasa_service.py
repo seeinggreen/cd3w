@@ -19,7 +19,7 @@ class RasaService:
         self.scene = configs[level][variant]["leader"]
 
     def get_response(self, follower_message):
-        bot_response = None
+        bot_response = "TEST"
         return bot_response
         # this is the method called when the follower types a message in Slurk
         # regardless of how we handle the passing of the message to Rasa
