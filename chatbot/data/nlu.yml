@@ -1,6 +1,8 @@
 version: "3.1"
 # NEED TO ADD MORE
 
+nlu:
+
 - intent:  general_chat	
   examples: |
 	  - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
@@ -29,8 +31,7 @@ version: "3.1"
 	  - thats was lucky
 	  - not sure if that matters?
 	  - this is an easy game level
-
-nlu:
+    
 - intent: greet
   examples: |
     - hey
