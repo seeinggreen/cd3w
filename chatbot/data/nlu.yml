@@ -1,36 +1,48 @@
 version: "3.1"
 # NEED TO ADD MORE
 
+nlu:
+
 - intent:  general_chat	
   examples: |
-	  - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
-	  - haha noob
-	  - google it
-	  - closer to*
-	  - see, finally some English.  
-	  - are you winning?
-	  - chill bro
-	  - its not placing i don't have any obj their
-	  - but i swapped [pan] {"entity": "obj"} with [bowl]{"entity": "obj"} because of [white]{"entity": "colour_obj"} [pan]{"entity": "obj"} command it think
-	  - then use [pink]{"entity": "colour_rcpt"}, dont switch between [pink]{"entity": "colour_rcpt"} and [purple]{"entity": "colour_rcpt"}
-	  - probabl need new hardware
-	  - I still have an [empty]{"entity": "state_rcpt"} [mat]{"entity": "rcpt"} is that normal?
-	  - i got a lot of stuff
-	  - sorry mb
-	  - strange looking [vase]{"entity": "obj"}
-	  - ok there is a spawn item
-	  - i thought you didnt know what [lilac]{"entity": "colour_rcpt"} was
-	  - this bot doesn't know to measure time as well..
-	  - my bad
-	  - sometimes i feel like colorblind. Are you moking 
-	  - we are on a roll
-	  - actually mine is affected parallax
-	  - nah im goofing 
-	  - thats was lucky
-	  - not sure if that matters?
-	  - this is an easy game level
+  - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
+  - haha noob
+  - google it
+  - closer to*
+  - see, finally some English.  
+  - are you winning?
+  - chill bro
+  - its not placing i don't have any obj their
+  - but i swapped [pan] {"entity": "obj"} with [bowl]{"entity": "obj"} because of [white]{"entity": "colour_obj"} [pan]{"entity": "obj"} command it think
+  - then use [pink]{"entity": "colour_rcpt"}, dont switch between [pink]{"entity": "colour_rcpt"} and [purple]{"entity": "colour_rcpt"}
+  - probabl need new hardware
+  - I still have an [empty]{"entity": "state_rcpt"} [mat]{"entity": "rcpt"} is that normal?
+  - i got a lot of stuff
+  - sorry mb
+  - strange looking [vase]{"entity": "obj"}
+  - ok there is a spawn item
+  - i thought you didnt know what [lilac]{"entity": "colour_rcpt"} was
+  - this bot doesn't know to measure time as well..
+  - my bad
+  - sometimes i feel like colorblind. Are you moking 
+  - we are on a roll
+  - actually mine is affected parallax
+  - nah im goofing 
+  - thats was lucky
+  - not sure if that matters?
+  - this is an easy game level
 
-nlu:
+- intent: obj_in_rcpt	
+  examples: |
+  - [egg]{"entity": "obj"} is on the [purple]{"entity": "colour_rcpt"} [square]{"entity": "rcpt"}
+  - theres [bread]{"entity": "obj"} on that [placemat]{"entity": "rcpt"}
+  - ohh it is already on the [red]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"}
+  - yes, but there is a [bowl]{"entity": "obj"} on it
+  - [plate]{"entity": "obj"} on the [right]{"entity": "pos_rcpt"} most [placemat]{"entity": "rcpt"} right?
+  - I've got a [bread]{"entity": "obj"} [there]{"entity": "rcpt"} already
+  - [Egg]{"entity": "obj"} is on a [purple]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"} and [plate]{"entity": "obj"} on the other
+  - nah, there is a [grey]{"entity": "colour_obj"} [bowl]{"entity": "obj"} on it
+
 - intent: greet
   examples: |
     - hey
@@ -86,6 +98,133 @@ nlu:
     - don't like that
     - no way
     - not really
+    - I cant see one
+    - no no
+    - no working on it
+
+- intent: i_have_obj
+  examples: |
+  - I do, but a [see through]{"entity": "colour_obj"} [one]{"entity": "obj"}
+  - I have a [vase]{"entity": "obj"} left
+  - I think it's a [vase]{"entity": "obj"}?
+  - a [yellow]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
+  - yes a [yellow]{"entity": "colour_obj"} [one]{"entity": "obj"}
+  - I have a [white]{"entity": "colour_obj"} [one]{"entity": "obj"}
+  - I have a [red]{"entity": "colour_obj"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour_obj"} [apple]{"entity": "obj"}
+
+- intent: wait
+  examples: |
+  - lol wait
+  - okay, working on it
+  - okay one sec
+  - cool, working on it
+  - one moment
+  - Okay, one moment
+  - okay, give me a sec
+  - okay one moment please
+  - gimme a minute
+  - looking at the rules. Gimme a min
+  - Yes, give me a second
+  - waiting ....
+  - one min
+  - correcting it now. Give me a min
+  - yup. Gimme a sec
+  - cool working on it
+  - one sec
+
+
+
+
+- intent: did_it	
+  examples: |
+  - done with the step
+  - sorry
+  - did it
+  - i have done it 
+  - did that
+  - its done*
+  - its down
+  - [egg]{"entity": "obj"} is on
+  - still looks wonky
+
+- intent: obj_is_colour	
+  examples: | 
+  - I have a [yellow]{"entity": "colour_obj"} [one]{"entity": "obj"} and a [red]{"entity": "colour_obj"} [one]{"entity": "obj"}
+  - [green]{"entity": "colour_obj"} [cup]{"entity": "obj"}
+  - I only have a [black]{"entity": "colour_obj"} [pan]{"entity": "obj"}
+  - i only have a [yellow]{"entity": "colour_obj"} [one]{"entity": "obj"}
+  - yup. looks like a [white]{"entity": "colour_obj"} [bread loaf]{"entity": "obj"}
+  - Okay, ehm you mean the [black]{"entity": "colour_obj"} [pan]{"entity": "obj"}?
+
+- intent: obj_in_state	
+  examples: |
+  - is the [brown]{"entity": "colour_obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
+  - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+  - both looks [unsliced]{"entity": "state_obj"}
+  - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
+
+- intent: not_used_obj	
+  examples: |
+  - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour_obj"} [plate]{"entity": "obj"} though
+  - what about the [bread]{"entity": "obj"}
+
+- intent: not_have_obj	
+  examples: |
+  - i haven't got any [bread]{"entity": "obj"}
+  - I don't have a [plate]{"entity": "obj"} I think
+  - okay I don't have an [egg]{"entity": "obj"}
+  - I don't have a [plate]{"entity": "obj"}
+  - I don't have a [yellow]{"entity": "colour_obj"} [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}
+
+- intent: rcpt_not_empty	
+  examples: |
+  - The [orange]{"entity": "colour_rcpt"} [one]{"entity": "rcpt"} already has a [glass]{"entity": "obj"} on top
+  - [it's]{"entity": "obj"} already [there]{"entity": "rcpt"}
+  - i dont have an [empty]{"entity": "state_rcpt"} [rounds]{"entity": "shape_rcpt"} [placemat]{"entity": "rcpt"}
+
+- intent: help_done	
+  examples: |
+	  done 
+- intent: i_have_number_obj	
+  examples: |
+  - i have 2 of [those]{"entity": "obj"}
+  - i have 1 [cup]{"entity": "obj"}
+  - yes I have two [apples]{"entity": "obj"}
+  - i am out of objects 
+
+- intent: rcpt_is_colour	
+  examples: |
+  - 2 [red]{"entity": "colour_rcpt"} [square]{"entity": "shape_rcpt"} [placemats]{"entity": "rcpt"}
+  - is [lavendar]{"entity": "colour_rcpt"} closer to [heather]{"entity": "colour_rcpt"} or [amathyst]{"entity": "colour_rcpt"}? 
+- intent: i_have_number_rcpt	
+  examples: |
+  - I have 2 [round]{"entity": "shape_rcpt"} [yellow]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"}
+  - i have two [square]{"entity": "shape_rcpt"} [blue]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"}
+  - I have 2 [green]{"entity": "colour_rcpt"} [placemats]{"entity": "rcpt"} as well
+  - [one]{"entity": "rcpt"} [dark]{"entity": "colour_rcpt"} and [one]{"entity": "rcpt"} [light]{"entity": "colour_rcpt"}
+
+- intent: ask_bot	
+  examples: |
+  - are you a bot?
+
+- intent: rcpt_is_empty	
+  examples: |
+  - both are [empty]{"entity": "state_rcpt"}
+  
+- intent: which_obj	
+  examples: |
+  - which [blue]{"entity": "colour_obj"} dark or [light]{"entity": "colour_obj"}
+
+- intent: confirm_obj	
+  examples: |
+  - what colour is [it]{"entity": "obj"}?
+
+- intent: confirm_obj_Q	
+  examples: |
+  - the [glass]{"entity": "colour_obj"} [bowl]{"entity": "obj"} or the [glass]{"entity": "colour_obj"} [cup]{"entity": "obj"}?
+  - which [bread]{"entity": "obj"} should i spwan?
+
+
 
 - intent: bot_challenge
   examples: |
