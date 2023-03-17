@@ -1,5 +1,35 @@
 version: "3.1"
 # NEED TO ADD MORE
+
+- intent:  general_chat	
+  examples: |
+	  - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
+	  - haha noob
+	  - google it
+	  - closer to*
+	  - see, finally some English.  
+	  - are you winning?
+	  - chill bro
+	  - its not placing i don't have any obj their
+	  - but i swapped [pan] {"entity": "obj"} with [bowl]{"entity": "obj"} because of [white]{"entity": "colour_obj"} [pan]{"entity": "obj"} command it think
+	  - then use [pink]{"entity": "colour_rcpt"}, dont switch between [pink]{"entity": "colour_rcpt"} and [purple]{"entity": "colour_rcpt"}
+	  - probabl need new hardware
+	  - I still have an [empty]{"entity": "state_rcpt"} [mat]{"entity": "rcpt"} is that normal?
+	  - i got a lot of stuff
+	  - sorry mb
+	  - strange looking [vase]{"entity": "obj"}
+	  - ok there is a spawn item
+	  - i thought you didnt know what [lilac]{"entity": "colour_rcpt"} was
+	  - this bot doesn't know to measure time as well..
+	  - my bad
+	  - sometimes i feel like colorblind. Are you moking 
+	  - we are on a roll
+	  - actually mine is affected parallax
+	  - nah im goofing 
+	  - thats was lucky
+	  - not sure if that matters?
+	  - this is an easy game level
+
 nlu:
 - intent: greet
   examples: |
@@ -64,57 +94,6 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
   
-- intent: general_question # Need to think about "out-of-context" intent
-  examples: |
-    - how to move the [cup]{"entity": "object"}?
-    - what do this button do?
-    - How is your day?
-    - what are we doing here?
-    - you good?
-
-- intent: clarification_question # Think about different types of grounding intents ?
-  examples: |
-    - Can you elaborate?
-    - is it the [green]{"entity": "color"} one?
-    - you meant the [big]{"entity": "shape"} [bowl]{"entity": "receptacle"}?
-    - is it the [square]{"entity": "shape"} one?
-    - What is the color of the [bowl]{"entity": "receptacle"}?
-    - What was the task again?
-    - Can you explain it once more?
-    - Where should I put the [fork]{"entity": "object"}
-    - What do you mean by [iris]{"entity": "color"}
-    - Which [pan]{"entity": "object"}
-    - Do you mean the [pink]{"entity": "color"} bottle
-    - is it [tall]{"entity": "shape"}
-
-- intent: ask_next_step # Differentiate between clarification question and ask next step
-  examples: |
-    - what should i do now?
-    - should i move the [plate]{"entity": "object"} now ?
-    - what to do with the [spoon]{"entity": "object"}?
-    - what's next
-
-- intent: acknowlege_action_completion
-  examples: |
-    - yes, it's done
-    - I have done it
-    - yup, moved the [mug]{"entity": "object"} on the [table]{"entity": "receptacle"}
-    - done
-
-# NLG
-
-- intent: confirm_obj_in_rcp
-  examples: |
-    - _object_ is already in _receptacle_
-    - [spoon]{"entity": "object"} is already in the pan
-
-- intent: rcp_not_empty
-  examples: |
-    - _receptacle_ is not empty
-    - bowl is not empty
-    - pan is not empty
-
-
 - synonym: large
   examples: |
     - big
@@ -145,3 +124,4 @@ nlu:
     - brown
     - khaki
     - white
+
