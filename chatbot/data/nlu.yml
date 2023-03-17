@@ -1,0 +1,147 @@
+version: "3.1"
+# NEED TO ADD MORE
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - yo
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - yep
+    - yeah
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - nope
+    - I don't have that
+    - I don't see that item
+    - no can do
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+  
+- intent: general_question # Need to think about "out-of-context" intent
+  examples: |
+    - how to move the [cup]{"entity": "object"}?
+    - what do this button do?
+    - How is your day?
+    - what are we doing here?
+    - you good?
+
+- intent: clarification_question # Think about different types of grounding intents ?
+  examples: |
+    - Can you elaborate?
+    - is it the [green]{"entity": "color"} one?
+    - you meant the [big]{"entity": "shape"} [bowl]{"entity": "receptacle"}?
+    - is it the [square]{"entity": "shape"} one?
+    - What is the color of the [bowl]{"entity": "receptacle"}?
+    - What was the task again?
+    - Can you explain it once more?
+    - Where should I put the [fork]{"entity": "object"}
+    - What do you mean by [iris]{"entity": "color"}
+    - Which [pan]{"entity": "object"}
+    - Do you mean the [pink]{"entity": "color"} bottle
+    - is it [tall]{"entity": "shape"}
+
+- intent: ask_next_step # Differentiate between clarification question and ask next step
+  examples: |
+    - what should i do now?
+    - should i move the [plate]{"entity": "object"} now ?
+    - what to do with the [spoon]{"entity": "object"}?
+    - what's next
+
+- intent: acknowlege_action_completion
+  examples: |
+    - yes, it's done
+    - I have done it
+    - yup, moved the [mug]{"entity": "object"} on the [table]{"entity": "receptacle"}
+    - done
+
+# NLG
+
+- intent: confirm_obj_in_rcp
+  examples: |
+    - _object_ is already in _receptacle_
+    - [spoon]{"entity": "object"} is already in the pan
+
+- intent: rcp_not_empty
+  examples: |
+    - _receptacle_ is not empty
+    - bowl is not empty
+    - pan is not empty
+
+
+- synonym: large
+  examples: |
+    - big
+    - gigantic
+
+- lookup: placemat
+  examples: |
+    - bowl
+    - plate
+    - pot
+    - pan
+
+- lookup: color
+  examples: |
+    - red
+    - blue
+    - orange
+    - green
+    - purple
+    - yellow
+    - iris
+    - black
+    - ocean blue
+    - sky blue
+    - gold
+    - silver
+    - gray
+    - brown
+    - khaki
+    - white

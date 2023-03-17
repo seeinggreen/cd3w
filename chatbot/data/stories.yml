@@ -1,0 +1,108 @@
+version: "3.1"
+
+stories:
+
+- story: easy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_clarification_question
+  - intent: affirm
+  - action: utter_acknowlge
+  - intent: acknowlege_action_completion
+  - action: utter_clarification_question
+  - intent: affirm
+  - action: utter_acknowlge
+  - intent: acknowlege_action_completion
+  - intent: general_question
+  - action: utter_clarification_question
+  - intent: ask_next_step
+  - action: utter_clarification_question
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+# NEW
+
+- story: simple path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_obj
+  - intent: affirm
+  - action: utter_put_obj_in_recp
+  - or:
+    - intent: affirm
+    - intent: ask_next_step
+  - action: utter_confirm_obj_in_recp
+  - intent: affirm
+  - action: utter_goodbye
+
+
+- story: no unused objs recps
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_any_unused_obj_recp
+  - intent: deny
+  - action: utter_goodbye
+
+# NEW NLG
+
+- story: put object in receptacle
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_obj
+  - intent: affirm
+  - action: utter_put_obj_in_recp
+  - or:
+    - intent: affirm
+    - intent: ask_next_step
+  - action: utter_confirm_obj_in_recp
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: no unused objects or receptacles
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_do_you_have_any_unused_obj_recp
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: receptacle not empty
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_put_obj_in_recp_
+  - intent: deny
+  - action: utter_is_recp_empty
+  - intent: deny
+  - action: utter_remove_obj_from_recp__and_place_anywhere_on_table
+  - or:
+    - intent: affirm
+    - intent: ask_next_step
+  - action: utter_confirm_obj_in_recp
+  - intent: affirm
+  - action: utter_goodbye
+
+
+- story: object already in receptacle
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_put_obj_in_recp_
+  - or:
+    - intent: confirm_obj_in_rcp
+    - intent: rcp_not_empty
+  - action: utter_remove_obj_from_recp__and_place_anywhere_on_table
+  - or:
+    - intent: affirm
+    - intent: ask_next_step
+  - action: utter_confirm_obj_in_recp
+  - intent: affirm
+  - action: utter_goodbye
+
+
