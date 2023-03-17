@@ -43,17 +43,22 @@ nlu:
     - good evening
     - moin
     - hey there
+    - Hi there!
+    - Howdy!
     - let's go
     - hey dude
     - goodmorning
     - goodevening
     - good afternoon
+    - greetings
+    - hiya
 
 - intent: goodbye
   examples: |
     - cu
     - good by
     - cee you later
+    - catch you later
     - good night
     - bye
     - goodbye
@@ -73,6 +78,14 @@ nlu:
     - sure
     - yep
     - yeah
+    - i agree
+    - indeed
+    - Thats it
+    - exactly
+    - absolutely
+    - you are spot on
+    - thats right
+    - good job
 
 - intent: deny
   examples: |
@@ -246,3 +259,18 @@ nlu:
     - khaki
     - white
 
+- lookup: object
+  examples: |
+    - apple
+    - bread
+    - bowl
+    - cup
+    - egg
+    - pan
+    - plate
+    - vase
+ 
+- lookup: shape
+  examples: |
+    - circle
+    - square
