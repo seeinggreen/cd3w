@@ -95,10 +95,10 @@ class IthorBot:
                     {"user": data["user"]["name"], "command": data["command"]}
                 )
             if data["command"].lower() == "ready":
-                if "leader" in data["user"]["name"].lower():
-                    self.leader = data["user"]
-                if "follower" in data["user"]["name"].lower():
+                if not self.follower:
                     self.follower = data["user"]
+                else:
+                    self.leader = data["user"]
                 if self.leader and self.follower:
                     if self.round_in_progress:
                         return
