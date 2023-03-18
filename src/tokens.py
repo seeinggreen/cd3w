@@ -1,5 +1,6 @@
 import sys
 import os
+from threading import Thread
 
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
@@ -123,7 +124,6 @@ if __name__ == "__main__":
     # Need to implement this in Tokens class
     leader_bot_token = tokens.leader_bot_token
     leader_bot_user = tokens.leader_bot_user
-    task = args["task"]
     level = args["level"]
     variant = args["variant"]
 
@@ -134,12 +134,10 @@ if __name__ == "__main__":
         ithor_user,
         "http://localhost",
         port,
-        task,
         ithor_service,
         level,
         variant,
     )
-    ithor_bot.run()
 
     rasa_service = RasaService()
 
@@ -148,9 +146,10 @@ if __name__ == "__main__":
         leader_bot_user,
         "http://localhost",
         port,
-        task,
         rasa_service,
         level,
         variant,
     )
-    leader_bot.run()
+
+    Thread(target=ithor_bot.run).start()
+    Thread(target=leader_bot.run).start()

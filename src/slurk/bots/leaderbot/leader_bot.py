@@ -3,7 +3,7 @@ import socketio
 
 
 class LeaderBot:
-    def __init__(self, token, user, host, port, task, rasa_service, level, variant):
+    def __init__(self, token, user, host, port, rasa_service, level, variant):
         self.token = token
         self.user = user
         self.host = host
@@ -18,19 +18,16 @@ class LeaderBot:
 
         self.sio = socketio.Client(logger=True)
 
-        self.task_id = task
         self.sio.on("new_task_room", self.join_task_room())
 
         self.register_join_get_scene_handler()
+        self.register_command_handler()
         self.register_message_handler()
 
     def join_task_room(self):
         """Let the bot join an assigned task room."""
 
         def join(data):
-            if self.task_id is None or data["task"] != self.task_id:
-                return
-
             response = requests.post(
                 f"{self.host}:{self.port}/slurk/api/users/{self.user}/rooms/{data['room']}",
                 headers={"Authorization": f"Bearer {self.token}"},
@@ -41,7 +38,7 @@ class LeaderBot:
     def register_join_get_scene_handler(self):
         @self.sio.event
         def status(data):
-            if data["type"] == "join":
+            if data["type"] == "join" and data["user"]["id"] == self.user:
                 self.rasa_service.get_scene(level=self.level, variant=self.variant)
 
     def register_command_handler(self):
@@ -57,7 +54,7 @@ class LeaderBot:
                     "message_command",
                     {
                         "room": data["room"],
-                        "command": "/ready",
+                        "command": "ready",
                     },
                 )
             elif (
@@ -70,7 +67,7 @@ class LeaderBot:
     def register_message_handler(self):
         @self.sio.event
         def text_message(data):
-            if data["user"]["id"] == self.user:
+            if not self.follower or data["user"]["id"] != self.follower["id"]:
                 return
 
             leader_message = self.rasa_service.get_response(data["message"])
