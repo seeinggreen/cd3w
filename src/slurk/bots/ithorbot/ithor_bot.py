@@ -7,7 +7,7 @@ import socketio
 
 
 class IthorBot:
-    def __init__(self, token, user, host, port, task, ithor_service, level, variant):
+    def __init__(self, token, user, host, port, ithor_service, level, variant):
         self.token = token
         self.user = user
         self.host = host
@@ -24,7 +24,6 @@ class IthorBot:
 
         self.sio = socketio.Client(logger=True)
 
-        self.task_id = task
         self.sio.on("new_task_room", self.join_task_room())
 
         self.register_user_welcome_handler()
@@ -37,9 +36,6 @@ class IthorBot:
         """Let the bot join an assigned task room."""
 
         def join(data):
-            if self.task_id is None or data["task"] != self.task_id:
-                return
-
             response = requests.post(
                 f"{self.host}:{self.port}/slurk/api/users/{self.user}/rooms/{data['room']}",
                 headers={"Authorization": f"Bearer {self.token}"},
@@ -95,10 +91,10 @@ class IthorBot:
                     {"user": data["user"]["name"], "command": data["command"]}
                 )
             if data["command"].lower() == "ready":
-                if "leader" in data["user"]["name"].lower():
-                    self.leader = data["user"]
-                if "follower" in data["user"]["name"].lower():
+                if not self.follower:
                     self.follower = data["user"]
+                elif not self.leader:
+                    self.leader = data["user"]
                 if self.leader and self.follower:
                     if self.round_in_progress:
                         return

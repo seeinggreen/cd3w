@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 
@@ -8,7 +7,9 @@ if not basepath in sys.path:
 
 from argparsing import get_args
 from ithor.ithor_service import IthorService
+from rasa.rasa_service import RasaService
 from slurk.bots.ithorbot.ithor_bot import IthorBot
+from slurk.bots.leaderbot.leader_bot import LeaderBot
 
 if __name__ == "__main__":
     # Get the experiment arguments from the command line
@@ -25,3 +26,10 @@ if __name__ == "__main__":
         token, user, "http://localhost", 5000, task, ithor_service, level, variant
     )
     ithor_bot.run()
+
+    rasa_service = RasaService()
+
+    leader_bot = LeaderBot(
+        token, user, "http://localhost", 5000, task, rasa_service, level, variant
+    )
+    leader_bot.run()
