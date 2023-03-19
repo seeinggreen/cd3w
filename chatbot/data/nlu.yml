@@ -201,14 +201,18 @@ nlu:
     - khaki
     - white
 
-- lookup: obj
-  examples: |
-    - apple
-    - bread
-    - bowl
-    - cup
-    - egg
-    - pan
-    - plate
-    - vase
-
+# - lookup: object
+#   examples: |
+#     - apple
+#     - bread
+#     - bowl
+#     - cup
+#     - egg
+#     - pan
+#     - plate
+#     - vase
+ 
+# - lookup: shape
+#   examples: |
+#     - circle
+#     - square
