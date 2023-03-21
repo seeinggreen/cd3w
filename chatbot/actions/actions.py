@@ -26,186 +26,219 @@
 #
 #         return []
 
+import json
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import (
+    SlotSet
+)
+
+def print_prev_events(tracker):
+    print("\n\ntracker.events:")
+    for e in tracker.events:
+        if e["event"] == "user":
+            parse_data = e["parse_data"]
+            print(json.dumps(parse_data["intent"], indent=4))
+            print(json.dumps(parse_data["entities"], indent=4))
+
+def print_slots(tracker):
+    print("\ntracker.slots:")
+    print(tracker.slots)
+
+def print_latest_message(tracker):
+    print("\ntracker.latest_message:")
+    print(tracker.latest_message["intent"])
+    print(json.dumps(tracker.latest_message["entities"], indent=4))
+    print(tracker.latest_message["text"])
+
+def print_all(tracker):
+    print("____________________________________")
+    print_prev_events(tracker)
+    print_slots(tracker)
+    #print_latest_message(tracker)
+    print("____________________________________")
 
 
-word_varients_colour = {"Colour", "colour", "Color", 'color', 'culor', 'colur', 'coulour', 'coler', 'clour', 'colar', 'colr', 'culour', 'coleur'}
-
-
-class Obj():
-    def __init__(type, colour, state, rcpt):
-        self.type = type
-        self.colour = colour
-        self.state = state
-        self.rcpt = rcpt
-        self.has_moved = False
-
-    def set_moved():
-        self.hasMoved = True
-
-
-class Rcpt():
-    def __init__(shape, colour, pos):
-        self.shape = shape
-        self.colour = colour
-        self.pos = pos
-
-class Obj_Manager():
-    def __init__(self) -> None:
-        obj_list = []
-        prev_obj = []
-        pass
-
-    #takes the metadata from SLURK and converts it to a Python array
-    def set_obj_list(metadat):
-        return 0
-    
-    #Gets the next obj to be moved
-    def get_obj():
-        for o in self.obj_list:
-            if not o.has_moved:
-                self.prev_obj.push(o)
-                return o
-        #Task is completed
-        return False
-    
-    def get_prev_obj():
-        return self.prev_obj[-1]
-
-    def get_obj_context(obj):
-        return 0
-    
-obj_manager = Obj_Manager()
-
-
-class Action_put_obj_on_rcpt(Action):
+class affirm(Action):
     def name(self) -> Text:
-        return "Action_put_obj_on_rcpt"
-    def run(self, 
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                     #To store the previous conversation. Same as rasa shell.
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    #Intents and Actions
+        return "affirm"
 
-        obj = obj_manager.get_obj()
-        if(obj):
-            slotvars = {
-                "obj_description": obj_manager.get_obj_context(obj), 
-                "rcpt": obj.rcpt
-            }
-        else:
-            dispatcher.utter_message(response="uttter_ask_remaining_obj")  
-        return []
-    
-class Action_confirm_obj_on_rcpt(Action):
-    def name(self) -> Text:
-        return "Action_confirm_obj_on_rcpt"
-    def run(self, 
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                   
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        obj = obj_manager.get_obj()
-        if(obj):
-            slotvars = {
-                "obj": obj, 
-                "rcpt": obj.rcpt
-            }
-        dispatcher.utter_message(response="utter_confirm_obj_in_rcpt", **slotvars)            
-        return []
-    
-class Action_do_it(Action):
-    def name(self) -> Text:
-        return "Action_do_it"
-    def run(self, 
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                     
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    
-        dispatcher.utter_message(response="utter_do_it")         
-        return []
-    
-
-
-class Action_help_delete(Action):
-    def name(self) -> Text:
-        return "Action_help_delete"
     def run(self,
             dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                     
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    
-        dispatcher.utter_message(response="utter_help_delete")         
-        return []
-    
-class Action_help_done(Action):
-    def name(self) -> Text:
-        return "Action_help_done"
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                     
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    
-        dispatcher.utter_message(response="utter_help_done")         
-        return []
-    
-class Action_help_request(Action):
-    def name(self) -> Text:
-        return "Action_help_request"
-    def run(self, 
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                     
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    
-        obj = obj_manager.get_obj()
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slotvars = {
-                "obj": obj, 
-            }
-        dispatcher.utter_message(response="utter_help_spawn", **slotvars)  
+            "state": "sliced",
+        }
+        dispatcher.utter_message(response="utter_affirm", **slotvars)
         return []
-    
 
 
-class Action_describe_rcpt(Action):
+class deny(Action):
     def name(self) -> Text:
-        return "Action_describe_rcpt"
-    def run(self, 
+        return "deny"
+
+    def run(self,
             dispatcher: CollectingDispatcher,
-            tracker: Tracker,                                     
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    
-        
-        #Assuming we are talking about the last rcpt
-        rcpt = obj_manager.get_obj().rcpt
-
-        last_message =  tracker.latest_message.split()
-        isColour = [e for e in last_message if e in word_varients_colour]
-
-        #what colour is the rcpt
-        if tracker.get_latest_entity_values("colour") != None:
-            slotvars = {
-                "rcpt": rcpt, 
-                "colour": rcpt.colour()
-            }
-            dispatcher.utter_message(response="utter_rcpt_is_colour", **slotvars)  
-
-        #what shape is the rcpt
-        if tracker.get_latest_entity_values("shape") != None:
-            slotvars = {
-                "rcpt": rcpt, 
-                "colour": rcpt.shape()
-            }
-            dispatcher.utter_message(response="utter_rcpt_is_shape", **slotvars)  
-
-        #what pos is the rcpt
-        if tracker.get_latest_entity_values("pos") != None:
-            slotvars = {
-                "rcpt": rcpt, 
-                "colour": rcpt.pos()
-            }
-            dispatcher.utter_message(response="utter_rcpt_is_located", **slotvars)  
-
-        #what obj is on rcpt
-        if tracker.get_latest_entity_values("obj") != None:
-            slotvars = {               
-                "obj": obj,
-                "rcpt": rcpt
-            }
-            dispatcher.utter_message(response="utter_obj_is_in_rcpt", **slotvars)  
-
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            "state": "sliced",
+        }
+        dispatcher.utter_message(response="utter_deny", **slotvars)
         return []
 
+
+class greet(Action):
+    def name(self) -> Text:
+        return "greet"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            "state": "sliced",
+        }
+        dispatcher.utter_message(response="utter_greet", **slotvars)
+        return []
+
+
+class goodbye(Action):
+    def name(self) -> Text:
+        return "goodbye"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        slotvars = {
+            "state": "sliced",
+        }
+        dispatcher.utter_message(response="utter_goodbye", **slotvars)
+        return []
+
+
+class tell_colour(Action):
+    def name(self) -> Text:
+        return "tell_colour"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        e = tracker.latest_message
+        print(tracker.get_latest_entity_values("role"))
+        #print(e)
+        slotvars = {
+            "objRcpt": "OBJRCPT",
+            "colour": tracker.get_slot("obj")["colour"]
+        }
+        dispatcher.utter_message(response="utter_tell_colour", **slotvars)
+        
+        return []
+
+#DONT HAVE
+class tell_shape(Action):
+    def name(self) -> Text:
+        return "tell_shape"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            "rcpt": "RCPT",
+            "shape": "SHAPE"
+        }
+        dispatcher.utter_message(response="utter_tell_shape", **slotvars)
+        return []
+
+#DONT HAVE
+class tell_pos(Action):
+    def name(self) -> Text:
+        return "tell_pos"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            "rcpt": "RCPT",
+            "pos": "POS"
+        }
+        dispatcher.utter_message(response="utter_tell_pos", **slotvars)
+        return []
+
+
+class tell_state(Action):
+    def name(self) -> Text:
+        return "tell_state"
+        
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        slotvars = {
+            "obj": "OBJ",
+            "state": "STATE"
+        }
+        dispatcher.utter_message(response="utter_tell_state", **slotvars)
+        return []
+
+
+class tell_general(Action):
+    def name(self) -> Text:
+        return "tell_general"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            "context": "CONTEXT",
+            "objRcpt": "OBJRCPT"
+        }
+        dispatcher.utter_message(response="utter_tell_general", **slotvars)
+        return []
+
+
+class tell_next_step(Action):
+    def name(self) -> Text:
+        return "tell_next_step"
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        next_obj = {"obj":"apple","colour":"green","state":"whole"}
+        next_rcpt = {"rcpt":"mat","colour":"green","shape":"square","pos":"top left"}
+
+        #obj_context = get_context(next_obj)
+        #rcpt_context = get_context(next_rcpt)
+
+        slotvars = {
+            "obj": next_obj["obj"],
+            "rcpt": next_rcpt["rcpt"] 
+        }
+
+        dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
+        return [SlotSet("obj", {"obj":"apple","colour":"green","state":"whole"})]
+
+
+class tell_me_when_done(Action):
+    def name(self) -> Text:
+        return "tell_me_when_done"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            
+        }
+        dispatcher.utter_message(
+            response="utter_tell_me_when_done", **slotvars)
+        return []

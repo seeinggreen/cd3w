@@ -5,108 +5,85 @@ intents:
   - goodbye
   - affirm
   - deny
-  - wait
-  - did_it
-  - clarification_is_colour
-  - clarification_obj_state
+  - ask_colour
+  - ask_shape
+  - ask_pos
+  - ask_state
+  - ask_general
   - ask_next_step
+  - wait
   - not_have_obj
   - rcpt_not_empty
-  - general_clarification
   - clarification_numbers
   - bot_challenge
-  
 
-entities:  
+entities:
   - obj
   - rcpt
   - colour:
       roles:
-      - obj
-      - rcpt
+        - obj
+        - rcpt
   - shape:
       roles:
-      - obj
-      - rcpt
+        - obj
+        - rcpt
   - state_obj
   - count:
       roles:
-      - obj
-      - rcpt
+        - obj
+        - rcpt
 
 slots:
   obj:
     type: any
     mappings:
-    - type: from_entity
-      entity: obj
+      - type: custom
   rcpt:
     type: any
     mappings:
-    - type: from_entity
-      entity: rcpt
+      - type: custom
 
 
-  
 responses:
+  utter_affirm:
+    - text: "yes"
+  utter_deny:
+    - text: "no"
   utter_greet:
     - text: "Hey! How are you?"
-
+  utter_goodbye:
+    - text: "Bye"
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
       image: "https://i.imgur.com/nGF1K8f.jpg"
-
   utter_happy:
     - text: "Great, carry on!"
-
-  utter_goodbye:
-    - text: "Bye"
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
 
-  utter_clarification_question:
-    - text: "Do you have the red bowl?"
+#### V1 #####
+  utter_tell_colour:
+    - text: "The {objRcpt} is {colour}"
+  utter_tell_shape:
+    - text: "The {rcpt} is {shape}"
+  utter_tell_pos:
+    - text: "The {rcpt} is in the {pos} of the table"
+  utter_tell_state:
+    - text: "The {obj} is {state}"
+  utter_tell_general:
+    - text: "The {context} {objRcpt}"
+  utter_tell_next_step:
+    - text: "Put the {obj} on the {rcpt}"
+  utter_tell_me_when_done:
+    - text: Tell me when you're done"
 
-  utter_acknowlge:
-    - text: "Have you moved the mug?"
-
-  utter_task_completion:
-    - text: "We are Done."
-
-  utter_do_you_have_obj:
-    - text: "Do you have _object_?"
-
-  utter_confirm_obj_in_recp:
-    - text: "Put _object_ in _receptacle_."
-
-  utter_put_obj_in_rcpt:
-    - text: "Confirm _object_ in _receptacle_."
-
-  utter_do_you_have_any_unused_obj_recp:
-    - text: "Have you any unused /_receptacle_?"
-
-  utter_is_recp_empty:
-    - text: "Is _receptacle_ empty?"
-
-  utter_perform_state_change_on_obj_:
-    - text: "Perform _state_change_ on _object_."
-
-  utter_remove_obj_from_recp__and_place_anywhere_on_table:
-    - text: "Remove _object_ from _receptacle_ and place anywhere on table."
-
-  #### Dialogue Manager Utterances ####
-
-  utter_put_obj_on_rcpt:
-    - text: "Put {obj_description} on {rcpt}."
-  utter_confirm_obj_in_rcpt:
-    - text: "Can you confirn that the {obj} is on {rcpt}?"
+#### V2 ####
   utter_do_it:
     - text: "Do it."
-
   uttter_ask_remaining_obj:
     - text: "Have you used all of your objects?"
-
   utter_help_delete:
     - text: "To delete an object, type /delete #<object id> in the chat"
   utter_help_done:
@@ -115,16 +92,18 @@ responses:
     - text: "To request an object type /request #<object id> (for the {obj}) in the chat"
 
 
-  utter_rcpt_is_colour:
-    - text: "The {rcpt} is {colour}"
-  utter_rcpt_is_shape:
-    - text: "The {rcpt} is {shape}"
-  utter_rcpt_is_located:
-    - text: "The {rcpt} is in the {pos}"
-  utter_obj_is_in_rcpt:
-    - text: "The {obj} is in the {rcpt}"
-
-
+actions:
+  - affirm
+  - deny
+  - greet
+  - goodbye
+  - tell_colour
+  - tell_shape
+  - tell_pos
+  - tell_state
+  - tell_general
+  - tell_next_step
+  - tell_me_when_done
 
 session_config:
   session_expiration_time: 60

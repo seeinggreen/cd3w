@@ -2,12 +2,37 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Clarify colour of either obj or rcpt
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: ask_colour 
+  - action: tell_colour
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Clarify shape of rcpt
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: ask_shape 
+  - action: tell_shape
+
+- rule: Clarify position of rcpt
+  steps:
+  - intent: ask_pos 
+  - action: tell_pos
+
+- rule: Clarify state of obj
+  steps:
+  - intent: ask_state 
+  - action: tell_state
+
+- rule: Clarify general
+  steps:
+  - intent: ask_general 
+  - action: tell_general
+
+- rule: Clarify next step
+  steps:
+  - intent: ask_next_step 
+  - action: tell_next_step
+
+- rule: Clarify task done
+  steps:
+  - intent: wait 
+  - action: tell_me_when_done
