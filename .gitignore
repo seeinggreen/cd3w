@@ -137,5 +137,6 @@ images/*
 
 # Ignore slurk
 slurk
+!src/slurk
 
 test
