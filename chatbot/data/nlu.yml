@@ -1,36 +1,5 @@
 version: "3.1"
-# NEED TO ADD MORE
-
 nlu:
-
-- intent: general_chat
-  examples: |
-    - do we need the [red]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
-    - haha noob
-    - google it
-    - closer to*
-    - see, finally some English.  
-    - are you winning?
-    - chill bro
-    - its not placing i don't have any obj their
-    - but i swapped [pan] {"entity": "obj"} with [bowl]{"entity": "obj"} because of [white]{"entity": "colour_obj"} [pan]{"entity": "obj"} command it think
-    - then use [pink]{"entity": "colour_rcpt"}, dont switch between [pink]{"entity": "colour_rcpt"} and [purple]{"entity": "colour_rcpt"}
-    - probabl need new hardware
-    - I still have an [empty]{"entity": "state_rcpt"} [mat]{"entity": "rcpt"} is that normal?
-    - i got a lot of stuff
-    - sorry mb
-    - strange looking [vase]{"entity": "obj"}
-    - ok there is a spawn item
-    - i thought you didnt know what [lilac]{"entity": "colour_rcpt"} was
-    - this bot doesn't know to measure time as well..
-    - my bad
-    - sometimes i feel like colorblind. Are you moking 
-    - we are on a roll
-    - actually mine is affected parallax
-    - nah im goofing 
-    - thats was lucky
-    - not sure if that matters?
-    - this is an easy game level
 
 - intent: greet
   examples: |
@@ -86,6 +55,7 @@ nlu:
     - you are spot on
     - thats right
     - good job
+    - ok there is a spawn item
 
 - intent: deny
   examples: |
@@ -102,17 +72,7 @@ nlu:
     - not really
     - I cant see one
     - no no
-    - no working on it
-
-- intent: i_have_obj
-  examples: |
-    - I do, but a [see through]{"entity": "colour_obj"} [one]{"entity": "obj"}
-    - I have a [vase]{"entity": "obj"} left
-    - I think it's a [vase]{"entity": "obj"}?
-    - a [yellow]{"entity": "colour_obj"} [vase]{"entity": "obj"}?
-    - yes a [yellow]{"entity": "colour_obj"} [one]{"entity": "obj"}
-    - I have a [white]{"entity": "colour_obj"} [one]{"entity": "obj"}
-    - I have a [red]{"entity": "colour_obj"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour_obj"} [apple]{"entity": "obj"}
+    - no working on it    
 
 - intent: wait
   examples: |
@@ -134,7 +94,7 @@ nlu:
     - cool working on it
     - one sec
 
-- intent: did_it
+- intent: did_it # NEED MORE SAMPLES
   examples: |
     - done with the step
     - sorry
@@ -144,89 +104,71 @@ nlu:
     - its done*
     - its down
     - [egg]{"entity": "obj"} is on
-    - still looks wonky
-    - I have placed the [green]{"entity": "colour_obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour_obj"} [placemat]{"entity": "rcpt"}.
-    - I put the [blue]{"entity": "colour_obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour_obj"} [placemat]{"entity": "rcpt"}.
-    - I set the [white]{"entity": "colour_obj"} [glass]{"entity": "obj"} on the [black]{"entity": "colour_obj"} [placemat]{"entity": "rcpt"}.
+    - It's already there
+    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
+    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
 
-- intent: obj_is_colour
+- intent: clarification_is_colour # CHECK (Important Last 2 utterences)
   examples: | 
-    - I have a [yellow]{"entity": "colour_obj"} [one]{"entity": "obj"} and a [red]{"entity": "colour_obj"} [one]{"entity": "obj"}
-    - [green]{"entity": "colour_obj"} [cup]{"entity": "obj"}
-    - I only have a [black]{"entity": "colour_obj"} [pan]{"entity": "obj"}
-    - i only have a [yellow]{"entity": "colour_obj"} [one]{"entity": "obj"}
-    - yup. looks like a [white]{"entity": "colour_obj"} [bread loaf]{"entity": "obj"}
-    - Okay, ehm you mean the [black]{"entity": "colour_obj"} [pan]{"entity": "obj"}?
+    - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
+    - do you mean the [green]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"}
+    - I only have a [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}
+    - i only have a [yellow]{"entity": "colour"} one
+    - yup. looks like a [white]{"entity": "colour"} [bread loaf]{"entity": "obj"}
+    - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
+    - what colour is it?
+    - is it the blue mat
+    - I have a [white]{"entity": "colour"} [one]{"entity": "obj"}
+    - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
+    - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
+    - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
+    - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
 
-- intent: obj_in_state
+- intent: clarification_obj_state #  
   examples: |
-    - is the [brown]{"entity": "colour_obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
+    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
     - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
     - both looks [unsliced]{"entity": "state_obj"}
     - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
+    
 
-- intent: not_used_obj
+- intent: ask_next_step # COMBINE WITH ASK NEXT STEP , GROUPING FOR 1st Sentence
   examples: |
-    - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour_obj"} [plate]{"entity": "obj"} though
+    - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} though
     - what about the [bread]{"entity": "obj"}
+    - I have a [vase]{"entity": "obj"} left
+    - What to do next
+    - What's next
 
-- intent: not_have_obj
+- intent: not_have_obj # DONE
   examples: |
     - i haven't got any [bread]{"entity": "obj"}
-    - I don't have a [plate]{"entity": "obj"} I think
+    - I don't have a [red]{"entity": "colour", "role": "obj"}[plate]{"entity": "obj"} I think
     - okay I don't have an [egg]{"entity": "obj"}
     - I don't have a [plate]{"entity": "obj"}
-    - I don't have a [yellow]{"entity": "colour_obj"} [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}
+    - I don't have a [yellow]{"entity": "colour", "role": "obj"} [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}
+    - i am out of objects
 
-- intent: rcpt_not_empty
+- intent: rcpt_not_empty # HOW TO HANDLE 2nd Utterence
   examples: |
-    - The [orange]{"entity": "colour_rcpt"} [one]{"entity": "rcpt"} already has a [glass]{"entity": "obj"} on top
-    - [it's]{"entity": "obj"} already [there]{"entity": "rcpt"}
-    - i dont have an [empty]{"entity": "state_rcpt"} [rounds]{"entity": "shape_rcpt"} [placemat]{"entity": "rcpt"}
-
-- intent: help_done
+    - The [orange]{"entity": "colour", "role": "rcpt" } [mat]{"entity": "rcpt"} already has a [glass]{"entity": "obj"} on top
+    - i dont have an [empty]{"entity": "state_rcpt"} [rounds]{"entity": "shape"} [placemat]{"entity": "rcpt"}
+    - [mat]{"entity": "rcpt"} already has stuff on top
+    - [mat]{"entity": "rcpt"} is not empty.
+    - The red["entity": "colour", "role": "rcpt"] [mat]{"entity": "rcpt"} is full
+    
+- intent: general_clarification 
   examples: |
-    - done
-  
-- intent: i_have_number_obj
-  examples: |
-    - i have 2 of [those]{"entity": "obj"}
-    - i have 1 [cup]{"entity": "obj"}
-    - yes I have two [apples]{"entity": "obj"}
-    - i am out of objects 
-
-- intent: rcpt_is_colour
-  examples: |
-    - 2 [red]{"entity": "colour_rcpt"} [square]{"entity": "shape_rcpt"} [placemats]{"entity": "rcpt"}
-    - is [lavendar]{"entity": "colour_rcpt"} closer to [heather]{"entity": "colour_rcpt"} or [amathyst]{"entity": "colour_rcpt"}? 
-
-- intent: i_have_number_rcpt
-  examples: |
-    - I have 2 [round]{"entity": "shape_rcpt"} [yellow]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"}
-    - i have two [square]{"entity": "shape_rcpt"} [blue]{"entity": "colour_rcpt"} [placemat]{"entity": "rcpt"}
-    - I have 2 [green]{"entity": "colour_rcpt"} [placemats]{"entity": "rcpt"} as well
-    - [one]{"entity": "rcpt"} [dark]{"entity": "colour_rcpt"} and [one]{"entity": "rcpt"} [light]{"entity": "colour_rcpt"}
-
-- intent: ask_bot
-  examples: |
-    - are you a bot?
-
-- intent: rcpt_is_empty
-  examples: |
-    - both are [empty]{"entity": "state_rcpt"}
-  
-- intent: which_obj
-  examples: |
-    - which [blue]{"entity": "colour_obj"} dark or [light]{"entity": "colour_obj"}
-
-- intent: confirm_obj
-  examples: |
-    - what colour is [it]{"entity": "obj"}?
-
-- intent: confirm_obj_Q
-  examples: |
-    - the [glass]{"entity": "colour_obj"} [bowl]{"entity": "obj"} or the [glass]{"entity": "colour_obj"} [cup]{"entity": "obj"}?
     - which [bread]{"entity": "obj"} should i spwan?
+    
+- intent: clarification_numbers # NEED TO ADD GROUPS FOR 4th utterence
+  examples: |
+    - I have [2]{"entity": "count", "role":"rcpt"} [round]{"entity": "shape", "role":"rcpt"} [yellow]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}
+    - i have [two]{"entity": "count", "role":"rcpt"} [square]{"entity": "shape", "role":"rcpt"} [blue]{"entity": "colour","role":"rcpt"} [mats]{"entity": "rcpt"}
+    - I have [2]{"entity": "count", "role":"rcpt"} [green]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} as well
+    - [one]{"entity": "count"} [dark]{"entity": "colour"} and [one]{"entity": "count"} [light]{"entity": "colour"}
+    - i have [2]{"entity": "count"} of those.
 
 - intent: bot_challenge
   examples: |
@@ -259,7 +201,7 @@ nlu:
     - khaki
     - white
 
-- lookup: object
+- lookup: obj
   examples: |
     - apple
     - bread
@@ -269,8 +211,4 @@ nlu:
     - pan
     - plate
     - vase
- 
-- lookup: shape
-  examples: |
-    - circle
-    - square
+
