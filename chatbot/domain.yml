@@ -5,19 +5,48 @@ intents:
   - goodbye
   - affirm
   - deny
-  - bot_challenge
-  - clarification_question
+  - wait
+  - did_it
+  - clarification_is_colour
+  - clarification_obj_state
   - ask_next_step
-  - acknowlege_action_completion
-  - general_question
-  - confirm_obj_in_rcp
-  - rcp_not_empty
+  - not_have_obj
+  - rcpt_not_empty
+  - general_clarification
+  - clarification_numbers
+  - bot_challenge
+  
 
-entities:
-  - color
-  - object
-  - shape
-  - placemat
+entities:  
+  - obj
+  - rcpt
+  - colour:
+      roles:
+      - obj
+      - rcpt
+  - shape:
+      roles:
+      - obj
+      - rcpt
+  - state_obj
+  - count:
+      roles:
+      - obj
+      - rcpt
+
+slots:
+  obj:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: obj
+  rcpt:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: rcpt
+
+
   
 responses:
   utter_greet:

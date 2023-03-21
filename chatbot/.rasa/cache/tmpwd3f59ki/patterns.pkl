@@ -1,0 +1,10 @@
+[
+  {
+    "name": "color",
+    "pattern": "(\\bred\\b|\\bblue\\b|\\borange\\b|\\bgreen\\b|\\bpurple\\b|\\byellow\\b|\\biris\\b|\\bblack\\b|\\bocean\\ blue\\b|\\bsky\\ blue\\b|\\bgold\\b|\\bsilver\\b|\\bgray\\b|\\bbrown\\b|\\bkhaki\\b|\\bwhite\\b)"
+  },
+  {
+    "name": "obj",
+    "pattern": "(\\bapple\\b|\\bbread\\b|\\bbowl\\b|\\bcup\\b|\\begg\\b|\\bpan\\b|\\bplate\\b|\\bvase\\b)"
+  }
+]
