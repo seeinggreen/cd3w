@@ -19,17 +19,19 @@ if __name__ == "__main__":
     task = args["task"]
     level = args["level"]
     variant = args["variant"]
+    
+    port = args["port"]
 
     ithor_service = IthorService()
 
     ithor_bot = IthorBot(
-        token, user, "http://localhost", 5000, task, ithor_service, level, variant
+        token, user, "http://localhost", port, task, ithor_service, level, variant
     )
     ithor_bot.run()
 
-    rasa_service = RasaService()
+    rasa_service = RasaService(port)
 
     leader_bot = LeaderBot(
-        token, user, "http://localhost", 5000, task, rasa_service, level, variant
+        token, user, "http://localhost", port, task, rasa_service, level, variant
     )
     leader_bot.run()
