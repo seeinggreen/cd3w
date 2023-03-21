@@ -106,6 +106,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+rasa_venv/
 ENV/
 env.bak/
 venv.bak/
@@ -137,3 +138,8 @@ images/*
 
 # Ignore slurk
 slurk
+
+# Ignore modals
+chatbot/modals/*
+
+chatbot/.rasa/cache/*

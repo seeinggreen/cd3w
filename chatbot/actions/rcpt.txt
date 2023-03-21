@@ -1,0 +1,7 @@
+class Rcpt():
+    def __init__(shape, colour, pos):
+        self.shape = shape
+        self.colour = colour
+        self.pos = pos
+
+    

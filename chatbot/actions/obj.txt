@@ -1,0 +1,16 @@
+import obj_manager
+
+class Obj():
+    def __init__(type, colour, state, rcpt):
+        self.type = type
+        self.colour = colour
+        self.state = state
+        self.rcpt = rcpt
+        self.has_moved = False
+
+    def set_moved():
+        self.hasMoved = True
+
+
+
+obj_manager = obj_manager()

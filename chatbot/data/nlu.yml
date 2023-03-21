@@ -56,6 +56,19 @@ nlu:
     - thats right
     - good job
     - ok there is a spawn item
+    - done with the step
+    - sorry
+    - did it
+    - i have done it 
+    - did that
+    - its done*
+    - its down
+    - [egg]{"entity": "obj"} is on
+    - It's already there
+    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
+    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
+
 
 - intent: deny
   examples: |
@@ -74,7 +87,55 @@ nlu:
     - no no
     - no working on it    
 
-- intent: wait
+###############################
+
+- intent: ask_colour # CHECK (Important Last 2 utterences)
+  examples: |
+    - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
+    - do you mean the [green]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"}
+    - I only have a [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}
+    - i only have a [yellow]{"entity": "colour"} one
+    - yup. looks like a [white]{"entity": "colour"} [bread loaf]{"entity": "obj"}
+    - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
+    - what colour is it?
+    - is it the blue mat
+    - I have a [white]{"entity": "colour"} [one]{"entity": "obj"}
+    - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
+    - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
+    - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
+    - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
+
+
+- intent: ask_shape 
+  examples: |
+
+
+- intent: ask_pos 
+  examples: |
+
+
+- intent: ask_state 
+  examples: |
+    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
+    - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+    - both looks [unsliced]{"entity": "state_obj"}
+    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"} 
+
+
+- intent: ask_general 
+  examples: |
+    - which [bread]{"entity": "obj"} should i spwan?
+
+
+- intent: ask_next_step 
+  examples: |
+    - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} though
+    - what about the [bread]{"entity": "obj"}
+    - I have a [vase]{"entity": "obj"} left
+    - What to do next
+    - What's next
+
+- intent: wait 
   examples: |
     - lol wait
     - okay, working on it
@@ -94,52 +155,7 @@ nlu:
     - cool working on it
     - one sec
 
-- intent: did_it # NEED MORE SAMPLES
-  examples: |
-    - done with the step
-    - sorry
-    - did it
-    - i have done it 
-    - did that
-    - its done*
-    - its down
-    - [egg]{"entity": "obj"} is on
-    - It's already there
-    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
-    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
-    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
-
-- intent: clarification_is_colour # CHECK (Important Last 2 utterences)
-  examples: | 
-    - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
-    - do you mean the [green]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"}
-    - I only have a [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}
-    - i only have a [yellow]{"entity": "colour"} one
-    - yup. looks like a [white]{"entity": "colour"} [bread loaf]{"entity": "obj"}
-    - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
-    - what colour is it?
-    - is it the blue mat
-    - I have a [white]{"entity": "colour"} [one]{"entity": "obj"}
-    - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
-    - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
-    - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
-    - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
-
-- intent: clarification_obj_state #  
-  examples: |
-    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
-    - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
-    - both looks [unsliced]{"entity": "state_obj"}
-    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
-    
-
-- intent: ask_next_step # COMBINE WITH ASK NEXT STEP , GROUPING FOR 1st Sentence
-  examples: |
-    - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} though
-    - what about the [bread]{"entity": "obj"}
-    - I have a [vase]{"entity": "obj"} left
-    - What to do next
-    - What's next
+###############################
 
 - intent: not_have_obj # DONE
   examples: |
@@ -158,10 +174,7 @@ nlu:
     - [mat]{"entity": "rcpt"} is not empty.
     - The red["entity": "colour", "role": "rcpt"] [mat]{"entity": "rcpt"} is full
     
-- intent: general_clarification 
-  examples: |
-    - which [bread]{"entity": "obj"} should i spwan?
-    
+
 - intent: clarification_numbers # NEED TO ADD GROUPS FOR 4th utterence
   examples: |
     - I have [2]{"entity": "count", "role":"rcpt"} [round]{"entity": "shape", "role":"rcpt"} [yellow]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}
