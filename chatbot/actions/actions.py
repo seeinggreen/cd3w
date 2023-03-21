@@ -26,9 +26,38 @@
 #
 #         return []
 
+import json
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import (
+    SlotSet
+)
+
+def print_prev_events(tracker):
+    print("\n\ntracker.events:")
+    for e in tracker.events:
+        if e["event"] == "user":
+            parse_data = e["parse_data"]
+            print(json.dumps(parse_data["intent"], indent=4))
+            print(json.dumps(parse_data["entities"], indent=4))
+
+def print_slots(tracker):
+    print("\ntracker.slots:")
+    print(tracker.slots)
+
+def print_latest_message(tracker):
+    print("\ntracker.latest_message:")
+    print(tracker.latest_message["intent"])
+    print(json.dumps(tracker.latest_message["entities"], indent=4))
+    print(tracker.latest_message["text"])
+
+def print_all(tracker):
+    print("____________________________________")
+    print_prev_events(tracker)
+    print_slots(tracker)
+    #print_latest_message(tracker)
+    print("____________________________________")
 
 
 class affirm(Action):
@@ -39,7 +68,6 @@ class affirm(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             "state": "sliced",
         }
@@ -55,7 +83,6 @@ class deny(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             "state": "sliced",
         }
@@ -71,7 +98,6 @@ class greet(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             "state": "sliced",
         }
@@ -87,7 +113,7 @@ class goodbye(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
+
         slotvars = {
             "state": "sliced",
         }
@@ -103,21 +129,18 @@ class tell_colour(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("tracker                      :   "+tracker                   )
-        print("tracker.sender_id            :   "+tracker.sender_id         )
-        print("tracker.slots                :   "+tracker.slots             )
-        print("tracker.latest_message       :   "+tracker.latest_message    )
-        print("tracker.events               :   "+tracker.events            )
-        print("tracker.active_loop          :   "+tracker.active_loop       )
-        print("tracker.latest_action_name   :   "+tracker.latest_action_name)
+        e = tracker.latest_message
+        print(tracker.get_latest_entity_values("role"))
+        #print(e)
         slotvars = {
             "objRcpt": "OBJRCPT",
-            "colour": "COLOUR"
+            "colour": tracker.get_slot("obj")["colour"]
         }
         dispatcher.utter_message(response="utter_tell_colour", **slotvars)
+        
         return []
 
-
+#DONT HAVE
 class tell_shape(Action):
     def name(self) -> Text:
         return "tell_shape"
@@ -126,7 +149,6 @@ class tell_shape(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             "rcpt": "RCPT",
             "shape": "SHAPE"
@@ -134,7 +156,7 @@ class tell_shape(Action):
         dispatcher.utter_message(response="utter_tell_shape", **slotvars)
         return []
 
-
+#DONT HAVE
 class tell_pos(Action):
     def name(self) -> Text:
         return "tell_pos"
@@ -143,7 +165,6 @@ class tell_pos(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             "rcpt": "RCPT",
             "pos": "POS"
@@ -155,13 +176,12 @@ class tell_pos(Action):
 class tell_state(Action):
     def name(self) -> Text:
         return "tell_state"
-
+        
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
-
+        
         slotvars = {
             "obj": "OBJ",
             "state": "STATE"
@@ -178,7 +198,6 @@ class tell_general(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             "context": "CONTEXT",
             "objRcpt": "OBJRCPT"
@@ -190,18 +209,23 @@ class tell_general(Action):
 class tell_next_step(Action):
     def name(self) -> Text:
         return "tell_next_step"
-
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
+        next_obj = {"obj":"apple","colour":"green","state":"whole"}
+        next_rcpt = {"rcpt":"mat","colour":"green","shape":"square","pos":"top left"}
+
+        #obj_context = get_context(next_obj)
+        #rcpt_context = get_context(next_rcpt)
+
         slotvars = {
-            "obj": "OBJ",
-            "rcpt": "RCPT"
+            "obj": next_obj["obj"],
+            "rcpt": next_rcpt["rcpt"] 
         }
+
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return []
+        return [SlotSet("obj", {"obj":"apple","colour":"green","state":"whole"})]
 
 
 class tell_me_when_done(Action):
@@ -212,7 +236,6 @@ class tell_me_when_done(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
         slotvars = {
             
         }
