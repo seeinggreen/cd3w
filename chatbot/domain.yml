@@ -18,59 +18,85 @@ entities:
   - object
   - shape
   - placemat
-  
+
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How are you?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
 
   utter_clarification_question:
-  - text: "Do you have the red bowl?"
+    - text: "Do you have the red bowl?"
 
   utter_acknowlge:
-  - text: "Have you moved the mug?"
+    - text: "Have you moved the mug?"
 
   utter_task_completion:
-  - text: "We are Done."
-
-  # NEW NLG
+    - text: "We are Done."
 
   utter_do_you_have_obj:
-  - text: "Do you have _object_?"
+    - text: "Do you have _object_?"
 
   utter_confirm_obj_in_recp:
-  - text: "Put _object_ in _receptacle_."
+    - text: "Put _object_ in _receptacle_."
 
-  utter_put_obj_in_recp:
-  - text: "Confirm _object_ in _receptacle_."
-  
+  utter_put_obj_in_rcpt:
+    - text: "Confirm _object_ in _receptacle_."
+
   utter_do_you_have_any_unused_obj_recp:
-  - text: "Have you any unused /_receptacle_?"
+    - text: "Have you any unused /_receptacle_?"
 
   utter_is_recp_empty:
-  - text: "Is _receptacle_ empty?"
-
-  utter_put_obj_in_recp_:
-  - text: "Put _object_ in _receptacle_."
+    - text: "Is _receptacle_ empty?"
 
   utter_perform_state_change_on_obj_:
-  - text: "Perform _state_change_ on _object_."
+    - text: "Perform _state_change_ on _object_."
 
   utter_remove_obj_from_recp__and_place_anywhere_on_table:
-  - text: "Remove _object_ from _receptacle_ and place anywhere on table."
-  
+    - text: "Remove _object_ from _receptacle_ and place anywhere on table."
+
+  #### Dialogue Manager Utterances ####
+
+  utter_put_obj_on_rcpt:
+    - text: "Put {obj_description} on {rcpt}."
+  utter_confirm_obj_in_rcpt:
+    - text: "Can you confirn that the {obj} is on {rcpt}?"
+  utter_do_it:
+    - text: "Do it."
+
+  uttter_ask_remaining_obj:
+    - text: "Have you used all of your objects?"
+
+  utter_help_delete:
+    - text: "To delete an object, type /delete #<object id> in the chat"
+  utter_help_done:
+    - text: "The game is over, please type /done in the chat"
+  utter_help_request:
+    - text: "To request an object type /request #<object id> (for the {obj}) in the chat"
+
+
+  utter_rcpt_is_colour:
+    - text: "The {rcpt} is {colour}"
+  utter_rcpt_is_shape:
+    - text: "The {rcpt} is {shape}"
+  utter_rcpt_is_located:
+    - text: "The {rcpt} is in the {pos}"
+  utter_obj_is_in_rcpt:
+    - text: "The {obj} is in the {rcpt}"
+
+
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

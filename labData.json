@@ -1,0 +1,22 @@
+db.busdata.aggregate([
+    { $match: { journey_id: { $in: [224, 323] } } },
+    { $group: {
+      _id: "$journey_id",
+      nextstop_ids: { $addToSet: "$nextstop_id" }
+    } },
+    { $project: {
+      _id: 0,
+      journey_id: "$_id",
+      nextstop_ids: 1
+    } },
+    { $sort: { journey_id: 1 } },
+    { $group: {
+      _id: null,
+      journey_224_nextstops: { $first: "$nextstop_ids" },
+      journey_323_nextstops: { $last: "$nextstop_ids" }
+    } },
+    { $project: {
+      _id: 0,
+      sum_set_difference:{ $sum: { $setDifference: [ "$journey_224_nextstops", "$journey_323_nextstops" ] } }
+    } }
+  ]);
