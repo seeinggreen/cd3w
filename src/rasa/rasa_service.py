@@ -3,8 +3,9 @@ from ithor.utils.items import Items
 
 
 class RasaService:
-    def __init__(self):
+    def __init__(self,port):
         self.scene = None
+        self.slurk_port = port
         self.metadata_objects, self.metadata_mats = self._get_metadata()
 
     def _get_metadata(self):
