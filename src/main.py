@@ -1,13 +1,15 @@
 import os
 import sys
 
+from sqlalchemy.sql.elements import True_
+
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
     sys.path.append(basepath)
 
 from argparsing import get_args
 from ithor.ithor_service import IthorService
-from rasa.rasa_service import RasaService
+from rasa_srv.service import RasaService
 from slurk.bots.ithorbot.ithor_bot import IthorBot
 from slurk.bots.leaderbot.leader_bot import LeaderBot
 

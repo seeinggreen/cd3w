@@ -10,7 +10,7 @@ import requests
 import json
 
 from ithor.ithor_service import IthorService
-from rasa.rasa_service import RasaService
+from rasa_srv.service import RasaService
 from slurk.bots.ithorbot.ithor_bot import IthorBot
 from slurk.bots.leaderbot.leader_bot import LeaderBot
 
@@ -126,6 +126,7 @@ if __name__ == "__main__":
     leader_bot_user = tokens.leader_bot_user
     level = args["level"]
     variant = args["variant"]
+    task = args["task"]
 
     ithor_service = IthorService()
 
@@ -134,18 +135,20 @@ if __name__ == "__main__":
         ithor_user,
         "http://localhost",
         port,
+        task,
         ithor_service,
         level,
         variant,
     )
 
-    rasa_service = RasaService()
+    rasa_service = RasaService(port)
 
     leader_bot = LeaderBot(
         leader_bot_token,
         leader_bot_user,
         "http://localhost",
         port,
+        task,
         rasa_service,
         level,
         variant,

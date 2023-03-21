@@ -7,7 +7,7 @@ import socketio
 
 
 class IthorBot:
-    def __init__(self, token, user, host, port, ithor_service, level, variant):
+    def __init__(self, token, user, host, port, task, ithor_service, level, variant):
         self.token = token
         self.user = user
         self.host = host
