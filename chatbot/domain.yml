@@ -18,9 +18,9 @@ intents:
   - bot_challenge
 
 entities:
-  - obj:
-  - rcpt:
-  - objRcpt:
+  - obj
+  - rcpt
+  - objRcpt
   - colour:
       roles:
         - obj

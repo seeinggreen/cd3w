@@ -69,7 +69,6 @@ nlu:
     - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
     - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
 
-
 - intent: deny
   examples: |
     - no
@@ -88,7 +87,6 @@ nlu:
     - no working on it    
 
 ###############################
-
 - intent: ask_colour # CHECK (Important Last 2 utterences)
   examples: |
     - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
@@ -105,14 +103,11 @@ nlu:
     - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
     - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
 
-
 - intent: ask_shape 
   examples: |
 
-
 - intent: ask_pos 
   examples: |
-
 
 - intent: ask_state 
   examples: |
@@ -120,7 +115,6 @@ nlu:
     - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
     - both looks [unsliced]{"entity": "state_obj"}
     - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"} 
-
 
 - intent: ask_general 
   examples: |
@@ -148,7 +142,7 @@ nlu:
     - gimme a minute
     - looking at the rules. Gimme a min
     - Yes, give me a second
-    - waiting ....
+    - waiting ...
     - one min
     - correcting it now. Give me a min
     - yup. Gimme a sec
@@ -174,7 +168,6 @@ nlu:
     - [mat]{"entity": "rcpt"} is not empty.
     - The red["entity": "colour", "role": "rcpt"] [mat]{"entity": "rcpt"} is full
     
-
 - intent: clarification_numbers # NEED TO ADD GROUPS FOR 4th utterence
   examples: |
     - I have [2]{"entity": "count", "role":"rcpt"} [round]{"entity": "shape", "role":"rcpt"} [yellow]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}

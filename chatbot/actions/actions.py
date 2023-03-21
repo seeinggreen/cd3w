@@ -103,7 +103,13 @@ class tell_colour(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker)
+        print("tracker                      :   "+tracker                   )
+        print("tracker.sender_id            :   "+tracker.sender_id         )
+        print("tracker.slots                :   "+tracker.slots             )
+        print("tracker.latest_message       :   "+tracker.latest_message    )
+        print("tracker.events               :   "+tracker.events            )
+        print("tracker.active_loop          :   "+tracker.active_loop       )
+        print("tracker.latest_action_name   :   "+tracker.latest_action_name)
         slotvars = {
             "objRcpt": "OBJRCPT",
             "colour": "COLOUR"
@@ -155,6 +161,7 @@ class tell_state(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         print(tracker)
+
         slotvars = {
             "obj": "OBJ",
             "state": "STATE"
