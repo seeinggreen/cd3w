@@ -138,6 +138,7 @@ images/*
 
 # Ignore slurk
 slurk
+!src/slurk
 
 test
 # Ignore modals
