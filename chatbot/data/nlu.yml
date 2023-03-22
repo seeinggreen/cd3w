@@ -81,6 +81,7 @@ nlu:
     - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
     - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
 
+
 - intent: deny
   examples: |
     - no
@@ -99,6 +100,7 @@ nlu:
     - no working on it    
 
 ###############################
+
 - intent: ask_colour # CHECK (Important Last 2 utterences)
   examples: |
     - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
@@ -109,24 +111,64 @@ nlu:
     - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
     - what colour is it?
     - is it the blue mat
-    - I have a [white]{"entity": "colour"} [one]{"entity": "obj"}
+    - I have a [white]{"entity": "colour"} one.
     - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
     - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
     - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
     - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
+    - Can you describe the color of the mug in more detail?
+    - Is the color of the mug more green or blue?
+    - What shade of color does the mug have?
+    - Is the color of the mug bright or muted?
+    - Is the color of the mug solid or does it have a pattern?
+    - Is there a particular hue or tint that the [plate]{"entity": "obj"} has?
+    - Would you say the color of the mug is closer to a warm or cool tone?
+    - How does the color of the [plate]{"entity": "obj"} compare to other objects nearby?
+    - Is there any texture or finish to the color of the [vase]{"entity": "obj"}?
+    - Could you give me a more specific name for the color of the [bowl]{"entity": "obj"}?
+
 
 - intent: ask_shape 
   examples: |
+    - What is the shape of the [mat]{"entity": "rcpt"}?
+    - Is the [placemat]{"entity": "rcpt"} round or square?
+    - What is the contour of the [mat]{"entity": "rcpt"}?
+    - Does the mat have any irregular shapes or edges?
+    - Is the mat circular, rectangular or oval?
+    - What is the perimeter of the mat?
+    - Is the mat symmetrical or asymmetrical?
+    - How does the mat compare to other mats in terms of shape?
+    - Can you tell me more about the shape of the [placemat]{"entity": "rcpt"}?
+    - What are the dimensions of the mat?
+    - What is the shape of the corners of the [mat]{"entity": "rcpt"}?
+
 
 - intent: ask_pos 
   examples: |
+    - Where on the table is the mat located?
+    - Could you point out the position of the mat on the table?
+    - Is the mat placed in the center of the table?
+    - What is the specific spot where the mat is situated on the table?
+    - Can you tell me the exact location of the [mat]{"entity": "rcpt"} on the table?
+    - Is the mat placed near any particular objects on the table?
+    - What is the orientation of the [mat]{"entity": "rcpt"}?
+    - How far is the [mat]{"entity": "rcpt"} from the edge of the table?
+    - Is the mat positioned closer to one end of the table than the other?
+    - Can you give me an idea of where the [mat]{"entity": "rcpt"} is located on the table relative to other items?
+
 
 - intent: ask_state 
   examples: |
     - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
     - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
     - both looks [unsliced]{"entity": "state_obj"}
-    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"} 
+    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
+    - Should the apple be sliced?
+    - should the bread be whole?
+    - Is bread whole?
+    - Should I slice the bread
+    - Has the bread been cut into slices?
+
 
 - intent: ask_general 
   examples: |
@@ -140,6 +182,16 @@ nlu:
     - I have a [vase]{"entity": "obj"} left
     - What to do next
     - What's next
+    - What is the next step in the task?
+    - Can you tell me what needs to be done next?
+    - Where should I go from here in the task?
+    - What action should I take next to complete the task?
+    - What comes after this step in the task?
+    - What is the follow-up step in the task?
+    - Which task should I start working on now?
+    - What do I need to do to move on to the next stage of the task?
+    - What should I prioritize as the next step in the task?
+    - How can I progress further in the task?
 
 - intent: wait 
   examples: |
@@ -154,14 +206,14 @@ nlu:
     - gimme a minute
     - looking at the rules. Gimme a min
     - Yes, give me a second
-    - waiting ...
+    - waiting ....
     - one min
     - correcting it now. Give me a min
     - yup. Gimme a sec
     - cool working on it
     - one sec
 
-- intent: did_it # NEED MORE SAMPLES
+- intent: did_it 
   examples: |
     - done with the step
     - did it
@@ -248,7 +300,7 @@ nlu:
     - After completing this stage, what's the next thing we need to focus on?
     - I still have [four]{"entity": "count", "role":"obj"} [objects]{"entity": "obj"} left that are not on [placemats]{"entity": "rcpt"}.
 
-- intent: not_have_obj # DONE
+- intent: not_have_obj
   examples: |
     - i haven't got any [bread]{"entity": "obj"}
     - I don't have a [red]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} I think
@@ -262,7 +314,7 @@ nlu:
     - I just realized that I don't have an [apple]{"entity": "obj"}.
 
 
-- intent: rcpt_not_empty # HOW TO HANDLE 2nd Utterence
+- intent: rcpt_not_empty 
   examples: |
     - The [orange]{"entity": "colour", "role": "rcpt" } [mat]{"entity": "rcpt"} already has a [glass]{"entity": "obj"} on top
     - i dont have an [empty]{"entity": "state_rcpt"} [round]{"entity": "shape"} [placemat]{"entity": "rcpt"}
@@ -286,7 +338,7 @@ nlu:
     - Which [apple]{"entity": "obj"} are we talking about?
     - I am not sure what you mean by [plate]{"entity": "obj"}
     
-- intent: clarification_numbers # NEED TO ADD GROUPS FOR 4th utterence
+- intent: clarification_numbers 
   examples: |
     - I have [2]{"entity": "count", "role":"rcpt"} [round]{"entity": "shape", "role":"rcpt"} [yellow]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}
     - i have [two]{"entity": "count", "role":"rcpt"} [square]{"entity": "shape", "role":"rcpt"} [blue]{"entity": "colour","role":"rcpt"} [mats]{"entity": "rcpt"}
