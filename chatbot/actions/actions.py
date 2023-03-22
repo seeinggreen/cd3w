@@ -120,7 +120,7 @@ class goodbye(Action):
         dispatcher.utter_message(response="utter_goodbye", **slotvars)
         return []
 
-
+#TODO 
 class tell_colour(Action):
     def name(self) -> Text:
         return "tell_colour"
@@ -130,11 +130,10 @@ class tell_colour(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         e = tracker.latest_message
-        print(tracker.get_latest_entity_values("role"))
-        #print(e)
+        objRcpt = tracker.latest_message["entities"][0]["entity"]
         slotvars = {
-            "objRcpt": "OBJRCPT",
-            "colour": tracker.get_slot("obj")["colour"]
+            "objRcpt": tracker.latest_message["entities"][0]["value"],
+            "colour": tracker.get_slot(objRcpt)["colour"]
         }
         dispatcher.utter_message(response="utter_tell_colour", **slotvars)
         
@@ -181,10 +180,10 @@ class tell_state(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+        print_latest_message(tracker)
         slotvars = {
-            "obj": "OBJ",
-            "state": "STATE"
+            "obj":tracker.get_slot("obj")["type"],
+            "state": tracker.get_slot("obj")["state"]
         }
         dispatcher.utter_message(response="utter_tell_state", **slotvars)
         return []
@@ -225,7 +224,7 @@ class tell_next_step(Action):
         }
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj", {"obj":"apple","colour":"green","state":"whole"})]
+        return [SlotSet("obj", {"type":"apple","colour":"green","state":"whole"}), SlotSet("rcpt", {"type":"mat","colour":"red","shape":"square","pos":"top left"})]
 
 
 class tell_me_when_done(Action):
