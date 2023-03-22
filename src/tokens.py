@@ -10,7 +10,7 @@ import requests
 import json
 
 from ithor.ithor_service import IthorService
-from rasa.rasa_service import RasaService
+from rasa_service.rasa_service import RasaService
 from slurk.bots.ithorbot.ithor_bot import IthorBot
 from slurk.bots.leaderbot.leader_bot import LeaderBot
 
@@ -43,9 +43,9 @@ class Tokens:
         self.create_ithor_user()
         self.get_leader_bot_token()
         self.create_leader_bot_user()
-        self.get_human_user_tokens()
+        self.get_human_user_token()
 
-        print(f"{self.user1}\n{self.user2}")
+        print(f"{self.user}")
 
     def get_url(self, sub_url):
         return f"{base_url}:{self.port}/slurk/api/{sub_url}"
@@ -106,50 +106,7 @@ class Tokens:
             permission_data = json.load(f)
         self.leader_bot_token = self.get_user_token(permission_data)
 
-    def get_human_user_tokens(self):
+    def get_human_user_token(self):
         with open(human_user_file) as f:
             permission_data = json.load(f)
-        self.user1 = self.get_user_token(permission_data)
-        self.user2 = self.get_user_token(permission_data)
-
-
-if __name__ == "__main__":
-    args = get_args()
-    port = args["port"]
-
-    tokens = Tokens(port)
-
-    ithor_token = tokens.ithor_token
-    ithor_user = tokens.ithor_user
-    # Need to implement this in Tokens class
-    leader_bot_token = tokens.leader_bot_token
-    leader_bot_user = tokens.leader_bot_user
-    level = args["level"]
-    variant = args["variant"]
-
-    ithor_service = IthorService()
-
-    ithor_bot = IthorBot(
-        ithor_token,
-        ithor_user,
-        "http://localhost",
-        port,
-        ithor_service,
-        level,
-        variant,
-    )
-
-    rasa_service = RasaService()
-
-    leader_bot = LeaderBot(
-        leader_bot_token,
-        leader_bot_user,
-        "http://localhost",
-        port,
-        rasa_service,
-        level,
-        variant,
-    )
-
-    Thread(target=ithor_bot.run).start()
-    Thread(target=leader_bot.run).start()
+        self.user = self.get_user_token(permission_data)
