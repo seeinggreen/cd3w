@@ -101,18 +101,6 @@ def get_leader_scene(level, variant):
     return get_scene_configs(level, variant, "leader")
 
 
-def get_leader_rcpts(level, variant):
-    mats = get_leader_scene(level, variant)["mats"]
-    return mats
-
-list_rcpt = []
-list_obj = []
-
-def set_list_rcpt(list_rcpt):
-    list_rcpt = list_rcpt
-
-def set_list_obj(list_obj):
-    list_obj = list_obj
 
 
 class RasaService:
@@ -123,8 +111,21 @@ class RasaService:
         self.level = level
         self.variant = variant
 
-        set_list_rcpt(self.get_scene())
-        set_list_obj(self.get_scene())
+
+
+        location - rasa_srv/lead_configs
+        slurk_port_objs - file name
+        slurk_port_rcpts - file name
+        [
+        ]
+
+    def write_rcpts(self):
+        return
+    
+
+    def write_objs(self):
+        return
+
 
     def _get_metadata(self):
         assets = Items().assets
