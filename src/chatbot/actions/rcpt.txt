@@ -1,7 +1,1 @@
-class Rcpt():
-    def __init__(shape, colour, pos):
-        self.shape = shape
-        self.colour = colour
-        self.pos = pos
-
-    
+[{'name': 'Circle4', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}, {'name': 'Circle11', 'shape': 'circle', 'colour': 'violet', 'pos': (2, 0)}, {'name': 'Square2', 'shape': 'square', 'colour': 'blue', 'pos': (3, 0)}, {'name': 'Square7', 'shape': 'square', 'colour': 'orange', 'pos': (3, 1)}, {'name': 'Circle9', 'shape': 'circle', 'colour': 'green', 'pos': (5, 1)}, {'name': 'Circle5', 'shape': 'circle', 'colour': 'yellow', 'pos': (5, 2)}]

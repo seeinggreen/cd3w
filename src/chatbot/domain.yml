@@ -59,7 +59,6 @@ responses:
       image: "https://i.imgur.com/nGF1K8f.jpg"
   utter_happy:
     - text: "Great, carry on!"
-
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
 
@@ -72,7 +71,7 @@ responses:
     - text: "The {rcpt} is in the {pos} of the table"
   utter_tell_state:
     - text: "The {obj} is {state}"
-  utter_tell_general:
+  utter_tell_ al:
     - text: "The {context} {objRcpt}"
   utter_tell_next_step:
     - text: "Put the {obj} on the {rcpt}"
@@ -90,7 +89,8 @@ responses:
     - text: "The game is over, please type /done in the chat"
   utter_help_request:
     - text: "To request an object type /request #<object id> (for the {obj}) in the chat"
-
+  utter_tell_general:
+    - text: ""
 
 actions:
   - affirm
