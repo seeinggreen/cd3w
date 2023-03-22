@@ -80,7 +80,37 @@ nlu:
     - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
     - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
     - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
-
+    - done with the step
+    - did it
+    - i have done it 
+    - did that
+    - its done*
+    - its down
+    - [egg]{"entity": "obj"} is on
+    - It's already there
+    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
+    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
+    - Placed the [gray]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} on the [white]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - done. What else?
+    - There you go, I've placed the [red]{"entity": "colour", "role": "obj"} [bowl]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - The [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} is now on the [green]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, all done.
+    - I've finished placing the [pink]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"} on the [white]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it looks great.
+    - The [black]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} is now on the [orange]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it's ready to be served.
+    - Done! The [purple]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"} is on the [blue]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I've just placed the [green]{"entity": "colour", "role": "obj"} [apple]{"entity": "obj"} on the [brown]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, looks good to me.
+    - I've finished placing the [yellow]{"entity": "colour", "role": "obj"} [spoon]{"entity": "obj"} on the [gray]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it matches nicely.
+    - The [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} is on the [beige]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, we're all set for lunch.
+    - All done! The [silver]{"entity": "colour", "role": "obj"} [fork]{"entity": "obj"} is on the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, looks elegant.
+    - There you go, I've placed the [glass]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}.
+    - Done! The [plate]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}.
+    - I've just put the [pan]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}.
+    - The [spoon]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}, all set for dessert.
+    - I've finished placing the [vase]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}, it looks lovely.
+    - The [candle]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}, ready to be lit.
+    - Completed the task.
+    - The task is done.
+    - All done!
 
 - intent: deny
   examples: |
@@ -126,6 +156,7 @@ nlu:
     - How does the color of the [plate]{"entity": "obj"} compare to other objects nearby?
     - Is there any texture or finish to the color of the [vase]{"entity": "obj"}?
     - Could you give me a more specific name for the color of the [bowl]{"entity": "obj"}?
+  
 
 
 - intent: ask_shape 
@@ -168,12 +199,23 @@ nlu:
     - Is bread whole?
     - Should I slice the bread
     - Has the bread been cut into slices?
+    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
+    - Do you want me to [slice]{"entity": "state_obj"} the [apple]{"entity": "obj"}
+    - The one without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+    - Do you mean the [unsliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+    - I have two [breads]{"entity": "obj"}. A [sliced]{"entity": "state_obj"} one and an [unsliced]{"entity": "state_obj"} one.
+    - both looks [unsliced]{"entity": "state_obj"}
+    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
+    - My [bread]{"entity": "obj"} is [not sliced]{"entity": "state_obj"}
+    - I have a [sliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"
 
 
 - intent: ask_general 
   examples: |
     - which [bread]{"entity": "obj"} should i spwan?
-
+    - Where is the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}
+    - Which [apple]{"entity": "obj"} are we talking about?
+    - I am not sure what you mean by [plate]{"entity": "obj"}
 
 - intent: ask_next_step 
   examples: |
@@ -192,7 +234,8 @@ nlu:
     - What do I need to do to move on to the next stage of the task?
     - What should I prioritize as the next step in the task?
     - How can I progress further in the task?
-
+   
+    
 - intent: wait 
   examples: |
     - lol wait
@@ -212,93 +255,6 @@ nlu:
     - yup. Gimme a sec
     - cool working on it
     - one sec
-
-- intent: did_it 
-  examples: |
-    - done with the step
-    - did it
-    - i have done it 
-    - did that
-    - its done*
-    - its down
-    - [egg]{"entity": "obj"} is on
-    - It's already there
-    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
-    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
-    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
-    - Placed the [gray]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} on the [white]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
-    - done. What else?
-    - There you go, I've placed the [red]{"entity": "colour", "role": "obj"} [bowl]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
-    - The [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} is now on the [green]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, all done.
-    - I've finished placing the [pink]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"} on the [white]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it looks great.
-    - The [black]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} is now on the [orange]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it's ready to be served.
-    - Done! The [purple]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"} is on the [blue]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
-    - I've just placed the [green]{"entity": "colour", "role": "obj"} [apple]{"entity": "obj"} on the [brown]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, looks good to me.
-    - I've finished placing the [yellow]{"entity": "colour", "role": "obj"} [spoon]{"entity": "obj"} on the [gray]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it matches nicely.
-    - The [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} is on the [beige]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, we're all set for lunch.
-    - All done! The [silver]{"entity": "colour", "role": "obj"} [fork]{"entity": "obj"} is on the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, looks elegant.
-    - There you go, I've placed the [glass]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}.
-    - Done! The [plate]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}.
-    - I've just put the [pan]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}.
-    - The [spoon]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}, all set for dessert.
-    - I've finished placing the [vase]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}, it looks lovely.
-    - The [candle]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}, ready to be lit.
-    - Completed the task.
-    - The task is done.
-    - All done!
-
-- intent: clarification_is_colour # CHECK (Important Last 2 utterences)
-  examples: | 
-    - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
-    - do you mean the [green]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"}
-    - I only have a [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}
-    - i only have a [yellow]{"entity": "colour"} one
-    - yup. looks like a [white]{"entity": "colour"} [bread loaf]{"entity": "obj"}
-    - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
-    - what colour is it?
-    - is it the blue mat
-    - I have a [white]{"entity": "colour", "role": "obj"} one
-    - a [yellow]{"entity": "colour"} [vase]{"entity": "obj"}?
-    - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
-    - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
-    - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
-    - Which [blue]{"entity": "colour"} [vase]{"entity": "obj"} are you referring to?
-    - Can you specify which [red]{"entity": "colour"} [apple]{"entity": "obj"} you mean?
-    - Are you talking about the [light green]{"entity": "colour"} or [dark green]{"entity": "colour"}?
-    - Which [yellow]{"entity": "colour"} [pan]{"entity": "obj"} are you referring to? The one above or the one below?
-    - Can you clarify which shade of [purple]{"entity": "colour"} [plate]{"entity": "colour"} you mean?
-    - Are you talking about the [green]{"entity": "colour"} [apple]{"entity": "obj"} on the left or the one on the right?
-    - I only have an [orange]{"entity": "colour"} [mug]{"entity": "obj"}.
-
-- intent: clarification_obj_state #  
-  examples: |
-    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
-    - Do you want me to [slice]{"entity": "state_obj"} the [apple]{"entity": "obj"}
-    - The one without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
-    - Do you mean the [unsliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
-    - I have two [breads]{"entity": "obj"}. A [sliced]{"entity": "state_obj"} one and an [unsliced]{"entity": "state_obj"} one.
-    - both looks [unsliced]{"entity": "state_obj"}
-    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
-    - My [bread]{"entity": "obj"} is [not sliced]{"entity": "state_obj"}
-    - I have a [sliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"}
-
-- intent: ask_next_step # COMBINE WITH ASK NEXT STEP , GROUPING FOR 1st Sentence
-  examples: |
-    - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} though
-    - what about the [bread]{"entity": "obj"}
-    - I have a [vase]{"entity": "obj"} left
-    - What to do next
-    - What's next
-    - What do we do next to solve this problem?
-    - After we finish this task, what's the next step?
-    - What is the next course of action that we should take?
-    - What would be the next logical step in this process?
-    - What steps do we need to take next to achieve our goal?
-    - What should we do next to improve this situation?
-    - What do you suggest we do next to make progress?
-    - What's the next move we need to make to move forward?
-    - After completing this stage, what's the next thing we need to focus on?
-    - I still have [four]{"entity": "count", "role":"obj"} [objects]{"entity": "obj"} left that are not on [placemats]{"entity": "rcpt"}.
 
 - intent: not_have_obj
   examples: |
@@ -331,14 +287,7 @@ nlu:
     - I can see that the square placemat in green color is not empty.
     - The round placemat in red color is being used and has items on it.
     
-- intent: general_clarification 
-  examples: |
-    - which [bread]{"entity": "obj"} should i spwan?
-    - Where is the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}
-    - Which [apple]{"entity": "obj"} are we talking about?
-    - I am not sure what you mean by [plate]{"entity": "obj"}
-    
-- intent: clarification_numbers 
+- intent: ask_numbers 
   examples: |
     - I have [2]{"entity": "count", "role":"rcpt"} [round]{"entity": "shape", "role":"rcpt"} [yellow]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}
     - i have [two]{"entity": "count", "role":"rcpt"} [square]{"entity": "shape", "role":"rcpt"} [blue]{"entity": "colour","role":"rcpt"} [mats]{"entity": "rcpt"}
