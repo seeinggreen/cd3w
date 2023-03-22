@@ -39,7 +39,7 @@ class LeaderBot:
         @self.sio.event
         def status(data):
             if data["type"] == "join" and data["user"]["id"] == self.user:
-                self.rasa_service.get_scene(level=self.level, variant=self.variant)
+                self.rasa_service.get_scene()
 
     def register_command_handler(self):
         @self.sio.event

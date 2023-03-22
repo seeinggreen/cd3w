@@ -141,7 +141,7 @@ if __name__ == "__main__":
         variant,
     )
 
-    rasa_service = RasaService(port)
+    rasa_service = RasaService(port, level, variant)
 
     leader_bot = LeaderBot(
         leader_bot_token,

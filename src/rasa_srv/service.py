@@ -5,7 +5,7 @@ from ithor.utils.items import Items
 from functools import reduce
 
 import requests
-from src.chatbot.chatbot_interface import *
+
 
 class RasaException(Exception):
     pass
@@ -116,12 +116,12 @@ def set_list_obj(list_obj):
 
 
 class RasaService:
-    def __init__(self,port,level, varient):
+    def __init__(self,port,level, variant):
         self.scene = None
         self.slurk_port = port
         self.metadata_objects, self.metadata_mats = self._get_metadata()
         self.level = level
-        self.varient = varient
+        self.variant = variant
 
         set_list_rcpt(self.get_scene())
         set_list_obj(self.get_scene())

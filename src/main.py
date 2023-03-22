@@ -32,6 +32,9 @@ if __name__ == "__main__":
 
     rasa_service = RasaService(port, level, variant)
 
+    print("running main")
+    print(rasa_service.get_scene())
+
     leader_bot = LeaderBot(
         token, user, "http://localhost", port, task, rasa_service, level, variant
     )
