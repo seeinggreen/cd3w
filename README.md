@@ -48,7 +48,7 @@ In a separate terminal (with your environment from above active), run the follow
 ```
 python src/main.py --port 5000 --level l0 --variant v1
 ```
-The first line of output will be the user tokens for the human user, e.g.:
+The first line of output will be the user token for the human user, e.g.:
 ```
 87cfcc61-37d2-47cf-b336-50897dd6b30e
 ```
