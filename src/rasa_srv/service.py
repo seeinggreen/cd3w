@@ -1,10 +1,13 @@
 import json
 from functools import reduce
+
+from sqlalchemy.sql.elements import False_
 from ithor.utils.items import Items
 
 from functools import reduce
 
 import requests
+import re
 
 
 class RasaException(Exception):
@@ -58,6 +61,7 @@ def get_items_matrix(m, list_items, get_item_fields):
 
     return items_flat_lst
 
+splitName = lambda s: re.split('(\d+)', s)
 
 def get_rcpt_data(tupl):
 
@@ -66,21 +70,36 @@ def get_rcpt_data(tupl):
 
     rcpt_dta = tupl[2]
 
+    name = splitName(rcpt_dta['name'])[0].lower()
+
     shape = "circle" if "ircle" in rcpt_dta['name'] else "square"
 
     return {
-        "name": rcpt_dta['name'],
+        "id": rcpt_dta['name'],
+        "name": "mat",
         "shape": shape,
         "colour": rcpt_dta["colour"].lower(),
         "pos": (x, y)
     }
 
 def get_obj_data(tupl):
+
+    x=tupl[0]
+    y=tupl[1]
+
     obj_dta = tupl[2]
+
+    isSliced = "lice" in obj_dta['name']
+
+    name = splitName(obj_dta['name'])[0].lower()
+
     return {
-        "name": obj_dta['name'],
+        "id": obj_dta['name'],
+        "name": name,
         "colour": obj_dta['colour'].lower(),
-        "hasMoved": False
+        "hasMoved": False,
+        "isSliced": isSliced,
+        "pos": (x, y)
     }
 
 
@@ -103,8 +122,34 @@ def get_leader_scene(level, variant):
 
 
 
+def read_json(slurk_port, item_type):
+    filename = str(slurk_port) + "_" + item_type
+    with open(f'src/rasa_srv/lead_configs/{filename}.json', encoding="utf-8") as jFile:
+        data = json.load(jFile)
+    return data
+
+def read_obj_json(slurk_port):
+    return read_json(slurk_port, "obj")
+
+def read_rcpt_json(slurk_port):
+    return read_json(slurk_port, "rcpt")
+
+def write_json(slurk_port, item_type, dct):
+    filename = str(slurk_port) + "_" + item_type
+    with open(f'src/rasa_srv/lead_configs/{filename}.json', "w") as outfile:
+        json.dump(dct, outfile)
+
+def write_obj_json(slurk_port, dct):
+    write_json(slurk_port, "obj", dct)
+
+def write_rcpt_json(slurk_port, dct):
+    write_json(slurk_port, "rcpt", dct)
+
+
+
+
 class RasaService:
-    def __init__(self,port,level, variant):
+    def __init__(self,port,level, variant, write_file=False):
         self.scene = None
         self.slurk_port = port
         self.metadata_objects, self.metadata_mats = self._get_metadata()
@@ -112,12 +157,13 @@ class RasaService:
         self.variant = variant
 
 
+        if write_file:
+            mats, objs = self.get_scene()
 
-        location - rasa_srv/lead_configs
-        slurk_port_objs - file name
-        slurk_port_rcpts - file name
-        [
-        ]
+            write_rcpt_json(self.slurk_port, mats)
+            write_obj_json(self.slurk_port, objs)
+
+
 
     def write_rcpts(self):
         return
