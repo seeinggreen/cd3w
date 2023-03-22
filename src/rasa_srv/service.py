@@ -10,6 +10,7 @@ import requests
 class RasaException(Exception):
     pass
 
+
 def send_msg_rasa(sender_id, msg):
     return requests.post(
         "http://localhost:5005/webhooks/rest/webhook", 
@@ -74,28 +75,25 @@ def get_rcpt_data(tupl):
         "pos": (x, y)
     }
 
+
 def get_rcpts(m, list_rcpts):
     return get_items_matrix(m, list_rcpts, get_rcpt_data)
 
 
-def get_element_matrix(m, name_element, name_attribute=False):
+def get_scene_configs(level, variant, user):
+    with open("src/ithor/scene_configs.json", encoding="utf-8") as json_file:
+        configs = json.load(json_file)
 
-    f = lambda d:d
+    return configs[level][variant][user]
 
-    if name_attribute != False: 
-        f = lambda d: get_att_OrDict(d, name_attribute)
 
-    els = list(filter(
-        lambda e: e != None and e['name'] == name_element,
-        reduce(
-            lambda xs, x: xs+x, 
-            m
-        )
-    ))
+def get_leader_scene(level, variant): 
+    return get_scene_configs(level, variant, "leader")
 
-    if len(els) == 0: return False
 
-    return f(els[0])
+def get_leader_rcpts(level, variant):
+    mats = get_leader_scene(level, variant)["mats"]
+    return mats
 
 
 class RasaService:
@@ -117,17 +115,8 @@ class RasaService:
         #
 
     def get_scene(self, level, variant):
-        with open("src/ithor/scene_configs.json", encoding="utf-8") as json_file:
-            configs = json.load(json_file)
-        self.scene = configs[level][variant]["leader"]
+        self.scene = get_leader_scene(level, variant)
 
-        # store in a data structure for rasa
-
-        #`for obj
-            # id
-            # colour
-            # shape
-            # attributes metadata file
 
         print("getting scene")
         print("\n\nscene: ", self.scene['mats'])
@@ -138,14 +127,6 @@ class RasaService:
         )
 
         print("\n\nNEW scene: ", self.scene['mats'])
-
-        print("\n\nobjs: ", self.scene['mats'])
-
-
-        #print("elements: ", self.get_element_matrix(
-            #self.scene['mats'],
-            #"Square2"
-        #))
 
 
         return self.scene['mats']
