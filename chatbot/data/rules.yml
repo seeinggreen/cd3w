@@ -2,6 +2,11 @@ version: "3.1"
 
 rules:
 
+- rule: Greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - rule: Clarify colour of either obj or rcpt
   steps:
   - intent: ask_colour 

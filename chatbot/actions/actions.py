@@ -54,9 +54,9 @@ def print_latest_message(tracker):
 
 def print_all(tracker):
     print("____________________________________")
-    print_prev_events(tracker)
+    #print_prev_events(tracker)
     print_slots(tracker)
-    #print_latest_message(tracker)
+    print_latest_message(tracker)
     print("____________________________________")
 
 
@@ -101,6 +101,7 @@ class greet(Action):
         slotvars = {
             "state": "sliced",
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_greet", **slotvars)
         return []
 
@@ -117,6 +118,7 @@ class goodbye(Action):
         slotvars = {
             "state": "sliced",
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_goodbye", **slotvars)
         return []
 
@@ -130,11 +132,14 @@ class tell_colour(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         e = tracker.latest_message
+
         objRcpt = tracker.latest_message["entities"][0]["entity"]
+        print_all(tracker)
         slotvars = {
             "objRcpt": tracker.latest_message["entities"][0]["value"],
             "colour": tracker.get_slot(objRcpt)["colour"]
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_tell_colour", **slotvars)
         
         return []
@@ -149,9 +154,10 @@ class tell_shape(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slotvars = {
-            "rcpt": "RCPT",
-            "shape": "SHAPE"
+            "rcpt": tracker.get_slot("rcpt")["name"],
+            "shape": tracker.get_slot("rcpt")["shape"]
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_tell_shape", **slotvars)
         return []
 
@@ -165,9 +171,10 @@ class tell_pos(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slotvars = {
-            "rcpt": "RCPT",
-            "pos": "POS"
+            "rcpt": tracker.get_slot("rcpt")["name"],
+            "pos": tracker.get_slot("rcpt")["pos"]
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_tell_pos", **slotvars)
         return []
 
@@ -180,11 +187,11 @@ class tell_state(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print_latest_message(tracker)
         slotvars = {
-            "obj":tracker.get_slot("obj")["type"],
+            "obj":tracker.get_slot("obj")["name"],
             "state": tracker.get_slot("obj")["state"]
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_tell_state", **slotvars)
         return []
 
@@ -201,6 +208,7 @@ class tell_general(Action):
             "context": "CONTEXT",
             "objRcpt": "OBJRCPT"
         }
+        print_all(tracker)
         dispatcher.utter_message(response="utter_tell_general", **slotvars)
         return []
 
@@ -222,9 +230,10 @@ class tell_next_step(Action):
             "obj": next_obj["obj"],
             "rcpt": next_rcpt["rcpt"] 
         }
+        print_all(tracker)
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj", {"type":"apple","colour":"green","state":"whole"}), SlotSet("rcpt", {"type":"mat","colour":"red","shape":"square","pos":"top left"})]
+        return [SlotSet("obj", {"name":"apple","colour":"green","state":"whole"}), SlotSet("rcpt", {"name":"mat","colour":"red","shape":"square","pos":"top left"})]
 
 
 class tell_me_when_done(Action):
@@ -238,6 +247,11 @@ class tell_me_when_done(Action):
         slotvars = {
             
         }
+        print_all(tracker)
         dispatcher.utter_message(
             response="utter_tell_me_when_done", **slotvars)
         return []
+
+
+
+ 
