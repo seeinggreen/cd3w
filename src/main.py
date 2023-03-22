@@ -1,6 +1,5 @@
 import os
 import sys
-
 from sqlalchemy.sql.elements import True_
 
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
@@ -31,7 +30,7 @@ if __name__ == "__main__":
     )
     ithor_bot.run()
 
-    rasa_service = RasaService(port)
+    rasa_service = RasaService(port, level, variant)
 
     leader_bot = LeaderBot(
         token, user, "http://localhost", port, task, rasa_service, level, variant

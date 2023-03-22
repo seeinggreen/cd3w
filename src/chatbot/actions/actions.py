@@ -27,7 +27,8 @@
 #         return []
 
 import json
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List    
+from rasa_srv.service import list_obj, list_rcpt
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
@@ -192,6 +193,7 @@ class tell_state(Action):
             "state": tracker.get_slot("obj")["state"]
         }
         print_all(tracker)
+        print("HELLO", list_mats)
         dispatcher.utter_message(response="utter_tell_state", **slotvars)
         return []
 
@@ -254,4 +256,35 @@ class tell_me_when_done(Action):
 
 
 
- 
+class help_delete(Action):
+    def name(self) -> Text:
+        return "help_delete"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            
+        }
+        print_all(tracker)
+        dispatcher.utter_message(
+            response="utter_help_delete", **slotvars)
+        return []
+
+
+class help_request(Action):
+    def name(self) -> Text:
+        return "help_delete"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+            
+        }
+        print_all(tracker)
+        dispatcher.utter_message(
+            response="utter_help_delete", **slotvars)
+        return []
