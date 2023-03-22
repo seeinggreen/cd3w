@@ -127,7 +127,7 @@ nlu:
     - not really
     - I cant see one
     - no no
-    - no working on it    
+    - no working on it
 
 ###############################
 
@@ -146,9 +146,9 @@ nlu:
     - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
     - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
     - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
-    - Can you describe the color of the mug in more detail?
+    - Can you describe the [color]{"entity": "colour"} of the mug in more detail?
     - Is the color of the mug more green or blue?
-    - What shade of color does the mug have?
+    - What shade of [color]{"entity": "colour"} does the mug have?
     - Is the color of the mug bright or muted?
     - Is the color of the mug solid or does it have a pattern?
     - Is there a particular hue or tint that the [plate]{"entity": "obj"} has?
@@ -156,29 +156,54 @@ nlu:
     - How does the color of the [plate]{"entity": "obj"} compare to other objects nearby?
     - Is there any texture or finish to the color of the [vase]{"entity": "obj"}?
     - Could you give me a more specific name for the color of the [bowl]{"entity": "obj"}?
+    - Do you mean the [lighter]{"entity": "colour"} [pruple]{"entity": "colour"} one?
+    - The [blue]{"entity": "colour"} one or the [red]{"entity": "colour"} one
+    - The [mug]{"entity": "obj"} in which color?
+    - Could you describe the color of the [plate]{"entity": "colour"} for me?
+    - They both have the same color
+    - Is the [vase]{"entity": "obj"} [white]{"entity": "colour"}, [black]{"entity": "colour"} or some other color?
+    - Does the [plate]{"entity": "colour"} have a specific color?
+    - You didn't mention the colour
+    - Can you tell me the [hue]{"entity": "colour"} of this object?
+    - What is the [shade]{"entity": "colour"} of the [pan]{"entity": "obj"}
+    - I'm curious about the color of the apple. Can you tell me what it is?
+    - Could you give me some details about the [object]{"entity": "obj"}'s color?
+    - Would you mind telling me the exact color of the [bread]{"entity": "obj"}?
+    - I'm trying to figure out which apple you mean. What color is it?
+    - The [dark]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} or the [light]{"entity": "colour"} one?
+    - I cannot seem to find it. What color is it?
+    - There are different shades of purple here. Which one?
   
 
 
 - intent: ask_shape 
   examples: |
-    - What is the shape of the [mat]{"entity": "rcpt"}?
-    - Is the [placemat]{"entity": "rcpt"} round or square?
-    - What is the contour of the [mat]{"entity": "rcpt"}?
-    - Does the mat have any irregular shapes or edges?
-    - Is the mat circular, rectangular or oval?
-    - What is the perimeter of the mat?
-    - Is the mat symmetrical or asymmetrical?
-    - How does the mat compare to other mats in terms of shape?
-    - Can you tell me more about the shape of the [placemat]{"entity": "rcpt"}?
-    - What are the dimensions of the mat?
-    - What is the shape of the corners of the [mat]{"entity": "rcpt"}?
+    - What is the [shape]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
+    - Is the [placemat]{"entity": "rcpt"} [round]{"entity": "shape"} or [square]{"entity": "shape"}?
+    - What is the [contour]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
+    - Does the mat have any irregular [shapes]{"entity": "shaoe"}  or edges?
+    - Is the mat [circular]{"entity": "shape"}, [rectangular]{"entity": "shape"} or [oval]{"entity": "shape"}?
+    - What is the [perimeter]{"entity": "shape"} of the mat?
+    - Is the mat [symmetrical]{"entity": "shape"} or [asymmetrical]{"entity": "shape"}?
+    - How does the mat compare to other mats in terms of [shape]{"entity": "shape"}?
+    - Can you tell me more about the [shape]{"entity": "shape"} of the [placemat]{"entity": "rcpt"}?
+    - What are the [dimensions]{"entity": "shape"} of the mat?
+    - What is the [shape]{"entity": "shape"} of the corners of the [mat]{"entity": "rcpt"}?
+    - Could you describe the shape?
+    - Are we talking about the [square]{"entity": "shape"} mat?
+    - The [round]{"entity": "shape"} mat?
+    - Could I ask what shape is the mat you're referring to?
+    - Do you mean the [oval]{"entity": "shape"} one?
+    - I can only see a [round]{"entity": "shape"} mat.
+    - Should I place the pan on the [circular]{"entity": "shape"} mat?
+    - Put the apple on the [square]{"entity": "shape"} mat, right?
 
 
 - intent: ask_pos 
   examples: |
     - Where on the table is the mat located?
-    - Could you point out the position of the mat on the table?
-    - Is the mat placed in the center of the table?
+    - Could you point out the [position]{"entity": "pos"} of the mat on the table?
+    - Is the mat placed in the [center]{"entity": "pos"} of the table?
     - What is the specific spot where the mat is situated on the table?
     - Can you tell me the exact location of the [mat]{"entity": "rcpt"} on the table?
     - Is the mat placed near any particular objects on the table?
@@ -186,6 +211,25 @@ nlu:
     - How far is the [mat]{"entity": "rcpt"} from the edge of the table?
     - Is the mat positioned closer to one end of the table than the other?
     - Can you give me an idea of where the [mat]{"entity": "rcpt"} is located on the table relative to other items?
+    - The placemat on the [top right]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - Just to confirm, I'm placing the pan on the [top right]{"entity": "pos"} mat
+    - The [bottom right]{"entity": "pos"} [mat]{"entity": "rcpt"}, right?
+    - Are we talking about the mat on the [bottom left]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - Where should I put the [vase]{"entity": "obj"}, the mat on the [top left]{"entity": "pos"} or [bottom right]{"entity": "pos"}?
+    - Where is this mat you're talking about?
+    - Is this mat on the [right]{"entity": "pos"} side of the previous one?
+    - Is it the mat on the [right]{"entity": "pos"} or [left]{"entity": "pos"}?
+    - do you mean the mat on the [bottom right]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - The mat placed above the [blue]{"entity": "colour", "role": "rcpt"} mat?
+    - Should I place the [apple]{"entity": "obj"} on the central mat?
+    - Which [green]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} should I place the pan on? The one in the [bottom]{"entity": "pos"} or the one on [top]{"entity": "pos"}?
+    - What's the relative [position]{"entity": "pos"} of the mat?
+    - What are the coordinates of this [green]{"entity": "colour"} mat?
+    - Should I place the pan on the mat closer to the [edge]{"entity": "pos"} of the table?
+    - I'm confused. Could you describe the [location]{"entity": "pos"} of the mat?
+    - What's the [location]{"entity": "pos"} of the target placemat?
+    - How [far]{"entity": "pos"} is the mat that we're talking of from the [green]{"entity": "pos"} mat?
+
 
 
 - intent: ask_state 
@@ -303,11 +347,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-  
-- synonym: large
-  examples: |
-    - big
-    - gigantic
 
 - lookup: colour
   examples: |
@@ -327,12 +366,50 @@ nlu:
     - brown
     - khaki
     - white
+    - color
+    - hue
+    - shade
+    - dark
+    - light
+    - bright
+    - matte
+    - Beige
+    - Maroon
+    - Navy
+    - Teal
+    - Turquoise
+    - Magenta
+    - Lavender
+    - Olive
+    - Forest Green
+    - Mustard
+    - Ruby
+    - Gold
+    - Silver
+    - Bronze
+    - Peach
 
 - lookup: shape
   examples: |
     - round
     - square
     - triangle
+
+- lookup: pos
+  examples: |
+    - right
+    - left
+    - centre
+    - top
+    - bottom
+    - above
+    - below
+    - position
+    - bottom right
+    - top right
+    - top left
+    - bottom left
+    - corner
 
 # - lookup: object
 #   examples: |
