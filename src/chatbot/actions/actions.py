@@ -28,12 +28,78 @@
 
 import json
 from typing import Any, Text, Dict, List    
-from rasa_srv.service import list_obj, list_rcpt
+
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
     SlotSet
 )
+
+#'id':'Apple3Slice','name':'apple','isSliced':True, 'colour': 'yellow', 'hasMoved': False, 'pos': (1, 0)
+
+obj_ls = [{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}, 
+          {'id': 'Plate2', 'name': 'plate', 'colour': 'blue', 'hasMoved': False, 'isSliced': False, 'pos': (2, 0)}, 
+          {'id': 'Cup2', 'name': 'cup', 'colour': 'orange', 'hasMoved': False, 'isSliced': False, 'pos': (3, 0)}, 
+          {'id': 'Bowl2', 'name': 'bowl', 'colour': 'brown', 'hasMoved': False, 'isSliced': False, 'pos': (3, 1)}, 
+          {'id': 'Pan1', 'name': 'apple', 'colour': 'silver', 'hasMoved': False, 'isSliced': True, 'pos': (5, 1)}, 
+          {'id': 'Bread1Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': False, 'pos': (5, 2)}]
+
+
+
+
+rcpt_ls = [{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}, 
+           {'id': 'Circle11','name': 'mat', 'shape': 'circle', 'colour': 'violet', 'pos': (2, 0)}, 
+           {'id': 'Square2', 'name': 'mat', 'shape': 'square', 'colour': 'red', 'pos': (3, 0)}, 
+           {'id': 'Square7', 'name': 'mat', 'shape': 'square', 'colour': 'orange', 'pos': (3, 1)}, 
+           {'id': 'Circle9', 'name': 'mat', 'shape': 'circle', 'colour': 'green', 'pos': (5, 1)}, 
+           {'id': 'Circle5', 'name': 'mat', 'shape': 'circle', 'colour': 'yellow', 'pos': (5, 2)}]
+
+def get_min_context_obj(curr):
+
+    name = True
+    nameSlice = True
+    nameColour = True
+    
+    for o in obj_ls:
+        if o["id"] != curr["id"]:
+            if o["name"] == curr["name"]:
+                name = False
+            if o["name"] == curr["name"] and o["isSliced"] == curr["isSliced"]:
+                nameSlice = False
+            if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
+                nameColour = False
+    if name:
+        return "only"
+    if nameSlice:
+        return "sliced "
+    if nameColour:
+        return curr["colour"] 
+    return  "sliced " + curr["colour"] 
+
+def get_min_context_rcpt(curr):
+
+    name = True
+    nameShape = True
+    nameColour = True
+    
+    for r in rcpt_ls:
+        if r["id"] != curr["id"]:
+            if r["name"] == curr["name"]:
+                name = False
+            if r["name"] == curr["name"] and r["shape"] == curr["shape"]:
+                nameShape = False
+            if r["name"] == curr["name"] and r["colour"] == curr["colour"]:
+                nameColour = False
+    if name:
+        return "only"
+    if nameShape:
+        return curr["shape"] 
+    if nameColour:
+        return curr["colour"] 
+    return curr["colour"] + " " + curr["shape"] 
+
+
+
 
 def print_prev_events(tracker):
     print("\n\ntracker.events:")
@@ -132,12 +198,12 @@ class tell_colour(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        e = tracker.latest_message
 
         objRcpt = tracker.latest_message["entities"][0]["entity"]
+
         print_all(tracker)
         slotvars = {
-            "objRcpt": tracker.latest_message["entities"][0]["value"],
+            "objRcpt": tracker.get_slot(objRcpt)["name"],
             "colour": tracker.get_slot(objRcpt)["colour"]
         }
         print_all(tracker)
@@ -159,6 +225,8 @@ class tell_shape(Action):
             "shape": tracker.get_slot("rcpt")["shape"]
         }
         print_all(tracker)
+        print(tracker.sender_id)
+
         dispatcher.utter_message(response="utter_tell_shape", **slotvars)
         return []
 
@@ -171,6 +239,8 @@ class tell_pos(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        
         slotvars = {
             "rcpt": tracker.get_slot("rcpt")["name"],
             "pos": tracker.get_slot("rcpt")["pos"]
@@ -190,10 +260,9 @@ class tell_state(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slotvars = {
             "obj":tracker.get_slot("obj")["name"],
-            "state": tracker.get_slot("obj")["state"]
+            "state": tracker.get_slot("obj")["isSliced"]
         }
         print_all(tracker)
-        print("HELLO", list_mats)
         dispatcher.utter_message(response="utter_tell_state", **slotvars)
         return []
 
@@ -206,9 +275,18 @@ class tell_general(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        objRcpt = tracker.latest_message["entities"][0]["entity"]
+        print(tracker.get_slot(objRcpt))
+        if(objRcpt == "obj"):
+            context = get_min_context_obj(tracker.get_slot(objRcpt))
+
+        if(objRcpt == "rcpt"):
+            context = get_min_context_rcpt(tracker.get_slot(objRcpt))
+
         slotvars = {
-            "context": "CONTEXT",
-            "objRcpt": "OBJRCPT"
+            "context": context,
+            "objRcpt": tracker.get_slot(objRcpt)["name"]
         }
         print_all(tracker)
         dispatcher.utter_message(response="utter_tell_general", **slotvars)
@@ -222,20 +300,20 @@ class tell_next_step(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        next_obj = {"obj":"apple","colour":"green","state":"whole"}
-        next_rcpt = {"rcpt":"mat","colour":"green","shape":"square","pos":"top left"}
+        next_obj =  {'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}
+        next_rcpt = {'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}
 
         #obj_context = get_context(next_obj)
         #rcpt_context = get_context(next_rcpt)
 
         slotvars = {
-            "obj": next_obj["obj"],
-            "rcpt": next_rcpt["rcpt"] 
+            "obj": next_obj["name"],
+            "rcpt": next_rcpt["name"] 
         }
         print_all(tracker)
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj", {"name":"apple","colour":"green","state":"whole"}), SlotSet("rcpt", {"name":"mat","colour":"red","shape":"square","pos":"top left"})]
+        return [SlotSet("obj",next_obj), SlotSet("rcpt",next_rcpt)]
 
 
 class tell_me_when_done(Action):
