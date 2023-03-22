@@ -75,10 +75,20 @@ def get_rcpt_data(tupl):
         "pos": (x, y)
     }
 
+def get_obj_data(tupl):
+    obj_dta = tupl[2]
+    return {
+        "name": obj_dta['name'],
+        "colour": obj_dta['colour'].lower(),
+        "hasMoved": False
+    }
+
 
 def get_rcpts(m, list_rcpts):
     return get_items_matrix(m, list_rcpts, get_rcpt_data)
 
+def get_objs(m, list_rcpts):
+    return get_items_matrix(m, list_rcpts, get_obj_data)
 
 def get_scene_configs(level, variant, user):
     with open("src/ithor/scene_configs.json", encoding="utf-8") as json_file:
@@ -118,18 +128,17 @@ class RasaService:
         self.scene = get_leader_scene(level, variant)
 
 
-        print("getting scene")
-        print("\n\nscene: ", self.scene['mats'])
-
         self.scene['mats'] = get_rcpts(
             self.scene['mats'], 
             self.metadata_mats
         )
 
-        print("\n\nNEW scene: ", self.scene['mats'])
+        self.scene['objs'] = get_objs(
+            self.scene['objects'],
+            self.metadata_objects
+        )
 
-
-        return self.scene['mats']
+        return self.scene['mats'], self.scene['objs']
 
         # this is the method called when the bot joins the Slurk room
         # it makes the scene config of the current game available to be used in Rasa
