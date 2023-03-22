@@ -5,7 +5,7 @@ from ithor.utils.items import Items
 from functools import reduce
 
 import requests
-
+from src.chatbot.chatbot_interface import *
 
 class RasaException(Exception):
     pass
@@ -95,13 +95,26 @@ def get_leader_rcpts(level, variant):
     mats = get_leader_scene(level, variant)["mats"]
     return mats
 
+list_rcpt = []
+list_obj = []
+
+def set_list_rcpt(list_rcpt):
+    list_rcpt = list_rcpt
+
+def set_list_obj(list_obj):
+    list_obj = list_obj
+
 
 class RasaService:
-    def __init__(self,port, sender_id=0):
+    def __init__(self,port,level, varient):
         self.scene = None
         self.slurk_port = port
         self.metadata_objects, self.metadata_mats = self._get_metadata()
-        self.sender_id = sender_id
+        self.level = level
+        self.varient = varient
+
+        set_list_rcpt(self.get_scene())
+        set_list_obj(self.get_scene())
 
     def _get_metadata(self):
         assets = Items().assets
@@ -114,8 +127,8 @@ class RasaService:
         # in the scene of the current game
         #
 
-    def get_scene(self, level, variant):
-        self.scene = get_leader_scene(level, variant)
+    def get_scene(self):
+        self.scene = get_leader_scene(self.level, self.variant)
 
 
         print("getting scene")
@@ -136,12 +149,12 @@ class RasaService:
 
     def get_response(self, follower_message):
 
-        res = send_msg_rasa(self.sender_id, follower_message)
+        res = send_msg_rasa(self.slurk_port, follower_message)
 
         if is_res_success(res):
             return get_res_msg(res)
         else:
-            raise RasaException("sender_id: ", self.sender_id, ", message: ", follower_message)
+            raise RasaException("sender_id: ", self.slurk_port, ", message: ", follower_message)
         # this is the method called when the follower types a message in Slurk
         # IMPORTANT regardless of how we handle the passing of the message to Rasa
         # and getting the bot generated response, this method needs to return
