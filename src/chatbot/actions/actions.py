@@ -28,31 +28,45 @@
 
 import json
 from typing import Any, Text, Dict, List    
-
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
     SlotSet
 )
 
+
+def read_json(slurk_port, item_type):
+    filename = str(slurk_port) + "_" + item_type
+    with open(f'../../src/rasa_srv/lead_configs/{filename}.json', encoding="utf-8") as jFile:
+        data = json.load(jFile)
+    return data
+
+def read_obj_json(slurk_port):
+    return read_json(slurk_port, "obj")
+
+def read_rcpt_json(slurk_port):
+    return read_json(slurk_port, "rcpt")
+
+
 #'id':'Apple3Slice','name':'apple','isSliced':True, 'colour': 'yellow', 'hasMoved': False, 'pos': (1, 0)
 
-obj_ls = [{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}, 
-          {'id': 'Plate2', 'name': 'plate', 'colour': 'blue', 'hasMoved': False, 'isSliced': False, 'pos': (2, 0)}, 
-          {'id': 'Cup2', 'name': 'cup', 'colour': 'orange', 'hasMoved': False, 'isSliced': False, 'pos': (3, 0)}, 
-          {'id': 'Bowl2', 'name': 'bowl', 'colour': 'brown', 'hasMoved': False, 'isSliced': False, 'pos': (3, 1)}, 
-          {'id': 'Pan1', 'name': 'apple', 'colour': 'silver', 'hasMoved': False, 'isSliced': True, 'pos': (5, 1)}, 
-          {'id': 'Bread1Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': False, 'pos': (5, 2)}]
+#obj_ls = [{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}, 
+#          {'id': 'Plate2', 'name': 'plate', 'colour': 'blue', 'hasMoved': False, 'isSliced': False, 'pos': (2, 0)}, 
+#          {'id': 'Cup2', 'name': 'cup', 'colour': 'orange', 'hasMoved': False, 'isSliced': False, 'pos': (3, 0)}, 
+#          {'id': 'Bowl2', 'name': 'bowl', 'colour': 'brown', 'hasMoved': False, 'isSliced': False, 'pos': (3, 1)}, 
+#          {'id': 'Pan1', 'name': 'apple', 'colour': 'silver', 'hasMoved': False, 'isSliced': True, 'pos': (5, 1)}, 
+#          {'id': 'Bread1Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': False, 'pos': (5, 2)}]
+
+obj_ls = read_obj_json(5000)
+rcpt_ls= read_rcpt_json(5000)
 
 
-
-
-rcpt_ls = [{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}, 
-           {'id': 'Circle11','name': 'mat', 'shape': 'circle', 'colour': 'violet', 'pos': (2, 0)}, 
-           {'id': 'Square2', 'name': 'mat', 'shape': 'square', 'colour': 'red', 'pos': (3, 0)}, 
-           {'id': 'Square7', 'name': 'mat', 'shape': 'square', 'colour': 'orange', 'pos': (3, 1)}, 
-           {'id': 'Circle9', 'name': 'mat', 'shape': 'circle', 'colour': 'green', 'pos': (5, 1)}, 
-           {'id': 'Circle5', 'name': 'mat', 'shape': 'circle', 'colour': 'yellow', 'pos': (5, 2)}]
+#rcpt_ls = [{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}, 
+#           {'id': 'Circle11','name': 'mat', 'shape': 'circle', 'colour': 'violet', 'pos': (2, 0)}, 
+#           {'id': 'Square2', 'name': 'mat', 'shape': 'square', 'colour': 'red', 'pos': (3, 0)}, 
+#           {'id': 'Square7', 'name': 'mat', 'shape': 'square', 'colour': 'orange', 'pos': (3, 1)}, 
+#           {'id': 'Circle9', 'name': 'mat', 'shape': 'circle', 'colour': 'green', 'pos': (5, 1)}, 
+#           {'id': 'Circle5', 'name': 'mat', 'shape': 'circle', 'colour': 'yellow', 'pos': (5, 2)}]
 
 def get_min_context_obj(curr):
 
