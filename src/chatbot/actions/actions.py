@@ -34,6 +34,8 @@ from rasa_sdk.events import (
     SlotSet
 )
 
+#LEVEL OF DETAIL FUNCTIONS #############################################################################################################
+
 def get_min_context_obj(curr):
 
     name = True
@@ -78,6 +80,35 @@ def get_min_context_rcpt(curr):
         return curr["colour"] 
     return curr["colour"] + " " + curr["shape"] 
 
+def get_pos(pos):
+    if pos[0] == 0:
+        pos[0] = "left"
+    if pos[0] == 1:
+        pos[0] = "middle"
+    if pos[0] == 2:
+        pos[0] = "right"
+
+    if pos[1] == 0:
+        pos[1] = "bottom"
+    if pos[1] == 1:
+        pos[1] = "top"
+    
+    return pos[0] +" "+ pos[1]
+
+def forced_context(curr):
+    return 0
+#NEXT OBJ FUNCTIONS #############################################################################################################
+def next_obj():
+    for o in obj_ls:
+        if not o.hasMoved:
+            return o
+    return False
+def next_rcpt(o):
+    for r in rcpt_ls:
+        if r.pos == o.pos:
+            return r
+    o.hasMoved = True
+    return False
 
 #HELPER FUNCTIONS #############################################################################################################
 
@@ -136,6 +167,7 @@ class affirm(Action):
         slotvars = {
             "state": "sliced",
         }
+
         dispatcher.utter_message(response="utter_affirm", **slotvars)
         return []
 
@@ -166,7 +198,7 @@ class greet(Action):
         slotvars = {
             "state": "sliced",
         }
-        print_all(tracker)
+
         dispatcher.utter_message(response="utter_greet", **slotvars)
         return []
 
@@ -183,7 +215,7 @@ class goodbye(Action):
         slotvars = {
             "state": "sliced",
         }
-        print_all(tracker)
+
         dispatcher.utter_message(response="utter_goodbye", **slotvars)
         return []
 
@@ -197,14 +229,25 @@ class tell_colour(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        objRcpt = tracker.latest_message["entities"][0]["entity"]
+        #by default use obj
+        objRcpt = "obj"
+        if(len(tracker.latest_message["entities"]) > 0):
+            objRcpt = tracker.latest_message["entities"][0]["entity"]
+        polite = ""
+        for c in set_colours:
+            if c in tracker.latest_message["text"].lower():
+                polite = "No. "
 
-        print_all(tracker)
+        if(tracker.get_slot(objRcpt)["colour"] in tracker.latest_message["text"].lower()):
+            polite = "Yes. "
+
         slotvars = {
+            "polite": polite,
             "objRcpt": tracker.get_slot(objRcpt)["name"],
             "colour": tracker.get_slot(objRcpt)["colour"]
         }
-        print_all(tracker)
+        print(tracker.latest_message)
+
         dispatcher.utter_message(response="utter_tell_colour", **slotvars)
         
         return []
@@ -217,27 +260,25 @@ class tell_shape(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print(tracker.latest_message)
 
         polite = ""
         if(tracker.get_slot("rcpt")["shape"] == "square"):
-            if( "circle" in tracker.latest_message["text"]):
-                polite = "No, "
+            if( "circle" in tracker.latest_message["text"].lower()):
+                polite = "No. "
 
         if(tracker.get_slot("rcpt")["shape"] == "circle"):
-            if( "square" in tracker.latest_message["text"]):
-                polite = "No, "
+            if( "square" in tracker.latest_message["text"].lower()):
+                polite = "No. "
 
-        if(tracker.get_slot("rcpt")["shape"] in tracker.latest_message["text"]):
-            polite = "Yes, "
+        if(tracker.get_slot("rcpt")["shape"] in tracker.latest_message["text"].lower()):
+            polite = "Yes. "
 
         slotvars = {
             "polite": polite,
             "rcpt": tracker.get_slot("rcpt")["name"],
             "shape": tracker.get_slot("rcpt")["shape"]
         }
-        print_all(tracker)
-
-
 
         dispatcher.utter_message(response="utter_tell_shape", **slotvars)
         return []
@@ -251,12 +292,15 @@ class tell_pos(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        
+        pos = get_pos(tracker.get_slot("rcpt")["pos"])
+
+        polite = ""
         slotvars = {
+            "polite": polite,
             "rcpt": tracker.get_slot("rcpt")["name"],
-            "pos": tracker.get_slot("rcpt")["pos"]
+            "pos": pos
         }
-        print_all(tracker)
+
         dispatcher.utter_message(response="utter_tell_pos", **slotvars)
         return []
 
@@ -268,11 +312,33 @@ class tell_state(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        polite = ""
+        if tracker.get_slot("obj")["isSliced"]:
+            state="sliced"
+            #user says "slice" and the obj is sliced
+            if("slice" in tracker.latest_message["text"].lower()):
+                polite = "Yes. "
+                #user says sliced and whole, implying they are asking "sliced or whole?" or "I have a slice and a whole"
+                if("whole" in tracker.latest_message["text"].lower()):
+                    polite = ""
+            #user says "whole" and the obj is sliced
+            elif("whole" in tracker.latest_message["text"].lower()):
+                polite = "No. "
+        else:
+            state="whole"
+            if("whole" in tracker.latest_message["text"].lower()):
+                polite = "Yes. "
+                if("slice" in tracker.latest_message["text"].lower()):
+                    polite = ""
+            elif("slice" in tracker.latest_message["text"].lower()):
+                polite = "No. "
+            
         slotvars = {
+            "polite": polite,
             "obj":tracker.get_slot("obj")["name"],
-            "state": tracker.get_slot("obj")["isSliced"]
+            "state": state
         }
-        print_all(tracker)
+
         dispatcher.utter_message(response="utter_tell_state", **slotvars)
         return []
 
@@ -297,7 +363,7 @@ class tell_general(Action):
             "context": context,
             "objRcpt": tracker.get_slot(objRcpt)["name"]
         }
-        print_all(tracker)
+
         dispatcher.utter_message(response="utter_tell_general", **slotvars)
         return []
 
@@ -308,17 +374,21 @@ class tell_next_step(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        next_obj =  {'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}
-        next_rcpt = {'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}
+        
+        obj =  next_obj()
+        #{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}
+        #rcpt =  next_rcpt(obj)
+        rcpt = next_rcpt(obj)
+        #{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}
 
         slotvars = {
-            "obj": next_obj["name"],
-            "rcpt": next_rcpt["name"] 
+            "obj": obj["name"],
+            "rcpt": rcpt["name"] 
         }
         print_all(tracker)
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj",next_obj), SlotSet("rcpt",next_rcpt)]
+        return [SlotSet("obj",obj), SlotSet("rcpt",srcpt)]
 
 class tell_me_when_done(Action):
     def name(self) -> Text:
@@ -331,7 +401,7 @@ class tell_me_when_done(Action):
         slotvars = {
             
         }
-        print_all(tracker)
+
         dispatcher.utter_message(
             response="utter_tell_me_when_done", **slotvars)
         return []
@@ -346,7 +416,7 @@ class help_delete(Action):
         slotvars = {
         
         }
-        print_all(tracker)
+
         dispatcher.utter_message(
             response="utter_help_delete", **slotvars)
         return []
@@ -362,7 +432,11 @@ class help_request(Action):
         slotvars = {
             
         }
-        print_all(tracker)
+
         dispatcher.utter_message(
             response="utter_help_delete", **slotvars)
         return []
+    
+
+
+set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","color","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}

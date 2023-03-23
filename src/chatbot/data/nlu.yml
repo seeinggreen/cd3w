@@ -193,7 +193,11 @@ nlu:
     - The [dark]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} or the [light]{"entity": "colour"} one?
     - I cannot seem to find it. What color is it?
     - There are different shades of purple here. Which one?
-  
+    - the [pan]{"entity": "obj"} is [green]{"entity": "colour", "role": "obj"}
+    - I think the [bowl]{"entity": "obj"} is [orange]{"entity": "colour", "role": "obj"}
+    - is the [plate]{"entity": "obj"} is [purple]{"entity": "colour", "role": "obj"}?
+    - what colour is the mat? 
+    - what is the colour of the mat? 
 
 
 - intent: ask_shape 
@@ -490,12 +494,6 @@ nlu:
     - Bronze
     - Peach
 
-- lookup: shape
-  examples: |
-    - round
-    - square
-    - triangle
-
 - lookup: pos
   examples: |
     - right
@@ -512,41 +510,47 @@ nlu:
     - bottom left
     - corner
 
-# - lookup: count
-#   examples: |
-#     - 1
-#     - 2
-#     - 3
-#     - 4
-#     - 5
-#     - 6
-#     - 7
-#     - 8
-#     - 9
-#     - 10
-#     - one
-#     - two
-#     - three
-#     - four
-#     - five
-#     - six
-#     - seven
-#     - eight
-#     - nine
-#     - 10
+ - lookup: count
+   examples: |
+     - 1
+     - 2
+     - 3
+     - 4
+     - 5
+     - 6
+     - 7
+     - 8
+     - 9
+     - 10
+     - one
+     - two
+     - three
+     - four
+     - five
+     - six
+     - seven
+     - eight
+     - nine
+     - 10
+     
+ - lookup: object
+   examples: |
+     - apple
+     - bread
+     - bowl
+     - cup
+     - egg
+     - pan
+     - plate
+     - vase
 
-# - lookup: object
-#   examples: |
-#     - apple
-#     - bread
-#     - bowl
-#     - cup
-#     - egg
-#     - pan
-#     - plate
-#     - vase
- 
-# - lookup: shape
-#   examples: |
-#     - circle
-#     - square
+ - lookup: rcpt
+   examples: |
+     - mat
+     - placemat
+  
+
+ - lookup: shape
+   examples: |
+     - circle
+     - square

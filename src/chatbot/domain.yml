@@ -64,13 +64,13 @@ responses:
 
 #### V1 #####
   utter_tell_colour:
-    - text: "{polite}the {objRcpt} is {colour}"
+    - text: "{polite}The {objRcpt} is {colour}"
   utter_tell_shape:
-    - text: "{polite}the {rcpt} is {shape}"
+    - text: "{polite}The {rcpt} is {shape}"
   utter_tell_pos:
-    - text: "{polite}the {rcpt} is in the {pos} of the table"
+    - text: "{polite}The {rcpt} is on the {pos} of the table"
   utter_tell_state:
-    - text: "{polite}the {obj} is {state}"
+    - text: "{polite}The {obj} is {state}"
   utter_tell_general:
     - text: "The {context} {objRcpt}"
   utter_tell_next_step:
