@@ -388,7 +388,7 @@ class tell_next_step(Action):
         print_all(tracker)
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj",obj), SlotSet("rcpt",srcpt)]
+        return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
 
 class tell_me_when_done(Action):
     def name(self) -> Text:
@@ -398,7 +398,7 @@ class tell_me_when_done(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {
+        slotvars = {   
             
         }
 

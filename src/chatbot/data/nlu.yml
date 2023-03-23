@@ -70,6 +70,9 @@ nlu:
     - ok there is a spawn item
     - done with the step
     - sorry
+
+- intent: done_it
+  examples: |
     - did it
     - i have done it 
     - did that
@@ -510,47 +513,47 @@ nlu:
     - bottom left
     - corner
 
- - lookup: count
-   examples: |
-     - 1
-     - 2
-     - 3
-     - 4
-     - 5
-     - 6
-     - 7
-     - 8
-     - 9
-     - 10
-     - one
-     - two
-     - three
-     - four
-     - five
-     - six
-     - seven
-     - eight
-     - nine
-     - 10
+- lookup: count
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - one
+    - two
+    - three
+    - four
+    - five
+    - six
+    - seven
+    - eight
+    - nine
+    - 10
      
- - lookup: object
-   examples: |
-     - apple
-     - bread
-     - bowl
-     - cup
-     - egg
-     - pan
-     - plate
-     - vase
+- lookup: obj
+  examples: |
+    - apple
+    - bread
+    - bowl
+    - cup
+    - egg
+    - pan
+    - plate
+    - vase
 
- - lookup: rcpt
-   examples: |
-     - mat
-     - placemat
-  
+- lookup: rcpt
+  examples: |
+    - mat
+    - placemat
 
- - lookup: shape
-   examples: |
-     - circle
-     - square
+
+- lookup: shape
+  examples: |
+    - circle
+    - square
