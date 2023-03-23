@@ -242,7 +242,7 @@ nlu:
     - should the bread be whole?
     - Is bread whole?
     - Should I slice the bread
-    - Has the bread been cut into slices?
+    - Has the bread been [cut]{"entity": "state_obj"} into slices?
     - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
     - Do you want me to [slice]{"entity": "state_obj"} the [apple]{"entity": "obj"}
     - The one without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
@@ -252,6 +252,16 @@ nlu:
     - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
     - My [bread]{"entity": "obj"} is [not sliced]{"entity": "state_obj"}
     - I have a [sliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"
+    - Should I [cut]{"entity": "state_obj"} the [bread]{"entity": "obj"} after I get one?
+    - There are two apples. One is [whole]{"entity": "state_obj"} the other one is [sliced]{"entity": "state_obj"}.
+    - How [many]{"entity": "count", "role": "obj"} apples should I [cut]{"entity": "state_obj"}.
+    - I can see an [unsliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"}
+    - Nope. There is only a [whole]{"entity": "state_obj"} [apple]{"entity": "state_obj"}.
+    - Should I get a [whole]{"entity": "state_obj"} bread or a [sliced]{"entity": "state_obj"} bread
+    - Should I discard the [sliced]{"entity": "state_obj"} apple?
+    - Can you please confirm if I should [slice]{"entity": "state_obj"} the [bread]{"entity": "obj"}?
+    - Seems like the apple is [unsliced]{"entity": "state_obj"}
+    - I'm not sure but the bread looks like it's been [cut]{"entity": "state_obj"}
 
 
 - intent: ask_general 
@@ -260,6 +270,10 @@ nlu:
     - Where is the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}
     - Which [apple]{"entity": "obj"} are we talking about?
     - I am not sure what you mean by [plate]{"entity": "obj"}
+    - Vase? what is a vase?
+    - I don't know this object
+    - Does your pan has a handle?
+    - Wait! I don't what you are referring to.
 
 - intent: ask_next_step 
   examples: |
@@ -278,7 +292,28 @@ nlu:
     - What do I need to do to move on to the next stage of the task?
     - What should I prioritize as the next step in the task?
     - How can I progress further in the task?
-   
+    - I still have two items left
+    - What's the next step in this process?
+    - What do you think our next move should be?
+    - Can you give me some guidance on what to do next?
+    - Where do we go from here?
+    - Do you have any suggestions for what we should do next?
+    - What's the next course of action?
+    - What should be our next priority?
+    - What's the next item on our to-do list?
+    - What do you recommend we do next?
+    - What's the next step on the agenda?
+    - What's our next option?
+    - What's the next phase of this project?
+    - Can you guide me on what steps to take next?
+    - What's the next task we need to complete?
+    - What should we focus on next?
+    - What's the next action we need to take?
+    - Where do we need to go from here?
+    - What do we need to do next to move forward?
+    - What's the next priority on our list?
+    - What should our next move be to achieve our goal?
+    - There are some objects left on the table, should I discard them?
     
 - intent: wait 
   examples: |
@@ -312,6 +347,36 @@ nlu:
     - I'm sorry, but I don't have an [apple]{"entity": "obj"} at the moment.
     - Unfortunately, I don't seem to have a [plate]{"entity": "obj"}
     - I just realized that I don't have an [apple]{"entity": "obj"}.
+    - I'm sorry, I don't have any plates at the moment.
+    - Unfortunately, I don't have a vase right now.
+    - I don't have a spare pan, I'm afraid.
+    - I'm sorry, I'm all out of bread.
+    - Sorry, I don't have any apples left.
+    - Regrettably, I'm currently plate-less.
+    - I'm afraid I don't have a vase on hand.
+    - I'm out of pans at the moment, sorry.
+    - Unfortunately, there's no bread available right now.
+    - I'm fresh out of apples, sorry about that.
+    - Sorry, I'm currently without plates.
+    - I'm sorry to say I don't have a spare vase.
+    - Unfortunately, I don't have any pans available.
+    - I don't have any bread in stock, sorry.
+    - Sorry, I don't have any apples at the moment.
+    - I'm afraid I don't have any plates left.
+    - Unfortunately, I don't have a vase to offer.
+    - I don't have any spare pans, I'm sorry.
+    - I'm sorry, but I'm currently out of bread.
+    - Sorry, I've run out of apples.
+    - I don't have any white plates at the moment.
+    - I don't have a blue vase right now.
+    - I don't have a red pan.
+    - I'm all out of brown bread.
+    - I don't have any green apples left.
+    - I'm currently plate-less, and I don't have any white plates either.
+    - I don't have a yellow vase on hand.
+    - I'm out of black pans at the moment.
+    - There's no white bread available right now.
+    - I'm fresh out of green apples.
 
 
 - intent: rcpt_not_empty 
@@ -340,6 +405,20 @@ nlu:
     - i have [2]{"entity": "count"} of those.
     - How many [apples]{"entity": "obj"} should I get?
     - I have [3]{"entity": "count"} [apples]{"entity": "obj"} on the table, one [gold]{"entity": "colour"}, one [red]{"entity": "colour"}, and one [green]{"entity": "colour"}
+    - I have three white plates and two blue vases.
+    - There are [four]{"entity": "count", "role":"obj"} [red]{"entity": "colour", "role":"obj"} pans and [five]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role":"obj"} apples.
+    - I own [six]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role":"obj"} pans and [three]{"entity": "count", "role":"obj"} [yellow]{"entity": "colour", "role":"obj"} vases.
+    - I have [two]{"entity": "count", "role":"obj"} white plates and [four]{"entity": "count", "role":"obj"} brown bread loaves.
+    - There are [seven]{"entity": "count", "role":"obj"} green apples and [one]{"entity": "count", "role":"obj"} blue vase in my kitchen.
+    - I own [three]{"entity": "count", "role":"obj"} red pans and [six]{"entity": "count", "role":"obj"} brown bread rolls.
+    - I have [one]{"entity": "count", "role":"obj"} yellow vase and [eight]{"entity": "count", "role":"obj"} green apples.
+    - There are [two]{"entity": "count", "role":"obj"} blue vases and [three]{"entity": "count", "role":"obj"} black pans.
+    - I own [four]{"entity": "count", "role":"obj"} white plates and [five]{"entity": "count", "role":"obj"} brown bread loaves.
+    - There are [six]{"entity": "count", "role":"obj"} green apples and [one]{"entity": "count", "role":"obj"} red pan on the table.
+    - I have [one]{"entity": "count", "role":"rcpt"} white mat and [two]{"entity": "count", "role":"rcpt"} green mats.
+    - There are [two]{"entity": "count", "role":"rcpt"} red mats and [one]{"entity": "count", "role":"rcpt"} black mat in my possession.
+    - I own [two]{"entity": "count", "role":"rcpt"} black mats and [one]{"entity": "count", "role":"rcpt"} yellow mat.
+    - I have [one]{"entity": "count", "role":"rcpt"} white mat and [one]{"entity": "count", "role":"rcpt"} yellow mat.
 
 - intent: bot_challenge
   examples: |
@@ -410,6 +489,29 @@ nlu:
     - top left
     - bottom left
     - corner
+
+# - lookup: count
+#   examples: |
+#     - 1
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     - 6
+#     - 7
+#     - 8
+#     - 9
+#     - 10
+#     - one
+#     - two
+#     - three
+#     - four
+#     - five
+#     - six
+#     - seven
+#     - eight
+#     - nine
+#     - 10
 
 # - lookup: object
 #   examples: |
