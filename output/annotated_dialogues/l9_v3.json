@@ -1,1 +1,233 @@
+<<<<<<< HEAD
 {"2023-03-08": [{"user": "Leader", "message": "Hello user, This is a tricky level are you sure you're up to it?"}, {"user": "follower", "message": "Yeah why not :-)"}, {"user": "Leader", "message": "move the bread onto the lilac placemat"}, {"user": "follower", "command": "put #12 on #Z"}, {"user": "Leader", "message": "let me know when you have done it."}, {"user": "follower", "message": "are you sure you mean lilac?"}, {"user": "follower", "message": "There's two purple mats - the lighter one?"}, {"user": "Leader", "message": "it is lilac."}, {"user": "Leader", "message": "its it the bottom most mat"}, {"user": "follower", "message": "okay"}, {"user": "Leader", "message": "nice, have you done it?"}, {"user": "follower", "message": "I've got a bread there already"}, {"user": "Leader", "message": "amazing, put the plate on the purple placemat"}, {"user": "follower", "message": "one sec"}, {"user": "follower", "message": "I don't have a plate I think"}, {"user": "Leader", "message": "yes that is fine, request a plate "}, {"user": "follower", "message": "what colour is it?"}, {"user": "Leader", "message": "blue"}, {"user": "follower", "message": "okay I'll request it"}, {"user": "follower", "command": "request #20"}, {"user": "follower", "message": "okay I've got the plate, will place it now"}, {"user": "Leader", "message": "have you completed the task?"}, {"user": "follower", "command": "put #20 on #X"}, {"user": "follower", "message": "yep"}, {"user": "Leader", "message": "nice, next step put the brown bowl on the square mat"}, {"user": "follower", "command": "put #12 on #Z"}, {"user": "follower", "message": "okay"}, {"user": "follower", "message": "one sec"}, {"user": "follower", "command": "put #10 on #G"}, {"user": "Leader", "message": "for what?"}, {"user": "follower", "message": "okay"}, {"user": "Leader", "message": "okay!"}, {"user": "Leader", "message": "glass bowl on the remaining orange mat"}, {"user": "follower", "command": "put #11 on #T"}, {"user": "follower", "message": "yup done"}, {"user": "Leader", "message": "and the sliced apple on the right yellow placemat"}, {"user": "follower", "command": "put #6 on #S"}, {"user": "follower", "message": "sorted"}, {"user": "Leader", "message": "put the apple on the last placemat"}, {"user": "follower", "command": "put #5 on #R"}, {"user": "follower", "message": "okay all done!"}, {"user": "Leader", "message": "bam speed run"}, {"user": "follower", "message": "okay?"}, {"user": "Leader", "message": "type /done in chat"}, {"user": "follower", "command": "done"}]}
+=======
+{
+  "2023-03-08": [
+    {
+      "user": "Leader",
+      "message": "Hello user, This is a tricky level are you sure you're up to it?",
+      "label": "greet"
+    },
+    {
+      "user": "follower",
+      "message": "Yeah why not :-)",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "move the [bread]{\"entity\": \"obj\"} onto the [lilac]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #12 on #Z",
+      "label": "CMD"
+    },
+    {
+      "user": "Leader",
+      "message": "let me know when you have done it.",
+      "label": "tell_me_when_done"
+    },
+    {
+      "user": "follower",
+      "message": "are you sure you mean [lilac]{\"entity\": \"colour_rcpt\"}?",
+      "label": "confirm_rcpt_Q"
+    },
+    {
+      "user": "follower",
+      "message": "There's two [purple]{\"entity\": \"colour_rcpt\"} [mats]{\"entity\": \"rcpt\"} - the [lighter]{\"entity\": \"colour_rcpt\"} [one]{\"entity\": \"rcpt\"}?",
+      "label": "confirm_rcpt_Q"
+    },
+    {
+      "user": "Leader",
+      "message": "it is [lilac]{\"entity\": \"colour_rcpt\"}.",
+      "label": "call_colour_this"
+    },
+    {
+      "user": "Leader",
+      "message": "its it the [bottom]{\"entity\": \"pos_rcpt\"} most [mat]{\"entity\": \"rcpt\"}",
+      "label": "confirm_rcpt_A"
+    },
+    {
+      "user": "follower",
+      "message": "okay",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "nice, have you done it?",
+      "label": "tell_me_when_done"
+    },
+    {
+      "user": "follower",
+      "message": "I've got a [bread]{\"entity\": \"obj\"} [there]{\"entity\": \"rcpt\"} already",
+      "label": "obj_in_rcpt"
+    },
+    {
+      "user": "Leader",
+      "message": "amazing, put the [plate]{\"entity\": \"obj\"} on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "message": "one sec",
+      "label": "wait"
+    },
+    {
+      "user": "follower",
+      "message": "I don't have a [plate]{\"entity\": \"obj\"} I think",
+      "label": "not_have_obj"
+    },
+    {
+      "user": "Leader",
+      "message": "yes that is fine, request a [plate]{\"entity\": \"obj\"} ",
+      "label": "help_spawn_obj"
+    },
+    {
+      "user": "follower",
+      "message": "what colour is [it]{\"entity\": \"obj\"}?",
+      "label": "confirm_obj"
+    },
+    {
+      "user": "Leader",
+      "message": "[blue]{\"entity\": \"colour_obj\"}",
+      "label": "colour_obj"
+    },
+    {
+      "user": "follower",
+      "message": "okay I'll request it",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "command": "request #20",
+      "label": "CMD"
+    },
+    {
+      "user": "follower",
+      "message": "okay I've got the [plate]{\"entity\": \"obj\"}, will place it now",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "have you completed the task?",
+      "label": "tell_me_when_done"
+    },
+    {
+      "user": "follower",
+      "command": "put #20 on #X",
+      "label": "CMD"
+    },
+    {
+      "user": "follower",
+      "message": "yep",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "nice, next step put the [brown]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #12 on #Z",
+      "label": "CMD"
+    },
+    {
+      "user": "follower",
+      "message": "okay",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "message": "one sec",
+      "label": "wait"
+    },
+    {
+      "user": "follower",
+      "command": "put #10 on #G",
+      "label": "CMD"
+    },
+    {
+      "user": "Leader",
+      "message": "for what?",
+      "label": "unused"
+    },
+    {
+      "user": "follower",
+      "message": "okay",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "okay!",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "[glass]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the remaining [orange]{\"entity\": \"colour_rcpt\"} [mat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #11 on #T",
+      "label": "CMD"
+    },
+    {
+      "user": "follower",
+      "message": "yup done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "and the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [right]{\"entity\": \"pos_rcpt\"} [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #6 on #S",
+      "label": "CMD"
+    },
+    {
+      "user": "follower",
+      "message": "sorted",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "put the [apple]{\"entity\": \"obj\"} on the last [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #5 on #R",
+      "label": "CMD"
+    },
+    {
+      "user": "follower",
+      "message": "okay all done!",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "bam speed run",
+      "label": "unused"
+    },
+    {
+      "user": "follower",
+      "message": "okay?",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "type /done in chat",
+      "label": "help_done"
+    },
+    {
+      "user": "follower",
+      "command": "done",
+      "label": "affirm"
+    }
+  ]
+}
+>>>>>>> 9e6e444fbcf7714a9d17c602f86b249b3da12343

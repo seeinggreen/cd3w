@@ -1,1 +1,253 @@
+<<<<<<< HEAD
 {"2023-03-08": [{"user": "Leader", "message": "hi there"}, {"user": "follower", "message": "Hey!"}, {"user": "Leader", "message": "shall we begin?"}, {"user": "follower", "message": "Sure"}, {"user": "Leader", "message": "great! Please put the unsliced apple on the yellow placemat"}, {"user": "follower", "message": "I can see two orange placemats? Is that what you mean?"}, {"user": "follower", "message": "The ones at the top of the table?"}, {"user": "Leader", "message": "yeah orange! "}, {"user": "follower", "message": "Okay - left or right?"}, {"user": "Leader", "message": "place it on the left one please"}, {"user": "follower", "message": "Sure, I'll do that"}, {"user": "follower", "command": "put #2 on #G"}, {"user": "follower", "message": "Okay, done"}, {"user": "Leader", "message": "perfect! do you have a sliced bread?"}, {"user": "follower", "message": "Yes, where should it go?"}, {"user": "Leader", "message": "please place it on the purple placemat"}, {"user": "Leader", "message": "the dark purple"}, {"user": "follower", "message": "The one down the bottom?"}, {"user": "Leader", "message": "yes!"}, {"user": "follower", "command": "put #13 on #L"}, {"user": "Leader", "message": "are you done?"}, {"user": "follower", "message": "Yep!"}, {"user": "Leader", "message": "do you have a sliced red apple?"}, {"user": "follower", "message": "Oops, I put it on the mat earlier instead of the whole one"}, {"user": "follower", "message": "I can move it to the correct mat - where should it go?"}, {"user": "Leader", "message": "okay no problemo, put the sliced apple on the yellow placemat on the right"}, {"user": "follower", "command": "put #2 on #H"}, {"user": "follower", "message": "Okay, done, and then the whole apple goes on the left orange one?"}, {"user": "Leader", "message": "yep"}, {"user": "follower", "command": "put #22 on #G"}, {"user": "Leader", "message": "now let's proceed with the blueish bowl"}, {"user": "Leader", "message": "place the blueish bowl on the square green placemat"}, {"user": "follower", "command": "put #1 on #G"}, {"user": "follower", "message": "Okay - that's the apples done"}, {"user": "follower", "message": "I'll do the bowl"}, {"user": "Leader", "message": "oki"}, {"user": "follower", "message": "The sort of grey one?"}, {"user": "Leader", "message": "yeah we could call it gray"}, {"user": "follower", "command": "put #9 on #I"}, {"user": "follower", "message": "Okay, that's done"}, {"user": "Leader", "message": "awesome! now please place the bowl on the other green placemat"}, {"user": "follower", "command": "put #10 on #V"}, {"user": "follower", "message": "Yep, the only thing I have left is the yellow vase"}, {"user": "Leader", "message": "amazing! lastly, place the yellow vase on the last available placemat"}, {"user": "follower", "command": "put #23 on #K"}, {"user": "follower", "message": "Okay, that's done"}, {"user": "Leader", "message": "thanks! I think we're done."}, {"user": "follower", "message": "I agree"}, {"user": "follower", "command": "done"}]}
+=======
+{
+  "2023-03-08": [
+    {
+      "user": "Leader",
+      "message": "hi there",
+      "label": "greet"
+    },
+    {
+      "user": "follower",
+      "message": "Hey!",
+      "label": "greet"
+    },
+    {
+      "user": "Leader",
+      "message": "shall we begin?",
+      "label": "greet"
+    },
+    {
+      "user": "follower",
+      "message": "Sure",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "great! Please put the [unsliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "message": "I can see two [orange]{\"entity\": \"colour_rcpt\"} [placemats]{\"entity\": \"rcpt\"}? Is that what you mean?",
+      "label": "i_have_number_rcpt"
+    },
+    {
+      "user": "follower",
+      "message": "The [ones]{\"entity\": \"rcpt\"} at the [top]{\"entity\": \"pos_rcpt\"} of the [table]{\"entity\": \"rcpt\"}?",
+      "label": "confirm_rcpt_Q"
+    },
+    {
+      "user": "Leader",
+      "message": "yeah [orange]{\"entity\": \"colour_rcpt\"}! ",
+      "label": "confirm_rcpt_A"
+    },
+    {
+      "user": "follower",
+      "message": "Okay - [left]{\"entity\": \"pos_rcpt\"} or [right]{\"entity\": \"pos_rcpt\"}?",
+      "label": "confirm_rcpt_Q"
+    },
+    {
+      "user": "Leader",
+      "message": "place it on the [left]{\"entity\": \"pos_rcpt\"} [one]{\"entity\": \"rcpt\"} please",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "message": "Sure, I'll do that",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "command": "put #2 on #G",
+      "label": "FUP"
+    },
+    {
+      "user": "follower",
+      "message": "Okay, done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "perfect! do you have a [sliced]{\"entity\": \"state_obj\"} [bread]{\"entity\": \"obj\"}?",
+      "label": "do_you_have_obj"
+    },
+    {
+      "user": "follower",
+      "message": "Yes, where should it go?",
+      "label": "next_step"
+    },
+    {
+      "user": "Leader",
+      "message": "please place it on the [purple]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "Leader",
+      "message": "the [dark purple]{\"entity\": \"colour_rcpt\"}",
+      "label": "confirm_rcpt_A"
+    },
+    {
+      "user": "follower",
+      "message": "The [one]{\"entity\": \"rcpt\"} down the [bottom]{\"entity\": \"pos_rcpt\"}?",
+      "label": "confirm_rcpt_Q"
+    },
+    {
+      "user": "Leader",
+      "message": "yes!",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "command": "put #13 on #L",
+      "label": "FUP"
+    },
+    {
+      "user": "Leader",
+      "message": "are you done?",
+      "label": "tell_me_when_done"
+    },
+    {
+      "user": "follower",
+      "message": "Yep!",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "do you have a [sliced]{\"entity\": \"state_obj\"} [red]{\"entity\": \"colour_obj\"} [apple]{\"entity\": \"obj\"}?",
+      "label": "do_you_have_obj"
+    },
+    {
+      "user": "follower",
+      "message": "Oops, I put it on the [mat]{\"entity\": \"rcpt\"} earlier instead of the [whole]{\"entity\": \"state_obj\"} [one]{\"entity\": \"obj\"}",
+      "label": "obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "message": "I can move it to the correct [mat]{\"entity\": \"rcpt\"} - where should it go?",
+      "label": "next_step"
+    },
+    {
+      "user": "Leader",
+      "message": "okay no problemo, put the [sliced]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} on the [yellow]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"} on the [right]{\"entity\": \"pos_rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #2 on #H",
+      "label": "FUP"
+    },
+    {
+      "user": "follower",
+      "message": "Okay, done, and then the [whole]{\"entity\": \"state_obj\"} [apple]{\"entity\": \"obj\"} goes on the [left]{\"entity\": \"pos_rcpt\"} [orange]{\"entity\": \"colour_rcpt\"} [one]{\"entity\": \"rcpt\"}?",
+      "label": "next_step"
+    },
+    {
+      "user": "Leader",
+      "message": "yep",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "command": "put #22 on #G",
+      "label": "FUP"
+    },
+    {
+      "user": "Leader",
+      "message": "now let's proceed with the [blueish]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"}",
+      "label": "do_you_have_obj"
+    },
+    {
+      "user": "Leader",
+      "message": "place the [blueish]{\"entity\": \"colour_obj\"} [bowl]{\"entity\": \"obj\"} on the [square]{\"entity\": \"shape_rcpt\"} [green]{\"entity\": \"colour_rcpt\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #1 on #G",
+      "label": "FUP"
+    },
+    {
+      "user": "follower",
+      "message": "Okay - that's the [apples]{\"entity\": \"obj\"} done",
+      "label": "did_it"
+    },
+    {
+      "user": "follower",
+      "message": "I'll do the [bowl]{\"entity\": \"obj\"}",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "oki",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "message": "The sort of [grey]{\"entity\": \"colour_obj\"} [one]{\"entity\": \"obj\"}?",
+      "label": "confirm_rcpt_Q"
+    },
+    {
+      "user": "Leader",
+      "message": "yeah we could call it gray",
+      "label": "call_colour_this"
+    },
+    {
+      "user": "follower",
+      "command": "put #9 on #I",
+      "label": "FUP"
+    },
+    {
+      "user": "follower",
+      "message": "Okay, that's done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "awesome! now please place the [bowl]{\"entity\": \"obj\"} on the other [green]{\"entity\": \"colour_obj\"} [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #10 on #V",
+      "label": "FUP"
+    },
+    {
+      "user": "follower",
+      "message": "Yep, the only thing I have left is the [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"}",
+      "label": "i_have_obj"
+    },
+    {
+      "user": "Leader",
+      "message": "amazing! lastly, place the [yellow]{\"entity\": \"colour_obj\"} [vase]{\"entity\": \"obj\"} on the last available [placemat]{\"entity\": \"rcpt\"}",
+      "label": "put_obj_in_rcpt"
+    },
+    {
+      "user": "follower",
+      "command": "put #23 on #K",
+      "label": "FUP"
+    },
+    {
+      "user": "follower",
+      "message": "Okay, that's done",
+      "label": "affirm"
+    },
+    {
+      "user": "Leader",
+      "message": "thanks! I think we're done.",
+      "label": "goodbye"
+    },
+    {
+      "user": "follower",
+      "message": "I agree",
+      "label": "affirm"
+    },
+    {
+      "user": "follower",
+      "command": "done",
+      "label": "affirm"
+    }
+  ]
+}
+>>>>>>> 9e6e444fbcf7714a9d17c602f86b249b3da12343

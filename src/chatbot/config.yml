@@ -1,7 +1,4 @@
 recipe: default.v1
-
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
 language: en
 pipeline: null
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
