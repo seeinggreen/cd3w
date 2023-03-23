@@ -1,7 +1,6 @@
 import json
 from functools import reduce
 
-from sqlalchemy.sql.elements import False_
 from ithor.utils.items import Items
 
 from functools import reduce

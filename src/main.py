@@ -1,6 +1,5 @@
 import os
 import sys
-from sqlalchemy.sql.elements import True_
 
 basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
@@ -11,24 +10,33 @@ from ithor.ithor_service import IthorService
 from rasa_srv.service import RasaService
 from slurk.bots.ithorbot.ithor_bot import IthorBot
 from slurk.bots.leaderbot.leader_bot import LeaderBot
+from tokens import Tokens
+from threading import Thread
 
 if __name__ == "__main__":
-    # Get the experiment arguments from the command line
     args = get_args()
-    token = args["token"]
-    user = args["user"]
-    task = args["task"]
+    port = args["port"]
+
+    tokens = Tokens(port)
+
+    ithor_token = tokens.ithor_token
+    ithor_user = tokens.ithor_user
+    leader_bot_token = tokens.leader_bot_token
+    leader_bot_user = tokens.leader_bot_user
     level = args["level"]
     variant = args["variant"]
-    
-    port = args["port"]
 
     ithor_service = IthorService()
 
     ithor_bot = IthorBot(
-        token, user, "http://localhost", port, task, ithor_service, level, variant
+        ithor_token,
+        ithor_user,
+        "http://localhost",
+        port,
+        ithor_service,
+        level,
+        variant,
     )
-    ithor_bot.run()
 
     rasa_service = RasaService(port, level, variant)
 
@@ -36,6 +44,14 @@ if __name__ == "__main__":
     print(rasa_service.get_scene())
 
     leader_bot = LeaderBot(
-        token, user, "http://localhost", port, task, rasa_service, level, variant
+        leader_bot_token,
+        leader_bot_user,
+        "http://localhost",
+        port,
+        rasa_service,
+        level,
+        variant,
     )
-    leader_bot.run()
+
+    Thread(target=ithor_bot.run).start()
+    Thread(target=leader_bot.run).start()

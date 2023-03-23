@@ -43,9 +43,8 @@ class Tokens:
         self.create_ithor_user()
         self.get_leader_bot_token()
         self.create_leader_bot_user()
-        self.get_human_user_tokens()
+        self.get_human_user_token()
 
-        print(f"{self.user1}\n{self.user2}")
 
     def get_url(self, sub_url):
         return f"{base_url}:{self.port}/slurk/api/{sub_url}"
@@ -78,6 +77,7 @@ class Tokens:
         url = self.get_url("tokens")
         data = {"permissions_id": permissions_id, "room_id": self.room_id}
         r = self.req(url, data)
+        print(r.json())
         return r.json()["id"]
 
     def create_ithor_user(self):
@@ -106,7 +106,7 @@ class Tokens:
             permission_data = json.load(f)
         self.leader_bot_token = self.get_user_token(permission_data)
 
-    def get_human_user_tokens(self):
+    def get_human_user_token(self):
         with open(human_user_file) as f:
             permission_data = json.load(f)
         self.user1 = self.get_user_token(permission_data)
@@ -126,7 +126,6 @@ if __name__ == "__main__":
     leader_bot_user = tokens.leader_bot_user
     level = args["level"]
     variant = args["variant"]
-    task = args["task"]
 
     ithor_service = IthorService()
 
@@ -135,7 +134,6 @@ if __name__ == "__main__":
         ithor_user,
         "http://localhost",
         port,
-        task,
         ithor_service,
         level,
         variant,
@@ -148,7 +146,6 @@ if __name__ == "__main__":
         leader_bot_user,
         "http://localhost",
         port,
-        task,
         rasa_service,
         level,
         variant,
@@ -156,3 +153,5 @@ if __name__ == "__main__":
 
     Thread(target=ithor_bot.run).start()
     Thread(target=leader_bot.run).start()
+
+    # self.user = self.get_user_token(permission_data)
