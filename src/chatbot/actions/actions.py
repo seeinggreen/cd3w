@@ -34,40 +34,6 @@ from rasa_sdk.events import (
     SlotSet
 )
 
-
-def read_json(slurk_port, item_type):
-    filename = str(slurk_port) + "_" + item_type
-    with open(f'../../src/rasa_srv/lead_configs/{filename}.json', encoding="utf-8") as jFile:
-        data = json.load(jFile)
-    return data
-
-def read_obj_json(slurk_port):
-    return read_json(slurk_port, "obj")
-
-def read_rcpt_json(slurk_port):
-    return read_json(slurk_port, "rcpt")
-
-
-#'id':'Apple3Slice','name':'apple','isSliced':True, 'colour': 'yellow', 'hasMoved': False, 'pos': (1, 0)
-
-#obj_ls = [{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}, 
-#          {'id': 'Plate2', 'name': 'plate', 'colour': 'blue', 'hasMoved': False, 'isSliced': False, 'pos': (2, 0)}, 
-#          {'id': 'Cup2', 'name': 'cup', 'colour': 'orange', 'hasMoved': False, 'isSliced': False, 'pos': (3, 0)}, 
-#          {'id': 'Bowl2', 'name': 'bowl', 'colour': 'brown', 'hasMoved': False, 'isSliced': False, 'pos': (3, 1)}, 
-#          {'id': 'Pan1', 'name': 'apple', 'colour': 'silver', 'hasMoved': False, 'isSliced': True, 'pos': (5, 1)}, 
-#          {'id': 'Bread1Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': False, 'pos': (5, 2)}]
-
-obj_ls = read_obj_json(5000)
-rcpt_ls= read_rcpt_json(5000)
-
-
-#rcpt_ls = [{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}, 
-#           {'id': 'Circle11','name': 'mat', 'shape': 'circle', 'colour': 'violet', 'pos': (2, 0)}, 
-#           {'id': 'Square2', 'name': 'mat', 'shape': 'square', 'colour': 'red', 'pos': (3, 0)}, 
-#           {'id': 'Square7', 'name': 'mat', 'shape': 'square', 'colour': 'orange', 'pos': (3, 1)}, 
-#           {'id': 'Circle9', 'name': 'mat', 'shape': 'circle', 'colour': 'green', 'pos': (5, 1)}, 
-#           {'id': 'Circle5', 'name': 'mat', 'shape': 'circle', 'colour': 'yellow', 'pos': (5, 2)}]
-
 def get_min_context_obj(curr):
 
     name = True
@@ -113,7 +79,24 @@ def get_min_context_rcpt(curr):
     return curr["colour"] + " " + curr["shape"] 
 
 
+#HELPER FUNCTIONS #############################################################################################################
 
+def read_json(slurk_port, item_type):
+    filename = str(slurk_port) + "_" + item_type
+    with open(f'../../src/rasa_srv/lead_configs/{filename}.json', encoding="utf-8") as jFile:
+        data = json.load(jFile)
+    return data
+
+def read_obj_json(slurk_port):
+    return read_json(slurk_port, "obj")
+
+def read_rcpt_json(slurk_port):
+    return read_json(slurk_port, "rcpt")
+
+obj_ls = read_obj_json(5000)
+rcpt_ls= read_rcpt_json(5000)
+
+#TRACKER PRINTING FUNCTIONS #############################################################################################################
 
 def print_prev_events(tracker):
     print("\n\ntracker.events:")
@@ -140,6 +123,7 @@ def print_all(tracker):
     print_latest_message(tracker)
     print("____________________________________")
 
+#ACTIONS #############################################################################################################
 
 class affirm(Action):
     def name(self) -> Text:
@@ -225,7 +209,6 @@ class tell_colour(Action):
         
         return []
 
-#DONT HAVE
 class tell_shape(Action):
     def name(self) -> Text:
         return "tell_shape"
@@ -234,17 +217,31 @@ class tell_shape(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        polite = ""
+        if(tracker.get_slot("rcpt")["shape"] == "square"):
+            if( "circle" in tracker.latest_message["text"]):
+                polite = "No, "
+
+        if(tracker.get_slot("rcpt")["shape"] == "circle"):
+            if( "square" in tracker.latest_message["text"]):
+                polite = "No, "
+
+        if(tracker.get_slot("rcpt")["shape"] in tracker.latest_message["text"]):
+            polite = "Yes, "
+
         slotvars = {
+            "polite": polite,
             "rcpt": tracker.get_slot("rcpt")["name"],
             "shape": tracker.get_slot("rcpt")["shape"]
         }
         print_all(tracker)
-        print(tracker.sender_id)
+
+
 
         dispatcher.utter_message(response="utter_tell_shape", **slotvars)
         return []
 
-#DONT HAVE
 class tell_pos(Action):
     def name(self) -> Text:
         return "tell_pos"
@@ -263,7 +260,6 @@ class tell_pos(Action):
         dispatcher.utter_message(response="utter_tell_pos", **slotvars)
         return []
 
-
 class tell_state(Action):
     def name(self) -> Text:
         return "tell_state"
@@ -280,7 +276,6 @@ class tell_state(Action):
         dispatcher.utter_message(response="utter_tell_state", **slotvars)
         return []
 
-
 class tell_general(Action):
     def name(self) -> Text:
         return "tell_general"
@@ -290,8 +285,8 @@ class tell_general(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        objRcpt = tracker.latest_message["entities"][0]["entity"]
-        print(tracker.get_slot(objRcpt))
+        if(len(tracker.latest_message["entities"]) > 0):
+            objRcpt = tracker.latest_message["entities"][0]["entity"]
         if(objRcpt == "obj"):
             context = get_min_context_obj(tracker.get_slot(objRcpt))
 
@@ -306,7 +301,6 @@ class tell_general(Action):
         dispatcher.utter_message(response="utter_tell_general", **slotvars)
         return []
 
-
 class tell_next_step(Action):
     def name(self) -> Text:
         return "tell_next_step"
@@ -317,9 +311,6 @@ class tell_next_step(Action):
         next_obj =  {'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}
         next_rcpt = {'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}
 
-        #obj_context = get_context(next_obj)
-        #rcpt_context = get_context(next_rcpt)
-
         slotvars = {
             "obj": next_obj["name"],
             "rcpt": next_rcpt["name"] 
@@ -328,7 +319,6 @@ class tell_next_step(Action):
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
         return [SlotSet("obj",next_obj), SlotSet("rcpt",next_rcpt)]
-
 
 class tell_me_when_done(Action):
     def name(self) -> Text:
@@ -346,24 +336,20 @@ class tell_me_when_done(Action):
             response="utter_tell_me_when_done", **slotvars)
         return []
 
-
-
 class help_delete(Action):
     def name(self) -> Text:
         return "help_delete"
-
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         slotvars = {
-            
+        
         }
         print_all(tracker)
         dispatcher.utter_message(
             response="utter_help_delete", **slotvars)
         return []
-
 
 class help_request(Action):
     def name(self) -> Text:

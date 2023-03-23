@@ -64,14 +64,14 @@ responses:
 
 #### V1 #####
   utter_tell_colour:
-    - text: "The {objRcpt} is {colour}"
+    - text: "{polite}the {objRcpt} is {colour}"
   utter_tell_shape:
-    - text: "The {rcpt} is {shape}"
+    - text: "{polite}the {rcpt} is {shape}"
   utter_tell_pos:
-    - text: "The {rcpt} is in the {pos} of the table"
+    - text: "{polite}the {rcpt} is in the {pos} of the table"
   utter_tell_state:
-    - text: "The {obj} is {state}"
-  utter_tell_ al:
+    - text: "{polite}the {obj} is {state}"
+  utter_tell_general:
     - text: "The {context} {objRcpt}"
   utter_tell_next_step:
     - text: "Put the {obj} on the {rcpt}"
@@ -89,8 +89,7 @@ responses:
     - text: "The game is over, please type /done in the chat"
   utter_help_request:
     - text: "To request an object type /request #<object id> (for the {obj}) in the chat"
-  utter_tell_general:
-    - text: ""
+
 
 actions:
   - affirm
