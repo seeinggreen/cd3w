@@ -79,7 +79,8 @@ nlu:
     - It's already there
     - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
     - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
-    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
+    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.'
+    - Just finished with placing [red]{"entity": "colour", "role":"obj"} [apple]{"entity": "obj"} on [white]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.'
     - done with the step
     - did it
     - i have done it 
@@ -111,6 +112,7 @@ nlu:
     - Completed the task.
     - The task is done.
     - All done!
+    - Task Completed!
 
 - intent: deny
   examples: |
@@ -119,6 +121,9 @@ nlu:
     - never
     - nope
     - I don't have that
+    - Item request - not avaliable on my table 
+    - I am unable to find the item
+    - Item missing!
     - I don't see that item
     - no can do
     - I don't think so
@@ -127,7 +132,22 @@ nlu:
     - not really
     - I cant see one
     - no no
+    - Not now
     - no working on it
+    - I'm not able to do that
+    - I cannot fulfill that request
+    - Negative, that's not possible
+    - Sorry, but I can't help you with that
+    - I'm sorry, but I cannot proceed with that.
+    - Sorry, that's not possible
+    - Sorry, I cannot agree to that
+    - I don't agree.
+    - I'm not sure
+    - Not right now.
+    - Sorry, that's something i cannot do.
+    - Invalid Request!
+    - Its already done! can't do that again
+    
 
 ###############################
 
@@ -239,6 +259,7 @@ nlu:
     - both looks [unsliced]{"entity": "state_obj"}
     - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
     - Should the apple be sliced?
+    - Are you sure apple is sliced?
     - should the bread be whole?
     - Is bread whole?
     - Should I slice the bread
@@ -259,6 +280,7 @@ nlu:
     - Nope. There is only a [whole]{"entity": "state_obj"} [apple]{"entity": "state_obj"}.
     - Should I get a [whole]{"entity": "state_obj"} bread or a [sliced]{"entity": "state_obj"} bread
     - Should I discard the [sliced]{"entity": "state_obj"} apple?
+    - Can you please confirm [apple]{"entity": "obj"} is [sliced]{"entity": "state_obj"}?
     - Can you please confirm if I should [slice]{"entity": "state_obj"} the [bread]{"entity": "obj"}?
     - Seems like the apple is [unsliced]{"entity": "state_obj"}
     - I'm not sure but the bread looks like it's been [cut]{"entity": "state_obj"}
