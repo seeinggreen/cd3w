@@ -3,7 +3,7 @@ import socketio
 
 
 class LeaderBot:
-    def __init__(self, token, user, host, port, task, rasa_service, level, variant):
+    def __init__(self, token, user, host, port, rasa_service, level, variant):
         self.token = token
         self.user = user
         self.host = host
