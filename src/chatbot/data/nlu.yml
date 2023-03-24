@@ -163,7 +163,7 @@ nlu:
     - yup. looks like a [white]{"entity": "colour"} [bread]{"entity": "obj"} loaf
     - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
     - what colour is it?
-    - is it the blue mat
+    - is it the blue [mat]{"entity": "rcpt"}
     - I have a [white]{"entity": "colour"} one.
     - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
     - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
@@ -199,8 +199,8 @@ nlu:
     - the [pan]{"entity": "obj"} is [green]{"entity": "colour", "role": "obj"}
     - I think the [bowl]{"entity": "obj"} is [orange]{"entity": "colour", "role": "obj"}
     - is the [plate]{"entity": "obj"} is [purple]{"entity": "colour", "role": "obj"}?
-    - what colour is the mat? 
-    - what is the colour of the mat? 
+    - what colour is the [mat]{"entity": "rcpt"}? 
+    - what is the colour of the [mat]{"entity": "rcpt"}? 
 
 
 - intent: ask_shape 
@@ -208,54 +208,54 @@ nlu:
     - What is the [shape]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
     - Is the [placemat]{"entity": "rcpt"} [round]{"entity": "shape"} or [square]{"entity": "shape"}?
     - What is the [contour]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
-    - Does the mat have any irregular [shapes]{"entity": "shaoe"}  or edges?
-    - Is the mat [circular]{"entity": "shape"}, [rectangular]{"entity": "shape"} or [oval]{"entity": "shape"}?
-    - What is the [perimeter]{"entity": "shape"} of the mat?
-    - Is the mat [symmetrical]{"entity": "shape"} or [asymmetrical]{"entity": "shape"}?
-    - How does the mat compare to other mats in terms of [shape]{"entity": "shape"}?
+    - Does the [mat]{"entity": "rcpt"} have any irregular [shapes]{"entity": "shaoe"}  or edges?
+    - Is the [mat]{"entity": "rcpt"} [circular]{"entity": "shape"}, [rectangular]{"entity": "shape"} or [oval]{"entity": "shape"}?
+    - What is the [perimeter]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
+    - Is the [mat]{"entity": "rcpt"} [symmetrical]{"entity": "shape"} or [asymmetrical]{"entity": "shape"}?
+    - How does the [mat]{"entity": "rcpt"} compare to other [mats]{"entity": "rcpt"} in terms of [shape]{"entity": "shape"}?
     - Can you tell me more about the [shape]{"entity": "shape"} of the [placemat]{"entity": "rcpt"}?
-    - What are the [dimensions]{"entity": "shape"} of the mat?
+    - What are the [dimensions]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
     - What is the [shape]{"entity": "shape"} of the corners of the [mat]{"entity": "rcpt"}?
     - Could you describe the shape?
-    - Are we talking about the [square]{"entity": "shape"} mat?
-    - The [round]{"entity": "shape"} mat?
-    - Could I ask what shape is the mat you're referring to?
+    - Are we talking about the [square]{"entity": "shape"} [mat]{"entity": "rcpt"}?
+    - The [round]{"entity": "shape"} [mat]{"entity": "rcpt"}?
+    - Could I ask what shape is the [mat]{"entity": "rcpt"} you're referring to?
     - Do you mean the [oval]{"entity": "shape"} one?
-    - I can only see a [round]{"entity": "shape"} mat.
-    - Should I place the pan on the [circular]{"entity": "shape"} mat?
-    - Put the apple on the [square]{"entity": "shape"} mat, right?
+    - I can only see a [round]{"entity": "shape"} [mat]{"entity": "rcpt"}.
+    - Should I place the pan on the [circular]{"entity": "shape"} [mat]{"entity": "rcpt"}?
+    - Put the apple on the [square]{"entity": "shape"} [mat]{"entity": "rcpt"}, right?
 
 
 - intent: ask_pos 
   examples: |
-    - Where on the table is the mat located?
-    - Could you point out the [position]{"entity": "pos"} of the mat on the table?
-    - Is the mat placed in the [center]{"entity": "pos"} of the table?
-    - What is the specific spot where the mat is situated on the table?
+    - Where on the table is the [mat]{"entity": "rcpt"} located?
+    - Could you point out the [position]{"entity": "pos"} of the [mat]{"entity": "rcpt"} on the table?
+    - Is the [mat]{"entity": "rcpt"} placed in the [center]{"entity": "pos"} of the table?
+    - What is the specific spot where the [mat]{"entity": "rcpt"} is situated on the table?
     - Can you tell me the exact location of the [mat]{"entity": "rcpt"} on the table?
-    - Is the mat placed near any particular objects on the table?
+    - Is the [mat]{"entity": "rcpt"} placed near any particular objects on the table?
     - What is the orientation of the [mat]{"entity": "rcpt"}?
     - How far is the [mat]{"entity": "rcpt"} from the edge of the table?
-    - Is the mat positioned closer to one end of the table than the other?
+    - Is the [mat]{"entity": "rcpt"} positioned closer to one end of the table than the other?
     - Can you give me an idea of where the [mat]{"entity": "rcpt"} is located on the table relative to other items?
     - The placemat on the [top right]{"entity": "pos"} [corner]{"entity": "pos"}?
-    - Just to confirm, I'm placing the pan on the [top right]{"entity": "pos"} mat
+    - Just to confirm, I'm placing the pan on the [top right]{"entity": "pos"} [mat]{"entity": "rcpt"}
     - The [bottom right]{"entity": "pos"} [mat]{"entity": "rcpt"}, right?
-    - Are we talking about the mat on the [bottom left]{"entity": "pos"} [corner]{"entity": "pos"}?
-    - Where should I put the [vase]{"entity": "obj"}, the mat on the [top left]{"entity": "pos"} or [bottom right]{"entity": "pos"}?
-    - Where is this mat you're talking about?
-    - Is this mat on the [right]{"entity": "pos"} side of the previous one?
-    - Is it the mat on the [right]{"entity": "pos"} or [left]{"entity": "pos"}?
-    - do you mean the mat on the [bottom right]{"entity": "pos"} [corner]{"entity": "pos"}?
-    - The mat placed above the [blue]{"entity": "colour", "role": "rcpt"} mat?
-    - Should I place the [apple]{"entity": "obj"} on the central mat?
+    - Are we talking about the [mat]{"entity": "rcpt"} on the [bottom left]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - Where should I put the [vase]{"entity": "obj"}, the [mat]{"entity": "rcpt"} on the [top left]{"entity": "pos"} or [bottom right]{"entity": "pos"}?
+    - Where is this [mat]{"entity": "rcpt"} you're talking about?
+    - Is this [mat]{"entity": "rcpt"} on the [right]{"entity": "pos"} side of the previous one?
+    - Is it the [mat]{"entity": "rcpt"} on the [right]{"entity": "pos"} or [left]{"entity": "pos"}?
+    - do you mean the [mat]{"entity": "rcpt"} on the [bottom right]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - The [mat]{"entity": "rcpt"} placed above the [blue]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"}?
+    - Should I place the [apple]{"entity": "obj"} on the central [mat]{"entity": "rcpt"}?
     - Which [green]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} should I place the pan on? The one in the [bottom]{"entity": "pos"} or the one on [top]{"entity": "pos"}?
-    - What's the relative [position]{"entity": "pos"} of the mat?
-    - What are the coordinates of this [green]{"entity": "colour"} mat?
-    - Should I place the pan on the mat closer to the [edge]{"entity": "pos"} of the table?
-    - I'm confused. Could you describe the [location]{"entity": "pos"} of the mat?
+    - What's the relative [position]{"entity": "pos"} of the [mat]{"entity": "rcpt"}?
+    - What are the coordinates of this [green]{"entity": "colour"} [mat]{"entity": "rcpt"}?
+    - Should I place the pan on the [mat]{"entity": "rcpt"} closer to the [edge]{"entity": "pos"} of the table?
+    - I'm confused. Could you describe the [location]{"entity": "pos"} of the [mat]{"entity": "rcpt"}?
     - What's the [location]{"entity": "pos"} of the target placemat?
-    - How [far]{"entity": "pos"} is the mat that we're talking of from the [green]{"entity": "pos"} mat?
+    - How [far]{"entity": "pos"} is the [mat]{"entity": "rcpt"} that we're talking of from the [green]{"entity": "pos"} [mat]{"entity": "rcpt"}?
 
 
 
@@ -444,10 +444,10 @@ nlu:
     - There are [two]{"entity": "count", "role":"obj"} blue [vases]{"entity": "obj"} and [three]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role": "obj"} pans.
     - I own [four]{"entity": "count", "role":"obj"} white [plates]{"entity": "obj"} and [five]{"entity": "count", "role":"obj"} [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} loaves.
     - There are [six]{"entity": "count", "role":"obj"} green [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} red pan on the table.
-    - I have [one]{"entity": "count", "role":"rcpt"} white mat and [two]{"entity": "count", "role":"rcpt"} green mats.
-    - There are [two]{"entity": "count", "role":"rcpt"} [red]{"entity": "colour", "role": "rcpt"} mats and [one]{"entity": "count", "role":"rcpt"} black mat in my possession.
-    - I own [two]{"entity": "count", "role":"rcpt"} [black]{"entity": "colour", "role": "rcpt"} mats and [one]{"entity": "count", "role":"rcpt"} yellow mat.
-    - I have [one]{"entity": "count", "role":"rcpt"} [white]{"entity": "colour", "role": "rcpt"} mat and [one]{"entity": "count", "role":"rcpt"} yellow mat.
+    - I have [one]{"entity": "count", "role":"rcpt"} white [mat]{"entity": "rcpt"} and [two]{"entity": "count", "role":"rcpt"} green [mats]{"entity": "rcpt"}.
+    - There are [two]{"entity": "count", "role":"rcpt"} [red]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} black [mat]{"entity": "rcpt"} in my possession.
+    - I own [two]{"entity": "count", "role":"rcpt"} [black]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} yellow [mat]{"entity": "rcpt"}.
+    - I have [one]{"entity": "count", "role":"rcpt"} [white]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} yellow [mat]{"entity": "rcpt"}.
 
 - intent: bot_challenge
   examples: |
@@ -549,7 +549,7 @@ nlu:
 
 - lookup: rcpt
   examples: |
-    - mat
+    - [mat]{"entity": "rcpt"}
     - placemat
 
 
