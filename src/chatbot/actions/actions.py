@@ -8,11 +8,12 @@ from rasa_sdk.events import (
     SlotSet,
     FollowupAction,
     ActionExecuted,
-    UserUttered
+    UserUttered 
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
 
+#This function returns the minimum level of detail required to uniquely identify an object
 def get_min_context_obj(curr):
 
     name = True
@@ -35,6 +36,7 @@ def get_min_context_obj(curr):
         return curr["colour"] 
     return  "sliced " + curr["colour"] 
 
+#This function returns the minimum level of detail required to uniquely identify an rcpt
 def get_min_context_rcpt(curr):
 
     name = True
@@ -55,7 +57,9 @@ def get_min_context_rcpt(curr):
         return curr["shape"] 
     if nameColour:
         return curr["colour"] 
-    return curr["colour"] + " " + curr["shape"] 
+    if nameColour and nameShape:
+        return curr["colour"] + " " + curr["shape"] 
+    return get_pos(curr["pos"]) + curr["colour"] + " " + curr["shape"] 
 
 def get_pos(pos):
     if pos[0] == 0:
@@ -74,27 +78,28 @@ def get_pos(pos):
 
 def forced_context(curr):
     return 0
+
 #NEXT OBJ FUNCTIONS #############################################################################################################
 
 def next_obj():
     for o in obj_ls:
-        if not o['hasMoved']:
+        if not o["hasMoved"]:
             return o
     return False
 
 def next_rcpt(o):
     for r in rcpt_ls:
-        if r['pos'] == o['pos']:
+        if r["pos"] == o["pos"]:
             return r
+    o["hasMoved"] = True
     return False
 
 def update_obj(obj):
     for o in obj_ls:
         if o["id"] == obj["id"]:
             o['hasMoved'] = True
-   
-    
-    
+    print (obj_ls)
+            
 #HELPER FUNCTIONS #############################################################################################################
 
 def read_json(slurk_port, item_type):
@@ -139,6 +144,63 @@ def print_all(tracker):
     print_latest_message(tracker)
     print("____________________________________")
 
+
+def purple_shape_grounding(tracker, shape):
+    shape11 = False
+    shape12 = False
+    shape13 = False
+
+    for r in rcpt_ls:
+        if r["id"].lower() == shape+"11".lower():
+            shape11 = True
+        if r["id"].lower() == shape+"12".lower():
+            shape12 = True
+        if r["id"].lower() == shape+"13".lower():
+            shape13 = True
+
+    if shape11 and shape12 and shape13:
+        # Colour = Violet
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"11".lower()):
+            return "middle shade of purple"
+        # Colour = Indigo
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"12".lower()):
+            return "darkest shade of purple"
+        # Colour = Iris
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"13".lower()):
+            return "lightest shade of purple"
+        
+    if shape12 and shape13:
+        # Colour = Indigo
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"12".lower()):
+            return "dark purple"
+        # Colour = Iris
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"13".lower()):
+            return "light purple"
+
+    if shape11 and shape13:
+        # Colour = Violet
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"11".lower()):
+            return "dark purple"
+        # Colour = Iris
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"13".lower()):
+            return "light purple"
+        
+    if shape11 and shape12:
+        # Colour = Violet
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"11".lower()):
+            return "light purple"
+        # Colour = Indigo
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"12".lower()):
+            return "dark purple"
+
+    if shape11:
+        return "purple"
+    if shape12:
+        return "purple"
+    if shape13: 
+        return "purple"
+
+
 #ACTIONS #############################################################################################################
 
 class affirm(Action):
@@ -152,15 +214,19 @@ class affirm(Action):
         
         temp_list = []
         for e in tracker.events:
-           
             if e["event"] == "bot":
                 temp_list.append(e['metadata'])
 
-        clarification_action_list = ["utter_tell_colour","utter_tell_shape" "utter_tell_pos", "tutter_tell_state", "utter_tell_general", "utter_tell_next_step"]
-        print (temp_list[-1])
-        if  (temp_list[-1]['utter_action'] in clarification_action_list):
-            print ("in print")
-            dispatcher.utter_message(response="utter_tell_me_when_done")
+        clarification_action_list = ["utter_tell_colour","utter_tell_shape", "utter_tell_pos", "utter_tell_state", "utter_tell_general", "utter_tell_next_step"]
+      
+        if(temp_list[-1]['utter_action']):
+            if  (temp_list[-1]['utter_action'] in clarification_action_list):
+                dispatcher.utter_message(response="utter_tell_me_when_done")
+            elif(temp_list[-1]['utter_action'] == "utter_greet"):
+                return [ActionExecuted("action_listen")] + [UserUttered("whats next", { 
+                "intent": {"confidence": 1, "name": "ask_next_step"}, 
+                "entities": [] 
+                })]
         return []
 
 class resp_done_it(Action):
@@ -171,15 +237,15 @@ class resp_done_it(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-       
-        update_obj(tracker.get_slot("obj"))  
-        return [FollowupAction("tell_next_step")]
-        '''
+
+        #return [FollowupAction("tell_next_step")]
+        update_obj(tracker.get_slot("obj"))
         return [ActionExecuted("action_listen")] + [UserUttered("whats next", { 
 		"intent": {"confidence": 1, "name": "ask_next_step"}, 
 		"entities": [] 
-		})]v
-        '''
+		})]
+        
+
 
 class deny(Action):
     def name(self) -> Text:
@@ -233,33 +299,82 @@ class tell_colour(Action):
     def name(self) -> Text:
         return "tell_colour"
 
+    def grounding(tracker, dispatcher, objRcpt, slot_colour):
+
+            for p in set_purples:
+                if p in tracker.latest_message["text"].lower():
+                    user_colour = p
+                    grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"])
+                    if user_colour != "purple":
+                        slotvars = {
+                            "user_colour": user_colour,
+                            "grounding": grounding_term,
+                            "slot_colour": slot_colour
+                        }
+                        #dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
+
+                        print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
+                    if user_colour == grounding_term:
+                        slotvars = {
+                            "user_colour": user_colour,
+                            "slot_colour": slot_colour
+                        }
+                        #dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
+
+                        print("Lets call " + user_colour + ", " + slot_colour+ ".")
+
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         #by default use obj
-        objRcpt = "obj"
-        if(len(tracker.latest_message["entities"]) > 0):
-            objRcpt = tracker.latest_message["entities"][0]["entity"]
+        objRcpt = "rcpt"
         polite = ""
-
-        # NEEDS TO CHANGE colors from set_colors
-        print (set_colours)
-        print (tracker.latest_message["text"].lower())
-        for c in set_colours:
-            if c in tracker.latest_message["text"].lower():
-                polite = "No. "
-
-        if(tracker.get_slot(objRcpt)["colour"] in tracker.latest_message["text"].lower()):
-            polite = "Yes. "
+        temp_list = []
+        if(len(tracker.latest_message["entities"]) > 0):
+            for entity_track in tracker.latest_message["entities"]:
+                if entity_track['entity'] == "obj":
+                     objRcpt = "obj"
+                     break
+            #if(tracker.latest_message["entities"][0]["entity"] == "obj"):
+                #objRcpt = "obj"
+            for c in set_colours:
+                if c in tracker.latest_message["text"].lower():
+                    polite = "No. "
+            if(tracker.get_slot(objRcpt)["colour"] in tracker.latest_message["text"].lower()):
+                polite = "Yes. "
+    
+        slot_colour = tracker.get_slot(objRcpt)["colour"].lower()
+        user_colour = ""
+        if(slot_colour == "violet" or slot_colour == "indigo" or slot_colour == "iris"):
+            for p in set_purples:
+                if p in tracker.latest_message["text"].lower():
+                    user_colour = p
+                    grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"])
+                    if user_colour != grounding_term:
+                        slotvars = {
+                            "user_colour": user_colour,
+                            "grounding_term": grounding_term,
+                            "slot_colour": slot_colour
+                        }
+                        dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
+                        #print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
+                        return []
+                    if user_colour == "purple":
+                        slotvars = {
+                            "user_colour": user_colour,
+                            "slot_colour": slot_colour
+                        }
+                        dispatcher.utter_message(response="utter_grounding_purple", **slotvars)
+                        #print("Lets call " + user_colour + ", " + slot_colour+ ".")
+                        return []
 
         slotvars = {
             "polite": polite,
             "objRcpt": tracker.get_slot(objRcpt)["name"],
             "colour": tracker.get_slot(objRcpt)["colour"]
         }
-        print(tracker.latest_message)
 
         dispatcher.utter_message(response="utter_tell_colour", **slotvars)
         
@@ -273,9 +388,7 @@ class tell_shape(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        #print(tracker.latest_message)
-        print(tracker.latest_message["entities"])
-        # LOOP THROUGH THE ENTITIES TO CHECK IF THE USER IS ASKING ABOUT OBJECT OR RCPT
+
         polite = ""
         if(tracker.get_slot("rcpt")["shape"] == "square"):
             if( "circle" in tracker.latest_message["text"].lower()):
@@ -388,19 +501,20 @@ class tell_next_step(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("in next step")
+       
         obj =  next_obj()
-        rcpt = next_rcpt(obj)
-      
-        slotvars = {
-            "obj": obj["name"],
-            "rcpt": rcpt["name"] 
-        }
-        #print_all(tracker)
-
-        dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
-
+        rcpt = {"id": "Circle11", "name": "mat", "shape": "circle", "colour": "violet", "pos": [2, 0]}
+     
+        if (obj):
+            slotvars = {
+                "obj": obj["name"],
+                "rcpt": rcpt["name"] 
+            }
+        
+            dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
+            return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
+        else:
+            dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
 
 class help_delete(Action):
     def name(self) -> Text:
@@ -436,3 +550,4 @@ class help_request(Action):
 
 
 set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}
+set_purples = {"magenta", "lavendar", "dark purple", "light purple", "purple"}

@@ -52,7 +52,7 @@ responses:
   utter_deny:
     - text: "no"
   utter_greet:
-    - text: "Hey! How are you?"
+    - text: "Hey! Ready to start the game?"
   utter_goodbye:
     - text: "Bye"
   utter_cheer_up:
@@ -66,6 +66,11 @@ responses:
 #### V1 #####
   utter_tell_colour:
     - text: "{polite}The {objRcpt} is {colour}"
+
+  utter_grounding_purple_variant:
+    - text: "The colour {user_colour} is ambiguous. I'm talking about the {grounding_term} mat, lets call that colour {slot_colour}"
+  utter_grounding_purple:
+    - text: "Lets call {user_colour}, {slot_colour}"
   utter_tell_shape:
     - text: "{polite}The {rcpt} is {shape}"
   utter_tell_pos:
