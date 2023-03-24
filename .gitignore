@@ -141,7 +141,7 @@ slurk
 !src/slurk
 
 test
-# Ignore modals
-src/chatbot/modals/*
+# Ignore models
+src/chatbot/models/*.tar.gz
 
 src/chatbot/.rasa/cache/*
