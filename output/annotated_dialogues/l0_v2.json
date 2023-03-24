@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{"2023-03-08": [{"user": "leader", "message": "Okay - let's start"}, {"user": "Follower", "message": "lets do this thing"}, {"user": "leader", "message": "The wooden bowl needs to be on the blue circle"}, {"user": "Follower", "command": "put #10 on #O"}, {"user": "Follower", "message": "what's next boss"}, {"user": "leader", "message": "The yellow vase, just underneath the bowl"}, {"user": "Follower", "message": "on the brown circle"}, {"user": "Follower", "message": "?"}, {"user": "leader", "message": "The orange circle, yeah"}, {"user": "Follower", "command": "put #23 on #U"}, {"user": "Follower", "message": "done"}, {"user": "leader", "message": "Great - the green cup goes on the yellow square"}, {"user": "Follower", "command": "put #7 on #F"}, {"user": "Follower", "message": "lets move to the next action"}, {"user": "leader", "message": "The pan goes next to that"}, {"user": "Follower", "message": "this is an easy game level"}, {"user": "leader", "message": "The purple square gets the egg"}, {"user": "Follower", "command": "put #19 on #D "}, {"user": "Follower", "command": "put #16 on #M"}, {"user": "Follower", "message": "egg is on the purple square"}, {"user": "leader", "message": "And the white plate goes on the final mat"}, {"user": "Follower", "command": "put #21 on #V"}, {"user": "Follower", "message": "Good to go forward"}, {"user": "leader", "message": "That's everything I think - do you have any other objects?"}, {"user": "Follower", "message": "nope"}, {"user": "leader", "message": "Great - we're done then!"}, {"user": "Follower", "message": "See ya"}, {"user": "Follower", "command": "done"}]}
-=======
 {
   "2023-03-08": [
     {
@@ -145,4 +142,3 @@
     }
   ]
 }
->>>>>>> 9e6e444fbcf7714a9d17c602f86b249b3da12343
