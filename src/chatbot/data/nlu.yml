@@ -163,19 +163,19 @@ nlu:
     - yup. looks like a [white]{"entity": "colour"} [bread]{"entity": "obj"} loaf
     - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
     - what colour is it?
-    - is it the blue [mat]{"entity": "rcpt"}
+    - is it the [blue]{"entity": "colour"} [mat]{"entity": "rcpt"}
     - I have a [white]{"entity": "colour"} one.
     - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
     - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
     - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
     - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
-    - Can you describe the [color]{"entity": "colour"} of the mug in more detail?
-    - Is the color of the mug more green or blue?
-    - What shade of [color]{"entity": "colour"} does the mug have?
-    - Is the color of the mug bright or muted?
-    - Is the color of the mug solid or does it have a pattern?
+    - Can you describe the [color]{"entity": "colour"} of the [mug]{"entity": "obj"} in more detail?
+    - Is the color of the [mug]{"entity": "obj"} more [green]{"entity": "colour"} or blue?
+    - What shade of [color]{"entity": "colour"} does the [mug]{"entity": "obj"} have?
+    - Is the color of the [mug]{"entity": "obj"} bright or muted?
+    - Is the color of the [mug]{"entity": "obj"} solid or does it have a pattern?
     - Is there a particular hue or tint that the [plate]{"entity": "obj"} has?
-    - Would you say the color of the mug is closer to a warm or cool tone?
+    - Would you say the color of the [mug]{"entity": "obj"} is closer to a warm or cool tone?
     - How does the color of the [plate]{"entity": "obj"} compare to other objects nearby?
     - Is there any texture or finish to the color of the [vase]{"entity": "obj"}?
     - Could you give me a more specific name for the color of the [bowl]{"entity": "obj"}?
@@ -222,7 +222,7 @@ nlu:
     - Could I ask what shape is the [mat]{"entity": "rcpt"} you're referring to?
     - Do you mean the [oval]{"entity": "shape"} one?
     - I can only see a [round]{"entity": "shape"} [mat]{"entity": "rcpt"}.
-    - Should I place the pan on the [circular]{"entity": "shape"} [mat]{"entity": "rcpt"}?
+    - Should I place the [pan]{"entity": "obj"} on the [circular]{"entity": "shape"} [mat]{"entity": "rcpt"}?
     - Put the apple on the [square]{"entity": "shape"} [mat]{"entity": "rcpt"}, right?
 
 
@@ -231,15 +231,15 @@ nlu:
     - Where on the table is the [mat]{"entity": "rcpt"} located?
     - Could you point out the [position]{"entity": "pos"} of the [mat]{"entity": "rcpt"} on the table?
     - Is the [mat]{"entity": "rcpt"} placed in the [center]{"entity": "pos"} of the table?
-    - What is the specific spot where the [mat]{"entity": "rcpt"} is situated on the table?
-    - Can you tell me the exact location of the [mat]{"entity": "rcpt"} on the table?
+    - What is the specific [spot]{"entity": "pos"} where the [mat]{"entity": "rcpt"} is situated on the table?
+    - Can you tell me the exact [location]{"entity": "pos"} of the [mat]{"entity": "rcpt"} on the table?
     - Is the [mat]{"entity": "rcpt"} placed near any particular objects on the table?
     - What is the orientation of the [mat]{"entity": "rcpt"}?
     - How far is the [mat]{"entity": "rcpt"} from the edge of the table?
     - Is the [mat]{"entity": "rcpt"} positioned closer to one end of the table than the other?
     - Can you give me an idea of where the [mat]{"entity": "rcpt"} is located on the table relative to other items?
     - The placemat on the [top right]{"entity": "pos"} [corner]{"entity": "pos"}?
-    - Just to confirm, I'm placing the pan on the [top right]{"entity": "pos"} [mat]{"entity": "rcpt"}
+    - Just to confirm, I'm placing the [pan]{"entity": "obj"} on the [top right]{"entity": "pos"} [mat]{"entity": "rcpt"}
     - The [bottom right]{"entity": "pos"} [mat]{"entity": "rcpt"}, right?
     - Are we talking about the [mat]{"entity": "rcpt"} on the [bottom left]{"entity": "pos"} [corner]{"entity": "pos"}?
     - Where should I put the [vase]{"entity": "obj"}, the [mat]{"entity": "rcpt"} on the [top left]{"entity": "pos"} or [bottom right]{"entity": "pos"}?
@@ -249,10 +249,10 @@ nlu:
     - do you mean the [mat]{"entity": "rcpt"} on the [bottom right]{"entity": "pos"} [corner]{"entity": "pos"}?
     - The [mat]{"entity": "rcpt"} placed above the [blue]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"}?
     - Should I place the [apple]{"entity": "obj"} on the central [mat]{"entity": "rcpt"}?
-    - Which [green]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} should I place the pan on? The one in the [bottom]{"entity": "pos"} or the one on [top]{"entity": "pos"}?
+    - Which [green]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} should I place the [pan]{"entity": "obj"} on? The one in the [bottom]{"entity": "pos"} or the one on [top]{"entity": "pos"}?
     - What's the relative [position]{"entity": "pos"} of the [mat]{"entity": "rcpt"}?
     - What are the coordinates of this [green]{"entity": "colour"} [mat]{"entity": "rcpt"}?
-    - Should I place the pan on the [mat]{"entity": "rcpt"} closer to the [edge]{"entity": "pos"} of the table?
+    - Should I place the [pan]{"entity": "obj"} on the [mat]{"entity": "rcpt"} closer to the [edge]{"entity": "pos"} of the table?
     - I'm confused. Could you describe the [location]{"entity": "pos"} of the [mat]{"entity": "rcpt"}?
     - What's the [location]{"entity": "pos"} of the target placemat?
     - How [far]{"entity": "pos"} is the [mat]{"entity": "rcpt"} that we're talking of from the [green]{"entity": "pos"} [mat]{"entity": "rcpt"}?
@@ -414,16 +414,16 @@ nlu:
     - i dont have an [empty]{"entity": "state_rcpt"} [round]{"entity": "shape"} [placemat]{"entity": "rcpt"}
     - [mat]{"entity": "rcpt"} already has stuff on top
     - [mat]{"entity": "rcpt"} is not empty.
-    - The red["entity": "colour", "role": "rcpt"] [mat]{"entity": "rcpt"} is full
+    - The [red]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} is full
     - The [round]{"entity": "shape"} [placemat]{"entity": "rcpt"} in [red]{"entity": "colour", "role": "rcpt"} has some items on it, so it's not [empty]{"entity": "state_rcpt"}.
     - I just noticed that the [green]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape"} [placemat]{"entity": "rcpt"} is [occupied]{"entity": "state_rcpt"}.
     - The [green-colored]{"entity": "colour", "role": "rcpt"} [round]{"entity": "shape"} [placemat]{"entity": "rcpt"} has a few things on it.
     - I can see that the [red]{"entity": "colour"}-colored square placemat is in use, so it's not empty.
-    - The [square]{"entity": "shape", "role":"rcpt"} placemat in green color has some items on it, which means it's not empty.
-    - The [round]{"entity": "shape", "role":"rcpt"} placemat in red color is being used and is not empty.
-    - It's evident that the [square]{"entity": "shape", "role":"rcpt"} placemat in green color is not empty, as there are things on it.
-    - I can see that the [square]{"entity": "shape", "role":"rcpt"} placemat in green color is not empty.
-    - The [round]{"entity": "shape", "role":"rcpt"} placemat in red color is being used and has items on it.
+    - The [square]{"entity": "shape", "role":"rcpt"} placemat in [green]{"entity": "colour"} color has some items on it, which means it's not empty.
+    - The [round]{"entity": "shape", "role":"rcpt"} placemat in [red]{"entity": "colour"} color is being used and is not empty.
+    - It's evident that the [square]{"entity": "shape", "role":"rcpt"} placemat in [green]{"entity": "colour"} color is not empty, as there are things on it.
+    - I can see that the [square]{"entity": "shape", "role":"rcpt"} placemat in [green]{"entity": "colour"} color is not empty.
+    - The [round]{"entity": "shape", "role":"rcpt"} placemat in [red]{"entity": "colour"} color is being used and has items on it.
     
 - intent: ask_numbers 
   examples: |
@@ -434,20 +434,20 @@ nlu:
     - i have [2]{"entity": "count"} of those.
     - How many [apples]{"entity": "obj"} should I get?
     - I have [3]{"entity": "count"} [apples]{"entity": "obj"} on the table, one [gold]{"entity": "colour"}, one [red]{"entity": "colour"}, and one [green]{"entity": "colour"}
-    - I have three white [plates]{"entity": "obj"} and two blue [vases]{"entity": "obj"}.
+    - I have three white [plates]{"entity": "obj"} and two [blue]{"entity": "colour"} [vases]{"entity": "obj"}.
     - There are [four]{"entity": "count", "role":"obj"} [red]{"entity": "colour", "role":"obj"} pans and [five]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role":"obj"} [apples]{"entity": "obj"}.
     - I own [six]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role":"obj"} pans and [three]{"entity": "count", "role":"obj"} [yellow]{"entity": "colour", "role":"obj"} [vases]{"entity": "obj"}.
-    - I have [two]{"entity": "count", "role":"obj"} [white]{"entity": "colour", "role": "obj"} [plates]{"entity": "obj"} and [four]{"entity": "count", "role":"obj"} brown [bread]{"entity": "obj"} loaves.
-    - There are [seven]{"entity": "count", "role":"obj"} green [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} in my kitchen.
-    - I own [three]{"entity": "count", "role":"obj"} red pans and [six]{"entity": "count", "role":"obj"} brown [bread]{"entity": "obj"} rolls.
-    - I have [one]{"entity": "count", "role":"obj"} yellow [vase]{"entity": "obj"} and [eight]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role": "obj"} [apples]{"entity": "obj"}.
-    - There are [two]{"entity": "count", "role":"obj"} blue [vases]{"entity": "obj"} and [three]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role": "obj"} pans.
+    - I have [two]{"entity": "count", "role":"obj"} [white]{"entity": "colour", "role": "obj"} [plates]{"entity": "obj"} and [four]{"entity": "count", "role":"obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"} loaves.
+    - There are [seven]{"entity": "count", "role":"obj"} [green]{"entity": "colour"} [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} in my kitchen.
+    - I own [three]{"entity": "count", "role":"obj"} [red]{"entity": "colour"} pans and [six]{"entity": "count", "role":"obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"} rolls.
+    - I have [one]{"entity": "count", "role":"obj"} [yellow]{"entity": "colour"} [vase]{"entity": "obj"} and [eight]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role": "obj"} [apples]{"entity": "obj"}.
+    - There are [two]{"entity": "count", "role":"obj"} [blue]{"entity": "colour"} [vases]{"entity": "obj"} and [three]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role": "obj"} pans.
     - I own [four]{"entity": "count", "role":"obj"} white [plates]{"entity": "obj"} and [five]{"entity": "count", "role":"obj"} [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} loaves.
-    - There are [six]{"entity": "count", "role":"obj"} green [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} red pan on the table.
-    - I have [one]{"entity": "count", "role":"rcpt"} white [mat]{"entity": "rcpt"} and [two]{"entity": "count", "role":"rcpt"} green [mats]{"entity": "rcpt"}.
+    - There are [six]{"entity": "count", "role":"obj"} [green]{"entity": "colour"} [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} [red]{"entity": "colour"} [pan]{"entity": "obj"} on the table.
+    - I have [one]{"entity": "count", "role":"rcpt"} white [mat]{"entity": "rcpt"} and [two]{"entity": "count", "role":"rcpt"} [green]{"entity": "colour"} [mats]{"entity": "rcpt"}.
     - There are [two]{"entity": "count", "role":"rcpt"} [red]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} black [mat]{"entity": "rcpt"} in my possession.
-    - I own [two]{"entity": "count", "role":"rcpt"} [black]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} yellow [mat]{"entity": "rcpt"}.
-    - I have [one]{"entity": "count", "role":"rcpt"} [white]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} yellow [mat]{"entity": "rcpt"}.
+    - I own [two]{"entity": "count", "role":"rcpt"} [black]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} [yellow]{"entity": "colour"} [mat]{"entity": "rcpt"}.
+    - I have [one]{"entity": "count", "role":"rcpt"} [white]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} and [one]{"entity": "count", "role":"rcpt"} [yellow]{"entity": "colour"} [mat]{"entity": "rcpt"}.
 
 - intent: bot_challenge
   examples: |
@@ -499,7 +499,6 @@ nlu:
 
 - lookup: pos
   examples: |
-    - right
     - left
     - centre
     - top
@@ -549,7 +548,7 @@ nlu:
 
 - lookup: rcpt
   examples: |
-    - [mat]{"entity": "rcpt"}
+    - mat
     - placemat
 
 
