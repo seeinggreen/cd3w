@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{"2023-03-08": [{"user": "Follower", "command": "put #5 on #table"}, {"user": "Follower", "command": "put #6 on #table"}, {"user": "Leader", "message": "you are ready"}, {"user": "Follower", "message": "lets do this"}, {"user": "Leader", "message": "oky great we just have to put the same yellow apple on yellow circle"}, {"user": "Follower", "command": "put #6 on #R"}, {"user": "Follower", "message": "done"}, {"user": "Leader", "message": "great! put the brown bowl on the yellow square "}, {"user": "Follower", "command": "put #10 on #E"}, {"user": "Follower", "message": "complete"}, {"user": "Leader", "message": "good let put brown bread on green square"}, {"user": "Follower", "command": "put #14 on #I"}, {"user": "Follower", "message": "done it"}, {"user": "Leader", "message": "great job let do white plate on blue square placement"}, {"user": "Follower", "command": "put #21 on #A"}, {"user": "Follower", "message": "done "}, {"user": "Leader", "message": "good now lets put yellow vase on purple circle"}, {"user": "Follower", "message": "strange looking vase"}, {"user": "Leader", "message": "yeah it is"}, {"user": "Follower", "command": "put #23 on #Z"}, {"user": "Follower", "message": "im glad we agree"}, {"user": "Follower", "message": "its done "}, {"user": "Leader", "message": "lets put pan on pink circle placement"}, {"user": "Follower", "message": "the fuchsia mat? "}, {"user": "Follower", "message": "nah im goofing "}, {"user": "Leader", "message": "hahha"}, {"user": "Follower", "command": "put #19 on #P"}, {"user": "Follower", "message": "every object has a placemat now!"}, {"user": "Leader", "message": "great job "}, {"user": "Leader", "command": "done"}, {"user": "Follower", "message": "i havent touched the egg or white plate though"}, {"user": "Leader", "message": "you haven't place white plate on blue square placement "}, {"user": "Leader", "message": "hahah"}, {"user": "Follower", "message": "luckily its already there"}, {"user": "Leader", "message": "then /done"}, {"user": "Follower", "command": "done"}]}
-=======
 {
   "2023-03-08": [
     {
@@ -185,4 +182,3 @@
     }
   ]
 }
->>>>>>> 9e6e444fbcf7714a9d17c602f86b249b3da12343
