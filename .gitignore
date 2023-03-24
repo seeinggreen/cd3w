@@ -142,6 +142,6 @@ slurk
 
 test
 # Ignore modals
-src/chatbot/modals/*
+src/chatbot/models/*
 
 src/chatbot/.rasa/cache/*
