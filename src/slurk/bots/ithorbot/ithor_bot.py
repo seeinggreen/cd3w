@@ -196,7 +196,10 @@ class IthorBot:
                 self.round_in_progress = False
                 self.sio.emit(
                     "text",
-                    {"room": data["room"], "message": "Thanks for playing!"},
+                    {
+                        "room": data["room"],
+                        "message": f"Thanks for playing level {self.level.replace('l', '')} variant {self.variant.replace('v', '')}! Please visit this link to evaluate LeaderBot: https://forms.office.com/e/AD3zZQAekj",
+                    },
                 )
             elif data["user"]["id"] == self.follower["id"]:
                 try:
