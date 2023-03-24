@@ -8,6 +8,7 @@ if not basepath in sys.path:
 from argparsing import get_args
 from ithor.ithor_service import IthorService
 from rasa_srv.service import RasaService
+
 from slurk.bots.ithorbot.ithor_bot import IthorBot
 from slurk.bots.leaderbot.leader_bot import LeaderBot
 from tokens import Tokens
@@ -37,9 +38,10 @@ if __name__ == "__main__":
         level,
         variant,
     )
-    print ("GOING RASA SERVICE")
+    print ("STARTING RASA SERVICE")
     rasa_service = RasaService(port, level, variant, write_file=True)
-    print ("GOING LEADER SERVICE")
+    print ("STARTING LEADER SERVICE")
+
     leader_bot = LeaderBot(
         leader_bot_token,
         leader_bot_user,

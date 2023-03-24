@@ -66,7 +66,7 @@ rasa run --enable-api
 ```
 
 ### 3.4 Setting up rasa action server
-In a separate terminal (with your environment from above active), run the following from the "src/chatbot" directory to start rasa action service (default port: 5050) :
+After starting main.py, in a separate terminal (with your environment from above active), run the following from the "src/chatbot" directory to start rasa action service (default port: 5050) :
 ```
 rasa run actions
 ```
