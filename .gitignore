@@ -142,6 +142,7 @@ slurk
 
 test
 # Ignore models
-src/chatbot/models/*.tar.gz
+src/chatbot/models/*
+!src/chatbot/models/models.md
 
 src/chatbot/.rasa/cache/*
