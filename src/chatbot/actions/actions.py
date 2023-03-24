@@ -1,37 +1,14 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,                                     #To store the previous conversation. Same as rasa shell
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    #Intents and Actions
-#
-#         dispatcher.utter_message(text="Hello World!")             #Sent to user
-#
-#         return []
 
 import json
 from typing import Any, Text, Dict, List    
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
-    SlotSet
+    SlotSet,
+    FollowupAction,
+    ActionExecuted,
+    UserUttered
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
@@ -98,18 +75,26 @@ def get_pos(pos):
 def forced_context(curr):
     return 0
 #NEXT OBJ FUNCTIONS #############################################################################################################
+
 def next_obj():
     for o in obj_ls:
-        if not o.hasMoved:
+        if not o['hasMoved']:
             return o
     return False
+
 def next_rcpt(o):
     for r in rcpt_ls:
-        if r.pos == o.pos:
+        if r['pos'] == o['pos']:
             return r
-    o.hasMoved = True
     return False
 
+def update_obj(obj):
+    for o in obj_ls:
+        if o["id"] == obj["id"]:
+            o['hasMoved'] = True
+   
+    
+    
 #HELPER FUNCTIONS #############################################################################################################
 
 def read_json(slurk_port, item_type):
@@ -164,13 +149,37 @@ class affirm(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {
-            "state": "sliced",
-        }
+        
+        temp_list = []
+        for e in tracker.events:
+           
+            if e["event"] == "bot":
+                temp_list.append(e['metadata'])
 
-        dispatcher.utter_message(response="utter_affirm", **slotvars)
+        clarification_action_list = ["utter_tell_colour","utter_tell_shape" "utter_tell_pos", "tutter_tell_state", "utter_tell_general", "utter_tell_next_step"]
+        print (temp_list[-1])
+        if  (temp_list[-1]['utter_action'] in clarification_action_list):
+            print ("in print")
+            dispatcher.utter_message(response="utter_tell_me_when_done")
         return []
 
+class resp_done_it(Action):
+    def name(self) -> Text:
+        return "resp_done_it"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
+        update_obj(tracker.get_slot("obj"))  
+        return [FollowupAction("tell_next_step")]
+        '''
+        return [ActionExecuted("action_listen")] + [UserUttered("whats next", { 
+		"intent": {"confidence": 1, "name": "ask_next_step"}, 
+		"entities": [] 
+		})]v
+        '''
 
 class deny(Action):
     def name(self) -> Text:
@@ -234,6 +243,10 @@ class tell_colour(Action):
         if(len(tracker.latest_message["entities"]) > 0):
             objRcpt = tracker.latest_message["entities"][0]["entity"]
         polite = ""
+
+        # NEEDS TO CHANGE colors from set_colors
+        print (set_colours)
+        print (tracker.latest_message["text"].lower())
         for c in set_colours:
             if c in tracker.latest_message["text"].lower():
                 polite = "No. "
@@ -260,8 +273,9 @@ class tell_shape(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker.latest_message)
-
+        #print(tracker.latest_message)
+        print(tracker.latest_message["entities"])
+        # LOOP THROUGH THE ENTITIES TO CHECK IF THE USER IS ASKING ABOUT OBJECT OR RCPT
         polite = ""
         if(tracker.get_slot("rcpt")["shape"] == "square"):
             if( "circle" in tracker.latest_message["text"].lower()):
@@ -374,37 +388,19 @@ class tell_next_step(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+        print("in next step")
         obj =  next_obj()
-        #{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}
-        #rcpt =  next_rcpt(obj)
         rcpt = next_rcpt(obj)
-        #{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}
-
+      
         slotvars = {
             "obj": obj["name"],
             "rcpt": rcpt["name"] 
         }
-        print_all(tracker)
+        #print_all(tracker)
 
         dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
         return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
 
-class tell_me_when_done(Action):
-    def name(self) -> Text:
-        return "tell_me_when_done"
-
-    def run(self,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {   
-            
-        }
-
-        dispatcher.utter_message(
-            response="utter_tell_me_when_done", **slotvars)
-        return []
 
 class help_delete(Action):
     def name(self) -> Text:
@@ -439,4 +435,4 @@ class help_request(Action):
     
 
 
-set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","color","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}
+set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}

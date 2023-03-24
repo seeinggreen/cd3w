@@ -16,6 +16,7 @@ intents:
   - rcpt_not_empty
   - clarification_numbers
   - bot_challenge
+  - done_it
 
 entities:
   - obj
@@ -102,7 +103,7 @@ actions:
   - tell_state
   - tell_general
   - tell_next_step
-  - tell_me_when_done
+  - resp_done_it
 
 session_config:
   session_expiration_time: 60

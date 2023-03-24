@@ -40,4 +40,14 @@ rules:
 - rule: Clarify task done
   steps:
   - intent: wait 
-  - action: tell_me_when_done
+  - action: utter_tell_me_when_done
+
+- rule: afiirm
+  steps:
+  - intent: affirm
+  - action: affirm
+
+- rule: did_it
+  steps:
+  - intent: done_it
+  - action: resp_done_it
