@@ -63,7 +63,7 @@ class IthorBot:
                         "message": f"### Hello and welcome! "
                         "Are you ready to play The Imitation Game? "
                         "To win the game, a leader and a follwer need to collaborate with one another for the follower to recreate the leader's scene. "
-                        f"You are the {data['user']['name']}. "
+                        f"You are the follower."
                         "Neither of you can see what the other's scene looks like, so to achieve this, you'll have to talk talk talk... "
                         "You can assume that your tables have the same placemats, in the same positions. "
                         "However, the objects you can see may be different, and they're most likely in different positions on the table.",
