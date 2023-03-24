@@ -160,7 +160,7 @@ nlu:
     - do you mean the [green]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"}
     - I only have a [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}
     - i only have a [yellow]{"entity": "colour"} one
-    - yup. looks like a [white]{"entity": "colour"} [bread loaf]{"entity": "obj"}
+    - yup. looks like a [white]{"entity": "colour"} [bread]{"entity": "obj"} loaf
     - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
     - what colour is it?
     - is it the blue mat
@@ -265,12 +265,12 @@ nlu:
     - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
     - both looks [unsliced]{"entity": "state_obj"}
     - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
-    - Should the apple be sliced?
-    - Are you sure apple is sliced?
-    - should the bread be whole?
-    - Is bread whole?
-    - Should I slice the bread
-    - Has the bread been [cut]{"entity": "state_obj"} into slices?
+    - Should the apple be [sliced]{"entity": "state_obj"}?
+    - Are you sure apple is [sliced]{"entity": "state_obj"}?
+    - should the [bread]{"entity": "obj"} be [whole]{"entity": "state_obj"}?
+    - Is [bread]{"entity": "obj"} [whole]{"entity": "state_obj"}?
+    - Should I slice the [bread]{"entity": "obj"}
+    - Has the [bread]{"entity": "obj"} been [cut]{"entity": "state_obj"} into slices?
     - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
     - Do you want me to [slice]{"entity": "state_obj"} the [apple]{"entity": "obj"}
     - The one without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
@@ -279,18 +279,18 @@ nlu:
     - both looks [unsliced]{"entity": "state_obj"}
     - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
     - My [bread]{"entity": "obj"} is [not sliced]{"entity": "state_obj"}
-    - I have a [sliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"
+    - I have a [sliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"}
     - Should I [cut]{"entity": "state_obj"} the [bread]{"entity": "obj"} after I get one?
-    - There are two apples. One is [whole]{"entity": "state_obj"} the other one is [sliced]{"entity": "state_obj"}.
-    - How [many]{"entity": "count", "role": "obj"} apples should I [cut]{"entity": "state_obj"}.
+    - There are two [apples]{"entity": "obj"}. One is [whole]{"entity": "state_obj"} the other one is [sliced]{"entity": "state_obj"}.
+    - How [many]{"entity": "count", "role": "obj"} [apples]{"entity": "obj"} should I [cut]{"entity": "state_obj"}.
     - I can see an [unsliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"}
     - Nope. There is only a [whole]{"entity": "state_obj"} [apple]{"entity": "state_obj"}.
-    - Should I get a [whole]{"entity": "state_obj"} bread or a [sliced]{"entity": "state_obj"} bread
+    - Should I get a [whole]{"entity": "state_obj"} [bread]{"entity": "obj"} or a [sliced]{"entity": "state_obj"} [bread]{"entity": "obj"}
     - Should I discard the [sliced]{"entity": "state_obj"} apple?
     - Can you please confirm [apple]{"entity": "obj"} is [sliced]{"entity": "state_obj"}?
     - Can you please confirm if I should [slice]{"entity": "state_obj"} the [bread]{"entity": "obj"}?
     - Seems like the apple is [unsliced]{"entity": "state_obj"}
-    - I'm not sure but the bread looks like it's been [cut]{"entity": "state_obj"}
+    - I'm not sure but the [bread]{"entity": "obj"} looks like it's been [cut]{"entity": "state_obj"}
 
 
 - intent: ask_general 
@@ -299,9 +299,9 @@ nlu:
     - Where is the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}
     - Which [apple]{"entity": "obj"} are we talking about?
     - I am not sure what you mean by [plate]{"entity": "obj"}
-    - Vase? what is a vase?
+    - [Vase]{"entity": "obj"}? what is a [vase]{"entity": "obj"}?
     - I don't know this object
-    - Does your pan has a handle?
+    - Does your [pan]{"entity": "obj"} has a handle?
     - Wait! I don't what you are referring to.
 
 - intent: ask_next_step 
@@ -376,36 +376,36 @@ nlu:
     - I'm sorry, but I don't have an [apple]{"entity": "obj"} at the moment.
     - Unfortunately, I don't seem to have a [plate]{"entity": "obj"}
     - I just realized that I don't have an [apple]{"entity": "obj"}.
-    - I'm sorry, I don't have any plates at the moment.
-    - Unfortunately, I don't have a vase right now.
+    - I'm sorry, I don't have any [plates]{"entity": "obj"} at the moment.
+    - Unfortunately, I don't have a [vase]{"entity": "obj"} right now.
     - I don't have a spare pan, I'm afraid.
-    - I'm sorry, I'm all out of bread.
-    - Sorry, I don't have any apples left.
+    - I'm sorry, I'm all out of [bread]{"entity": "obj"}.
+    - Sorry, I don't have any [apples]{"entity": "obj"} left.
     - Regrettably, I'm currently plate-less.
-    - I'm afraid I don't have a vase on hand.
+    - I'm afraid I don't have a [vase]{"entity": "obj"} on hand.
     - I'm out of pans at the moment, sorry.
-    - Unfortunately, there's no bread available right now.
-    - I'm fresh out of apples, sorry about that.
-    - Sorry, I'm currently without plates.
-    - I'm sorry to say I don't have a spare vase.
-    - Unfortunately, I don't have any pans available.
-    - I don't have any bread in stock, sorry.
-    - Sorry, I don't have any apples at the moment.
-    - I'm afraid I don't have any plates left.
-    - Unfortunately, I don't have a vase to offer.
-    - I don't have any spare pans, I'm sorry.
-    - I'm sorry, but I'm currently out of bread.
-    - Sorry, I've run out of apples.
-    - I don't have any white plates at the moment.
-    - I don't have a blue vase right now.
-    - I don't have a red pan.
-    - I'm all out of brown bread.
-    - I don't have any green apples left.
-    - I'm currently plate-less, and I don't have any white plates either.
-    - I don't have a yellow vase on hand.
-    - I'm out of black pans at the moment.
-    - There's no white bread available right now.
-    - I'm fresh out of green apples.
+    - Unfortunately, there's no [bread]{"entity": "obj"} available right now.
+    - I'm fresh out of [apples]{"entity": "obj"}, sorry about that.
+    - Sorry, I'm currently without [plates]{"entity": "obj"}.
+    - I'm sorry to say I don't have a spare [vase]{"entity": "obj"}.
+    - Unfortunately, I don't have any [pans]{"entity": "obj"} available.
+    - I don't have any [bread]{"entity": "obj"} in stock, sorry.
+    - Sorry, I don't have any [apples]{"entity": "obj"} at the moment.
+    - I'm afraid I don't have any [plates]{"entity": "obj"} left.
+    - Unfortunately, I don't have a [vase]{"entity": "obj"} to offer.
+    - I don't have any spare [pans]{"entity": "obj"}, I'm sorry.
+    - I'm sorry, but I'm currently out of [bread]{"entity": "obj"}.
+    - Sorry, I've run out of [apples]{"entity": "obj"}.
+    - I don't have any white [plates]{"entity": "obj"} at the moment.
+    - I don't have a [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} right now.
+    - I don't have a [red]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}.
+    - I'm all out of [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"}.
+    - I don't have any [green]{"entity": "colour", "role": "obj"} [apples]{"entity": "obj"} left.
+    - I'm currently plate-less, and I don't have any [white]{"entity": "colour", "role": "obj"} [plates]{"entity": "obj"} either.
+    - I don't have a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} on hand.
+    - I'm out of [black]{"entity": "colour", "role": "obj"} [pans]{"entity": "obj"} at the moment.
+    - There's no [white]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} available right now.
+    - I'm fresh out of [green]{"entity": "colour", "role": "obj"} [apples]{"entity": "obj"}.
 
 
 - intent: rcpt_not_empty 
@@ -418,12 +418,12 @@ nlu:
     - The [round]{"entity": "shape"} [placemat]{"entity": "rcpt"} in [red]{"entity": "colour", "role": "rcpt"} has some items on it, so it's not [empty]{"entity": "state_rcpt"}.
     - I just noticed that the [green]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape"} [placemat]{"entity": "rcpt"} is [occupied]{"entity": "state_rcpt"}.
     - The [green-colored]{"entity": "colour", "role": "rcpt"} [round]{"entity": "shape"} [placemat]{"entity": "rcpt"} has a few things on it.
-    - I can see that the red-colored square placemat is in use, so it's not empty.
-    - The square placemat in green color has some items on it, which means it's not empty.
-    - The round placemat in red color is being used and is not empty.
-    - It's evident that the square placemat in green color is not empty, as there are things on it.
-    - I can see that the square placemat in green color is not empty.
-    - The round placemat in red color is being used and has items on it.
+    - I can see that the [red]{"entity": "colour"}-colored square placemat is in use, so it's not empty.
+    - The [square]{"entity": "shape", "role":"rcpt"} placemat in green color has some items on it, which means it's not empty.
+    - The [round]{"entity": "shape", "role":"rcpt"} placemat in red color is being used and is not empty.
+    - It's evident that the [square]{"entity": "shape", "role":"rcpt"} placemat in green color is not empty, as there are things on it.
+    - I can see that the [square]{"entity": "shape", "role":"rcpt"} placemat in green color is not empty.
+    - The [round]{"entity": "shape", "role":"rcpt"} placemat in red color is being used and has items on it.
     
 - intent: ask_numbers 
   examples: |
@@ -434,20 +434,20 @@ nlu:
     - i have [2]{"entity": "count"} of those.
     - How many [apples]{"entity": "obj"} should I get?
     - I have [3]{"entity": "count"} [apples]{"entity": "obj"} on the table, one [gold]{"entity": "colour"}, one [red]{"entity": "colour"}, and one [green]{"entity": "colour"}
-    - I have three white plates and two blue vases.
-    - There are [four]{"entity": "count", "role":"obj"} [red]{"entity": "colour", "role":"obj"} pans and [five]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role":"obj"} apples.
-    - I own [six]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role":"obj"} pans and [three]{"entity": "count", "role":"obj"} [yellow]{"entity": "colour", "role":"obj"} vases.
-    - I have [two]{"entity": "count", "role":"obj"} white plates and [four]{"entity": "count", "role":"obj"} brown bread loaves.
-    - There are [seven]{"entity": "count", "role":"obj"} green apples and [one]{"entity": "count", "role":"obj"} blue vase in my kitchen.
-    - I own [three]{"entity": "count", "role":"obj"} red pans and [six]{"entity": "count", "role":"obj"} brown bread rolls.
-    - I have [one]{"entity": "count", "role":"obj"} yellow vase and [eight]{"entity": "count", "role":"obj"} green apples.
-    - There are [two]{"entity": "count", "role":"obj"} blue vases and [three]{"entity": "count", "role":"obj"} black pans.
-    - I own [four]{"entity": "count", "role":"obj"} white plates and [five]{"entity": "count", "role":"obj"} brown bread loaves.
-    - There are [six]{"entity": "count", "role":"obj"} green apples and [one]{"entity": "count", "role":"obj"} red pan on the table.
+    - I have three white [plates]{"entity": "obj"} and two blue [vases]{"entity": "obj"}.
+    - There are [four]{"entity": "count", "role":"obj"} [red]{"entity": "colour", "role":"obj"} pans and [five]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role":"obj"} [apples]{"entity": "obj"}.
+    - I own [six]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role":"obj"} pans and [three]{"entity": "count", "role":"obj"} [yellow]{"entity": "colour", "role":"obj"} [vases]{"entity": "obj"}.
+    - I have [two]{"entity": "count", "role":"obj"} [white]{"entity": "colour", "role": "obj"} [plates]{"entity": "obj"} and [four]{"entity": "count", "role":"obj"} brown [bread]{"entity": "obj"} loaves.
+    - There are [seven]{"entity": "count", "role":"obj"} green [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} in my kitchen.
+    - I own [three]{"entity": "count", "role":"obj"} red pans and [six]{"entity": "count", "role":"obj"} brown [bread]{"entity": "obj"} rolls.
+    - I have [one]{"entity": "count", "role":"obj"} yellow [vase]{"entity": "obj"} and [eight]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role": "obj"} [apples]{"entity": "obj"}.
+    - There are [two]{"entity": "count", "role":"obj"} blue [vases]{"entity": "obj"} and [three]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role": "obj"} pans.
+    - I own [four]{"entity": "count", "role":"obj"} white [plates]{"entity": "obj"} and [five]{"entity": "count", "role":"obj"} [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} loaves.
+    - There are [six]{"entity": "count", "role":"obj"} green [apples]{"entity": "obj"} and [one]{"entity": "count", "role":"obj"} red pan on the table.
     - I have [one]{"entity": "count", "role":"rcpt"} white mat and [two]{"entity": "count", "role":"rcpt"} green mats.
-    - There are [two]{"entity": "count", "role":"rcpt"} red mats and [one]{"entity": "count", "role":"rcpt"} black mat in my possession.
-    - I own [two]{"entity": "count", "role":"rcpt"} black mats and [one]{"entity": "count", "role":"rcpt"} yellow mat.
-    - I have [one]{"entity": "count", "role":"rcpt"} white mat and [one]{"entity": "count", "role":"rcpt"} yellow mat.
+    - There are [two]{"entity": "count", "role":"rcpt"} [red]{"entity": "colour", "role": "rcpt"} mats and [one]{"entity": "count", "role":"rcpt"} black mat in my possession.
+    - I own [two]{"entity": "count", "role":"rcpt"} [black]{"entity": "colour", "role": "rcpt"} mats and [one]{"entity": "count", "role":"rcpt"} yellow mat.
+    - I have [one]{"entity": "count", "role":"rcpt"} [white]{"entity": "colour", "role": "rcpt"} mat and [one]{"entity": "count", "role":"rcpt"} yellow mat.
 
 - intent: bot_challenge
   examples: |
