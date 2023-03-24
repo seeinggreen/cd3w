@@ -1,0 +1,109 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_colour
+  - ask_shape
+  - ask_pos
+  - ask_state
+  - ask_general
+  - ask_next_step
+  - wait
+  - not_have_obj
+  - rcpt_not_empty
+  - clarification_numbers
+  - bot_challenge
+
+entities:
+  - obj
+  - rcpt
+  - colour:
+      roles:
+        - obj
+        - rcpt
+  - shape:
+      roles:
+        - obj
+        - rcpt
+  - state_obj
+  - count:
+      roles:
+        - obj
+        - rcpt
+
+slots:
+  obj:
+    type: any
+    mappings:
+      - type: custom
+  rcpt:
+    type: any
+    mappings:
+      - type: custom
+
+
+responses:
+  utter_affirm:
+    - text: "yes"
+  utter_deny:
+    - text: "no"
+  utter_greet:
+    - text: "Hey! How are you?"
+  utter_goodbye:
+    - text: "Bye"
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_happy:
+    - text: "Great, carry on!"
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+#### V1 #####
+  utter_tell_colour:
+    - text: "{polite}The {objRcpt} is {colour}"
+  utter_tell_shape:
+    - text: "{polite}The {rcpt} is {shape}"
+  utter_tell_pos:
+    - text: "{polite}The {rcpt} is on the {pos} of the table"
+  utter_tell_state:
+    - text: "{polite}The {obj} is {state}"
+  utter_tell_general:
+    - text: "The {context} {objRcpt}"
+  utter_tell_next_step:
+    - text: "Put the {obj} on the {rcpt}"
+  utter_tell_me_when_done:
+    - text: Tell me when you're done"
+
+#### V2 ####
+  utter_do_it:
+    - text: "Do it."
+  uttter_ask_remaining_obj:
+    - text: "Have you used all of your objects?"
+  utter_help_delete:
+    - text: "To delete an object, type /delete #<object id> in the chat"
+  utter_help_done:
+    - text: "The game is over, please type /done in the chat"
+  utter_help_request:
+    - text: "To request an object type /request #<object id> (for the {obj}) in the chat"
+
+
+actions:
+  - affirm
+  - deny
+  - greet
+  - goodbye
+  - tell_colour
+  - tell_shape
+  - tell_pos
+  - tell_state
+  - tell_general
+  - tell_next_step
+  - tell_me_when_done
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

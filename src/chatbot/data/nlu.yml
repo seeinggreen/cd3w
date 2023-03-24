@@ -1,0 +1,559 @@
+version: "3.1"
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - yo
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - Hi there!
+    - Howdy!
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - greetings
+    - hiya
+    - Hey, how's it going?
+    - Nice to see you!
+    - Greetings!
+    - Salutations!
+    - What's up?
+    - Aloha!
+    - Hola!
+    - Bonjour!
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - catch you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - Peace out!
+    - Later!
+    - Ciao
+    - Have a great evening!
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - yep
+    - yeah
+    - i agree
+    - indeed
+    - Thats it
+    - exactly
+    - absolutely
+    - you are spot on
+    - thats right
+    - good job
+    - ok there is a spawn item
+    - done with the step
+    - sorry
+
+- intent: done_it
+  examples: |
+    - did it
+    - i have done it 
+    - did that
+    - its done*
+    - its down
+    - [egg]{"entity": "obj"} is on
+    - It's already there
+    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
+    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.'
+    - Just finished with placing [red]{"entity": "colour", "role":"obj"} [apple]{"entity": "obj"} on [white]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.'
+    - done with the step
+    - did it
+    - i have done it 
+    - did that
+    - its done*
+    - its down
+    - [egg]{"entity": "obj"} is on
+    - It's already there
+    - I have placed the [green]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I put the [blue]{"entity": "colour", "role": "obj"} [glass]{"entity": "obj"} on the [red]{"entity": "colour", "role":"rcpt"} [mat]{"entity": "rcpt"}.
+    - [white]{"entity": "colour", "role":"obj"} [glass]{"entity": "obj"} is now on the [black]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}.
+    - Placed the [gray]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} on the [white]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - done. What else?
+    - There you go, I've placed the [red]{"entity": "colour", "role": "obj"} [bowl]{"entity": "obj"} on the [yellow]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - The [blue]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"} is now on the [green]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, all done.
+    - I've finished placing the [pink]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"} on the [white]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it looks great.
+    - The [black]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} is now on the [orange]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it's ready to be served.
+    - Done! The [purple]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"} is on the [blue]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}.
+    - I've just placed the [green]{"entity": "colour", "role": "obj"} [apple]{"entity": "obj"} on the [brown]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, looks good to me.
+    - I've finished placing the [yellow]{"entity": "colour", "role": "obj"} [spoon]{"entity": "obj"} on the [gray]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, it matches nicely.
+    - The [brown]{"entity": "colour", "role": "obj"} [bread]{"entity": "obj"} is on the [beige]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, we're all set for lunch.
+    - All done! The [silver]{"entity": "colour", "role": "obj"} [fork]{"entity": "obj"} is on the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}, looks elegant.
+    - There you go, I've placed the [glass]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}.
+    - Done! The [plate]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}.
+    - I've just put the [pan]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}.
+    - The [spoon]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}, all set for dessert.
+    - I've finished placing the [vase]{"entity": "obj"} on the [placemat]{"entity": "rcpt"}, it looks lovely.
+    - The [candle]{"entity": "obj"} is now on the [placemat]{"entity": "rcpt"}, ready to be lit.
+    - Completed the task.
+    - The task is done.
+    - All done!
+    - Task Completed!
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - nope
+    - I don't have that
+    - Item request - not avaliable on my table 
+    - I am unable to find the item
+    - Item missing!
+    - I don't see that item
+    - no can do
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - I cant see one
+    - no no
+    - Not now
+    - no working on it
+    - I'm not able to do that
+    - I cannot fulfill that request
+    - Negative, that's not possible
+    - Sorry, but I can't help you with that
+    - I'm sorry, but I cannot proceed with that.
+    - Sorry, that's not possible
+    - Sorry, I cannot agree to that
+    - I don't agree.
+    - I'm not sure
+    - Not right now.
+    - Sorry, that's something i cannot do.
+    - Invalid Request!
+    - Its already done! can't do that again
+    
+
+###############################
+
+- intent: ask_colour # CHECK (Important Last 2 utterences)
+  examples: |
+    - I have a [yellow]{"entity": "colour", "role": "obj"} one and a [red]{"entity": "colour", "role": "obj"} one
+    - do you mean the [green]{"entity": "colour", "role": "obj"} [cup]{"entity": "obj"}
+    - I only have a [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}
+    - i only have a [yellow]{"entity": "colour"} one
+    - yup. looks like a [white]{"entity": "colour"} [bread loaf]{"entity": "obj"}
+    - Okay, ehm you mean the [black]{"entity": "colour", "role": "obj"} [pan]{"entity": "obj"}?
+    - what colour is it?
+    - is it the blue mat
+    - I have a [white]{"entity": "colour"} one.
+    - a [yellow]{"entity": "colour", "role": "obj"} [vase]{"entity": "obj"}?
+    - I have 2 [red]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape", "role": "rcpt"} [placemats]{"entity": "rcpt"}
+    - which [blue]{"entity": "colour"} dark or [light]{"entity": "colour"}
+    - I have a [red]{"entity": "colour"} [apple]{"entity": "obj"} and a [gold]{"entity": "colour"} [apple]{"entity": "obj"}
+    - Can you describe the [color]{"entity": "colour"} of the mug in more detail?
+    - Is the color of the mug more green or blue?
+    - What shade of [color]{"entity": "colour"} does the mug have?
+    - Is the color of the mug bright or muted?
+    - Is the color of the mug solid or does it have a pattern?
+    - Is there a particular hue or tint that the [plate]{"entity": "obj"} has?
+    - Would you say the color of the mug is closer to a warm or cool tone?
+    - How does the color of the [plate]{"entity": "obj"} compare to other objects nearby?
+    - Is there any texture or finish to the color of the [vase]{"entity": "obj"}?
+    - Could you give me a more specific name for the color of the [bowl]{"entity": "obj"}?
+    - Do you mean the [lighter]{"entity": "colour"} [pruple]{"entity": "colour"} one?
+    - The [blue]{"entity": "colour"} one or the [red]{"entity": "colour"} one
+    - The [mug]{"entity": "obj"} in which color?
+    - Could you describe the color of the [plate]{"entity": "colour"} for me?
+    - They both have the same color
+    - Is the [vase]{"entity": "obj"} [white]{"entity": "colour"}, [black]{"entity": "colour"} or some other color?
+    - Does the [plate]{"entity": "colour"} have a specific color?
+    - You didn't mention the colour
+    - Can you tell me the [hue]{"entity": "colour"} of this object?
+    - What is the [shade]{"entity": "colour"} of the [pan]{"entity": "obj"}
+    - I'm curious about the color of the apple. Can you tell me what it is?
+    - Could you give me some details about the [object]{"entity": "obj"}'s color?
+    - Would you mind telling me the exact color of the [bread]{"entity": "obj"}?
+    - I'm trying to figure out which apple you mean. What color is it?
+    - The [dark]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} or the [light]{"entity": "colour"} one?
+    - I cannot seem to find it. What color is it?
+    - There are different shades of purple here. Which one?
+    - the [pan]{"entity": "obj"} is [green]{"entity": "colour", "role": "obj"}
+    - I think the [bowl]{"entity": "obj"} is [orange]{"entity": "colour", "role": "obj"}
+    - is the [plate]{"entity": "obj"} is [purple]{"entity": "colour", "role": "obj"}?
+    - what colour is the mat? 
+    - what is the colour of the mat? 
+
+
+- intent: ask_shape 
+  examples: |
+    - What is the [shape]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
+    - Is the [placemat]{"entity": "rcpt"} [round]{"entity": "shape"} or [square]{"entity": "shape"}?
+    - What is the [contour]{"entity": "shape"} of the [mat]{"entity": "rcpt"}?
+    - Does the mat have any irregular [shapes]{"entity": "shaoe"}  or edges?
+    - Is the mat [circular]{"entity": "shape"}, [rectangular]{"entity": "shape"} or [oval]{"entity": "shape"}?
+    - What is the [perimeter]{"entity": "shape"} of the mat?
+    - Is the mat [symmetrical]{"entity": "shape"} or [asymmetrical]{"entity": "shape"}?
+    - How does the mat compare to other mats in terms of [shape]{"entity": "shape"}?
+    - Can you tell me more about the [shape]{"entity": "shape"} of the [placemat]{"entity": "rcpt"}?
+    - What are the [dimensions]{"entity": "shape"} of the mat?
+    - What is the [shape]{"entity": "shape"} of the corners of the [mat]{"entity": "rcpt"}?
+    - Could you describe the shape?
+    - Are we talking about the [square]{"entity": "shape"} mat?
+    - The [round]{"entity": "shape"} mat?
+    - Could I ask what shape is the mat you're referring to?
+    - Do you mean the [oval]{"entity": "shape"} one?
+    - I can only see a [round]{"entity": "shape"} mat.
+    - Should I place the pan on the [circular]{"entity": "shape"} mat?
+    - Put the apple on the [square]{"entity": "shape"} mat, right?
+
+
+- intent: ask_pos 
+  examples: |
+    - Where on the table is the mat located?
+    - Could you point out the [position]{"entity": "pos"} of the mat on the table?
+    - Is the mat placed in the [center]{"entity": "pos"} of the table?
+    - What is the specific spot where the mat is situated on the table?
+    - Can you tell me the exact location of the [mat]{"entity": "rcpt"} on the table?
+    - Is the mat placed near any particular objects on the table?
+    - What is the orientation of the [mat]{"entity": "rcpt"}?
+    - How far is the [mat]{"entity": "rcpt"} from the edge of the table?
+    - Is the mat positioned closer to one end of the table than the other?
+    - Can you give me an idea of where the [mat]{"entity": "rcpt"} is located on the table relative to other items?
+    - The placemat on the [top right]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - Just to confirm, I'm placing the pan on the [top right]{"entity": "pos"} mat
+    - The [bottom right]{"entity": "pos"} [mat]{"entity": "rcpt"}, right?
+    - Are we talking about the mat on the [bottom left]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - Where should I put the [vase]{"entity": "obj"}, the mat on the [top left]{"entity": "pos"} or [bottom right]{"entity": "pos"}?
+    - Where is this mat you're talking about?
+    - Is this mat on the [right]{"entity": "pos"} side of the previous one?
+    - Is it the mat on the [right]{"entity": "pos"} or [left]{"entity": "pos"}?
+    - do you mean the mat on the [bottom right]{"entity": "pos"} [corner]{"entity": "pos"}?
+    - The mat placed above the [blue]{"entity": "colour", "role": "rcpt"} mat?
+    - Should I place the [apple]{"entity": "obj"} on the central mat?
+    - Which [green]{"entity": "colour", "role": "rcpt"} [mat]{"entity": "rcpt"} should I place the pan on? The one in the [bottom]{"entity": "pos"} or the one on [top]{"entity": "pos"}?
+    - What's the relative [position]{"entity": "pos"} of the mat?
+    - What are the coordinates of this [green]{"entity": "colour"} mat?
+    - Should I place the pan on the mat closer to the [edge]{"entity": "pos"} of the table?
+    - I'm confused. Could you describe the [location]{"entity": "pos"} of the mat?
+    - What's the [location]{"entity": "pos"} of the target placemat?
+    - How [far]{"entity": "pos"} is the mat that we're talking of from the [green]{"entity": "pos"} mat?
+
+
+
+- intent: ask_state 
+  examples: |
+    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
+    - The [one]{"entity": "obj"} without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+    - both looks [unsliced]{"entity": "state_obj"}
+    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
+    - Should the apple be sliced?
+    - Are you sure apple is sliced?
+    - should the bread be whole?
+    - Is bread whole?
+    - Should I slice the bread
+    - Has the bread been [cut]{"entity": "state_obj"} into slices?
+    - is the [brown]{"entity": "colour", "role":"obj"} [loaf]{"entity": "obj"} [sliced]{"entity": "state_obj"}?
+    - Do you want me to [slice]{"entity": "state_obj"} the [apple]{"entity": "obj"}
+    - The one without the [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+    - Do you mean the [unsliced]{"entity": "state_obj"} [apple]{"entity": "obj"}?
+    - I have two [breads]{"entity": "obj"}. A [sliced]{"entity": "state_obj"} one and an [unsliced]{"entity": "state_obj"} one.
+    - both looks [unsliced]{"entity": "state_obj"}
+    - Actually, my [apple]{"entity": "obj"} is [whole]{"entity": "state_obj"}
+    - My [bread]{"entity": "obj"} is [not sliced]{"entity": "state_obj"}
+    - I have a [sliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"
+    - Should I [cut]{"entity": "state_obj"} the [bread]{"entity": "obj"} after I get one?
+    - There are two apples. One is [whole]{"entity": "state_obj"} the other one is [sliced]{"entity": "state_obj"}.
+    - How [many]{"entity": "count", "role": "obj"} apples should I [cut]{"entity": "state_obj"}.
+    - I can see an [unsliced]{"entity": "state_obj"} [brown]{"entity": "colour"} [bread]{"entity": "obj"}
+    - Nope. There is only a [whole]{"entity": "state_obj"} [apple]{"entity": "state_obj"}.
+    - Should I get a [whole]{"entity": "state_obj"} bread or a [sliced]{"entity": "state_obj"} bread
+    - Should I discard the [sliced]{"entity": "state_obj"} apple?
+    - Can you please confirm [apple]{"entity": "obj"} is [sliced]{"entity": "state_obj"}?
+    - Can you please confirm if I should [slice]{"entity": "state_obj"} the [bread]{"entity": "obj"}?
+    - Seems like the apple is [unsliced]{"entity": "state_obj"}
+    - I'm not sure but the bread looks like it's been [cut]{"entity": "state_obj"}
+
+
+- intent: ask_general 
+  examples: |
+    - which [bread]{"entity": "obj"} should i spwan?
+    - Where is the [red]{"entity": "colour", "role": "rcpt"} [placemat]{"entity": "rcpt"}
+    - Which [apple]{"entity": "obj"} are we talking about?
+    - I am not sure what you mean by [plate]{"entity": "obj"}
+    - Vase? what is a vase?
+    - I don't know this object
+    - Does your pan has a handle?
+    - Wait! I don't what you are referring to.
+
+- intent: ask_next_step 
+  examples: |
+    - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} though
+    - what about the [bread]{"entity": "obj"}
+    - I have a [vase]{"entity": "obj"} left
+    - What to do next
+    - What's next
+    - What is the next step in the task?
+    - Can you tell me what needs to be done next?
+    - Where should I go from here in the task?
+    - What action should I take next to complete the task?
+    - What comes after this step in the task?
+    - What is the follow-up step in the task?
+    - Which task should I start working on now?
+    - What do I need to do to move on to the next stage of the task?
+    - What should I prioritize as the next step in the task?
+    - How can I progress further in the task?
+    - I still have two items left
+    - What's the next step in this process?
+    - What do you think our next move should be?
+    - Can you give me some guidance on what to do next?
+    - Where do we go from here?
+    - Do you have any suggestions for what we should do next?
+    - What's the next course of action?
+    - What should be our next priority?
+    - What's the next item on our to-do list?
+    - What do you recommend we do next?
+    - What's the next step on the agenda?
+    - What's our next option?
+    - What's the next phase of this project?
+    - Can you guide me on what steps to take next?
+    - What's the next task we need to complete?
+    - What should we focus on next?
+    - What's the next action we need to take?
+    - Where do we need to go from here?
+    - What do we need to do next to move forward?
+    - What's the next priority on our list?
+    - What should our next move be to achieve our goal?
+    - There are some objects left on the table, should I discard them?
+    
+- intent: wait 
+  examples: |
+    - lol wait
+    - okay, working on it
+    - okay one sec
+    - cool, working on it
+    - one moment
+    - Okay, one moment
+    - okay, give me a sec
+    - okay one moment please
+    - gimme a minute
+    - looking at the rules. Gimme a min
+    - Yes, give me a second
+    - waiting ....
+    - one min
+    - correcting it now. Give me a min
+    - yup. Gimme a sec
+    - cool working on it
+    - one sec
+
+- intent: not_have_obj
+  examples: |
+    - i haven't got any [bread]{"entity": "obj"}
+    - I don't have a [red]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} I think
+    - okay I don't have an [egg]{"entity": "obj"}
+    - I don't have a [plate]{"entity": "obj"}
+    - I don't have a [yellow]{"entity": "colour", "role": "obj"} [sliced]{"entity": "state_obj"} [apple]{"entity": "obj"}
+    - i am out of objects
+    - I don't have [apples]{"entity": "obj"}
+    - I'm sorry, but I don't have an [apple]{"entity": "obj"} at the moment.
+    - Unfortunately, I don't seem to have a [plate]{"entity": "obj"}
+    - I just realized that I don't have an [apple]{"entity": "obj"}.
+    - I'm sorry, I don't have any plates at the moment.
+    - Unfortunately, I don't have a vase right now.
+    - I don't have a spare pan, I'm afraid.
+    - I'm sorry, I'm all out of bread.
+    - Sorry, I don't have any apples left.
+    - Regrettably, I'm currently plate-less.
+    - I'm afraid I don't have a vase on hand.
+    - I'm out of pans at the moment, sorry.
+    - Unfortunately, there's no bread available right now.
+    - I'm fresh out of apples, sorry about that.
+    - Sorry, I'm currently without plates.
+    - I'm sorry to say I don't have a spare vase.
+    - Unfortunately, I don't have any pans available.
+    - I don't have any bread in stock, sorry.
+    - Sorry, I don't have any apples at the moment.
+    - I'm afraid I don't have any plates left.
+    - Unfortunately, I don't have a vase to offer.
+    - I don't have any spare pans, I'm sorry.
+    - I'm sorry, but I'm currently out of bread.
+    - Sorry, I've run out of apples.
+    - I don't have any white plates at the moment.
+    - I don't have a blue vase right now.
+    - I don't have a red pan.
+    - I'm all out of brown bread.
+    - I don't have any green apples left.
+    - I'm currently plate-less, and I don't have any white plates either.
+    - I don't have a yellow vase on hand.
+    - I'm out of black pans at the moment.
+    - There's no white bread available right now.
+    - I'm fresh out of green apples.
+
+
+- intent: rcpt_not_empty 
+  examples: |
+    - The [orange]{"entity": "colour", "role": "rcpt" } [mat]{"entity": "rcpt"} already has a [glass]{"entity": "obj"} on top
+    - i dont have an [empty]{"entity": "state_rcpt"} [round]{"entity": "shape"} [placemat]{"entity": "rcpt"}
+    - [mat]{"entity": "rcpt"} already has stuff on top
+    - [mat]{"entity": "rcpt"} is not empty.
+    - The red["entity": "colour", "role": "rcpt"] [mat]{"entity": "rcpt"} is full
+    - The [round]{"entity": "shape"} [placemat]{"entity": "rcpt"} in [red]{"entity": "colour", "role": "rcpt"} has some items on it, so it's not [empty]{"entity": "state_rcpt"}.
+    - I just noticed that the [green]{"entity": "colour", "role": "rcpt"} [square]{"entity": "shape"} [placemat]{"entity": "rcpt"} is [occupied]{"entity": "state_rcpt"}.
+    - The [green-colored]{"entity": "colour", "role": "rcpt"} [round]{"entity": "shape"} [placemat]{"entity": "rcpt"} has a few things on it.
+    - I can see that the red-colored square placemat is in use, so it's not empty.
+    - The square placemat in green color has some items on it, which means it's not empty.
+    - The round placemat in red color is being used and is not empty.
+    - It's evident that the square placemat in green color is not empty, as there are things on it.
+    - I can see that the square placemat in green color is not empty.
+    - The round placemat in red color is being used and has items on it.
+    
+- intent: ask_numbers 
+  examples: |
+    - I have [2]{"entity": "count", "role":"rcpt"} [round]{"entity": "shape", "role":"rcpt"} [yellow]{"entity": "colour", "role":"rcpt"} [placemat]{"entity": "rcpt"}
+    - i have [two]{"entity": "count", "role":"rcpt"} [square]{"entity": "shape", "role":"rcpt"} [blue]{"entity": "colour","role":"rcpt"} [mats]{"entity": "rcpt"}
+    - I have [2]{"entity": "count", "role":"rcpt"} [green]{"entity": "colour", "role": "rcpt"} [mats]{"entity": "rcpt"} as well
+    - [one]{"entity": "count"} [dark]{"entity": "colour"} and [one]{"entity": "count"} [light]{"entity": "colour"}
+    - i have [2]{"entity": "count"} of those.
+    - How many [apples]{"entity": "obj"} should I get?
+    - I have [3]{"entity": "count"} [apples]{"entity": "obj"} on the table, one [gold]{"entity": "colour"}, one [red]{"entity": "colour"}, and one [green]{"entity": "colour"}
+    - I have three white plates and two blue vases.
+    - There are [four]{"entity": "count", "role":"obj"} [red]{"entity": "colour", "role":"obj"} pans and [five]{"entity": "count", "role":"obj"} [green]{"entity": "colour", "role":"obj"} apples.
+    - I own [six]{"entity": "count", "role":"obj"} [black]{"entity": "colour", "role":"obj"} pans and [three]{"entity": "count", "role":"obj"} [yellow]{"entity": "colour", "role":"obj"} vases.
+    - I have [two]{"entity": "count", "role":"obj"} white plates and [four]{"entity": "count", "role":"obj"} brown bread loaves.
+    - There are [seven]{"entity": "count", "role":"obj"} green apples and [one]{"entity": "count", "role":"obj"} blue vase in my kitchen.
+    - I own [three]{"entity": "count", "role":"obj"} red pans and [six]{"entity": "count", "role":"obj"} brown bread rolls.
+    - I have [one]{"entity": "count", "role":"obj"} yellow vase and [eight]{"entity": "count", "role":"obj"} green apples.
+    - There are [two]{"entity": "count", "role":"obj"} blue vases and [three]{"entity": "count", "role":"obj"} black pans.
+    - I own [four]{"entity": "count", "role":"obj"} white plates and [five]{"entity": "count", "role":"obj"} brown bread loaves.
+    - There are [six]{"entity": "count", "role":"obj"} green apples and [one]{"entity": "count", "role":"obj"} red pan on the table.
+    - I have [one]{"entity": "count", "role":"rcpt"} white mat and [two]{"entity": "count", "role":"rcpt"} green mats.
+    - There are [two]{"entity": "count", "role":"rcpt"} red mats and [one]{"entity": "count", "role":"rcpt"} black mat in my possession.
+    - I own [two]{"entity": "count", "role":"rcpt"} black mats and [one]{"entity": "count", "role":"rcpt"} yellow mat.
+    - I have [one]{"entity": "count", "role":"rcpt"} white mat and [one]{"entity": "count", "role":"rcpt"} yellow mat.
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- lookup: colour
+  examples: |
+    - red
+    - blue
+    - orange
+    - green
+    - purple
+    - yellow
+    - iris
+    - black
+    - ocean blue
+    - sky blue
+    - gold
+    - silver
+    - gray
+    - brown
+    - khaki
+    - white
+    - color
+    - hue
+    - shade
+    - dark
+    - light
+    - bright
+    - matte
+    - Beige
+    - Maroon
+    - Navy
+    - Teal
+    - Turquoise
+    - Magenta
+    - Lavender
+    - Olive
+    - Forest Green
+    - Mustard
+    - Ruby
+    - Gold
+    - Silver
+    - Bronze
+    - Peach
+
+- lookup: pos
+  examples: |
+    - right
+    - left
+    - centre
+    - top
+    - bottom
+    - above
+    - below
+    - position
+    - bottom right
+    - top right
+    - top left
+    - bottom left
+    - corner
+
+- lookup: count
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - one
+    - two
+    - three
+    - four
+    - five
+    - six
+    - seven
+    - eight
+    - nine
+    - 10
+     
+- lookup: obj
+  examples: |
+    - apple
+    - bread
+    - bowl
+    - cup
+    - egg
+    - pan
+    - plate
+    - vase
+
+- lookup: rcpt
+  examples: |
+    - mat
+    - placemat
+
+
+- lookup: shape
+  examples: |
+    - circle
+    - square

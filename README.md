@@ -53,5 +53,23 @@ The first line of output will be the user token for the human user, e.g.:
 87cfcc61-37d2-47cf-b336-50897dd6b30e
 ```
 
-### 3.3 Linking to the room
-To let users enter the room, they should go to ```192.168.xxx.xxx:500x``` (you will need to check the IP address of your local machine and tell the users which port their room is using). They may enter any name but need to enter the token from above. The room will give instructions automatically.
+### 3.3 Setting up rasa core
+
+If no model file present in "src/chatbot/models" (eg: 20230323-174448-fixed-template.tar.gz) run the following command (with your environment from above active) from the "src/chatbot" directory to train and save the model.
+```
+rasa train
+```
+If the model file is present/ after training do the below step:
+In a separate terminal (with your environment from above active), run the following from the "src/chatbot" directory to start rasa core service (default port: 5005) :
+```
+rasa run --enable-api
+```
+
+### 3.4 Setting up rasa action server
+After starting main.py, in a separate terminal (with your environment from above active), run the following from the "src/chatbot" directory to start rasa action service (default port: 5050) :
+```
+rasa run actions
+```
+
+### 3.5 Linking to the room
+After starting both rasa services, let users enter the room, they should go to ```192.168.xxx.xxx:500x``` (you will need to check the IP address of your local machine and tell the users which port their room is using). They may enter any name but need to enter the token from above. The room will give instructions automatically.

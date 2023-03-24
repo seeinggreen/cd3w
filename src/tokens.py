@@ -10,7 +10,6 @@ import requests
 import json
 
 from ithor.ithor_service import IthorService
-from rasa_service.rasa_service import RasaService
 from slurk.bots.ithorbot.ithor_bot import IthorBot
 from slurk.bots.leaderbot.leader_bot import LeaderBot
 
