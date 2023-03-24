@@ -136,6 +136,11 @@ class IthorController:
         object_id = self.name_to_object_id(name)
         # Objects should be in front of the agent before calling this method
         self.controller.step(action="PickupObject", objectId=object_id)
+        grid = self.table.grid
+        for column in grid:
+            for slot in column:
+                if slot.object == name:
+                    slot.object = None
 
     def place_assets(self, config):
         """
