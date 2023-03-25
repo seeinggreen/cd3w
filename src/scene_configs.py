@@ -525,7 +525,7 @@ class SceneConfigurator:
         final_objects = copy.deepcopy(selected_objects)
         for i, obj in enumerate(selected_objects):
             if "Slice" in obj and i in [2, 3]:
-                final_objects[i] = None
+                final_objects.remove(obj)
             else:
                 continue
         return final_objects
@@ -534,7 +534,7 @@ class SceneConfigurator:
         final_objects = copy.deepcopy(selected_objects)
         for i, obj in enumerate(selected_objects):
             if not "Slice" in obj and i in [2, 3]:
-                final_objects[i] = None
+                final_objects.remove(obj)
             else:
                 continue
         return final_objects
