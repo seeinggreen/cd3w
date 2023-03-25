@@ -1,5 +1,3 @@
-
-
 import json
 from typing import Any, Text, Dict, List    
 from rasa_sdk import Action, Tracker
@@ -76,11 +74,11 @@ def get_pos(pos):
         pos[0] = "right"
 
     if pos[1] == 0:
-        pos[1] = "bottom"
+        pos[1] = "top"
     if pos[1] == 0:
         pos[1] = "middle"
     if pos[1] == 1:
-        pos[1] = "top"
+        pos[1] = "bottom"
     
     return pos[0] +" "+ pos[1]
 
