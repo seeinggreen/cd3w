@@ -16,6 +16,7 @@ intents:
   - rcpt_not_empty
   - clarification_numbers
   - bot_challenge
+  - done_it
 
 entities:
   - obj
@@ -51,7 +52,7 @@ responses:
   utter_deny:
     - text: "no"
   utter_greet:
-    - text: "Hey! How are you?"
+    - text: "Hey! Ready to start the game?"
   utter_goodbye:
     - text: "Bye"
   utter_cheer_up:
@@ -65,6 +66,11 @@ responses:
 #### V1 #####
   utter_tell_colour:
     - text: "{polite}The {objRcpt} is {colour}"
+
+  utter_grounding_purple_variant:
+    - text: "I'm talking about the {grounding_term} mat, lets call that colour {slot_colour}"
+  utter_grounding_purple:
+    - text: "Lets call {user_colour}, {slot_colour}"
   utter_tell_shape:
     - text: "{polite}The {rcpt} is {shape}"
   utter_tell_pos:
@@ -76,7 +82,7 @@ responses:
   utter_tell_next_step:
     - text: "Put the {obj} on the {rcpt}"
   utter_tell_me_when_done:
-    - text: Tell me when you're done"
+    - text: "Tell me when you're done"
 
 #### V2 ####
   utter_do_it:
@@ -102,7 +108,7 @@ actions:
   - tell_state
   - tell_general
   - tell_next_step
-  - tell_me_when_done
+  - resp_done_it
 
 session_config:
   session_expiration_time: 60

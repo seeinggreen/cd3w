@@ -1,41 +1,17 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,                                     #To store the previous conversation. Same as rasa shell
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:    #Intents and Actions
-#
-#         dispatcher.utter_message(text="Hello World!")             #Sent to user
-#
-#         return []
-
 import json
 from typing import Any, Text, Dict, List    
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
-    SlotSet
+    SlotSet,
+    FollowupAction,
+    ActionExecuted,
+    UserUttered 
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
 
+#This function returns the minimum level of detail required to uniquely identify an object
 def get_min_context_obj(curr):
 
     name = True
@@ -58,6 +34,7 @@ def get_min_context_obj(curr):
         return curr["colour"] 
     return  "sliced " + curr["colour"] 
 
+#This function returns the minimum level of detail required to uniquely identify an rcpt
 def get_min_context_rcpt(curr):
 
     name = True
@@ -78,38 +55,56 @@ def get_min_context_rcpt(curr):
         return curr["shape"] 
     if nameColour:
         return curr["colour"] 
-    return curr["colour"] + " " + curr["shape"] 
+    if nameColour and nameShape:
+        return curr["colour"] + " " + curr["shape"] 
+    return get_pos(curr["pos"]) + " " + curr["colour"] + " " + curr["shape"] 
 
 def get_pos(pos):
     if pos[0] == 0:
         pos[0] = "left"
     if pos[0] == 1:
-        pos[0] = "middle"
+        pos[0] = "left"
     if pos[0] == 2:
+        pos[0] = "middle"
+    if pos[0] == 3:
+        pos[0] = "middle"
+    if pos[0] == 4:
+        pos[0] = "right"
+    if pos[0] == 5:
         pos[0] = "right"
 
     if pos[1] == 0:
-        pos[1] = "bottom"
-    if pos[1] == 1:
         pos[1] = "top"
+    if pos[1] == 1:
+        pos[1] = "middle"
+    if pos[1] == 2:
+        pos[1] = "bottom"
     
     return pos[0] +" "+ pos[1]
 
 def forced_context(curr):
     return 0
+
 #NEXT OBJ FUNCTIONS #############################################################################################################
+
 def next_obj():
     for o in obj_ls:
-        if not o.hasMoved:
+        if not o["hasMoved"]:
             return o
     return False
+
 def next_rcpt(o):
     for r in rcpt_ls:
-        if r.pos == o.pos:
+        if r["pos"] == o["pos"]:
             return r
-    o.hasMoved = True
     return False
 
+def update_obj(obj):
+    for o in obj_ls:
+        if o["id"] == obj["id"]:
+            o['hasMoved'] = True
+    print (obj_ls)
+            
 #HELPER FUNCTIONS #############################################################################################################
 
 def read_json(slurk_port, item_type):
@@ -124,9 +119,11 @@ def read_obj_json(slurk_port):
 def read_rcpt_json(slurk_port):
     return read_json(slurk_port, "rcpt")
 
-obj_ls = read_obj_json(5000)
-rcpt_ls= read_rcpt_json(5000)
+#obj_ls = read_obj_json(5000)
+#rcpt_ls= read_rcpt_json(5000)
 
+obj_ls = []
+rcpt_ls = []
 #TRACKER PRINTING FUNCTIONS #############################################################################################################
 
 def print_prev_events(tracker):
@@ -154,6 +151,63 @@ def print_all(tracker):
     print_latest_message(tracker)
     print("____________________________________")
 
+
+def purple_shape_grounding(tracker, shape):
+    shape11 = False
+    shape12 = False
+    shape13 = False
+
+    for r in rcpt_ls:
+        if r["id"].lower() == shape+"11".lower():
+            shape11 = True
+        if r["id"].lower() == shape+"12".lower():
+            shape12 = True
+        if r["id"].lower() == shape+"13".lower():
+            shape13 = True
+
+    if shape11 and shape12 and shape13:
+        # Colour = Violet
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"11".lower()):
+            return "middle shade of purple"
+        # Colour = Indigo
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"12".lower()):
+            return "darkest shade of purple"
+        # Colour = Iris
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"13".lower()):
+            return "lightest shade of purple"
+        
+    if shape12 and shape13:
+        # Colour = Indigo
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"12".lower()):
+            return "dark purple"
+        # Colour = Iris
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"13".lower()):
+            return "light purple"
+
+    if shape11 and shape13:
+        # Colour = Violet
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"11".lower()):
+            return "dark purple"
+        # Colour = Iris
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"13".lower()):
+            return "light purple"
+        
+    if shape11 and shape12:
+        # Colour = Violet
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"11".lower()):
+            return "light purple"
+        # Colour = Indigo
+        if(tracker.get_slot("rcpt")["id"].lower() == shape+"12".lower()):
+            return "dark purple"
+
+    if shape11:
+        return "purple"
+    if shape12:
+        return "purple"
+    if shape13: 
+        return "purple"
+
+
 #ACTIONS #############################################################################################################
 
 class affirm(Action):
@@ -164,12 +218,40 @@ class affirm(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {
-            "state": "sliced",
-        }
+        
+        temp_list = []
+        for e in tracker.events:
+            if e["event"] == "bot":
+                temp_list.append(e['metadata'])
 
-        dispatcher.utter_message(response="utter_affirm", **slotvars)
+        clarification_action_list = ["utter_tell_colour","utter_tell_shape", "utter_tell_pos", "utter_tell_state", "utter_tell_general", "utter_tell_next_step"]
+      
+        if(temp_list[-1]['utter_action']):
+            if  (temp_list[-1]['utter_action'] in clarification_action_list):
+                dispatcher.utter_message(response="utter_tell_me_when_done")
+            elif(temp_list[-1]['utter_action'] == "utter_greet"):
+                return [ActionExecuted("action_listen")] + [UserUttered("whats next", { 
+                "intent": {"confidence": 1, "name": "ask_next_step"}, 
+                "entities": [] 
+                })]
         return []
+
+class resp_done_it(Action):
+    def name(self) -> Text:
+        return "resp_done_it"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        #return [FollowupAction("tell_next_step")]
+        update_obj(tracker.get_slot("obj"))
+        return [ActionExecuted("action_listen")] + [UserUttered("whats next", { 
+		"intent": {"confidence": 1, "name": "ask_next_step"}, 
+		"entities": [] 
+		})]
+        
 
 
 class deny(Action):
@@ -183,6 +265,14 @@ class deny(Action):
         slotvars = {
             "state": "sliced",
         }
+        # Getting last bot action event
+        temp_list = []
+        for e in tracker.events:
+            if e["event"] == "bot":
+                temp_list.append(e['metadata'])
+
+        if  (temp_list[-1]['utter_action'] == "utter_greet"):
+                dispatcher.utter_message(text="Let me know when ready")
         dispatcher.utter_message(response="utter_deny", **slotvars)
         return []
 
@@ -195,11 +285,13 @@ class greet(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {
-            "state": "sliced",
-        }
 
-        dispatcher.utter_message(response="utter_greet", **slotvars)
+        # Setting json scene data on greet by checking sender id
+        global obj_ls, rcpt_ls
+        obj_ls= read_obj_json(tracker.current_state()['sender_id'])
+        rcpt_ls= read_rcpt_json(tracker.current_state()['sender_id'])
+        
+        dispatcher.utter_message(response="utter_greet")
         return []
 
 
@@ -219,7 +311,7 @@ class goodbye(Action):
         dispatcher.utter_message(response="utter_goodbye", **slotvars)
         return []
 
-#TODO 
+
 class tell_colour(Action):
     def name(self) -> Text:
         return "tell_colour"
@@ -230,23 +322,51 @@ class tell_colour(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         #by default use obj
-        objRcpt = "obj"
-        if(len(tracker.latest_message["entities"]) > 0):
-            objRcpt = tracker.latest_message["entities"][0]["entity"]
+        objRcpt = "rcpt"
         polite = ""
-        for c in set_colours:
-            if c in tracker.latest_message["text"].lower():
-                polite = "No. "
-
-        if(tracker.get_slot(objRcpt)["colour"] in tracker.latest_message["text"].lower()):
-            polite = "Yes. "
+        temp_list = []
+        if(len(tracker.latest_message["entities"]) > 0):
+            for entity_track in tracker.latest_message["entities"]:
+                if entity_track['entity'] == "obj":
+                     objRcpt = "obj"
+                     break
+     
+            for c in set_colours:
+                if c in tracker.latest_message["text"].lower():
+                    polite = "No. "
+            if(tracker.get_slot(objRcpt)["colour"] in tracker.latest_message["text"].lower()):
+                polite = "Yes. "
+    
+        slot_colour = tracker.get_slot(objRcpt)["colour"].lower()
+        user_colour = ""
+        if(slot_colour == "violet" or slot_colour == "indigo" or slot_colour == "iris"):
+            for p in set_purples:
+                if p in tracker.latest_message["text"].lower():
+                    user_colour = p
+                    grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"])
+                    if user_colour != grounding_term:
+                        slotvars = {
+                            
+                            "grounding_term": grounding_term,
+                            "slot_colour": slot_colour
+                        }
+                        dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
+                        #print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
+                        return []
+                    if user_colour == grounding_term:
+                        slotvars = {
+                            "user_colour": user_colour,
+                            "slot_colour": slot_colour
+                        }
+                        dispatcher.utter_message(response="utter_grounding_purple", **slotvars)
+                        #print("Lets call " + user_colour + ", " + slot_colour+ ".")
+                        return []
 
         slotvars = {
             "polite": polite,
             "objRcpt": tracker.get_slot(objRcpt)["name"],
             "colour": tracker.get_slot(objRcpt)["colour"]
         }
-        print(tracker.latest_message)
 
         dispatcher.utter_message(response="utter_tell_colour", **slotvars)
         
@@ -260,7 +380,6 @@ class tell_shape(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print(tracker.latest_message)
 
         polite = ""
         if(tracker.get_slot("rcpt")["shape"] == "square"):
@@ -374,37 +493,20 @@ class tell_next_step(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+       
         obj =  next_obj()
-        #{'id': 'Apple3Slice', 'name': 'apple', 'colour': 'yellow', 'hasMoved': False, 'isSliced': True, 'pos': (1, 0)}
-        #rcpt =  next_rcpt(obj)
-        rcpt = next_rcpt(obj)
-        #{'id': 'Circle4', 'name': 'mat', 'shape': 'circle', 'colour': 'red', 'pos': (1, 0)}
-
-        slotvars = {
-            "obj": obj["name"],
-            "rcpt": rcpt["name"] 
-        }
-        print_all(tracker)
-
-        dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
-        return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
-
-class tell_me_when_done(Action):
-    def name(self) -> Text:
-        return "tell_me_when_done"
-
-    def run(self,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {   
-            
-        }
-
-        dispatcher.utter_message(
-            response="utter_tell_me_when_done", **slotvars)
-        return []
+     
+        if (obj):
+            rcpt = next_rcpt(obj)
+            slotvars = {
+                "obj": obj["name"],
+                "rcpt": rcpt["name"] 
+            }
+        
+            dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
+            return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
+        else:
+            dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
 
 class help_delete(Action):
     def name(self) -> Text:
@@ -439,4 +541,5 @@ class help_request(Action):
     
 
 
-set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","color","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}
+set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}
+set_purples = {"magenta", "lavendar", "dark purple", "light purple", "purple"}
