@@ -66,9 +66,6 @@ nlu:
     - absolutely
     - you are spot on
     - thats right
-    - good job
-    - ok there is a spawn item
-    - sorry
     
 
 - intent: done_it
@@ -117,6 +114,8 @@ nlu:
     - All done!
     - Task Completed!
     - done with the step
+    - Job complete boss
+    - we are good to go boss.
 
 - intent: deny
   examples: |

@@ -57,7 +57,7 @@ def get_min_context_rcpt(curr):
         return curr["colour"] 
     if nameColour and nameShape:
         return curr["colour"] + " " + curr["shape"] 
-    return get_pos(curr["pos"]) + curr["colour"] + " " + curr["shape"] 
+    return get_pos(curr["pos"]) + " " + curr["colour"] + " " + curr["shape"] 
 
 def get_pos(pos):
     if pos[0] == 0:
@@ -75,9 +75,9 @@ def get_pos(pos):
 
     if pos[1] == 0:
         pos[1] = "top"
-    if pos[1] == 0:
-        pos[1] = "middle"
     if pos[1] == 1:
+        pos[1] = "middle"
+    if pos[1] == 2:
         pos[1] = "bottom"
     
     return pos[0] +" "+ pos[1]
@@ -316,30 +316,6 @@ class tell_colour(Action):
     def name(self) -> Text:
         return "tell_colour"
 
-    def grounding(tracker, dispatcher, objRcpt, slot_colour):
-
-            for p in set_purples:
-                if p in tracker.latest_message["text"].lower():
-                    user_colour = p
-                    grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"])
-                    if user_colour != "purple":
-                        slotvars = {
-                            "user_colour": user_colour,
-                            "grounding": grounding_term,
-                            "slot_colour": slot_colour
-                        }
-                        #dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
-
-                        print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
-                    if user_colour == grounding_term:
-                        slotvars = {
-                            "user_colour": user_colour,
-                            "slot_colour": slot_colour
-                        }
-                        #dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
-
-                        print("Lets call " + user_colour + ", " + slot_colour+ ".")
-
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -354,8 +330,7 @@ class tell_colour(Action):
                 if entity_track['entity'] == "obj":
                      objRcpt = "obj"
                      break
-            #if(tracker.latest_message["entities"][0]["entity"] == "obj"):
-                #objRcpt = "obj"
+     
             for c in set_colours:
                 if c in tracker.latest_message["text"].lower():
                     polite = "No. "
@@ -371,14 +346,14 @@ class tell_colour(Action):
                     grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"])
                     if user_colour != grounding_term:
                         slotvars = {
-                            "user_colour": user_colour,
+                            
                             "grounding_term": grounding_term,
                             "slot_colour": slot_colour
                         }
                         dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
                         #print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
                         return []
-                    if user_colour == "purple":
+                    if user_colour == grounding_term:
                         slotvars = {
                             "user_colour": user_colour,
                             "slot_colour": slot_colour
