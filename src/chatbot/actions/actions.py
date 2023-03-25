@@ -82,11 +82,6 @@ def get_pos(pos):
     
     return pos[0] +" "+ pos[1]
 
-    print (type(pos[0]))
-    print (type(pos[0]))
-    
-    return pos[0] +" "+ pos[1]
-
 def forced_context(curr):
     return 0
 
