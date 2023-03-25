@@ -65,14 +65,24 @@ def get_pos(pos):
     if pos[0] == 0:
         pos[0] = "left"
     if pos[0] == 1:
-        pos[0] = "middle"
+        pos[0] = "left"
     if pos[0] == 2:
+        pos[0] = "middle"
+    if pos[0] == 3:
+        pos[0] = "middle"
+    if pos[0] == 4:
+        pos[0] = "right"
+    if pos[0] == 5:
         pos[0] = "right"
 
     if pos[1] == 0:
         pos[1] = "bottom"
+    if pos[1] == 0:
+        pos[1] = "middle"
     if pos[1] == 1:
         pos[1] = "top"
+    
+    return pos[0] +" "+ pos[1]
 
     print (type(pos[0]))
     print (type(pos[0]))
