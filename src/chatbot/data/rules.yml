@@ -5,7 +5,7 @@ rules:
 - rule: Greeting
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: greet
 
 - rule: Clarify colour of either obj or rcpt
   steps:
@@ -51,3 +51,8 @@ rules:
   steps:
   - intent: done_it
   - action: resp_done_it
+
+- rule: deny
+  steps:
+  - intent: deny
+  - action: deny

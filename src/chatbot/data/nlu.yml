@@ -68,8 +68,8 @@ nlu:
     - thats right
     - good job
     - ok there is a spawn item
-    - done with the step
     - sorry
+    
 
 - intent: done_it
   examples: |
@@ -116,6 +116,7 @@ nlu:
     - The task is done.
     - All done!
     - Task Completed!
+    - done with the step
 
 - intent: deny
   examples: |
@@ -351,6 +352,9 @@ nlu:
     - What's the next priority on our list?
     - What should our next move be to achieve our goal?
     - There are some objects left on the table, should I discard them?
+    - ready
+    - let's start
+    - lets go
     
 - intent: wait 
   examples: |

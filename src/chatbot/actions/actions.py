@@ -114,9 +114,11 @@ def read_obj_json(slurk_port):
 def read_rcpt_json(slurk_port):
     return read_json(slurk_port, "rcpt")
 
-obj_ls = read_obj_json(5000)
-rcpt_ls= read_rcpt_json(5000)
+#obj_ls = read_obj_json(5000)
+#rcpt_ls= read_rcpt_json(5000)
 
+obj_ls = []
+rcpt_ls = []
 #TRACKER PRINTING FUNCTIONS #############################################################################################################
 
 def print_prev_events(tracker):
@@ -258,6 +260,14 @@ class deny(Action):
         slotvars = {
             "state": "sliced",
         }
+        # Getting last bot action event
+        temp_list = []
+        for e in tracker.events:
+            if e["event"] == "bot":
+                temp_list.append(e['metadata'])
+
+        if  (temp_list[-1]['utter_action'] == "utter_greet"):
+                dispatcher.utter_message(text="Let me know when ready")
         dispatcher.utter_message(response="utter_deny", **slotvars)
         return []
 
@@ -270,11 +280,13 @@ class greet(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        slotvars = {
-            "state": "sliced",
-        }
 
-        dispatcher.utter_message(response="utter_greet", **slotvars)
+        # Setting json scene data on greet by checking sender id
+        global obj_ls, rcpt_ls
+        obj_ls= read_obj_json(tracker.current_state()['sender_id'])
+        rcpt_ls= read_rcpt_json(tracker.current_state()['sender_id'])
+        
+        dispatcher.utter_message(response="utter_greet")
         return []
 
 
@@ -294,7 +306,7 @@ class goodbye(Action):
         dispatcher.utter_message(response="utter_goodbye", **slotvars)
         return []
 
-#TODO 
+
 class tell_colour(Action):
     def name(self) -> Text:
         return "tell_colour"
