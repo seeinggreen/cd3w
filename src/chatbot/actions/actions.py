@@ -73,6 +73,9 @@ def get_pos(pos):
         pos[1] = "bottom"
     if pos[1] == 1:
         pos[1] = "top"
+
+    print (type(pos[0]))
+    print (type(pos[0]))
     
     return pos[0] +" "+ pos[1]
 
@@ -91,7 +94,6 @@ def next_rcpt(o):
     for r in rcpt_ls:
         if r["pos"] == o["pos"]:
             return r
-    o["hasMoved"] = True
     return False
 
 def update_obj(obj):
@@ -515,9 +517,9 @@ class tell_next_step(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        
         obj =  next_obj()
-        rcpt = {"id": "Circle11", "name": "mat", "shape": "circle", "colour": "violet", "pos": [2, 0]}
      
         if (obj):
+            rcpt = next_rcpt(obj)
             slotvars = {
                 "obj": obj["name"],
                 "rcpt": rcpt["name"] 
