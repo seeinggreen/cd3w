@@ -78,7 +78,7 @@ responses:
   utter_tell_state:
     - text: "{polite}The {obj} is {state}"
   utter_tell_general:
-    - text: "The {context} {objRcpt}"
+    - text: "The {context}"
   utter_tell_next_step:
     - text: "Put the {obj} on the {rcpt}"
   utter_tell_me_when_done:

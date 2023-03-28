@@ -7,8 +7,7 @@ from rasa_sdk.events import (
     SlotSet,
     FollowupAction,
     ActionExecuted,
-    UserUttered ,
-    Restarted
+    UserUttered 
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
@@ -55,14 +54,14 @@ def get_min_context_rcpt(curr, sender_id):
             if r["name"] == curr["name"] and r["colour"] == curr["colour"]:
                 nameColour = False
     if name:
-        return "only"
+        return "only" + " " + curr["name"]
     if nameShape:
         return curr["shape"] + " " + curr["name"]
     if nameColour:
         return curr["colour"] + " " + curr["name"]
     if nameColour and nameShape:
-        return curr["colour"] + " " + curr["shape"]  + " " + curr["name"]
-    return curr["colour"] + " " + curr["shape"] + " " + curr["name"]
+        return curr["colour"] + " " + curr["shape"] + " " + curr["name"]
+    return get_pos(curr["colour"]) + ", " +  curr["colour"] + ", and " + curr["shape"] + " " + curr["name"]
 
 # OBJ ##############
 def context_manager_obj(curr, sender_id):
@@ -107,13 +106,17 @@ def get_min_context_obj(curr, sender_id):
                 nameSlice = False
             if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
                 nameColour = False
+    if o["isSliced"]:
+        state = "sliced"
+    else:   
+        state = "whole"
     if name:
-        return "only" + " " + curr["name"]
+        return "only " + curr["name"] 
     if nameSlice:
-        return "sliced " + " " + curr["name"]
+        return state + " " + curr["name"] 
     if nameColour:
-        return curr["colour"] + " " + curr["name"]
-    return  "sliced " + curr["colour"] + " " + curr["name"]
+        return curr["colour"]  + " " + curr["name"] 
+    return  state + " " + curr["colour"] + " " + curr["name"] 
 
 def get_pos(pos):
     if pos[0] == 0:
@@ -176,17 +179,17 @@ def read_json(slurk_port, item_type):
 def read_obj_json(slurk_port):
     if (slurk_port not in dict_obj):
         dict_obj[slurk_port] = read_json(slurk_port, "obj")
-
+    #return read_json(slurk_port, "obj")
 
 def read_rcpt_json(slurk_port):
     if (slurk_port not in dict_rcpt):
         dict_rcpt[slurk_port] = read_json(slurk_port, "rcpt")
-
+    #return read_json(slurk_port, "rcpt")
 
 def read_context_json(slurk_port):
-    if (slurk_port not in dict_context):
+    if (slurk_port not in dict_rcpt):
         dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
-    
+    #return read_json(slurk_port, "rcpt")
 
 def write_events_log(data, file_name):
     log_folder = f'../../output/rasa_logs/lead_configs'
@@ -298,8 +301,7 @@ class affirm(Action):
                 temp_list.append(e['metadata'])
 
         clarification_action_list = ["utter_grounding_purple","utter_grounding_purple_variant","utter_tell_colour","utter_tell_shape", "utter_tell_pos", "utter_tell_state", "utter_tell_general", "utter_tell_next_step"]
-        print ("utter_Action")
-        print (temp_list[-1]['utter_action'])
+
         if(temp_list[-1]['utter_action']):
             if  (temp_list[-1]['utter_action'] in clarification_action_list):
                 dispatcher.utter_message(response="utter_tell_me_when_done")
@@ -360,7 +362,6 @@ class greet(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        print ("GREET")
         # Setting json scene data on greet by checking sender id        
         read_obj_json(tracker.current_state()['sender_id'])
         read_rcpt_json(tracker.current_state()['sender_id'])
@@ -427,7 +428,6 @@ class tell_colour(Action):
                             "slot_colour": slot_colour
                         }
                         dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
-                        #print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
                         return []
                     if user_colour == grounding_term:
                         slotvars = {
@@ -435,7 +435,6 @@ class tell_colour(Action):
                             "slot_colour": slot_colour
                         }
                         dispatcher.utter_message(response="utter_grounding_purple", **slotvars)
-                        #print("Lets call " + user_colour + ", " + slot_colour+ ".")
                         return []
 
         slotvars = {
@@ -550,19 +549,15 @@ class tell_general(Action):
         
         if(len(tracker.latest_message["entities"]) > 0):
             objRcpt = tracker.latest_message["entities"][0]["entity"]
-        print ("obj_rcpt")
-        print (objRcpt)
+   
         if(objRcpt == "obj"):
-            context = get_min_context_obj(tracker.get_slot(objRcpt), sender_id)
-
+            context =  context_manager_obj(objRcpt, tracker.current_state()['sender_id'])
         if(objRcpt == "rcpt"):
-            context = get_min_context_rcpt(tracker.get_slot(objRcpt), sender_id)
+            context =  context_manager_rcpt(objRcpt, tracker.current_state()['sender_id'])
 
         slotvars = {
             "context": context,
-            "objRcpt": tracker.get_slot(objRcpt)["name"]
         }
-
         dispatcher.utter_message(response="utter_tell_general", **slotvars)
         return []
 
@@ -589,10 +584,8 @@ class tell_next_step(Action):
             dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
             return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
         else:
+
             dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
-            dict_obj.pop(tracker.current_state()['sender_id'])
-            dict_rcpt.pop(tracker.current_state()['sender_id'])
-            return [Restarted()]
 
 class help_delete(Action):
     def name(self) -> Text:
