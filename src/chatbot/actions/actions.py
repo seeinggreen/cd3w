@@ -57,12 +57,12 @@ def get_min_context_rcpt(curr, sender_id):
     if name:
         return "only"
     if nameShape:
-        return curr["shape"] 
+        return curr["shape"] + " " + curr["name"]
     if nameColour:
-        return curr["colour"] 
+        return curr["colour"] + " " + curr["name"]
     if nameColour and nameShape:
-        return curr["colour"] + " " + curr["shape"] 
-    return curr["colour"] + " " + curr["shape"] 
+        return curr["colour"] + " " + curr["shape"]  + " " + curr["name"]
+    return curr["colour"] + " " + curr["shape"] + " " + curr["name"]
 
 # OBJ ##############
 def context_manager_obj(curr, sender_id):
@@ -108,12 +108,12 @@ def get_min_context_obj(curr, sender_id):
             if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
                 nameColour = False
     if name:
-        return "only"
+        return "only" + " " + curr["name"]
     if nameSlice:
-        return "sliced "
+        return "sliced " + " " + curr["name"]
     if nameColour:
-        return curr["colour"] 
-    return  "sliced " + curr["colour"] 
+        return curr["colour"] + " " + curr["name"]
+    return  "sliced " + curr["colour"] + " " + curr["name"]
 
 def get_pos(pos):
     if pos[0] == 0:
@@ -176,17 +176,17 @@ def read_json(slurk_port, item_type):
 def read_obj_json(slurk_port):
     if (slurk_port not in dict_obj):
         dict_obj[slurk_port] = read_json(slurk_port, "obj")
-    #return read_json(slurk_port, "obj")
+
 
 def read_rcpt_json(slurk_port):
     if (slurk_port not in dict_rcpt):
         dict_rcpt[slurk_port] = read_json(slurk_port, "rcpt")
-    #return read_json(slurk_port, "rcpt")
+
 
 def read_context_json(slurk_port):
-    if (slurk_port not in dict_rcpt):
+    if (slurk_port not in dict_context):
         dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
-    #return read_json(slurk_port, "rcpt")
+    
 
 def write_events_log(data, file_name):
     log_folder = f'../../output/rasa_logs/lead_configs'
