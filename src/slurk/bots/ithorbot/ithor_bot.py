@@ -182,7 +182,7 @@ class IthorBot:
                 and data["user"]["id"] == self.follower["id"]
             ):
                 self.ithor_service.follower_controller.save_table_state(
-                    self.level, self.variant
+                    self.level, self.variant, self.follower["name"]
                 )
                 message_log_path = f"{os.path.abspath('')}/output/dialogues/{self.level}_{self.variant}.json"
                 if os.path.exists(message_log_path):
