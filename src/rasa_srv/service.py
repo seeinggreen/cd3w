@@ -148,17 +148,22 @@ def write_sceneInfo_json(slurk_port, dct):
     write_json(slurk_port, "sceneInfo", dct)
 
 
-
+BOT_VARIANT_MAPPING = {"v5": 1, "v6": 1, "v7": 2, "v8": 2, "v9": 3, "v10": 3}
 class RasaService:
-    def __init__(self,port,level, variant, write_file=False, context_level=1):
+    def __init__(self,port,level, variant, write_file=False):
         self.scene = None
         self.slurk_port = port
         self.metadata_objects, self.metadata_mats = self._get_metadata()
         self.level = level
         self.variant = variant
-        self.context_level = context_level
         self.timeStamp =time.strftime("%Y%m%d-%H%M%S")  
         self.ID = str(self.slurk_port) + self.timeStamp
+
+        self.context_level = (
+            BOT_VARIANT_MAPPING[self.variant]
+            if self.variant in BOT_VARIANT_MAPPING.keys()
+            else 2
+        )
 
         if write_file:
             mats, objs = self.get_scene()
