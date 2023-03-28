@@ -56,3 +56,8 @@ rules:
   steps:
   - intent: deny
   - action: deny
+
+- rule: i dont understand
+  steps:
+  - intent: nlu_fallback
+  - action: tell_please_rephrase

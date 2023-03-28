@@ -17,6 +17,8 @@ intents:
   - clarification_numbers
   - bot_challenge
   - done_it
+  - nlu_fallback
+  
 
 entities:
   - obj
@@ -50,7 +52,7 @@ responses:
   utter_affirm:
     - text: "yes"
   utter_deny:
-    - text: "no"
+    - text: "no?"
   utter_greet:
     - text: "Hey! Ready to start the game?"
   utter_goodbye:
@@ -62,6 +64,9 @@ responses:
     - text: "Great, carry on!"
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
+  utter_please_rephrase:
+    - text: "I don't understand, can you rephrase."
+
 
 #### V1 #####
   utter_tell_colour:
@@ -109,6 +114,7 @@ actions:
   - tell_general
   - tell_next_step
   - resp_done_it
+  - tell_please_rephrase
 
 session_config:
   session_expiration_time: 60

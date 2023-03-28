@@ -2,6 +2,7 @@ import json
 import random
 from typing import Any, Text, Dict, List    
 from rasa_sdk import Action, Tracker
+
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
     SlotSet,
@@ -14,6 +15,18 @@ from rasa_sdk.events import (
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
 # RCPT ##############
 def context_manager_rcpt(curr, sender_id):
+
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return curr["name"]
+    if context_level == 2:
+        return get_min_context_rcpt(curr, sender_id)
+    else:
+        return get_high_context_rcpt(curr, sender_id)
+    
+
+def context_manager_rcpt_general(curr, sender_id):
 
     context_level = dict_context[sender_id]["context"]
     
@@ -36,7 +49,7 @@ def get_low_context_rcpt(curr, sender_id):
 
 # over specify
 def get_high_context_rcpt(curr, sender_id):
-    return get_pos(curr["pos"])  + ", " + curr["colour"] + ", and " + curr["shape"] + " " + curr["name"] 
+    return curr["colour"] + " " + curr["shape"] + " " + curr["name"] + " at the " + get_pos(curr["pos"]) + " of the table" 
 
 #Incremental Algorithm 
 #This function returns the minimum level of detail required to uniquely identify an rcpt
@@ -45,6 +58,7 @@ def get_min_context_rcpt(curr, sender_id):
     name = True
     nameShape = True
     nameColour = True
+    nameShapeColour = True
     rcpt_ls = dict_rcpt.get(sender_id)
     for r in rcpt_ls:
         if r["id"] != curr["id"]:
@@ -54,22 +68,32 @@ def get_min_context_rcpt(curr, sender_id):
                 nameShape = False
             if r["name"] == curr["name"] and r["colour"] == curr["colour"]:
                 nameColour = False
-    
-    print (name)
-    print(nameShape)
-    print (nameColour)
+            if r["name"] == curr["name"] and r["colour"] == curr["colour"] and r["shape"] == curr["shape"]:
+                nameShapeColour = False
+
     if name:
         return "only" + " " + curr["name"]
     if nameShape:
         return curr["shape"] + " " + curr["name"]
     if nameColour:
         return curr["colour"] + " " + curr["name"]
-    if nameColour and nameShape:
+    if nameShapeColour:
         return curr["colour"] + " " + curr["shape"] + " " + curr["name"]
-    return get_pos(curr["pos"]) + ", " +  curr["colour"] + ", and " + curr["shape"] + " " + curr["name"]
+    return curr["colour"] + " " + curr["shape"] + " " + curr["name"] + " at the " + get_pos(curr["pos"]) + " of the table" 
 
 # OBJ ##############
 def context_manager_obj(curr, sender_id):
+
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return curr["name"]
+    if context_level == 2:
+        return get_min_context_obj(curr, sender_id)
+    else:
+        return get_high_context_obj(curr, sender_id)
+
+def context_manager_obj_general(curr, sender_id):
 
     context_level = dict_context[sender_id]["context"]
     
@@ -79,6 +103,7 @@ def context_manager_obj(curr, sender_id):
         return get_min_context_obj(curr, sender_id)
     else:
         return get_high_context_obj(curr, sender_id)
+
 
 # under specify
 def get_low_context_obj(curr, sender_id):
@@ -92,8 +117,11 @@ def get_low_context_obj(curr, sender_id):
     
 # over specify      
 def get_high_context_obj(curr, sender_id):
+    state = "whole"
+    if curr["isSliced"]:
+        state = "sliced"
     if(curr["name"] == "apple"  or curr["colour"] == "bread"):
-        return curr["colour"] + " " + curr["state"] + " " + curr["name"]
+        return curr["colour"] + " " + state + " " + curr["name"]
     else:
         return curr["colour"] + " " + curr["name"]
 
@@ -192,15 +220,55 @@ def read_rcpt_json(slurk_port):
     #return read_json(slurk_port, "rcpt")
 
 def read_context_json(slurk_port):
-    if (slurk_port not in dict_context):
+    if (slurk_port not in dict_context):           
         dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
     
 
 def write_events_log(data, fileName):
     
     log_folder = f'../../output/rasa_logs/lead_configs'
-    with open(f'../../output/rasa_logs/{fileName}.json', 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    t1 = json.dumps(data)
+    f = open(f'../../output/rasa_logs/{fileName}.txt', 'w', encoding='utf-8')
+    num = 0
+    for e in data:
+        
+        if e["event"] == "user":
+            parse_data = e["parse_data"]
+            user = "Follower"
+            intent = json.dumps(parse_data["intent"], indent=1)
+            entities = json.dumps(parse_data["entities"], indent=4)
+            text = json.dumps(e["text"], indent=4)
+
+            dict = {"turn_" + str(num) :{
+                "user"      : user,
+                "intent"    : intent,
+                "entities"  : entities,
+                "text"      : text
+            } }
+
+            f.write(json.dumps(dict, indent=4))
+            num = num + 1           
+
+
+        if e["event"] == "bot":
+
+            user = "Leader"
+            metadata = json.dumps(e["metadata"], indent=4)
+            text = json.dumps(e["text"], indent=4)
+            
+            dict = {"turn_" + str(num) :{
+                "user"      : user,
+                "metadata"  : metadata,
+                "text"      : text
+            } }
+            f.write(json.dumps(dict, indent=4))
+   
+            num = num + 1       
+    f.close()
+    with open(f'../../output/rasa_logs/{fileName}_extended.json', 'w', encoding='utf-8') as f:
+        f.write(t1)
+
+    
 
 dict_obj = {}
 dict_rcpt = {}
@@ -552,14 +620,14 @@ class tell_general(Action):
         
         
         sender_id = tracker.current_state()['sender_id']
-        
+        objRcpt = "obj"
         if(len(tracker.latest_message["entities"]) > 0):
             objRcpt = tracker.latest_message["entities"][0]["entity"]
-   
+
         if(objRcpt == "obj"):
-            context =  context_manager_obj(objRcpt, tracker.current_state()['sender_id'])
+            context =  context_manager_obj_general(tracker.get_slot(objRcpt), sender_id)
         if(objRcpt == "rcpt"):
-            context =  context_manager_rcpt(objRcpt, tracker.current_state()['sender_id'])
+            context =  context_manager_rcpt_general(tracker.get_slot(objRcpt), sender_id)
 
         slotvars = {
             "context": context,
@@ -570,11 +638,20 @@ class tell_general(Action):
 class tell_next_step(Action):
     def name(self) -> Text:
         return "tell_next_step"
+    
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         sender_id = tracker.current_state()['sender_id']
+
+        fileName = str(sender_id) + '_' + str(dict_context[sender_id]['level']) \
+        + '_' + str(dict_context[sender_id]['variant']) + '_' + str(dict_context[sender_id]['context']) \
+        + '_' + str(dict_context[sender_id]['timeStamp'])
+        
+        
+
+
         obj =  next_obj(sender_id)
         if (obj):
             rcpt = next_rcpt(obj, sender_id)
@@ -594,11 +671,25 @@ class tell_next_step(Action):
             dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
             dict_obj.pop(sender_id)
             dict_rcpt.pop(sender_id)
-            fileName = str(sender_id) + '_' + dict_context[sender_id]['level'] \
-            + '_' + dict_context[sender_id]['variant'] + '_' + dict_context[sender_id]['context'] \
-            + '_' + dict_context[sender_id]['timeStamp']
-            #write_events_log("test", fileName)
+            write_events_log(tracker.events, fileName)
             return [Restarted()]
+
+class tell_please_rephrase(Action):
+    
+    def name(self) -> Text:
+        return "tell_please_rephrase"
+    
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+        
+        }
+
+        dispatcher.utter_message(
+            response="utter_please_rephrase", **slotvars)
+        return []
 
 class help_delete(Action):
     def name(self) -> Text:
