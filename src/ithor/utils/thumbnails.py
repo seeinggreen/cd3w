@@ -18,29 +18,30 @@ X_CROP_START = 425
 # The left edge of the scene to crop when creating thumbnails
 Y_CROP_START = 600
 # The top edge of the scene to crop when creating thumbnails
-FONT_FACE = cv2.FONT_HERSHEY_COMPLEX_SMALL
+FONT_FACE = cv2.FONT_HERSHEY_DUPLEX
 # The font to use
-TEXT_SCALE = 2
+TEXT_SCALE = 3
 # The font size for the main text labels
-LABEL_SCALE = 1
+LABEL_SCALE = 2
 # The font size for the individual asset labels
-FONT_THICKNESS = 1
+FONT_THICKNESS = 2
 # The font thickness to use
 FONT_COLOUR = (0, 0, 0)
 # The colour for the labels (set to black)
-TEXT_HEIGHT = 39
+TEXT_HEIGHT = 64
 # The height of the main text labels
-LABEL_HEIGHT = 20
+LABEL_HEIGHT = 43
 # The height of the smaller asset labels
 
 
-HEIGHT = 1200
+HEIGHT = 1800
 WIDTH = 1600
 HORIZONTAL_MARGIN = 75
 HORIZONTAL_PAD = 50
-VERTICAL_MARGIN = 0
-TEXT_PAD = 4
-LABEL_PAD = 2
+VERTICAL_MARGIN = 80
+VERTICAL_PAD = 50
+TEXT_PAD = 40
+LABEL_PAD = 30
 
 class Thumbnails:
     def __init__(self, image_dir, controller=None):
@@ -252,12 +253,15 @@ class Thumbnails:
             raise ExistingThumbnailFolderError(
                 "A thumbnail folder already exists, please delete it and try again."
             )
-
+            
+        blank_scene_controller.init_scene(pos=[0.25, 1, 0], rot=270, horizon=70)
+        blank_scene_controller.place_assets(None)
+            
         # Go through all the assets and generate a thumbnail
         for asset in self.items.assets:
             name = asset["name"]
             # Place the asset in the centre of the table
-            blank_scene_controller.place_asset(name, 2, 1)
+            blank_scene_controller.place_asset_at_location(name, 2, 1)
             # Get an image of the whole scene
             img = blank_scene_controller.controller.last_event.cv2img
             # Crop the image to just the item

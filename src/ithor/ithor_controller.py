@@ -53,6 +53,7 @@ class IthorController:
             fieldOfView=field_of_view,
             snapToGrid=False,
         )
+        self.items = Items()
 
     def init_scene(self, pos, rot, horizon):
         """
@@ -80,7 +81,7 @@ class IthorController:
             position={"x": pos[0], "y": pos[1], "z": pos[2]},
             rotation={"x": 0, "y": rot, "z": 0},
             horizon=horizon,
-            forceAction=True,
+            forceAction=True
         )
 
     def name_to_object_id(self, name):
@@ -156,8 +157,10 @@ class IthorController:
         None.
 
         """
-
-        self.table = Table(config["mats"], config["objects"])
+        if config == None:
+            self.table = Table(Table.get_empty_slots_list(),Table.get_empty_slots_list())
+        else:
+            self.table = Table(config["mats"], config["objects"])
 
         grid = self.table.grid
         for x, column in enumerate(grid):
@@ -199,7 +202,7 @@ class IthorController:
             action="PlaceObjectAtPoint",
             objectId=object_id,
             position=pos,
-            rotation={"x": 0, "y": 0, "z": 0},
+            rotation=self.items.get_home_rotation(name)
         )
 
     def place_asset_at_empty_location(self, name):
@@ -252,17 +255,14 @@ class IthorController:
         None.
 
         """
-        items = Items()
-        # Get the home position of the asset
-        pos = items.get_home_position(name)
         # Get the objectId using the asset name
         object_id = self.name_to_object_id(name)
         # Place the object out of sight
         self.controller.step(
             action="PlaceObjectAtPoint",
             objectId=object_id,
-            position=pos,
-            rotation={"x": 0, "y": 0, "z": 0},
+            position=self.items.get_home_position(name),
+            rotation=self.items.get_home_rotation(name)
         )
         for column in self.table.grid:
             for slot in column:
