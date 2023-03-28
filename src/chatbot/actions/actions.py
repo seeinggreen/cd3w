@@ -6,7 +6,8 @@ from rasa_sdk.events import (
     SlotSet,
     FollowupAction,
     ActionExecuted,
-    UserUttered 
+    UserUttered ,
+    Restarted
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
@@ -529,8 +530,10 @@ class tell_next_step(Action):
             dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
             return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
         else:
-
             dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
+            dict_obj.pop(tracker.current_state()['sender_id'])
+            dict_rcpt.pop(tracker.current_state()['sender_id'])
+            return [Restarted()]
 
 class help_delete(Action):
     def name(self) -> Text:

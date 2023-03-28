@@ -145,23 +145,32 @@ def write_obj_json(slurk_port, dct):
 def write_rcpt_json(slurk_port, dct):
     write_json(slurk_port, "rcpt", dct)
 
+def write_sceneInfo_json(slurk_port, dct):
+    write_json(slurk_port, "sceneInfo", dct)
 
 
 
 class RasaService:
-    def __init__(self,port,level, variant, write_file=False):
+    def __init__(self,port,level, variant, write_file=False, context_level=1):
         self.scene = None
         self.slurk_port = port
         self.metadata_objects, self.metadata_mats = self._get_metadata()
         self.level = level
         self.variant = variant
+        self.context_level = context_level
 
 
         if write_file:
             mats, objs = self.get_scene()
+            sceneInfo =  {
+                "level": self.level,
+                "variant": self.variant,
+                "context": self.context_level
+            }
 
             write_rcpt_json(self.slurk_port, mats)
             write_obj_json(self.slurk_port, objs)
+            write_sceneInfo_json(self.slurk_port, sceneInfo)
 
 
 
