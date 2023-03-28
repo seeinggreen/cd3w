@@ -1,4 +1,5 @@
 import json
+import random
 from typing import Any, Text, Dict, List    
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -10,30 +11,33 @@ from rasa_sdk.events import (
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
+# RCPT ##############
+def context_manager_rcpt(curr, sender_id):
 
-#This function returns the minimum level of detail required to uniquely identify an object
-def get_min_context_obj(curr, sender_id):
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return get_low_context_rcpt(curr, sender_id)
+    if context_level == 2:
+        return get_min_context_rcpt(curr, sender_id)
+    else:
+        return get_high_context_rcpt(curr, sender_id)
+    
+# under specify
+def get_low_context_rcpt(curr, sender_id):
+    rand = random.randint(0,2)
+    if rand == 0:
+        return curr["shape"] + " " + curr["name"]
+    if rand == 1:
+        return curr["colour"] + " " + curr["name"]
+    if rand == 2:
+        return curr["pos"] + " " + curr["name"]
 
-    name = True
-    nameSlice = True
-    nameColour = True
-    obj_ls = dict_obj.get(sender_id)
-    for o in obj_ls:
-        if o["id"] != curr["id"]:
-            if o["name"] == curr["name"]:
-                name = False
-            if o["name"] == curr["name"] and o["isSliced"] == curr["isSliced"]:
-                nameSlice = False
-            if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
-                nameColour = False
-    if name:
-        return "only"
-    if nameSlice:
-        return "sliced "
-    if nameColour:
-        return curr["colour"] 
-    return  "sliced " + curr["colour"] 
+# over specify
+def get_high_context_rcpt(curr, sender_id):
+    return curr["pos"] + ", " + curr["colour"] + ", and " + curr["shape"] + " " + curr["name"] 
 
+#Incremental Algorithm 
 #This function returns the minimum level of detail required to uniquely identify an rcpt
 def get_min_context_rcpt(curr, sender_id):
 
@@ -57,7 +61,58 @@ def get_min_context_rcpt(curr, sender_id):
         return curr["colour"] 
     if nameColour and nameShape:
         return curr["colour"] + " " + curr["shape"] 
-    return get_pos(curr["pos"]) + " " + curr["colour"] + " " + curr["shape"] 
+    return curr["colour"] + " " + curr["shape"] 
+
+# OBJ ##############
+def context_manager_obj(curr, sender_id):
+
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return get_low_context_obj(curr, sender_id)
+    if context_level == 2:
+        return get_min_context_obj(curr, sender_id)
+    else:
+        return get_high_context_obj(curr, sender_id)
+
+# under specify
+def get_low_context_obj(curr, sender_id):
+
+    if(curr["name"] == "apple"  or curr["colour"] == "bread"):
+        return curr["state"] + " " + curr["name"]
+    else:
+        return curr["colour"] + " " + curr["name"]
+    
+# over specify      
+def get_high_context_obj(curr, sender_id):
+    if(curr["name"] == "apple"  or curr["colour"] == "bread"):
+        return curr["colour"] + " " + curr["state"] + " " + curr["name"]
+    else:
+        return curr["colour"] + " " + curr["name"]
+
+#Incremental Algorithm 
+#This function returns the minimum level of detail required to uniquely identify an object
+def get_min_context_obj(curr, sender_id):
+
+    name = True
+    nameSlice = True
+    nameColour = True
+    obj_ls = dict_obj.get(sender_id)
+    for o in obj_ls:
+        if o["id"] != curr["id"]:
+            if o["name"] == curr["name"]:
+                name = False
+            if o["name"] == curr["name"] and o["isSliced"] == curr["isSliced"]:
+                nameSlice = False
+            if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
+                nameColour = False
+    if name:
+        return "only"
+    if nameSlice:
+        return "sliced "
+    if nameColour:
+        return curr["colour"] 
+    return  "sliced " + curr["colour"] 
 
 def get_pos(pos):
     if pos[0] == 0:
@@ -90,8 +145,6 @@ def forced_context(curr):
 
 def next_obj(sender_id):
     obj_ls = dict_obj.get(sender_id)
-    print ("new_obj_ls")
-    print (obj_ls)
     for o in obj_ls:
         if not o["hasMoved"]:
             return o
@@ -99,8 +152,6 @@ def next_obj(sender_id):
 
 def next_rcpt(o, sender_id):
     rcpt_ls = dict_rcpt.get(sender_id)
-    print ("new recpt")
-    print (rcpt_ls)
     for r in rcpt_ls:
         if r["pos"] == o["pos"]:
             return r
@@ -108,8 +159,6 @@ def next_rcpt(o, sender_id):
 
 def update_obj(obj, sender_id):
     obj_ls = dict_obj.get(sender_id)
-    print ("new_obj_ls")
-    print (obj_ls)
     for o in obj_ls:
         if o["id"] == obj["id"]:
             o['hasMoved'] = True
@@ -125,13 +174,17 @@ def read_json(slurk_port, item_type):
 
 def read_obj_json(slurk_port):
     if (slurk_port not in dict_obj):
-        print ("YOOO")
         dict_obj[slurk_port] = read_json(slurk_port, "obj")
     #return read_json(slurk_port, "obj")
 
 def read_rcpt_json(slurk_port):
     if (slurk_port not in dict_rcpt):
         dict_rcpt[slurk_port] = read_json(slurk_port, "rcpt")
+    #return read_json(slurk_port, "rcpt")
+
+def read_context_json(slurk_port):
+    if (slurk_port not in dict_rcpt):
+        dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
     #return read_json(slurk_port, "rcpt")
 
 def write_events_log(data, file_name):
@@ -141,6 +194,7 @@ def write_events_log(data, file_name):
 
 dict_obj = {}
 dict_rcpt = {}
+dict_context = {}
 
 #TRACKER PRINTING FUNCTIONS #############################################################################################################
 
@@ -309,7 +363,8 @@ class greet(Action):
         # Setting json scene data on greet by checking sender id        
         read_obj_json(tracker.current_state()['sender_id'])
         read_rcpt_json(tracker.current_state()['sender_id'])
-       
+        read_context_json(tracker.current_state()['sender_id'])
+
         dispatcher.utter_message(response="utter_greet")
         return []
 
@@ -521,9 +576,13 @@ class tell_next_step(Action):
         obj =  next_obj(tracker.current_state()['sender_id'])
         if (obj):
             rcpt = next_rcpt(obj, tracker.current_state()['sender_id'])
+
+            obj_context =  context_manager_obj(obj, tracker.current_state()['sender_id'])
+            rcpt_context = context_manager_rcpt(rcpt, tracker.current_state()['sender_id'])
+
             slotvars = {
-                "obj": obj["name"],
-                "rcpt": rcpt["name"] 
+                "obj": obj_context,
+                "rcpt": rcpt_context
             }
         
             dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
