@@ -184,11 +184,31 @@ class IthorBot:
                 self.ithor_service.follower_controller.save_table_state(
                     self.level, self.variant
                 )
-                with open(
-                    f"{os.path.abspath('')}/output/dialogues/{self.level}_{self.variant}.json",
-                    "w+",
-                ) as outfile:
-                    json.dump({str(date.today()): self.message_log}, outfile)
+                message_log_path = f"{os.path.abspath('')}/output/dialogues/{self.level}_{self.variant}.json"
+                if os.path.exists(message_log_path):
+                    with open(message_log_path, encoding="utf-8") as json_file:
+                        existing_message_log = json.load(json_file)
+                    if str(date.today()) in existing_message_log:
+                        existing_message_log[str(date.today())][
+                            self.follower["name"]
+                        ] = self.message_log
+                    else:
+                        existing_message_log[str(date.today())] = {
+                            self.follower["name"]: self.message_log
+                        }
+                else:
+                    with open(
+                        message_log_path,
+                        "w+",
+                    ) as outfile:
+                        json.dump(
+                            {
+                                str(date.today()): {
+                                    self.follower["name"]: self.message_log
+                                }
+                            },
+                            outfile,
+                        )
                 self.message_log = []
                 self.ithor_service.follower_controller.stop()
                 self.leader = None
