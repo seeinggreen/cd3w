@@ -8,6 +8,8 @@ from functools import reduce
 
 import requests
 import re
+import time
+
 
 
 class RasaException(Exception):
@@ -119,9 +121,6 @@ def get_scene_configs(level, variant, user):
 def get_leader_scene(level, variant): 
     return get_scene_configs(level, variant, "leader")
 
-
-
-
 def read_json(slurk_port, item_type):
     filename = str(slurk_port) + "_" + item_type
     with open(f'src/rasa_srv/lead_configs/{filename}.json', encoding="utf-8") as jFile:
@@ -163,9 +162,11 @@ class RasaService:
         if write_file:
             mats, objs = self.get_scene()
             sceneInfo =  {
+                "port": self.slurk_port,
                 "level": self.level,
                 "variant": self.variant,
-                "context": self.context_level
+                "context": self.context_level,
+                "timeStamp" : time.strftime("%Y%m%d-%H%M%S")
             }
 
             write_rcpt_json(self.slurk_port, mats)

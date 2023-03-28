@@ -188,9 +188,10 @@ def read_context_json(slurk_port):
         dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
     
 
-def write_events_log(data, file_name):
+def write_events_log(data, fileName):
+    
     log_folder = f'../../output/rasa_logs/lead_configs'
-    with open(f'../../output/rasa_logs/{file_name}.json', 'w', encoding='utf-8') as f:
+    with open(f'../../output/rasa_logs/{fileName}.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 dict_obj = {}
@@ -573,13 +574,13 @@ class tell_next_step(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-       
-        obj =  next_obj(tracker.current_state()['sender_id'])
+        sender_id = tracker.current_state()['sender_id']
+        obj =  next_obj()
         if (obj):
-            rcpt = next_rcpt(obj, tracker.current_state()['sender_id'])
+            rcpt = next_rcpt(obj, sender_id)
 
-            obj_context =  context_manager_obj(obj, tracker.current_state()['sender_id'])
-            rcpt_context = context_manager_rcpt(rcpt, tracker.current_state()['sender_id'])
+            obj_context =  context_manager_obj(obj, sender_id)
+            rcpt_context = context_manager_rcpt(rcpt, sender_id)
 
             slotvars = {
                 "obj": obj_context,
@@ -590,8 +591,12 @@ class tell_next_step(Action):
             return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
         else:
             dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
-            dict_obj.pop(tracker.current_state()['sender_id'])
-            dict_rcpt.pop(tracker.current_state()['sender_id'])
+            dict_obj.pop(sender_id)
+            dict_rcpt.pop(sender_id)
+            fileName = str(sender_id) + '_' + dict_context[sender_id]['level'] \
+            + '_' + dict_context[sender_id]['variant'] + '_' + dict_context[sender_id]['context'] \
+            + '_' + dict_context[sender_id]['timeStamp']
+            #write_events_log("test", fileName)
             return [Restarted()]
 
 class help_delete(Action):
