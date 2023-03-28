@@ -38,6 +38,7 @@ class SceneConfigurator:
         ) = self._generate_object_combos()
         self.position_combos_6_pos = self._generate_position_combos(6)
         self.position_combos_7_pos = self._generate_position_combos(7)
+        self.position_combos_3_pos = self._generate_position_combos(3)
         self.rng = default_rng()
         self.selected_mats = None
         self.selected_leader_objects = None
@@ -46,10 +47,10 @@ class SceneConfigurator:
         self.selected_follower_object_positions = None
         self.rules = {
             "l0": {
-                "mat_rules": [self._sample_n_random_mats(6)],
-                "object_rules": [self._sample_n_random_objects(6)],
+                "mat_rules": [self._sample_n_random_mats(3)],
+                "object_rules": [self._sample_n_random_objects(3)],
                 "position_rules": [
-                    self._sample_from_positions(6),
+                    self._sample_from_positions(3),
                     self._only_empty_positions,
                 ],
                 "inclusion_rules": {
@@ -476,6 +477,8 @@ class SceneConfigurator:
     def _sample_from_positions(self, n_positions):
         if n_positions == 6:
             position_combos = self.position_combos_6_pos
+        elif n_positions == 3:
+            position_combos = self.position_combos_3_pos
         else:
             position_combos = self.position_combos_7_pos
         random_id = self.rng.integers(len(position_combos))
