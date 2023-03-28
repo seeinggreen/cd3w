@@ -7,7 +7,8 @@ from rasa_sdk.events import (
     SlotSet,
     FollowupAction,
     ActionExecuted,
-    UserUttered 
+    UserUttered,
+    Restarted
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
@@ -31,11 +32,11 @@ def get_low_context_rcpt(curr, sender_id):
     if rand == 1:
         return curr["colour"] + " " + curr["name"]
     if rand == 2:
-        return curr["pos"] + " " + curr["name"]
+        return get_pos(curr["pos"])  + " " + curr["name"]
 
 # over specify
 def get_high_context_rcpt(curr, sender_id):
-    return curr["pos"] + ", " + curr["colour"] + ", and " + curr["shape"] + " " + curr["name"] 
+    return get_pos(curr["pos"])  + ", " + curr["colour"] + ", and " + curr["shape"] + " " + curr["name"] 
 
 #Incremental Algorithm 
 #This function returns the minimum level of detail required to uniquely identify an rcpt
@@ -53,6 +54,10 @@ def get_min_context_rcpt(curr, sender_id):
                 nameShape = False
             if r["name"] == curr["name"] and r["colour"] == curr["colour"]:
                 nameColour = False
+    
+    print (name)
+    print(nameShape)
+    print (nameColour)
     if name:
         return "only" + " " + curr["name"]
     if nameShape:
@@ -61,7 +66,7 @@ def get_min_context_rcpt(curr, sender_id):
         return curr["colour"] + " " + curr["name"]
     if nameColour and nameShape:
         return curr["colour"] + " " + curr["shape"] + " " + curr["name"]
-    return get_pos(curr["colour"]) + ", " +  curr["colour"] + ", and " + curr["shape"] + " " + curr["name"]
+    return get_pos(curr["pos"]) + ", " +  curr["colour"] + ", and " + curr["shape"] + " " + curr["name"]
 
 # OBJ ##############
 def context_manager_obj(curr, sender_id):
@@ -77,9 +82,11 @@ def context_manager_obj(curr, sender_id):
 
 # under specify
 def get_low_context_obj(curr, sender_id):
-
+    state = "whole"
+    if curr["isSliced"]:
+        state = "sliced"
     if(curr["name"] == "apple"  or curr["colour"] == "bread"):
-        return curr["state"] + " " + curr["name"]
+        return state + " " + curr["name"]
     else:
         return curr["colour"] + " " + curr["name"]
     
@@ -141,8 +148,6 @@ def get_pos(pos):
     
     return pos[0] +" "+ pos[1]
 
-def forced_context(curr):
-    return 0
 
 #NEXT OBJ FUNCTIONS #############################################################################################################
 
@@ -187,7 +192,7 @@ def read_rcpt_json(slurk_port):
     #return read_json(slurk_port, "rcpt")
 
 def read_context_json(slurk_port):
-    if (slurk_port not in dict_rcpt):
+    if (slurk_port not in dict_context):
         dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
     
 
@@ -570,7 +575,7 @@ class tell_next_step(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         sender_id = tracker.current_state()['sender_id']
-        obj =  next_obj()
+        obj =  next_obj(sender_id)
         if (obj):
             rcpt = next_rcpt(obj, sender_id)
 
