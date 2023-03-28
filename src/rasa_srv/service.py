@@ -164,7 +164,11 @@ class RasaService:
         self.metadata_objects, self.metadata_mats = self._get_metadata()
         self.level = level
         self.variant = variant
-        self.bot_variant = BOT_VARIANT_MAPPING[self.variant]
+        self.bot_variant = (
+            BOT_VARIANT_MAPPING[self.variant]
+            if self.variant in BOT_VARIANT_MAPPING.keys()
+            else 2
+        )
 
         if write_file:
             mats, objs = self.get_scene()
