@@ -29,7 +29,7 @@ def context_manager_rcpt(curr, sender_id):
 def context_manager_rcpt_general(curr, sender_id):
 
     context_level = dict_context[sender_id]["context"]
-    
+
     if context_level == 1:
         return get_low_context_rcpt(curr, sender_id)
     if context_level == 2:
@@ -155,22 +155,22 @@ def get_min_context_obj(curr, sender_id):
 
 def get_pos(pos):
     if pos[0] == 0:
-        pos[0] = "left"
+        pos[0] = "far left"
     if pos[0] == 1:
         pos[0] = "left"
     if pos[0] == 2:
-        pos[0] = "middle"
+        pos[0] = "left middle"
     if pos[0] == 3:
-        pos[0] = "middle"
+        pos[0] = "right middle"
     if pos[0] == 4:
         pos[0] = "right"
     if pos[0] == 5:
-        pos[0] = "right"
+        pos[0] = "far right"
 
     if pos[1] == 0:
         pos[1] = "top"
     if pos[1] == 1:
-        pos[1] = "middle"
+        pos[1] = "centre"
     if pos[1] == 2:
         pos[1] = "bottom"
     
@@ -243,7 +243,8 @@ def write_events_log(data, fileName):
                 "user"      : user,
                 "intent"    : intent,
                 "entities"  : entities,
-                "text"      : text
+                "text"      : text,
+                "true_label": ""
             } }
 
             f.write(json.dumps(dict, indent=4))

@@ -1,0 +1,191 @@
+{
+    "turn_0": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"greet\",\n \"confidence\": 0.7543201446533203\n}",
+        "entities": "[]",
+        "text": "\"Hi there, should we play.\"",
+        "true_label": ""
+    }
+}{
+    "turn_1": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_greet\",\n    \"template\": \"utter_greet\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Hey! Ready to start the game?\""
+    }
+}{
+    "turn_2": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"affirm\",\n \"confidence\": 0.9919237494468689\n}",
+        "entities": "[]",
+        "text": "\"yes\"",
+        "true_label": ""
+    }
+}{
+    "turn_3": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_4": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only bread\",\n    \"rcpt\": \"orange square mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only bread on the orange square mat\""
+    }
+}{
+    "turn_5": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_6": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_7": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only apple\",\n    \"rcpt\": \"orange circle mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only apple on the orange circle mat\""
+    }
+}{
+    "turn_8": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"affirm\",\n \"confidence\": 0.9961990714073181\n}",
+        "entities": "[]",
+        "text": "\"OK\"",
+        "true_label": ""
+    }
+}{
+    "turn_9": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_me_when_done\",\n    \"template\": \"utter_tell_me_when_done\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Tell me when you're done\""
+    }
+}{
+    "turn_10": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9908179044723511\n}",
+        "entities": "[]",
+        "text": "\"complete\"",
+        "true_label": ""
+    }
+}{
+    "turn_11": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_12": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only cup\",\n    \"rcpt\": \"green mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only cup on the green mat\""
+    }
+}{
+    "turn_13": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_14": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_15": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only bowl\",\n    \"rcpt\": \"red mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only bowl on the red mat\""
+    }
+}{
+    "turn_16": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_17": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_18": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only vase\",\n    \"rcpt\": \"violet mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only vase on the violet mat\""
+    }
+}{
+    "turn_19": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_20": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_21": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only plate\",\n    \"rcpt\": \"blue mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only plate on the blue mat\""
+    }
+}{
+    "turn_22": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"deny\",\n \"confidence\": 0.5802623629570007\n}",
+        "entities": "[]",
+        "text": "\"doen\"",
+        "true_label": ""
+    }
+}{
+    "turn_23": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_deny\",\n    \"template\": \"utter_deny\",\n    \"state\": \"sliced\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"no?\""
+    }
+}{
+    "turn_24": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_25": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}

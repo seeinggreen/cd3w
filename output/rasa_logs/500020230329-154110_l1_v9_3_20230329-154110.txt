@@ -1,0 +1,337 @@
+{
+    "turn_0": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.8406085968017578\n}",
+        "entities": "[]",
+        "text": "\"what should i do\"",
+        "true_label": ""
+    }
+}{
+    "turn_1": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.9856106638908386\n}",
+        "entities": "[]",
+        "text": "\"What is the first step\"",
+        "true_label": ""
+    }
+}{
+    "turn_2": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.7029650807380676\n}",
+        "entities": "[]",
+        "text": "\"Can you tell me what to do\"",
+        "true_label": ""
+    }
+}{
+    "turn_3": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.6355757117271423\n}",
+        "entities": "[]",
+        "text": "\"Give you your first instruction?\"",
+        "true_label": ""
+    }
+}{
+    "turn_4": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"greet\",\n \"confidence\": 0.9993626475334167\n}",
+        "entities": "[]",
+        "text": "\"Greetings\"",
+        "true_label": ""
+    }
+}{
+    "turn_5": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_greet\",\n    \"template\": \"utter_greet\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Hey! Ready to start the game?\""
+    }
+}{
+    "turn_6": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"deny\",\n \"confidence\": 0.9996205568313599\n}",
+        "entities": "[]",
+        "text": "\"No\"",
+        "true_label": ""
+    }
+}{
+    "turn_7": {
+        "user": "Leader",
+        "metadata": "{\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Let me know when ready\""
+    }
+}{
+    "turn_8": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_deny\",\n    \"template\": \"utter_deny\",\n    \"state\": \"sliced\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"no?\""
+    }
+}{
+    "turn_9": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.9736203551292419\n}",
+        "entities": "[]",
+        "text": "\"Ok im ready now\"",
+        "true_label": ""
+    }
+}{
+    "turn_10": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"brown egg\",\n    \"rcpt\": \"yellow square mat at the far left top of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the brown egg on the yellow square mat at the far left top of the table\""
+    }
+}{
+    "turn_11": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.9997795224189758\n}",
+        "entities": "[]",
+        "text": "\"ok what is next\"",
+        "true_label": ""
+    }
+}{
+    "turn_12": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.5446135401725769\n}",
+        "entities": "[]",
+        "text": "\"ok i am finish\"",
+        "true_label": ""
+    }
+}{
+    "turn_13": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_14": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"white bread\",\n    \"rcpt\": \"yellow circle mat at the left centre of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the white bread on the yellow circle mat at the left centre of the table\""
+    }
+}{
+    "turn_15": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"nlu_fallback\",\n \"confidence\": 0.3\n}",
+        "entities": "[]",
+        "text": "\"ok what is after\"",
+        "true_label": ""
+    }
+}{
+    "turn_16": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_please_rephrase\",\n    \"template\": \"utter_please_rephrase\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"I don't understand, can you rephrase.\""
+    }
+}{
+    "turn_17": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.7818705439567566\n}",
+        "entities": "[]",
+        "text": "\"what to do now?\"",
+        "true_label": ""
+    }
+}{
+    "turn_18": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.9998421669006348\n}",
+        "entities": "[]",
+        "text": "\"what is next\"",
+        "true_label": ""
+    }
+}{
+    "turn_19": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_20": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_21": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"yellow vase\",\n    \"rcpt\": \"green circle mat at the left bottom of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the yellow vase on the green circle mat at the left bottom of the table\""
+    }
+}{
+    "turn_22": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_23": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_24": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"black bowl\",\n    \"rcpt\": \"red circle mat at the left middle top of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the black bowl on the red circle mat at the left middle top of the table\""
+    }
+}{
+    "turn_25": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9034191370010376\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 5,\n        \"end\": 8,\n        \"confidence_entity\": 0.8351486325263977,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"what mat\"",
+        "true_label": ""
+    }
+}{
+    "turn_26": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"red circle mat at the left middle top of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The red circle mat at the left middle top of the table\""
+    }
+}{
+    "turn_27": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_next_step\",\n \"confidence\": 0.319353848695755\n}",
+        "entities": "[\n    {\n        \"entity\": \"obj\",\n        \"start\": 5,\n        \"end\": 9,\n        \"confidence_entity\": 0.9988988637924194,\n        \"value\": \"bowl\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"what bowl\"",
+        "true_label": ""
+    }
+}{
+    "turn_28": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_colour\",\n \"confidence\": 0.8005872964859009\n}",
+        "entities": "[\n    {\n        \"entity\": \"obj\",\n        \"start\": 14,\n        \"end\": 18,\n        \"confidence_entity\": 0.9994984865188599,\n        \"value\": \"bowl\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"do you have a bowl\"",
+        "true_label": ""
+    }
+}{
+    "turn_29": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_colour\",\n    \"template\": \"utter_tell_colour\",\n    \"objRcpt\": \"bowl\",\n    \"colour\": \"black\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The bowl is black\""
+    }
+}{
+    "turn_30": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"deny\",\n \"confidence\": 0.9638035893440247\n}",
+        "entities": "[\n    {\n        \"entity\": \"colour\",\n        \"start\": 30,\n        \"end\": 36,\n        \"confidence_entity\": 0.9965251088142395,\n        \"role\": \"obj\",\n        \"confidence_role\": 0.9981124401092529,\n        \"value\": \"silver\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"what item do you have that is silver\"",
+        "true_label": ""
+    }
+}{
+    "turn_31": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_deny\",\n    \"template\": \"utter_deny\",\n    \"state\": \"sliced\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"no?\""
+    }
+}{
+    "turn_32": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_colour\",\n \"confidence\": 0.7077441811561584\n}",
+        "entities": "[]",
+        "text": "\"do you have a frying pan\"",
+        "true_label": ""
+    }
+}{
+    "turn_33": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_colour\",\n    \"template\": \"utter_tell_colour\",\n    \"objRcpt\": \"mat\",\n    \"colour\": \"red\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The mat is red\""
+    }
+}{
+    "turn_34": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_35": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_36": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"silver pan\",\n    \"rcpt\": \"indigo circle mat at the right top of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the silver pan on the indigo circle mat at the right top of the table\""
+    }
+}{
+    "turn_37": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"nlu_fallback\",\n \"confidence\": 0.3\n}",
+        "entities": "[\n    {\n        \"entity\": \"colour\",\n        \"start\": 14,\n        \"end\": 20,\n        \"confidence_entity\": 0.9962395429611206,\n        \"role\": \"obj\",\n        \"confidence_role\": 0.999807596206665,\n        \"value\": \"silver\",\n        \"extractor\": \"DIETClassifier\"\n    },\n    {\n        \"entity\": \"obj\",\n        \"start\": 21,\n        \"end\": 24,\n        \"confidence_entity\": 0.9994593262672424,\n        \"value\": \"pan\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"do you have a silver pan\"",
+        "true_label": ""
+    }
+}{
+    "turn_38": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_please_rephrase\",\n    \"template\": \"utter_please_rephrase\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"I don't understand, can you rephrase.\""
+    }
+}{
+    "turn_39": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_colour\",\n \"confidence\": 0.7972450256347656\n}",
+        "entities": "[\n    {\n        \"entity\": \"obj\",\n        \"start\": 14,\n        \"end\": 17,\n        \"confidence_entity\": 0.9997005462646484,\n        \"value\": \"pan\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"do you have a pan\"",
+        "true_label": ""
+    }
+}{
+    "turn_40": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_colour\",\n    \"template\": \"utter_tell_colour\",\n    \"objRcpt\": \"pan\",\n    \"colour\": \"silver\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The pan is silver\""
+    }
+}{
+    "turn_41": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_42": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_43": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"yellow whole apple\",\n    \"rcpt\": \"orange circle mat at the right bottom of the table\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the yellow whole apple on the orange circle mat at the right bottom of the table\""
+    }
+}{
+    "turn_44": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9997997879981995\n}",
+        "entities": "[]",
+        "text": "\"done\"",
+        "true_label": ""
+    }
+}{
+    "turn_45": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}

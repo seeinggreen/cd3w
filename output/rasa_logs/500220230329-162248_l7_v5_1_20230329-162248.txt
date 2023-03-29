@@ -1,0 +1,409 @@
+{
+    "turn_0": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"greet\",\n \"confidence\": 0.9993537068367004\n}",
+        "entities": "[]",
+        "text": "\"hi\"",
+        "true_label": ""
+    }
+}{
+    "turn_1": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_greet\",\n    \"template\": \"utter_greet\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Hey! Ready to start the game?\""
+    }
+}{
+    "turn_2": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"affirm\",\n \"confidence\": 0.9919237494468689\n}",
+        "entities": "[]",
+        "text": "\"yes\"",
+        "true_label": ""
+    }
+}{
+    "turn_3": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_4": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"apple\",\n    \"rcpt\": \"mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the apple on the mat\""
+    }
+}{
+    "turn_5": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9902390241622925\n}",
+        "entities": "[\n    {\n        \"entity\": \"obj\",\n        \"start\": 6,\n        \"end\": 11,\n        \"confidence_entity\": 0.986575186252594,\n        \"value\": \"apple\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which apple?\"",
+        "true_label": ""
+    }
+}{
+    "turn_6": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"sliced apple\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The sliced apple\""
+    }
+}{
+    "turn_7": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat\"",
+        "true_label": ""
+    }
+}{
+    "turn_8": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"square mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The square mat\""
+    }
+}{
+    "turn_9": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat\"",
+        "true_label": ""
+    }
+}{
+    "turn_10": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"square mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The square mat\""
+    }
+}{
+    "turn_11": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_colour\",\n \"confidence\": 0.9999710321426392\n}",
+        "entities": "[]",
+        "text": "\"which color\"",
+        "true_label": ""
+    }
+}{
+    "turn_12": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_colour\",\n    \"template\": \"utter_tell_colour\",\n    \"objRcpt\": \"mat\",\n    \"colour\": \"blue\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The mat is blue\""
+    }
+}{
+    "turn_13": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9551102519035339\n}",
+        "entities": "[]",
+        "text": "\"anything else?\"",
+        "true_label": ""
+    }
+}{
+    "turn_14": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_15": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"apple\",\n    \"rcpt\": \"mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the apple on the mat\""
+    }
+}{
+    "turn_16": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat?\"",
+        "true_label": ""
+    }
+}{
+    "turn_17": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"circle mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The circle mat\""
+    }
+}{
+    "turn_18": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9551102519035339\n}",
+        "entities": "[]",
+        "text": "\"anything else\"",
+        "true_label": ""
+    }
+}{
+    "turn_19": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_20": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"bread\",\n    \"rcpt\": \"mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the bread on the mat\""
+    }
+}{
+    "turn_21": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9095999598503113\n}",
+        "entities": "[\n    {\n        \"entity\": \"obj\",\n        \"start\": 6,\n        \"end\": 11,\n        \"confidence_entity\": 0.999832272529602,\n        \"value\": \"bread\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which bread?\"",
+        "true_label": ""
+    }
+}{
+    "turn_22": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"brown bread\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The brown bread\""
+    }
+}{
+    "turn_23": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_state\",\n \"confidence\": 0.9993607401847839\n}",
+        "entities": "[\n    {\n        \"entity\": \"state_obj\",\n        \"start\": 0,\n        \"end\": 6,\n        \"confidence_entity\": 0.934529185295105,\n        \"value\": \"sliced\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"sliced?\"",
+        "true_label": ""
+    }
+}{
+    "turn_24": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_state\",\n    \"template\": \"utter_tell_state\",\n    \"polite\": \"No. \",\n    \"obj\": \"bread\",\n    \"state\": \"whole\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"No. The bread is whole\""
+    }
+}{
+    "turn_25": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat?\"",
+        "true_label": ""
+    }
+}{
+    "turn_26": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"yellow mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The yellow mat\""
+    }
+}{
+    "turn_27": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_state\",\n \"confidence\": 0.8327251076698303\n}",
+        "entities": "[\n    {\n        \"entity\": \"state_obj\",\n        \"start\": 4,\n        \"end\": 9,\n        \"confidence_entity\": 0.9985133409500122,\n        \"value\": \"whole\",\n        \"extractor\": \"DIETClassifier\"\n    },\n    {\n        \"entity\": \"obj\",\n        \"start\": 10,\n        \"end\": 15,\n        \"confidence_entity\": 0.9996984004974365,\n        \"value\": \"bread\",\n        \"extractor\": \"DIETClassifier\"\n    },\n    {\n        \"entity\": \"colour\",\n        \"start\": 34,\n        \"end\": 40,\n        \"confidence_entity\": 0.9982181787490845,\n        \"role\": \"rcpt\",\n        \"confidence_role\": 0.9301834106445312,\n        \"value\": \"yellow\",\n        \"extractor\": \"DIETClassifier\"\n    },\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 41,\n        \"end\": 44,\n        \"confidence_entity\": 0.9986227750778198,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"the whole bread is already on the yellow mat\\\\\"",
+        "true_label": ""
+    }
+}{
+    "turn_28": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_state\",\n    \"template\": \"utter_tell_state\",\n    \"polite\": \"Yes. \",\n    \"obj\": \"bread\",\n    \"state\": \"whole\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Yes. The bread is whole\""
+    }
+}{
+    "turn_29": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9551102519035339\n}",
+        "entities": "[]",
+        "text": "\"anything else?\"",
+        "true_label": ""
+    }
+}{
+    "turn_30": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_31": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"bread\",\n    \"rcpt\": \"mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the bread on the mat\""
+    }
+}{
+    "turn_32": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9551102519035339\n}",
+        "entities": "[]",
+        "text": "\"anything else?\"",
+        "true_label": ""
+    }
+}{
+    "turn_33": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_34": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"cup\",\n    \"rcpt\": \"mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the cup on the mat\""
+    }
+}{
+    "turn_35": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat?\"",
+        "true_label": ""
+    }
+}{
+    "turn_36": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"square mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The square mat\""
+    }
+}{
+    "turn_37": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.6181232929229736\n}",
+        "entities": "[\n    {\n        \"entity\": \"shape\",\n        \"start\": 6,\n        \"end\": 12,\n        \"confidence_entity\": 0.9388357400894165,\n        \"value\": \"square\",\n        \"extractor\": \"DIETClassifier\"\n    },\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 13,\n        \"end\": 16,\n        \"confidence_entity\": 0.953775942325592,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which square mat?\"",
+        "true_label": ""
+    }
+}{
+    "turn_38": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat?\"",
+        "true_label": ""
+    }
+}{
+    "turn_39": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"square mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The square mat\""
+    }
+}{
+    "turn_40": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_colour\",\n \"confidence\": 0.9999710321426392\n}",
+        "entities": "[]",
+        "text": "\"which color\"",
+        "true_label": ""
+    }
+}{
+    "turn_41": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_colour\",\n    \"template\": \"utter_tell_colour\",\n    \"objRcpt\": \"mat\",\n    \"colour\": \"violet\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The mat is violet\""
+    }
+}{
+    "turn_42": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"deny\",\n \"confidence\": 0.9996681213378906\n}",
+        "entities": "[]",
+        "text": "\"no\"",
+        "true_label": ""
+    }
+}{
+    "turn_43": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_deny\",\n    \"template\": \"utter_deny\",\n    \"state\": \"sliced\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"no?\""
+    }
+}{
+    "turn_44": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"deny\",\n \"confidence\": 0.9996681213378906\n}",
+        "entities": "[]",
+        "text": "\"no\"",
+        "true_label": ""
+    }
+}{
+    "turn_45": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_deny\",\n    \"template\": \"utter_deny\",\n    \"state\": \"sliced\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"no?\""
+    }
+}{
+    "turn_46": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"deny\",\n \"confidence\": 0.9989843964576721\n}",
+        "entities": "[]",
+        "text": "\"no violet\"",
+        "true_label": ""
+    }
+}{
+    "turn_47": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_deny\",\n    \"template\": \"utter_deny\",\n    \"state\": \"sliced\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"no?\""
+    }
+}{
+    "turn_48": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9551102519035339\n}",
+        "entities": "[]",
+        "text": "\"anything else?\"",
+        "true_label": ""
+    }
+}{
+    "turn_49": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}{
+    "turn_50": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"vase\",\n    \"rcpt\": \"mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the vase on the mat\""
+    }
+}{
+    "turn_51": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9989513158798218\n}",
+        "entities": "[]",
+        "text": "\"which may?\"",
+        "true_label": ""
+    }
+}{
+    "turn_52": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"red vase\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The red vase\""
+    }
+}{
+    "turn_53": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"ask_general\",\n \"confidence\": 0.9986773133277893\n}",
+        "entities": "[\n    {\n        \"entity\": \"rcpt\",\n        \"start\": 6,\n        \"end\": 9,\n        \"confidence_entity\": 0.9948476552963257,\n        \"value\": \"mat\",\n        \"extractor\": \"DIETClassifier\"\n    }\n]",
+        "text": "\"which mat?\"",
+        "true_label": ""
+    }
+}{
+    "turn_54": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_general\",\n    \"template\": \"utter_tell_general\",\n    \"context\": \"iris mat\",\n    \"model_id\": \"18a2086a9bfc4c0f8504eae37e6c8974\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"The iris mat\""
+    }
+}{
+    "turn_55": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9551102519035339\n}",
+        "entities": "[]",
+        "text": "\"anything else?\"",
+        "true_label": ""
+    }
+}{
+    "turn_56": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\"",
+        "true_label": ""
+    }
+}
