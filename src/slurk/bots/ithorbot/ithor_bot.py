@@ -104,7 +104,7 @@ class IthorBot:
                         "text",
                         {
                             "room": data["room"],
-                            "message": f"We're playing level {self.level.replace('l', '')}. Hold on a sec while I get things set up. This might take a little while...",
+                            "message": f"Hold on a sec while I get things set up. This might take a little while...",
                         },
                     )
 
@@ -122,7 +122,8 @@ class IthorBot:
                             "/slice -> for slicing an object, "
                             "/done ->  at the end of the game, if you think you have successfully recreated your chat partner's table. "
                             "You can specify mats and objects using the lookup sheet (e.g., in the format /put #2 on #V, /request #2, /slice #2). "
-                            "If you want to put something on the table, use #table (e.g., /put #2 on #table).",
+                            "If you want to put something on the table, use #table (e.g., /put #2 on #table). "
+                            "Say something to the LeaderBot to get started once the scene has loaded.",
                         },
                     )
 
@@ -185,6 +186,11 @@ class IthorBot:
                     self.level, self.variant, self.follower["name"]
                 )
                 message_log_path = f"{os.path.abspath('')}/output/dialogues/{self.level}_{self.variant}.json"
+                existing_message_log = {
+                                str(date.today()): {
+                                    self.follower["name"]: self.message_log
+                                }
+                            }
                 if os.path.exists(message_log_path):
                     with open(message_log_path, encoding="utf-8") as json_file:
                         existing_message_log = json.load(json_file)
@@ -196,19 +202,14 @@ class IthorBot:
                         existing_message_log[str(date.today())] = {
                             self.follower["name"]: self.message_log
                         }
-                else:
-                    with open(
-                        message_log_path,
-                        "w+",
-                    ) as outfile:
-                        json.dump(
-                            {
-                                str(date.today()): {
-                                    self.follower["name"]: self.message_log
-                                }
-                            },
-                            outfile,
-                        )
+                with open(
+                    message_log_path,
+                    "w",
+                ) as outfile:
+                    json.dump(
+                        existing_message_log,
+                        outfile,
+                    )
                 self.message_log = []
                 self.ithor_service.follower_controller.stop()
                 self.leader = None
@@ -218,7 +219,7 @@ class IthorBot:
                     "text",
                     {
                         "room": data["room"],
-                        "message": f"Thanks for playing level {self.level.replace('l', '')} variant {self.variant.replace('v', '')}! Please copy this link into your browser to evaluate LeaderBot: https://forms.office.com/e/AD3zZQAekj",
+                        "message": f"Thanks for playing! Please copy this link into your browser to evaluate LeaderBot: https://forms.office.com/e/AD3zZQAekj",
                     },
                 )
             elif data["user"]["id"] == self.follower["id"]:

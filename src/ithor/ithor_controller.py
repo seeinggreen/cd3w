@@ -295,23 +295,24 @@ class IthorController:
 
         config = {"mats": mats, "objects": objects}
 
-        final_states_path = f"{os.path.abspath('')}/output/final_states/{self.level}_{self.variant}.json"
+        final_states_path = f"{os.path.abspath('')}/output/final_states/{level}_{variant}.json"
+        existing_final_states = {str(date.today()): {username: config}}
         if os.path.exists(final_states_path):
             with open(final_states_path, encoding="utf-8") as json_file:
                 existing_final_states = json.load(json_file)
             if str(date.today()) in existing_final_states:
-                existing_final_states[str(date.today())][self.follower["name"]] = config
+                if username in existing_final_states[str(date.today())]:
+                    existing_final_states[str(date.today())][username] = config
+                else:
+                    existing_final_states[str(date.today())].update({username: config})
             else:
-                existing_final_states[str(date.today())] = {
-                    self.follower["name"]: config
-                }
-        else:
-            with open(
+                existing_final_states.update({str(date.today()): {username: config}})
+        with open(
                 final_states_path,
-                "w+",
+                "w",
             ) as outfile:
                 json.dump(
-                    {str(date.today()): {self.follower["name"]: config}},
+                    existing_final_states,
                     outfile,
                 )
 

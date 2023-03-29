@@ -1,0 +1,148 @@
+{
+    "turn_0": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"greet\",\n \"confidence\": 0.9989483952522278\n}",
+        "entities": "[]",
+        "text": "\"Hello\""
+    }
+}{
+    "turn_1": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_greet\",\n    \"template\": \"utter_greet\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Hey! Ready to start the game?\""
+    }
+}{
+    "turn_2": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"affirm\",\n \"confidence\": 0.9983847141265869\n}",
+        "entities": "[]",
+        "text": "\"Yes\""
+    }
+}{
+    "turn_3": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}{
+    "turn_4": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"white bread\",\n    \"rcpt\": \"orange square mat\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the white bread on the orange square mat\""
+    }
+}{
+    "turn_5": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.9998137354850769\n}",
+        "entities": "[]",
+        "text": "\"done\""
+    }
+}{
+    "turn_6": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}{
+    "turn_7": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"brown bread\",\n    \"rcpt\": \"circle mat\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the brown bread on the circle mat\""
+    }
+}{
+    "turn_8": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.999853253364563\n}",
+        "entities": "[]",
+        "text": "\"Done\""
+    }
+}{
+    "turn_9": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}{
+    "turn_10": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only bowl\",\n    \"rcpt\": \"red square mat at the middle top of the table\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only bowl on the red square mat at the middle top of the table\""
+    }
+}{
+    "turn_11": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.999853253364563\n}",
+        "entities": "[]",
+        "text": "\"Done\""
+    }
+}{
+    "turn_12": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}{
+    "turn_13": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only plate\",\n    \"rcpt\": \"red square mat at the middle middle of the table\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only plate on the red square mat at the middle middle of the table\""
+    }
+}{
+    "turn_14": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.999853253364563\n}",
+        "entities": "[]",
+        "text": "\"Done\""
+    }
+}{
+    "turn_15": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}{
+    "turn_16": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only egg\",\n    \"rcpt\": \"violet mat\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only egg on the violet mat\""
+    }
+}{
+    "turn_17": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.999853253364563\n}",
+        "entities": "[]",
+        "text": "\"Done\""
+    }
+}{
+    "turn_18": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}{
+    "turn_19": {
+        "user": "Leader",
+        "metadata": "{\n    \"utter_action\": \"utter_tell_next_step\",\n    \"template\": \"utter_tell_next_step\",\n    \"obj\": \"only pan\",\n    \"rcpt\": \"indigo mat\",\n    \"model_id\": \"587e1fd6814d4d2296b59240a5c66775\",\n    \"assistant_id\": \"20230323-162328-slim-designer\"\n}",
+        "text": "\"Put the only pan on the indigo mat\""
+    }
+}{
+    "turn_20": {
+        "user": "Follower",
+        "intent": "{\n \"name\": \"done_it\",\n \"confidence\": 0.999853253364563\n}",
+        "entities": "[]",
+        "text": "\"Done\""
+    }
+}{
+    "turn_21": {
+        "user": "Follower",
+        "intent": "{\n \"confidence\": 1,\n \"name\": \"ask_next_step\"\n}",
+        "entities": "[]",
+        "text": "\"whats next\""
+    }
+}
