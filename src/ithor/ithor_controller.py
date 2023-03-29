@@ -81,7 +81,7 @@ class IthorController:
             position={"x": pos[0], "y": pos[1], "z": pos[2]},
             rotation={"x": 0, "y": rot, "z": 0},
             horizon=horizon,
-            forceAction=True
+            forceAction=True,
         )
 
     def name_to_object_id(self, name):
@@ -158,7 +158,9 @@ class IthorController:
 
         """
         if config == None:
-            self.table = Table(Table.get_empty_slots_list(),Table.get_empty_slots_list())
+            self.table = Table(
+                Table.get_empty_slots_list(), Table.get_empty_slots_list()
+            )
         else:
             self.table = Table(config["mats"], config["objects"])
 
@@ -202,7 +204,7 @@ class IthorController:
             action="PlaceObjectAtPoint",
             objectId=object_id,
             position=pos,
-            rotation=self.items.get_home_rotation(name)
+            rotation=self.items.get_home_rotation(name),
         )
 
     def place_asset_at_empty_location(self, name):
@@ -262,7 +264,7 @@ class IthorController:
             action="PlaceObjectAtPoint",
             objectId=object_id,
             position=self.items.get_home_position(name),
-            rotation=self.items.get_home_rotation(name)
+            rotation=self.items.get_home_rotation(name),
         )
         for column in self.table.grid:
             for slot in column:
@@ -280,7 +282,7 @@ class IthorController:
         """
         self.controller.stop()
 
-    def save_table_state(self, level, variant):
+    def save_table_state(self, level, variant, username):
         grid = self.table.grid
         mats = Table.get_empty_slots_list()
         objects = Table.get_empty_slots_list()
@@ -291,12 +293,28 @@ class IthorController:
                 if slot.has_object():
                     objects[x][y] = slot.object
 
-        config = {str(date.today()): {"mats": mats, "objects": objects}}
+        config = {"mats": mats, "objects": objects}
 
+        final_states_path = f"{os.path.abspath('')}/output/final_states/{level}_{variant}.json"
+        existing_final_states = {str(date.today()): {username: config}}
+        if os.path.exists(final_states_path):
+            with open(final_states_path, encoding="utf-8") as json_file:
+                existing_final_states = json.load(json_file)
+            if str(date.today()) in existing_final_states:
+                if username in existing_final_states[str(date.today())]:
+                    existing_final_states[str(date.today())][username] = config
+                else:
+                    existing_final_states[str(date.today())].update({username: config})
+            else:
+                existing_final_states.update({str(date.today()): {username: config}})
         with open(
-            f"{os.path.abspath('')}/output/final_states/{level}_{variant}.json", "w+"
-        ) as outfile:
-            json.dump(config, outfile)
+                final_states_path,
+                "w",
+            ) as outfile:
+                json.dump(
+                    existing_final_states,
+                    outfile,
+                )
 
     def get_current_table_items(self):
         grid = self.table.grid
