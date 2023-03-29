@@ -50,6 +50,10 @@ nlu:
 
 - intent: affirm
   examples: |
+    - ok
+    - of course
+    - okay
+    - 
     - yes
     - y
     - indeed

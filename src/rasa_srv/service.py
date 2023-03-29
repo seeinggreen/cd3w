@@ -8,6 +8,8 @@ from functools import reduce
 
 import requests
 import re
+import time
+
 
 
 class RasaException(Exception):
@@ -119,9 +121,6 @@ def get_scene_configs(level, variant, user):
 def get_leader_scene(level, variant): 
     return get_scene_configs(level, variant, "leader")
 
-
-
-
 def read_json(slurk_port, item_type):
     filename = str(slurk_port) + "_" + item_type
     with open(f'src/rasa_srv/lead_configs/{filename}.json', encoding="utf-8") as jFile:
@@ -145,9 +144,11 @@ def write_obj_json(slurk_port, dct):
 def write_rcpt_json(slurk_port, dct):
     write_json(slurk_port, "rcpt", dct)
 
+def write_sceneInfo_json(slurk_port, dct):
+    write_json(slurk_port, "sceneInfo", dct)
 
 
-
+BOT_VARIANT_MAPPING = {"v5": 1, "v6": 1, "v7": 2, "v8": 2, "v9": 3, "v10": 3}
 class RasaService:
     def __init__(self,port,level, variant, write_file=False):
         self.scene = None
@@ -155,13 +156,29 @@ class RasaService:
         self.metadata_objects, self.metadata_mats = self._get_metadata()
         self.level = level
         self.variant = variant
+        self.timeStamp =time.strftime("%Y%m%d-%H%M%S")  
+        self.ID = str(self.slurk_port) + self.timeStamp
 
+        self.context_level = (
+            BOT_VARIANT_MAPPING[self.variant]
+            if self.variant in BOT_VARIANT_MAPPING.keys()
+            else 2
+        )
 
         if write_file:
             mats, objs = self.get_scene()
+            sceneInfo =  {
+                "ID": self.ID,
+                "port": self.slurk_port,
+                "level": self.level,
+                "variant": self.variant,
+                "context": self.context_level,
+                "timeStamp" : self.timeStamp
+            }
 
-            write_rcpt_json(self.slurk_port, mats)
-            write_obj_json(self.slurk_port, objs)
+            write_rcpt_json(self.ID, mats)
+            write_obj_json(self.ID, objs)
+            write_sceneInfo_json(self.ID, sceneInfo)
 
 
 
@@ -205,12 +222,14 @@ class RasaService:
 
     def get_response(self, follower_message):
 
-        res = send_msg_rasa(self.slurk_port, follower_message)
-
+        res = send_msg_rasa(self.ID, follower_message)
         if is_res_success(res):
-            return get_res_msg(res)
+            if(not res.json()):
+                return "I don't understand, can you rephrase."
+            else:
+                return get_res_msg(res)
         else:
-            raise RasaException("sender_id: ", self.slurk_port, ", message: ", follower_message)
+            raise RasaException("sender_id: ", self.ID, ", message: ", follower_message)
         # this is the method called when the follower types a message in Slurk
         # IMPORTANT regardless of how we handle the passing of the message to Rasa
         # and getting the bot generated response, this method needs to return
