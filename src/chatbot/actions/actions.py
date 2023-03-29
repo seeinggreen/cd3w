@@ -1,46 +1,65 @@
 import json
+import random
 from typing import Any, Text, Dict, List    
 from rasa_sdk import Action, Tracker
+
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import (
     SlotSet,
     FollowupAction,
     ActionExecuted,
-    UserUttered 
+    UserUttered,
+    Restarted
 )
 
 #LEVEL OF DETAIL FUNCTIONS #############################################################################################################
+# RCPT ##############
+def context_manager_rcpt(curr, sender_id):
 
-#This function returns the minimum level of detail required to uniquely identify an object
-def get_min_context_obj(curr):
-
-    name = True
-    nameSlice = True
-    nameColour = True
+    context_level = dict_context[sender_id]["context"]
     
-    for o in obj_ls:
-        if o["id"] != curr["id"]:
-            if o["name"] == curr["name"]:
-                name = False
-            if o["name"] == curr["name"] and o["isSliced"] == curr["isSliced"]:
-                nameSlice = False
-            if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
-                nameColour = False
-    if name:
-        return "only"
-    if nameSlice:
-        return "sliced "
-    if nameColour:
-        return curr["colour"] 
-    return  "sliced " + curr["colour"] 
+    if context_level == 1:
+        return curr["name"]
+    if context_level == 2:
+        return get_min_context_rcpt(curr, sender_id)
+    else:
+        return get_high_context_rcpt(curr, sender_id)
+    
 
+def context_manager_rcpt_general(curr, sender_id):
+
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return get_low_context_rcpt(curr, sender_id)
+    if context_level == 2:
+        return get_min_context_rcpt(curr, sender_id)
+    else:
+        return get_high_context_rcpt(curr, sender_id)
+    
+# under specify
+def get_low_context_rcpt(curr, sender_id):
+    rand = random.randint(0,2)
+    if rand == 0:
+        return curr["shape"] + " " + curr["name"]
+    if rand == 1:
+        return curr["colour"] + " " + curr["name"]
+    if rand == 2:
+        return get_pos(curr["pos"])  + " " + curr["name"]
+
+# over specify
+def get_high_context_rcpt(curr, sender_id):
+    return curr["colour"] + " " + curr["shape"] + " " + curr["name"] + " at the " + get_pos(curr["pos"]) + " of the table" 
+
+#Incremental Algorithm 
 #This function returns the minimum level of detail required to uniquely identify an rcpt
-def get_min_context_rcpt(curr):
+def get_min_context_rcpt(curr, sender_id):
 
     name = True
     nameShape = True
     nameColour = True
-    
+    nameShapeColour = True
+    rcpt_ls = dict_rcpt.get(sender_id)
     for r in rcpt_ls:
         if r["id"] != curr["id"]:
             if r["name"] == curr["name"]:
@@ -49,15 +68,90 @@ def get_min_context_rcpt(curr):
                 nameShape = False
             if r["name"] == curr["name"] and r["colour"] == curr["colour"]:
                 nameColour = False
+            if r["name"] == curr["name"] and r["colour"] == curr["colour"] and r["shape"] == curr["shape"]:
+                nameShapeColour = False
+
     if name:
-        return "only"
+        return "only" + " " + curr["name"]
     if nameShape:
-        return curr["shape"] 
+        return curr["shape"] + " " + curr["name"]
     if nameColour:
-        return curr["colour"] 
-    if nameColour and nameShape:
-        return curr["colour"] + " " + curr["shape"] 
-    return get_pos(curr["pos"]) + " " + curr["colour"] + " " + curr["shape"] 
+        return curr["colour"] + " " + curr["name"]
+    if nameShapeColour:
+        return curr["colour"] + " " + curr["shape"] + " " + curr["name"]
+    return curr["colour"] + " " + curr["shape"] + " " + curr["name"] + " at the " + get_pos(curr["pos"]) + " of the table" 
+
+# OBJ ##############
+def context_manager_obj(curr, sender_id):
+
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return curr["name"]
+    if context_level == 2:
+        return get_min_context_obj(curr, sender_id)
+    else:
+        return get_high_context_obj(curr, sender_id)
+
+def context_manager_obj_general(curr, sender_id):
+
+    context_level = dict_context[sender_id]["context"]
+    
+    if context_level == 1:
+        return get_low_context_obj(curr, sender_id)
+    if context_level == 2:
+        return get_min_context_obj(curr, sender_id)
+    else:
+        return get_high_context_obj(curr, sender_id)
+
+
+# under specify
+def get_low_context_obj(curr, sender_id):
+    state = "whole"
+    if curr["isSliced"]:
+        state = "sliced"
+    if(curr["name"] == "apple"  or curr["colour"] == "bread"):
+        return state + " " + curr["name"]
+    else:
+        return curr["colour"] + " " + curr["name"]
+    
+# over specify      
+def get_high_context_obj(curr, sender_id):
+    state = "whole"
+    if curr["isSliced"]:
+        state = "sliced"
+    if(curr["name"] == "apple"  or curr["colour"] == "bread"):
+        return curr["colour"] + " " + state + " " + curr["name"]
+    else:
+        return curr["colour"] + " " + curr["name"]
+
+#Incremental Algorithm 
+#This function returns the minimum level of detail required to uniquely identify an object
+def get_min_context_obj(curr, sender_id):
+
+    name = True
+    nameSlice = True
+    nameColour = True
+    obj_ls = dict_obj.get(sender_id)
+    for o in obj_ls:
+        if o["id"] != curr["id"]:
+            if o["name"] == curr["name"]:
+                name = False
+            if o["name"] == curr["name"] and o["isSliced"] == curr["isSliced"]:
+                nameSlice = False
+            if o["name"] == curr["name"] and o["colour"] == curr["colour"]:
+                nameColour = False
+    if o["isSliced"]:
+        state = "sliced"
+    else:   
+        state = "whole"
+    if name:
+        return "only " + curr["name"] 
+    if nameSlice:
+        return state + " " + curr["name"] 
+    if nameColour:
+        return curr["colour"]  + " " + curr["name"] 
+    return  state + " " + curr["colour"] + " " + curr["name"] 
 
 def get_pos(pos):
     if pos[0] == 0:
@@ -82,28 +176,30 @@ def get_pos(pos):
     
     return pos[0] +" "+ pos[1]
 
-def forced_context(curr):
-    return 0
 
 #NEXT OBJ FUNCTIONS #############################################################################################################
 
-def next_obj():
+
+def next_obj(sender_id):
+    obj_ls = dict_obj.get(sender_id)
     for o in obj_ls:
         if not o["hasMoved"]:
             return o
     return False
 
-def next_rcpt(o):
+def next_rcpt(o, sender_id):
+    rcpt_ls = dict_rcpt.get(sender_id)
     for r in rcpt_ls:
         if r["pos"] == o["pos"]:
             return r
     return False
 
-def update_obj(obj):
+def update_obj(obj, sender_id):
+    obj_ls = dict_obj.get(sender_id)
     for o in obj_ls:
         if o["id"] == obj["id"]:
             o['hasMoved'] = True
-    print (obj_ls)
+    
             
 #HELPER FUNCTIONS #############################################################################################################
 
@@ -114,16 +210,70 @@ def read_json(slurk_port, item_type):
     return data
 
 def read_obj_json(slurk_port):
-    return read_json(slurk_port, "obj")
+    if (slurk_port not in dict_obj):
+        dict_obj[slurk_port] = read_json(slurk_port, "obj")
+    #return read_json(slurk_port, "obj")
 
 def read_rcpt_json(slurk_port):
-    return read_json(slurk_port, "rcpt")
+    if (slurk_port not in dict_rcpt):
+        dict_rcpt[slurk_port] = read_json(slurk_port, "rcpt")
+    #return read_json(slurk_port, "rcpt")
 
-#obj_ls = read_obj_json(5000)
-#rcpt_ls= read_rcpt_json(5000)
+def read_context_json(slurk_port):
+    if (slurk_port not in dict_context):           
+        dict_context[slurk_port] = read_json(slurk_port, "sceneInfo")
+    
 
-obj_ls = []
-rcpt_ls = []
+def write_events_log(data, fileName):
+    
+    log_folder = f'../../output/rasa_logs/lead_configs'
+    t1 = json.dumps(data)
+    f = open(f'../../output/rasa_logs/{fileName}.txt', 'w', encoding='utf-8')
+    num = 0
+    for e in data:
+        
+        if e["event"] == "user":
+            parse_data = e["parse_data"]
+            user = "Follower"
+            intent = json.dumps(parse_data["intent"], indent=1)
+            entities = json.dumps(parse_data["entities"], indent=4)
+            text = json.dumps(e["text"], indent=4)
+
+            dict = {"turn_" + str(num) :{
+                "user"      : user,
+                "intent"    : intent,
+                "entities"  : entities,
+                "text"      : text
+            } }
+
+            f.write(json.dumps(dict, indent=4))
+            num = num + 1           
+
+
+        if e["event"] == "bot":
+
+            user = "Leader"
+            metadata = json.dumps(e["metadata"], indent=4)
+            text = json.dumps(e["text"], indent=4)
+            
+            dict = {"turn_" + str(num) :{
+                "user"      : user,
+                "metadata"  : metadata,
+                "text"      : text
+            } }
+            f.write(json.dumps(dict, indent=4))
+   
+            num = num + 1       
+    f.close()
+    with open(f'../../output/rasa_logs/{fileName}_extended.json', 'w', encoding='utf-8') as f:
+        f.write(t1)
+
+    
+
+dict_obj = {}
+dict_rcpt = {}
+dict_context = {}
+
 #TRACKER PRINTING FUNCTIONS #############################################################################################################
 
 def print_prev_events(tracker):
@@ -152,11 +302,11 @@ def print_all(tracker):
     print("____________________________________")
 
 
-def purple_shape_grounding(tracker, shape):
+def purple_shape_grounding(tracker, shape, sender_id):
     shape11 = False
     shape12 = False
     shape13 = False
-
+    rcpt_ls = dict_rcpt.get(sender_id)
     for r in rcpt_ls:
         if r["id"].lower() == shape+"11".lower():
             shape11 = True
@@ -224,8 +374,8 @@ class affirm(Action):
             if e["event"] == "bot":
                 temp_list.append(e['metadata'])
 
-        clarification_action_list = ["utter_tell_colour","utter_tell_shape", "utter_tell_pos", "utter_tell_state", "utter_tell_general", "utter_tell_next_step"]
-      
+        clarification_action_list = ["utter_grounding_purple","utter_grounding_purple_variant","utter_tell_colour","utter_tell_shape", "utter_tell_pos", "utter_tell_state", "utter_tell_general", "utter_tell_next_step"]
+
         if(temp_list[-1]['utter_action']):
             if  (temp_list[-1]['utter_action'] in clarification_action_list):
                 dispatcher.utter_message(response="utter_tell_me_when_done")
@@ -246,7 +396,7 @@ class resp_done_it(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         #return [FollowupAction("tell_next_step")]
-        update_obj(tracker.get_slot("obj"))
+        update_obj(tracker.get_slot("obj"), tracker.current_state()['sender_id'] )
         return [ActionExecuted("action_listen")] + [UserUttered("whats next", { 
 		"intent": {"confidence": 1, "name": "ask_next_step"}, 
 		"entities": [] 
@@ -286,11 +436,11 @@ class greet(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        # Setting json scene data on greet by checking sender id
-        global obj_ls, rcpt_ls
-        obj_ls= read_obj_json(tracker.current_state()['sender_id'])
-        rcpt_ls= read_rcpt_json(tracker.current_state()['sender_id'])
-        
+        # Setting json scene data on greet by checking sender id        
+        read_obj_json(tracker.current_state()['sender_id'])
+        read_rcpt_json(tracker.current_state()['sender_id'])
+        read_context_json(tracker.current_state()['sender_id'])
+
         dispatcher.utter_message(response="utter_greet")
         return []
 
@@ -322,6 +472,7 @@ class tell_colour(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         #by default use obj
+        sender_id = tracker.current_state()['sender_id']
         objRcpt = "rcpt"
         polite = ""
         temp_list = []
@@ -343,7 +494,7 @@ class tell_colour(Action):
             for p in set_purples:
                 if p in tracker.latest_message["text"].lower():
                     user_colour = p
-                    grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"])
+                    grounding_term = purple_shape_grounding(tracker, tracker.get_slot(objRcpt)["shape"], sender_id)
                     if user_colour != grounding_term:
                         slotvars = {
                             
@@ -351,7 +502,6 @@ class tell_colour(Action):
                             "slot_colour": slot_colour
                         }
                         dispatcher.utter_message(response="utter_grounding_purple_variant", **slotvars)
-                        #print("I'm not sure what " + user_colour + " is. I'm talking about the "+ grounding_term +" mat, lets call that colour "+ slot_colour)
                         return []
                     if user_colour == grounding_term:
                         slotvars = {
@@ -359,7 +509,6 @@ class tell_colour(Action):
                             "slot_colour": slot_colour
                         }
                         dispatcher.utter_message(response="utter_grounding_purple", **slotvars)
-                        #print("Lets call " + user_colour + ", " + slot_colour+ ".")
                         return []
 
         slotvars = {
@@ -419,7 +568,6 @@ class tell_pos(Action):
             "rcpt": tracker.get_slot("rcpt")["name"],
             "pos": pos
         }
-
         dispatcher.utter_message(response="utter_tell_pos", **slotvars)
         return []
 
@@ -470,43 +618,78 @@ class tell_general(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        
+        sender_id = tracker.current_state()['sender_id']
+        objRcpt = "obj"
         if(len(tracker.latest_message["entities"]) > 0):
             objRcpt = tracker.latest_message["entities"][0]["entity"]
-        if(objRcpt == "obj"):
-            context = get_min_context_obj(tracker.get_slot(objRcpt))
 
+        if(objRcpt == "obj"):
+            context =  context_manager_obj_general(tracker.get_slot(objRcpt), sender_id)
         if(objRcpt == "rcpt"):
-            context = get_min_context_rcpt(tracker.get_slot(objRcpt))
+            context =  context_manager_rcpt_general(tracker.get_slot(objRcpt), sender_id)
 
         slotvars = {
             "context": context,
-            "objRcpt": tracker.get_slot(objRcpt)["name"]
         }
-
         dispatcher.utter_message(response="utter_tell_general", **slotvars)
         return []
 
 class tell_next_step(Action):
     def name(self) -> Text:
         return "tell_next_step"
+    
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-       
-        obj =  next_obj()
-     
+        sender_id = tracker.current_state()['sender_id']
+
+        fileName = str(sender_id) + '_' + str(dict_context[sender_id]['level']) \
+        + '_' + str(dict_context[sender_id]['variant']) + '_' + str(dict_context[sender_id]['context']) \
+        + '_' + str(dict_context[sender_id]['timeStamp'])
+        
+        
+
+
+        obj =  next_obj(sender_id)
         if (obj):
-            rcpt = next_rcpt(obj)
+            rcpt = next_rcpt(obj, sender_id)
+
+            obj_context =  context_manager_obj(obj, sender_id)
+            rcpt_context = context_manager_rcpt(rcpt, sender_id)
+
             slotvars = {
-                "obj": obj["name"],
-                "rcpt": rcpt["name"] 
+                "obj": obj_context,
+                "rcpt": rcpt_context
             }
         
             dispatcher.utter_message(response="utter_tell_next_step", **slotvars)
             return [SlotSet("obj",obj), SlotSet("rcpt",rcpt)]
         else:
+
             dispatcher.utter_message(text="Congratulations. We are done with the game. Thanks for playing")
+            dict_obj.pop(sender_id)
+            dict_rcpt.pop(sender_id)
+            write_events_log(tracker.events, fileName)
+            return [Restarted()]
+
+class tell_please_rephrase(Action):
+    
+    def name(self) -> Text:
+        return "tell_please_rephrase"
+    
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        slotvars = {
+        
+        }
+
+        dispatcher.utter_message(
+            response="utter_please_rephrase", **slotvars)
+        return []
 
 class help_delete(Action):
     def name(self) -> Text:
@@ -539,7 +722,5 @@ class help_request(Action):
             response="utter_help_delete", **slotvars)
         return []
     
-
-
 set_colours = {"red","blue","orange","green","purple","yellow","iris","black","ocean blue","sky blue","gold","silver","gray","brown","khaki","white","Beige","Maroon","Navy","Teal","Turquoise","Magenta","Lavender","Olive","Forest Green","Mustard","Ruby","Gold","Silver","Bronze","Peach"}
 set_purples = {"magenta", "lavendar", "dark purple", "light purple", "purple"}
