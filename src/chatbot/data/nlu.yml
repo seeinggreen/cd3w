@@ -315,7 +315,15 @@ nlu:
     - I don't know this object
     - Does your [pan]{"entity": "obj"} has a handle?
     - Wait! I don't what you are referring to.
-
+    - Which [mat]{"entity": "rcpt"}?
+    - Which [placemat]{"entity": "rcpt"}?
+    - Which [placemat]{"entity": "rcpt"} does it go on?
+    - Which apple should i use?
+    - Which mat should i use
+    - what mat was it it?
+    - what about the mat?
+    - what apple was i using?
+  
 - intent: ask_next_step 
   examples: |
     - i havent touched the [egg]{"entity": "obj"} or [white]{"entity": "colour", "role": "obj"} [plate]{"entity": "obj"} though
