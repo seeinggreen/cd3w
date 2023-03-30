@@ -10,6 +10,7 @@ numpy = "*"
 requests = "*"
 python-socketio = "*"
 python-socketio-client = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
