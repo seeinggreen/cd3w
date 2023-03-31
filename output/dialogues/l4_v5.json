@@ -1,1 +1,1040 @@
-{"2023-03-29": {"Laurent": [{"user": "Laurent", "command": "ready"}, {"user": "LeaderBot", "command": "ready"}, {"user": "Laurent", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Laurent", "message": "yes"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The orange mat"}, {"user": "Laurent", "message": "which orange many?"}, {"user": "LeaderBot", "message": "Yes. The mat is orange"}, {"user": "Laurent", "message": "there are two orange mats"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Laurent", "command": "put #4 on #G"}, {"user": "Laurent", "message": "next"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "which mat"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Laurent", "message": "next"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "next"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Laurent", "message": "which apple?"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Laurent", "message": "which apple/"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Laurent", "message": "which sliced apple?"}, {"user": "LeaderBot", "message": "Yes. The apple is sliced"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The far left bottom mat"}, {"user": "Laurent", "command": "put #2 on #T"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the cup on the mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The red mat"}, {"user": "Laurent", "message": "which red mat?"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The red mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The red mat"}, {"user": "Laurent", "message": "there are two red mats"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Laurent", "command": "put #8 on #Q"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the egg on the mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The right middle centre mat"}, {"user": "Laurent", "command": "put #16 on #L"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the pan on the mat"}, {"user": "Laurent", "command": "put #19 on #M"}, {"user": "Laurent", "message": "anything else"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "Laurent", "command": "put #13 on #P"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Laurent", "command": "done"}], "Adam": [{"user": "Adam", "message": "hello!"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Adam", "message": "Affirmative"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Adam", "message": "I can confirm I am ready"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "I am ready"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Adam", "message": "can i see the scene again?"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Adam", "message": "why not?"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Adam", "message": "thats not very helpful"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Adam", "message": "ok so what should  i do again?"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Adam", "message": "what do i do now"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "what to do now"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Adam", "message": "which mat "}, {"user": "LeaderBot", "message": "The orange mat"}, {"user": "Adam", "command": "put #3 on #G"}, {"user": "Adam", "message": "which apple?"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Adam", "message": "what color is it?"}, {"user": "LeaderBot", "message": "The mat is orange"}, {"user": "Adam", "message": "what color is the apple"}, {"user": "LeaderBot", "message": "The apple is red"}, {"user": "Adam", "command": "put #2 on G"}, {"user": "Adam", "message": "put #2 on #G"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "command": "put #2 on #G"}, {"user": "Adam", "command": "put #2 on #G"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Adam", "message": "which apple"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Adam", "message": "what color"}, {"user": "LeaderBot", "message": "The mat is orange"}, {"user": "Adam", "message": "what color apple"}, {"user": "LeaderBot", "message": "The apple is green"}, {"user": "Adam", "message": "what mat"}, {"user": "LeaderBot", "message": "The orange mat"}, {"user": "Adam", "message": "which orange mat"}, {"user": "LeaderBot", "message": "Yes. The mat is orange"}, {"user": "Adam", "message": "the circle mat or square mat"}, {"user": "LeaderBot", "message": "Yes. The mat is circle"}, {"user": "Adam", "command": "put #4 to #T"}, {"user": "Adam", "command": "put"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the cup on the mat"}, {"user": "Adam", "message": "what mat"}, {"user": "LeaderBot", "message": "The right middle top mat"}, {"user": "Adam", "message": "what color"}, {"user": "LeaderBot", "message": "The mat is red"}, {"user": "Adam", "command": "put #8 to #Q"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the egg on the mat"}, {"user": "Adam", "message": "which mat"}, {"user": "LeaderBot", "message": "The red mat"}, {"user": "Adam", "message": "which red mat"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "there are 2 red mat which one"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "which mat"}, {"user": "LeaderBot", "message": "The right middle centre mat"}, {"user": "Adam", "message": "it already has an item"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "command": "put #8 to #P"}, {"user": "Adam", "command": "put #16 to #Q"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the pan on the mat"}, {"user": "Adam", "message": "which mat"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Adam", "message": "which square ,at"}, {"user": "LeaderBot", "message": "The black pan"}, {"user": "Adam", "message": "which square mat"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "which mat"}, {"user": "LeaderBot", "message": "The right centre mat"}, {"user": "Adam", "command": "put #19 on #L"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "Adam", "message": "which map "}, {"user": "LeaderBot", "message": "The iris mat"}, {"user": "Adam", "message": "what is iris"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "which map is iris"}, {"user": "LeaderBot", "message": "The white bread"}, {"user": "Adam", "message": "what color is iris"}, {"user": "LeaderBot", "message": "The mat is iris"}, {"user": "Adam", "message": "what is iris"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "is iris purple??"}, {"user": "LeaderBot", "message": "I'm talking about the light purple mat, lets call that colour iris"}, {"user": "Adam", "command": "put #15 on #M"}, {"user": "Adam", "command": "put #15 on #M"}, {"user": "Adam", "command": "put #13 on #M"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Adam", "command": "done"}], "rishav": [{"user": "rishav", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "rishav", "message": "yes"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "rishav", "command": "put #4 on #P"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "rishav", "command": "put #2 on #Q"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the cup on the mat"}, {"user": "rishav", "command": "put #8 on #L"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the egg on the mat"}, {"user": "rishav", "command": "put #17 on #M"}, {"user": "rishav", "command": "put #16 on #M"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the pan on the mat"}, {"user": "rishav", "command": "put #19 on #G"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "rishav", "command": "put #13 on #T"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "rishav", "command": "done"}], "Peter": [{"user": "Peter", "message": "Hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Peter", "message": "Y"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Peter", "message": "Is the apple sliced?"}, {"user": "LeaderBot", "message": "Yes. The apple is sliced"}, {"user": "Peter", "message": "Which mat? what colour, what shape?"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Peter", "message": "what colour"}, {"user": "LeaderBot", "message": "The mat is orange"}, {"user": "Peter", "command": "put #2 on #G"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Peter", "message": "What colour is the apple? "}, {"user": "LeaderBot", "message": "The apple is green"}, {"user": "Peter", "message": "what colour is the mat?"}, {"user": "LeaderBot", "message": "The mat is orange"}, {"user": "Peter", "message": "what shape"}, {"user": "LeaderBot", "message": "The mat is circle"}, {"user": "Peter", "command": "put #4 on #T"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the cup on the mat"}, {"user": "Peter", "message": "what colour is the mat?\u00fa"}, {"user": "LeaderBot", "message": "The mat is red"}, {"user": "Peter", "message": "where is the mat?"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Peter", "message": "I have two red circle mat"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Peter", "message": "I have two red circle mats"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Peter", "message": "The top mat?"}, {"user": "LeaderBot", "message": "The mat is on the right middle top of the table"}, {"user": "Peter", "command": "put #4 on #P"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the egg on the mat"}, {"user": "Peter", "message": "where"}, {"user": "LeaderBot", "message": "The brown egg"}, {"user": "Peter", "message": "which mat"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Peter", "command": "put #17 on #Q "}, {"user": "Peter", "command": "put #16 on #Q"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the pan on the mat"}, {"user": "Peter", "message": "which mat"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Peter", "message": "what colour"}, {"user": "LeaderBot", "message": "The mat is indigo"}, {"user": "Peter", "message": "is the indigo dark or light?? "}, {"user": "LeaderBot", "message": "Yes. The mat is indigo"}, {"user": "Peter", "message": "Is the indigo light? "}, {"user": "LeaderBot", "message": "Yes. The mat is indigo"}, {"user": "Peter", "message": "Is the indigo a dark colour? "}, {"user": "LeaderBot", "message": "Yes. The mat is indigo"}, {"user": "Peter", "message": "Where is the mat?"}, {"user": "LeaderBot", "message": "The right centre mat"}, {"user": "Peter", "command": "put #19 on #L"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "Peter", "message": "which mat"}, {"user": "LeaderBot", "message": "The right bottom mat"}, {"user": "Peter", "command": "put #13 on #M"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Peter", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "Laurent": [
+            {
+                "user": "Laurent",
+                "command": "ready"
+            },
+            {
+                "user": "LeaderBot",
+                "command": "ready"
+            },
+            {
+                "user": "Laurent",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "Laurent",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The orange mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which orange many?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is orange"
+            },
+            {
+                "user": "Laurent",
+                "message": "there are two orange mats"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "Laurent",
+                "command": "put #4 on #G"
+            },
+            {
+                "user": "Laurent",
+                "message": "next"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "next"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "next"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which apple?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "Laurent",
+                "message": "which apple/"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "Laurent",
+                "message": "which sliced apple?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The apple is sliced"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The far left bottom mat"
+            },
+            {
+                "user": "Laurent",
+                "command": "put #2 on #T"
+            },
+            {
+                "user": "Laurent",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the cup on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which red mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "there are two red mats"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Laurent",
+                "command": "put #8 on #Q"
+            },
+            {
+                "user": "Laurent",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the egg on the mat"
+            },
+            {
+                "user": "Laurent",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The right middle centre mat"
+            },
+            {
+                "user": "Laurent",
+                "command": "put #16 on #L"
+            },
+            {
+                "user": "Laurent",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the pan on the mat"
+            },
+            {
+                "user": "Laurent",
+                "command": "put #19 on #M"
+            },
+            {
+                "user": "Laurent",
+                "message": "anything else"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "Laurent",
+                "command": "put #13 on #P"
+            },
+            {
+                "user": "Laurent",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "Laurent",
+                "command": "done"
+            }
+        ],
+        "Adam": [
+            {
+                "user": "Adam",
+                "message": "hello!"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "Adam",
+                "message": "Affirmative"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "Adam",
+                "message": "I can confirm I am ready"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "I am ready"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "can i see the scene again?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "Adam",
+                "message": "why not?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "Adam",
+                "message": "thats not very helpful"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "Adam",
+                "message": "ok so what should  i do again?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "Adam",
+                "message": "what do i do now"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "what to do now"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which mat "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The orange mat"
+            },
+            {
+                "user": "Adam",
+                "command": "put #3 on #G"
+            },
+            {
+                "user": "Adam",
+                "message": "which apple?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "Adam",
+                "message": "what color is it?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is orange"
+            },
+            {
+                "user": "Adam",
+                "message": "what color is the apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is red"
+            },
+            {
+                "user": "Adam",
+                "command": "put #2 on G"
+            },
+            {
+                "user": "Adam",
+                "message": "put #2 on #G"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "command": "put #2 on #G"
+            },
+            {
+                "user": "Adam",
+                "command": "put #2 on #G"
+            },
+            {
+                "user": "Adam",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "Adam",
+                "message": "what color"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is orange"
+            },
+            {
+                "user": "Adam",
+                "message": "what color apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is green"
+            },
+            {
+                "user": "Adam",
+                "message": "what mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The orange mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which orange mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is orange"
+            },
+            {
+                "user": "Adam",
+                "message": "the circle mat or square mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is circle"
+            },
+            {
+                "user": "Adam",
+                "command": "put #4 to #T"
+            },
+            {
+                "user": "Adam",
+                "command": "put"
+            },
+            {
+                "user": "Adam",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the cup on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "what mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The right middle top mat"
+            },
+            {
+                "user": "Adam",
+                "message": "what color"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is red"
+            },
+            {
+                "user": "Adam",
+                "command": "put #8 to #Q"
+            },
+            {
+                "user": "Adam",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the egg on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which red mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "there are 2 red mat which one"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The right middle centre mat"
+            },
+            {
+                "user": "Adam",
+                "message": "it already has an item"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "command": "put #8 to #P"
+            },
+            {
+                "user": "Adam",
+                "command": "put #16 to #Q"
+            },
+            {
+                "user": "Adam",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the pan on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which square ,at"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The black pan"
+            },
+            {
+                "user": "Adam",
+                "message": "which square mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The right centre mat"
+            },
+            {
+                "user": "Adam",
+                "command": "put #19 on #L"
+            },
+            {
+                "user": "Adam",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "Adam",
+                "message": "which map "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The iris mat"
+            },
+            {
+                "user": "Adam",
+                "message": "what is iris"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "which map is iris"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The white bread"
+            },
+            {
+                "user": "Adam",
+                "message": "what color is iris"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is iris"
+            },
+            {
+                "user": "Adam",
+                "message": "what is iris"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Adam",
+                "message": "is iris purple??"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I'm talking about the light purple mat, lets call that colour iris"
+            },
+            {
+                "user": "Adam",
+                "command": "put #15 on #M"
+            },
+            {
+                "user": "Adam",
+                "command": "put #15 on #M"
+            },
+            {
+                "user": "Adam",
+                "command": "put #13 on #M"
+            },
+            {
+                "user": "Adam",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "Adam",
+                "command": "done"
+            }
+        ],
+        "rishav": [
+            {
+                "user": "rishav",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "rishav",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "rishav",
+                "command": "put #4 on #P"
+            },
+            {
+                "user": "rishav",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "rishav",
+                "command": "put #2 on #Q"
+            },
+            {
+                "user": "rishav",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the cup on the mat"
+            },
+            {
+                "user": "rishav",
+                "command": "put #8 on #L"
+            },
+            {
+                "user": "rishav",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the egg on the mat"
+            },
+            {
+                "user": "rishav",
+                "command": "put #17 on #M"
+            },
+            {
+                "user": "rishav",
+                "command": "put #16 on #M"
+            },
+            {
+                "user": "rishav",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the pan on the mat"
+            },
+            {
+                "user": "rishav",
+                "command": "put #19 on #G"
+            },
+            {
+                "user": "rishav",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "rishav",
+                "command": "put #13 on #T"
+            },
+            {
+                "user": "rishav",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "rishav",
+                "command": "done"
+            }
+        ],
+        "Peter": [
+            {
+                "user": "Peter",
+                "message": "Hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "Peter",
+                "message": "Y"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Peter",
+                "message": "Is the apple sliced?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The apple is sliced"
+            },
+            {
+                "user": "Peter",
+                "message": "Which mat? what colour, what shape?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "Peter",
+                "message": "what colour"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is orange"
+            },
+            {
+                "user": "Peter",
+                "command": "put #2 on #G"
+            },
+            {
+                "user": "Peter",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "Peter",
+                "message": "What colour is the apple? "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is green"
+            },
+            {
+                "user": "Peter",
+                "message": "what colour is the mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is orange"
+            },
+            {
+                "user": "Peter",
+                "message": "what shape"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is circle"
+            },
+            {
+                "user": "Peter",
+                "command": "put #4 on #T"
+            },
+            {
+                "user": "Peter",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the cup on the mat"
+            },
+            {
+                "user": "Peter",
+                "message": "what colour is the mat?\u00fa"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is red"
+            },
+            {
+                "user": "Peter",
+                "message": "where is the mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "Peter",
+                "message": "I have two red circle mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Peter",
+                "message": "I have two red circle mats"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "Peter",
+                "message": "The top mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is on the right middle top of the table"
+            },
+            {
+                "user": "Peter",
+                "command": "put #4 on #P"
+            },
+            {
+                "user": "Peter",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the egg on the mat"
+            },
+            {
+                "user": "Peter",
+                "message": "where"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The brown egg"
+            },
+            {
+                "user": "Peter",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "Peter",
+                "command": "put #17 on #Q "
+            },
+            {
+                "user": "Peter",
+                "command": "put #16 on #Q"
+            },
+            {
+                "user": "Peter",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the pan on the mat"
+            },
+            {
+                "user": "Peter",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "Peter",
+                "message": "what colour"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is indigo"
+            },
+            {
+                "user": "Peter",
+                "message": "is the indigo dark or light?? "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is indigo"
+            },
+            {
+                "user": "Peter",
+                "message": "Is the indigo light? "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is indigo"
+            },
+            {
+                "user": "Peter",
+                "message": "Is the indigo a dark colour? "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is indigo"
+            },
+            {
+                "user": "Peter",
+                "message": "Where is the mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The right centre mat"
+            },
+            {
+                "user": "Peter",
+                "command": "put #19 on #L"
+            },
+            {
+                "user": "Peter",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "Peter",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The right bottom mat"
+            },
+            {
+                "user": "Peter",
+                "command": "put #13 on #M"
+            },
+            {
+                "user": "Peter",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "Peter",
+                "command": "done"
+            }
+        ]
+    }
+}
