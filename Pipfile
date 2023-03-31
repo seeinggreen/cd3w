@@ -11,6 +11,8 @@ requests = "*"
 python-socketio = "*"
 python-socketio-client = "*"
 sqlalchemy = "*"
+pandas = "*"
+matplotlib = "*"
 
 [dev-packages]
 
