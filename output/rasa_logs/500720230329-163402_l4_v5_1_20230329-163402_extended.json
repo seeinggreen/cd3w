@@ -3575,6 +3575,7 @@
         "parse_data": {
             "intent": {
                 "name": "ask_colour",
+                "true_label": "ask_colour",
                 "confidence": 0.9998910427093506
             },
             "entities": [],
