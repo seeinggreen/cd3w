@@ -219,7 +219,7 @@ questionnaire_quant_df = pd.read_csv(
         "name",
         "gameID",
         "nlu",
-        "nlu_examples",
+        "not_understood_examples",
         "naturalness",
         "unnaturalness_examples",
         "helpfulness",
@@ -227,7 +227,7 @@ questionnaire_quant_df = pd.read_csv(
         "satisfaction",
         "improvements",
     ],
-    usecols=[1, 2, 5, 6, 8, 10, 12],
+    usecols=[1, 2, 5, 6, 7, 8, 9, 10, 11, 12, 13],
 ).drop([0], axis=0)
 
 questionnaire_quant_df = questionnaire_quant_df.astype(
@@ -311,3 +311,21 @@ for metric in ["nlu", "naturalness", "helpfulness", "satisfaction", "duration"]:
             stats_df = make_stats_df(questionnaire_quant_merged_df, metric, agg, bot)
             plot_results(stats_df, metric, agg, bot)
             print(stats_df)
+
+
+def make_filtered_grouped_df(df, category):
+    return df[["bot", category]].groupby(by="bot").apply(lambda x: x[category]).dropna()
+
+
+def save_json(df, category):
+    df.to_json(f"{os.path.abspath('')}/results/{category}.json")
+
+
+for category in [
+    "not_understood_examples",
+    "unnaturalness_examples",
+    "unhelpfulness_examples",
+    "improvements",
+]:
+    grouped_df = make_filtered_grouped_df(questionnaire_quant_merged_df, category)
+    save_json(grouped_df, category)
