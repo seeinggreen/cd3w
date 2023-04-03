@@ -1,1 +1,166 @@
-{"b3": {"l1": {"bart": 1.0, "mike": 1.0, "ben": 1.0, "laurent": 0.0, "malek": 0.0, "adam": 1.0, "rishav": 1.0, "peter": 0.0}, "l4": {"bart": 0.0, "mike": 0.0, "ben": 1.0, "laurent": 0.0, "adam": 1.0, "rishav": 0.0, "peter": 0.0}, "l7": {"bart": 1.0, "mike": 0.0, "laurent": 1.0, "rishav": 0.0}}, "l1": {"b3": {"bart": 1.0, "mike": 1.0, "ben": 1.0, "laurent": 0.0, "malek": 0.0, "adam": 1.0, "rishav": 1.0, "peter": 0.0}, "b1": {"malek": 0.0, "laurent": 0.0, "adam": 0.0, "peter": 0.0, "rishav": 0.0, "bart": 0.0, "mike": 0.0, "ben": 1.0}, "b2": {"laurent": 0.0, "malek": 0.0, "peter": 1.0, "rishav": 0.0, "bart": 1.0, "ben": 1.0, "mike": 1.0}}, "b1": {"l1": {"malek": 0.0, "laurent": 0.0, "adam": 0.0, "peter": 0.0, "rishav": 0.0, "bart": 0.0, "mike": 0.0, "ben": 1.0}, "l4": {"laurent": 0.0, "adam": 0.0, "rishav": 0.0, "peter": 0.0, "bart": 0.0, "mike": 0.0}, "l7": {"laurent": 0.0, "adam": 0.0, "rishav": 0.0, "bart": 0.0, "mike": 0.0}}, "b2": {"l1": {"laurent": 0.0, "malek": 0.0, "peter": 1.0, "rishav": 0.0, "bart": 1.0, "ben": 1.0, "mike": 1.0}, "l4": {"mike": 0.0, "laurent": 0.0, "malek": 0.0, "rishav": 1.0, "peter": 1.0, "adam": 0.0, "bart": 0.0, "ben": 1.0}, "l7": {"rishav": 0.0, "laurent": 0.0, "peter": 0.0, "bart": 0.0, "mike": 0.0}}, "l4": {"b3": {"bart": 0.0, "mike": 0.0, "ben": 1.0, "laurent": 0.0, "adam": 1.0, "rishav": 0.0, "peter": 0.0}, "b1": {"laurent": 0.0, "adam": 0.0, "rishav": 0.0, "peter": 0.0, "bart": 0.0, "mike": 0.0}, "b2": {"mike": 0.0, "laurent": 0.0, "malek": 0.0, "rishav": 1.0, "peter": 1.0, "adam": 0.0, "bart": 0.0, "ben": 1.0}}, "l7": {"b3": {"bart": 1.0, "mike": 0.0, "laurent": 1.0, "rishav": 0.0}, "b1": {"laurent": 0.0, "adam": 0.0, "rishav": 0.0, "bart": 0.0, "mike": 0.0}, "b2": {"rishav": 0.0, "laurent": 0.0, "peter": 0.0, "bart": 0.0, "mike": 0.0}}}
+{
+    "b3": {
+        "l1": {
+            "bart": 1.0,
+            "mike": 1.0,
+            "ben": 1.0,
+            "laurent": 0.0,
+            "malek": 0.0,
+            "adam": 1.0,
+            "rishav": 1.0,
+            "peter": 0.0
+        },
+        "l4": {
+            "bart": 0.0,
+            "mike": 0.0,
+            "ben": 1.0,
+            "laurent": 0.0,
+            "adam": 1.0,
+            "rishav": 0.0,
+            "peter": 0.0
+        },
+        "l7": {
+            "bart": 1.0,
+            "mike": 0.0,
+            "laurent": 1.0,
+            "rishav": 0.0
+        }
+    },
+    "l1": {
+        "b3": {
+            "bart": 1.0,
+            "mike": 1.0,
+            "ben": 1.0,
+            "laurent": 0.0,
+            "malek": 0.0,
+            "adam": 1.0,
+            "rishav": 1.0,
+            "peter": 0.0
+        },
+        "b1": {
+            "malek": 0.0,
+            "laurent": 0.0,
+            "adam": 0.0,
+            "peter": 0.0,
+            "rishav": 0.0,
+            "bart": 0.0,
+            "mike": 0.0,
+            "ben": 1.0
+        },
+        "b2": {
+            "laurent": 0.0,
+            "malek": 0.0,
+            "peter": 1.0,
+            "rishav": 0.0,
+            "bart": 1.0,
+            "ben": 1.0,
+            "mike": 1.0
+        }
+    },
+    "b1": {
+        "l1": {
+            "malek": 0.0,
+            "laurent": 0.0,
+            "adam": 0.0,
+            "peter": 0.0,
+            "rishav": 0.0,
+            "bart": 0.0,
+            "mike": 0.0,
+            "ben": 1.0
+        },
+        "l4": {
+            "laurent": 0.0,
+            "adam": 0.0,
+            "rishav": 0.0,
+            "peter": 0.0,
+            "bart": 0.0,
+            "mike": 0.0
+        },
+        "l7": {
+            "laurent": 0.0,
+            "adam": 0.0,
+            "rishav": 0.0,
+            "bart": 0.0,
+            "mike": 0.0
+        }
+    },
+    "b2": {
+        "l1": {
+            "laurent": 0.0,
+            "malek": 0.0,
+            "peter": 1.0,
+            "rishav": 0.0,
+            "bart": 1.0,
+            "ben": 1.0,
+            "mike": 1.0
+        },
+        "l4": {
+            "mike": 0.0,
+            "laurent": 0.0,
+            "malek": 0.0,
+            "rishav": 1.0,
+            "peter": 1.0,
+            "adam": 0.0,
+            "bart": 0.0,
+            "ben": 1.0
+        },
+        "l7": {
+            "rishav": 0.0,
+            "laurent": 0.0,
+            "peter": 0.0,
+            "bart": 0.0,
+            "mike": 0.0
+        }
+    },
+    "l4": {
+        "b3": {
+            "bart": 0.0,
+            "mike": 0.0,
+            "ben": 1.0,
+            "laurent": 0.0,
+            "adam": 1.0,
+            "rishav": 0.0,
+            "peter": 0.0
+        },
+        "b1": {
+            "laurent": 0.0,
+            "adam": 0.0,
+            "rishav": 0.0,
+            "peter": 0.0,
+            "bart": 0.0,
+            "mike": 0.0
+        },
+        "b2": {
+            "mike": 0.0,
+            "laurent": 0.0,
+            "malek": 0.0,
+            "rishav": 1.0,
+            "peter": 1.0,
+            "adam": 0.0,
+            "bart": 0.0,
+            "ben": 1.0
+        }
+    },
+    "l7": {
+        "b3": {
+            "bart": 1.0,
+            "mike": 0.0,
+            "laurent": 1.0,
+            "rishav": 0.0
+        },
+        "b1": {
+            "laurent": 0.0,
+            "adam": 0.0,
+            "rishav": 0.0,
+            "bart": 0.0,
+            "mike": 0.0
+        },
+        "b2": {
+            "rishav": 0.0,
+            "laurent": 0.0,
+            "peter": 0.0,
+            "bart": 0.0,
+            "mike": 0.0
+        }
+    }
+}
