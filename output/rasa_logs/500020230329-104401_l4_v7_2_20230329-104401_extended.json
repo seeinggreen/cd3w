@@ -1,1 +1,1720 @@
-[{"event": "action", "timestamp": 1680083150.7337615, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_session_start", "policy": null, "confidence": 1.0, "action_text": null, "hide_rule_turn": false}, {"event": "session_started", "timestamp": 1680083150.7338576, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}}, {"event": "action", "timestamp": 1680083150.7339046, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083150.765312, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Hello", "parse_data": {"intent": {"name": "greet", "confidence": 0.9989483952522278}, "entities": [], "text": "Hello", "message_id": "5e685fb1f04c45c1b1bdac61c7edfecc", "metadata": {}, "text_tokens": [[0, 5]], "intent_ranking": [{"name": "greet", "confidence": 0.9989483952522278}, {"name": "rcpt_not_empty", "confidence": 0.00025167528656311333}, {"name": "ask_numbers", "confidence": 0.00018339492089580745}, {"name": "wait", "confidence": 0.00012455953401513398}, {"name": "ask_shape", "confidence": 0.00011378912313375622}, {"name": "deny", "confidence": 8.888966112863272e-05}, {"name": "ask_pos", "confidence": 7.320103759411722e-05}, {"name": "ask_state", "confidence": 5.111845166538842e-05}, {"name": "affirm", "confidence": 4.882545908913016e-05}, {"name": "ask_colour", "confidence": 3.576253948267549e-05}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "5e685fb1f04c45c1b1bdac61c7edfecc"}, {"event": "user_featurization", "timestamp": 1680083150.8114624, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083150.811479, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "greet", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083150.8115075, "metadata": {"utter_action": "utter_greet", "template": "utter_greet", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Hey! Ready to start the game?", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "action", "timestamp": 1680083150.8124661, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083152.2574027, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Yes", "parse_data": {"intent": {"name": "affirm", "confidence": 0.9983847141265869}, "entities": [], "text": "Yes", "message_id": "7e408e1109e241fb8d81cbb7d7343642", "metadata": {}, "text_tokens": [[0, 3]], "intent_ranking": [{"name": "affirm", "confidence": 0.9983847141265869}, {"name": "goodbye", "confidence": 0.0003421192814130336}, {"name": "ask_next_step", "confidence": 0.00023323690402321517}, {"name": "ask_shape", "confidence": 0.00022660208924207836}, {"name": "wait", "confidence": 0.00020159885752946138}, {"name": "greet", "confidence": 0.00011703430936904624}, {"name": "ask_pos", "confidence": 0.00010155382915399969}, {"name": "deny", "confidence": 9.399075497640297e-05}, {"name": "not_have_obj", "confidence": 6.517966539831832e-05}, {"name": "ask_state", "confidence": 6.210691935848445e-05}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "7e408e1109e241fb8d81cbb7d7343642"}, {"event": "user_featurization", "timestamp": 1680083152.2952976, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083152.295308, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "affirm", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083152.2953165, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083152.2953186, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083152.3237803, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083152.323791, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "tell_next_step", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083152.3238208, "metadata": {"utter_action": "utter_tell_next_step", "template": "utter_tell_next_step", "obj": "white bread", "rcpt": "orange square mat", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Put the white bread on the orange square mat", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "slot", "timestamp": 1680083152.323824, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "obj", "value": {"id": "Bread1", "name": "bread", "colour": "white", "hasMoved": false, "isSliced": false, "pos": [0, 0]}}, {"event": "slot", "timestamp": 1680083152.323828, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "rcpt", "value": {"id": "Square7", "name": "mat", "shape": "square", "colour": "orange", "pos": [0, 0]}}, {"event": "action", "timestamp": 1680083152.324824, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083167.7628996, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "done", "parse_data": {"intent": {"name": "done_it", "confidence": 0.9998137354850769}, "entities": [], "text": "done", "message_id": "1d52d5c85a154adb9e7634b8b6a7a34b", "metadata": {}, "text_tokens": [[0, 4]], "intent_ranking": [{"name": "done_it", "confidence": 0.9998137354850769}, {"name": "deny", "confidence": 2.8736418244079687e-05}, {"name": "goodbye", "confidence": 2.558103733463213e-05}, {"name": "ask_numbers", "confidence": 2.417678479105234e-05}, {"name": "rcpt_not_empty", "confidence": 1.9972161680925637e-05}, {"name": "wait", "confidence": 1.4819406715105288e-05}, {"name": "ask_shape", "confidence": 1.4738084246346261e-05}, {"name": "greet", "confidence": 1.4023803487361874e-05}, {"name": "ask_state", "confidence": 1.1941913726332132e-05}, {"name": "ask_general", "confidence": 1.1763129805331118e-05}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "1d52d5c85a154adb9e7634b8b6a7a34b"}, {"event": "user_featurization", "timestamp": 1680083167.794617, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083167.7946312, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "resp_done_it", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083167.7946408, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083167.794643, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083167.824464, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083167.824477, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "tell_next_step", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083167.82451, "metadata": {"utter_action": "utter_tell_next_step", "template": "utter_tell_next_step", "obj": "brown bread", "rcpt": "circle mat", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Put the brown bread on the circle mat", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "slot", "timestamp": 1680083167.8245142, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "obj", "value": {"id": "Bread2", "name": "bread", "colour": "brown", "hasMoved": false, "isSliced": false, "pos": [0, 1]}}, {"event": "slot", "timestamp": 1680083167.824518, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "rcpt", "value": {"id": "Circle7", "name": "mat", "shape": "circle", "colour": "orange", "pos": [0, 1]}}, {"event": "action", "timestamp": 1680083167.825784, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083188.645869, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Done", "parse_data": {"intent": {"name": "done_it", "confidence": 0.999853253364563}, "entities": [], "text": "Done", "message_id": "a85d8a083d4748f3a1f0c542675738ac", "metadata": {}, "text_tokens": [[0, 4]], "intent_ranking": [{"name": "done_it", "confidence": 0.999853253364563}, {"name": "deny", "confidence": 2.224799754912965e-05}, {"name": "ask_numbers", "confidence": 1.9944705854868516e-05}, {"name": "goodbye", "confidence": 1.965970113815274e-05}, {"name": "rcpt_not_empty", "confidence": 1.521912963653449e-05}, {"name": "ask_shape", "confidence": 1.1943206118303351e-05}, {"name": "wait", "confidence": 1.1491049008327536e-05}, {"name": "greet", "confidence": 1.132096895162249e-05}, {"name": "ask_general", "confidence": 9.633497029426508e-06}, {"name": "ask_state", "confidence": 9.523270819045138e-06}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "a85d8a083d4748f3a1f0c542675738ac"}, {"event": "user_featurization", "timestamp": 1680083188.6783009, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083188.6783142, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "resp_done_it", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083188.6783242, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083188.6783266, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083188.7080028, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083188.7080154, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "tell_next_step", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083188.7080474, "metadata": {"utter_action": "utter_tell_next_step", "template": "utter_tell_next_step", "obj": "only bowl", "rcpt": "red square mat at the middle top of the table", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Put the only bowl on the red square mat at the middle top of the table", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "slot", "timestamp": 1680083188.7080507, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "obj", "value": {"id": "Bowl2", "name": "bowl", "colour": "brown", "hasMoved": false, "isSliced": false, "pos": [2, 0]}}, {"event": "slot", "timestamp": 1680083188.7080545, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "rcpt", "value": {"id": "Square3", "name": "mat", "shape": "square", "colour": "red", "pos": ["middle", "top"]}}, {"event": "action", "timestamp": 1680083188.7093048, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083226.6905653, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Done", "parse_data": {"intent": {"name": "done_it", "confidence": 0.999853253364563}, "entities": [], "text": "Done", "message_id": "c2929ed20bed40468dd7015ee093f884", "metadata": {}, "text_tokens": [[0, 4]], "intent_ranking": [{"name": "done_it", "confidence": 0.999853253364563}, {"name": "deny", "confidence": 2.224799754912965e-05}, {"name": "ask_numbers", "confidence": 1.9944705854868516e-05}, {"name": "goodbye", "confidence": 1.965970113815274e-05}, {"name": "rcpt_not_empty", "confidence": 1.521912963653449e-05}, {"name": "ask_shape", "confidence": 1.1943206118303351e-05}, {"name": "wait", "confidence": 1.1491049008327536e-05}, {"name": "greet", "confidence": 1.132096895162249e-05}, {"name": "ask_general", "confidence": 9.633497029426508e-06}, {"name": "ask_state", "confidence": 9.523270819045138e-06}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "c2929ed20bed40468dd7015ee093f884"}, {"event": "user_featurization", "timestamp": 1680083226.7283254, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083226.7283363, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "resp_done_it", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083226.7283459, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083226.7283483, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083226.7582235, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083226.7582364, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "tell_next_step", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083226.7582686, "metadata": {"utter_action": "utter_tell_next_step", "template": "utter_tell_next_step", "obj": "only plate", "rcpt": "red square mat at the middle middle of the table", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Put the only plate on the red square mat at the middle middle of the table", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "slot", "timestamp": 1680083226.758272, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "obj", "value": {"id": "Plate1", "name": "plate", "colour": "white", "hasMoved": false, "isSliced": false, "pos": [2, 1]}}, {"event": "slot", "timestamp": 1680083226.7582755, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "rcpt", "value": {"id": "Square4", "name": "mat", "shape": "square", "colour": "red", "pos": ["middle", "middle"]}}, {"event": "action", "timestamp": 1680083226.759652, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083241.1508706, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Done", "parse_data": {"intent": {"name": "done_it", "confidence": 0.999853253364563}, "entities": [], "text": "Done", "message_id": "3a466ce54aeb473b955b80d0b5187ff7", "metadata": {}, "text_tokens": [[0, 4]], "intent_ranking": [{"name": "done_it", "confidence": 0.999853253364563}, {"name": "deny", "confidence": 2.224799754912965e-05}, {"name": "ask_numbers", "confidence": 1.9944705854868516e-05}, {"name": "goodbye", "confidence": 1.965970113815274e-05}, {"name": "rcpt_not_empty", "confidence": 1.521912963653449e-05}, {"name": "ask_shape", "confidence": 1.1943206118303351e-05}, {"name": "wait", "confidence": 1.1491049008327536e-05}, {"name": "greet", "confidence": 1.132096895162249e-05}, {"name": "ask_general", "confidence": 9.633497029426508e-06}, {"name": "ask_state", "confidence": 9.523270819045138e-06}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "3a466ce54aeb473b955b80d0b5187ff7"}, {"event": "user_featurization", "timestamp": 1680083241.185423, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083241.1854336, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "resp_done_it", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083241.1854422, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083241.1854446, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083241.214968, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083241.214979, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "tell_next_step", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083241.2150083, "metadata": {"utter_action": "utter_tell_next_step", "template": "utter_tell_next_step", "obj": "only egg", "rcpt": "violet mat", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Put the only egg on the violet mat", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "slot", "timestamp": 1680083241.2150114, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "obj", "value": {"id": "Egg2", "name": "egg", "colour": "white", "hasMoved": false, "isSliced": false, "pos": [3, 0]}}, {"event": "slot", "timestamp": 1680083241.2150145, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "rcpt", "value": {"id": "Square11", "name": "mat", "shape": "square", "colour": "violet", "pos": [3, 0]}}, {"event": "action", "timestamp": 1680083241.2164698, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083264.101587, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Done", "parse_data": {"intent": {"name": "done_it", "confidence": 0.999853253364563}, "entities": [], "text": "Done", "message_id": "7aa136e039c54ed4949be33c3d074270", "metadata": {}, "text_tokens": [[0, 4]], "intent_ranking": [{"name": "done_it", "confidence": 0.999853253364563}, {"name": "deny", "confidence": 2.224799754912965e-05}, {"name": "ask_numbers", "confidence": 1.9944705854868516e-05}, {"name": "goodbye", "confidence": 1.965970113815274e-05}, {"name": "rcpt_not_empty", "confidence": 1.521912963653449e-05}, {"name": "ask_shape", "confidence": 1.1943206118303351e-05}, {"name": "wait", "confidence": 1.1491049008327536e-05}, {"name": "greet", "confidence": 1.132096895162249e-05}, {"name": "ask_general", "confidence": 9.633497029426508e-06}, {"name": "ask_state", "confidence": 9.523270819045138e-06}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "7aa136e039c54ed4949be33c3d074270"}, {"event": "user_featurization", "timestamp": 1680083264.135285, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083264.135298, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "resp_done_it", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083264.1353073, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083264.1353092, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083264.1659644, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083264.1659777, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "tell_next_step", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "bot", "timestamp": 1680083264.1660097, "metadata": {"utter_action": "utter_tell_next_step", "template": "utter_tell_next_step", "obj": "only pan", "rcpt": "indigo mat", "model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Put the only pan on the indigo mat", "data": {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}}, {"event": "slot", "timestamp": 1680083264.166013, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "obj", "value": {"id": "Pan2", "name": "pan", "colour": "black", "hasMoved": false, "isSliced": false, "pos": [5, 1]}}, {"event": "slot", "timestamp": 1680083264.1660168, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "rcpt", "value": {"id": "Square12", "name": "mat", "shape": "square", "colour": "indigo", "pos": [5, 1]}}, {"event": "action", "timestamp": 1680083264.1676211, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "user", "timestamp": 1680083286.766087, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "Done", "parse_data": {"intent": {"name": "done_it", "confidence": 0.999853253364563}, "entities": [], "text": "Done", "message_id": "b2d31190eaca4483b43294fd7d9d307e", "metadata": {}, "text_tokens": [[0, 4]], "intent_ranking": [{"name": "done_it", "confidence": 0.999853253364563}, {"name": "deny", "confidence": 2.224799754912965e-05}, {"name": "ask_numbers", "confidence": 1.9944705854868516e-05}, {"name": "goodbye", "confidence": 1.965970113815274e-05}, {"name": "rcpt_not_empty", "confidence": 1.521912963653449e-05}, {"name": "ask_shape", "confidence": 1.1943206118303351e-05}, {"name": "wait", "confidence": 1.1491049008327536e-05}, {"name": "greet", "confidence": 1.132096895162249e-05}, {"name": "ask_general", "confidence": 9.633497029426508e-06}, {"name": "ask_state", "confidence": 9.523270819045138e-06}], "response_selector": {"all_retrieval_intents": [], "default": {"response": {"responses": null, "confidence": 0.0, "intent_response_key": null, "utter_action": "utter_None"}, "ranking": []}}}, "input_channel": "rest", "message_id": "b2d31190eaca4483b43294fd7d9d307e"}, {"event": "user_featurization", "timestamp": 1680083286.8023326, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "use_text_for_featurization": false}, {"event": "action", "timestamp": 1680083286.8023455, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "resp_done_it", "policy": "RulePolicy", "confidence": 1.0, "action_text": null, "hide_rule_turn": true}, {"event": "action", "timestamp": 1680083286.8023553, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "name": "action_listen", "policy": null, "confidence": null, "action_text": null, "hide_rule_turn": false}, {"event": "user", "timestamp": 1680083286.8023574, "metadata": {"model_id": "587e1fd6814d4d2296b59240a5c66775", "assistant_id": "20230323-162328-slim-designer"}, "text": "whats next", "parse_data": {"intent": {"confidence": 1, "name": "ask_next_step"}, "entities": [], "text": "whats next", "message_id": null, "metadata": {}}, "input_channel": null, "message_id": null}, {"event": "user_featurization", "timestamp": 1680083286.8047926, "use_text_for_featurization": false}]
+[
+    {
+        "event": "action",
+        "timestamp": 1680083150.7337615,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_session_start",
+        "policy": null,
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "session_started",
+        "timestamp": 1680083150.7338576,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083150.7339046,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083150.765312,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Hello",
+        "parse_data": {
+            "intent": {
+                "true_label": "greet",
+                "name": "greet",
+                "confidence": 0.9989483952522278
+            },
+            "entities": [],
+            "text": "Hello",
+            "message_id": "5e685fb1f04c45c1b1bdac61c7edfecc",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    5
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "greet",
+                    "confidence": 0.9989483952522278
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 0.00025167528656311333
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 0.00018339492089580745
+                },
+                {
+                    "name": "wait",
+                    "confidence": 0.00012455953401513398
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 0.00011378912313375622
+                },
+                {
+                    "name": "deny",
+                    "confidence": 8.888966112863272e-05
+                },
+                {
+                    "name": "ask_pos",
+                    "confidence": 7.320103759411722e-05
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 5.111845166538842e-05
+                },
+                {
+                    "name": "affirm",
+                    "confidence": 4.882545908913016e-05
+                },
+                {
+                    "name": "ask_colour",
+                    "confidence": 3.576253948267549e-05
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "5e685fb1f04c45c1b1bdac61c7edfecc"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083150.8114624,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083150.811479,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "greet",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083150.8115075,
+        "metadata": {
+            "utter_action": "utter_greet",
+            "template": "utter_greet",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Hey! Ready to start the game?",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083150.8124661,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083152.2574027,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Yes",
+        "parse_data": {
+            "intent": {
+                "true_label": "affirm",
+                "name": "affirm",
+                "confidence": 0.9983847141265869
+            },
+            "entities": [],
+            "text": "Yes",
+            "message_id": "7e408e1109e241fb8d81cbb7d7343642",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    3
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "affirm",
+                    "confidence": 0.9983847141265869
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 0.0003421192814130336
+                },
+                {
+                    "name": "ask_next_step",
+                    "confidence": 0.00023323690402321517
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 0.00022660208924207836
+                },
+                {
+                    "name": "wait",
+                    "confidence": 0.00020159885752946138
+                },
+                {
+                    "name": "greet",
+                    "confidence": 0.00011703430936904624
+                },
+                {
+                    "name": "ask_pos",
+                    "confidence": 0.00010155382915399969
+                },
+                {
+                    "name": "deny",
+                    "confidence": 9.399075497640297e-05
+                },
+                {
+                    "name": "not_have_obj",
+                    "confidence": 6.517966539831832e-05
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 6.210691935848445e-05
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "7e408e1109e241fb8d81cbb7d7343642"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083152.2952976,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083152.295308,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "affirm",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083152.2953165,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083152.2953186,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "confidence": 1,
+                "true_label": "ask_next_step",
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083152.3237803,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083152.323791,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "tell_next_step",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083152.3238208,
+        "metadata": {
+            "utter_action": "utter_tell_next_step",
+            "template": "utter_tell_next_step",
+            "obj": "white bread",
+            "rcpt": "orange square mat",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Put the white bread on the orange square mat",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083152.323824,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "obj",
+        "value": {
+            "id": "Bread1",
+            "name": "bread",
+            "colour": "white",
+            "hasMoved": false,
+            "isSliced": false,
+            "pos": [
+                0,
+                0
+            ]
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083152.323828,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "rcpt",
+        "value": {
+            "id": "Square7",
+            "name": "mat",
+            "shape": "square",
+            "colour": "orange",
+            "pos": [
+                0,
+                0
+            ]
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083152.324824,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083167.7628996,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "done",
+        "parse_data": {
+            "intent": {
+                "true_label": "done_it",
+                "name": "done_it",
+                "confidence": 0.9998137354850769
+            },
+            "entities": [],
+            "text": "done",
+            "message_id": "1d52d5c85a154adb9e7634b8b6a7a34b",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    4
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "done_it",
+                    "confidence": 0.9998137354850769
+                },
+                {
+                    "name": "deny",
+                    "confidence": 2.8736418244079687e-05
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 2.558103733463213e-05
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 2.417678479105234e-05
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 1.9972161680925637e-05
+                },
+                {
+                    "name": "wait",
+                    "confidence": 1.4819406715105288e-05
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 1.4738084246346261e-05
+                },
+                {
+                    "name": "greet",
+                    "confidence": 1.4023803487361874e-05
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 1.1941913726332132e-05
+                },
+                {
+                    "name": "ask_general",
+                    "confidence": 1.1763129805331118e-05
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "1d52d5c85a154adb9e7634b8b6a7a34b"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083167.794617,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083167.7946312,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "resp_done_it",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083167.7946408,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083167.794643,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "true_label": "ask_next_step",
+                "confidence": 1,
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083167.824464,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083167.824477,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "tell_next_step",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083167.82451,
+        "metadata": {
+            "utter_action": "utter_tell_next_step",
+            "template": "utter_tell_next_step",
+            "obj": "brown bread",
+            "rcpt": "circle mat",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Put the brown bread on the circle mat",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083167.8245142,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "obj",
+        "value": {
+            "id": "Bread2",
+            "name": "bread",
+            "colour": "brown",
+            "hasMoved": false,
+            "isSliced": false,
+            "pos": [
+                0,
+                1
+            ]
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083167.824518,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "rcpt",
+        "value": {
+            "id": "Circle7",
+            "name": "mat",
+            "shape": "circle",
+            "colour": "orange",
+            "pos": [
+                0,
+                1
+            ]
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083167.825784,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083188.645869,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Done",
+        "parse_data": {
+            "intent": {
+                "true_label": "done_it",
+                "name": "done_it",
+                "confidence": 0.999853253364563
+            },
+            "entities": [],
+            "text": "Done",
+            "message_id": "a85d8a083d4748f3a1f0c542675738ac",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    4
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "done_it",
+                    "confidence": 0.999853253364563
+                },
+                {
+                    "name": "deny",
+                    "confidence": 2.224799754912965e-05
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 1.9944705854868516e-05
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 1.965970113815274e-05
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 1.521912963653449e-05
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 1.1943206118303351e-05
+                },
+                {
+                    "name": "wait",
+                    "confidence": 1.1491049008327536e-05
+                },
+                {
+                    "name": "greet",
+                    "confidence": 1.132096895162249e-05
+                },
+                {
+                    "name": "ask_general",
+                    "confidence": 9.633497029426508e-06
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 9.523270819045138e-06
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "a85d8a083d4748f3a1f0c542675738ac"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083188.6783009,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083188.6783142,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "resp_done_it",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083188.6783242,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083188.6783266,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "true_label": "ask_next_step",
+                "confidence": 1,
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083188.7080028,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083188.7080154,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "tell_next_step",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083188.7080474,
+        "metadata": {
+            "utter_action": "utter_tell_next_step",
+            "template": "utter_tell_next_step",
+            "obj": "only bowl",
+            "rcpt": "red square mat at the middle top of the table",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Put the only bowl on the red square mat at the middle top of the table",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083188.7080507,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "obj",
+        "value": {
+            "id": "Bowl2",
+            "name": "bowl",
+            "colour": "brown",
+            "hasMoved": false,
+            "isSliced": false,
+            "pos": [
+                2,
+                0
+            ]
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083188.7080545,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "rcpt",
+        "value": {
+            "id": "Square3",
+            "name": "mat",
+            "shape": "square",
+            "colour": "red",
+            "pos": [
+                "middle",
+                "top"
+            ]
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083188.7093048,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083226.6905653,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Done",
+        "parse_data": {
+            "intent": {
+                "true_label": "done_it",
+                "name": "done_it",
+                "confidence": 0.999853253364563
+            },
+            "entities": [],
+            "text": "Done",
+            "message_id": "c2929ed20bed40468dd7015ee093f884",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    4
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "done_it",
+                    "confidence": 0.999853253364563
+                },
+                {
+                    "name": "deny",
+                    "confidence": 2.224799754912965e-05
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 1.9944705854868516e-05
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 1.965970113815274e-05
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 1.521912963653449e-05
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 1.1943206118303351e-05
+                },
+                {
+                    "name": "wait",
+                    "confidence": 1.1491049008327536e-05
+                },
+                {
+                    "name": "greet",
+                    "confidence": 1.132096895162249e-05
+                },
+                {
+                    "name": "ask_general",
+                    "confidence": 9.633497029426508e-06
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 9.523270819045138e-06
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "c2929ed20bed40468dd7015ee093f884"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083226.7283254,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083226.7283363,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "resp_done_it",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083226.7283459,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083226.7283483,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "true_label": "ask_next_step",
+                "confidence": 1,
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083226.7582235,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083226.7582364,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "tell_next_step",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083226.7582686,
+        "metadata": {
+            "utter_action": "utter_tell_next_step",
+            "template": "utter_tell_next_step",
+            "obj": "only plate",
+            "rcpt": "red square mat at the middle middle of the table",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Put the only plate on the red square mat at the middle middle of the table",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083226.758272,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "obj",
+        "value": {
+            "id": "Plate1",
+            "name": "plate",
+            "colour": "white",
+            "hasMoved": false,
+            "isSliced": false,
+            "pos": [
+                2,
+                1
+            ]
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083226.7582755,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "rcpt",
+        "value": {
+            "id": "Square4",
+            "name": "mat",
+            "shape": "square",
+            "colour": "red",
+            "pos": [
+                "middle",
+                "middle"
+            ]
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083226.759652,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083241.1508706,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Done",
+        "parse_data": {
+            "intent": {
+                "true_label": "done_it",
+                "name": "done_it",
+                "confidence": 0.999853253364563
+            },
+            "entities": [],
+            "text": "Done",
+            "message_id": "3a466ce54aeb473b955b80d0b5187ff7",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    4
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "done_it",
+                    "confidence": 0.999853253364563
+                },
+                {
+                    "name": "deny",
+                    "confidence": 2.224799754912965e-05
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 1.9944705854868516e-05
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 1.965970113815274e-05
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 1.521912963653449e-05
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 1.1943206118303351e-05
+                },
+                {
+                    "name": "wait",
+                    "confidence": 1.1491049008327536e-05
+                },
+                {
+                    "name": "greet",
+                    "confidence": 1.132096895162249e-05
+                },
+                {
+                    "name": "ask_general",
+                    "confidence": 9.633497029426508e-06
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 9.523270819045138e-06
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "3a466ce54aeb473b955b80d0b5187ff7"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083241.185423,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083241.1854336,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "resp_done_it",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083241.1854422,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083241.1854446,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "true_label": "ask_next_step",
+                "confidence": 1,
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083241.214968,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083241.214979,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "tell_next_step",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083241.2150083,
+        "metadata": {
+            "utter_action": "utter_tell_next_step",
+            "template": "utter_tell_next_step",
+            "obj": "only egg",
+            "rcpt": "violet mat",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Put the only egg on the violet mat",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083241.2150114,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "obj",
+        "value": {
+            "id": "Egg2",
+            "name": "egg",
+            "colour": "white",
+            "hasMoved": false,
+            "isSliced": false,
+            "pos": [
+                3,
+                0
+            ]
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083241.2150145,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "rcpt",
+        "value": {
+            "id": "Square11",
+            "name": "mat",
+            "shape": "square",
+            "colour": "violet",
+            "pos": [
+                3,
+                0
+            ]
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083241.2164698,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083264.101587,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Done",
+        "parse_data": {
+            "intent": {
+                "true_label": "done_it",
+                "name": "done_it",
+                "confidence": 0.999853253364563
+            },
+            "entities": [],
+            "text": "Done",
+            "message_id": "7aa136e039c54ed4949be33c3d074270",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    4
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "done_it",
+                    "confidence": 0.999853253364563
+                },
+                {
+                    "name": "deny",
+                    "confidence": 2.224799754912965e-05
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 1.9944705854868516e-05
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 1.965970113815274e-05
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 1.521912963653449e-05
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 1.1943206118303351e-05
+                },
+                {
+                    "name": "wait",
+                    "confidence": 1.1491049008327536e-05
+                },
+                {
+                    "name": "greet",
+                    "confidence": 1.132096895162249e-05
+                },
+                {
+                    "name": "ask_general",
+                    "confidence": 9.633497029426508e-06
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 9.523270819045138e-06
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "7aa136e039c54ed4949be33c3d074270"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083264.135285,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083264.135298,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "resp_done_it",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083264.1353073,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083264.1353092,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "true_label": "ask_next_step",
+                "confidence": 1,
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083264.1659644,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083264.1659777,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "tell_next_step",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "bot",
+        "timestamp": 1680083264.1660097,
+        "metadata": {
+            "utter_action": "utter_tell_next_step",
+            "template": "utter_tell_next_step",
+            "obj": "only pan",
+            "rcpt": "indigo mat",
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Put the only pan on the indigo mat",
+        "data": {
+            "elements": null,
+            "quick_replies": null,
+            "buttons": null,
+            "attachment": null,
+            "image": null,
+            "custom": null
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083264.166013,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "obj",
+        "value": {
+            "id": "Pan2",
+            "name": "pan",
+            "colour": "black",
+            "hasMoved": false,
+            "isSliced": false,
+            "pos": [
+                5,
+                1
+            ]
+        }
+    },
+    {
+        "event": "slot",
+        "timestamp": 1680083264.1660168,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "rcpt",
+        "value": {
+            "id": "Square12",
+            "name": "mat",
+            "shape": "square",
+            "colour": "indigo",
+            "pos": [
+                5,
+                1
+            ]
+        }
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083264.1676211,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083286.766087,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "Done",
+        "parse_data": {
+            "intent": {
+                "true_label": "done_it",
+                "name": "done_it",
+                "confidence": 0.999853253364563
+            },
+            "entities": [],
+            "text": "Done",
+            "message_id": "b2d31190eaca4483b43294fd7d9d307e",
+            "metadata": {},
+            "text_tokens": [
+                [
+                    0,
+                    4
+                ]
+            ],
+            "intent_ranking": [
+                {
+                    "name": "done_it",
+                    "confidence": 0.999853253364563
+                },
+                {
+                    "name": "deny",
+                    "confidence": 2.224799754912965e-05
+                },
+                {
+                    "name": "ask_numbers",
+                    "confidence": 1.9944705854868516e-05
+                },
+                {
+                    "name": "goodbye",
+                    "confidence": 1.965970113815274e-05
+                },
+                {
+                    "name": "rcpt_not_empty",
+                    "confidence": 1.521912963653449e-05
+                },
+                {
+                    "name": "ask_shape",
+                    "confidence": 1.1943206118303351e-05
+                },
+                {
+                    "name": "wait",
+                    "confidence": 1.1491049008327536e-05
+                },
+                {
+                    "name": "greet",
+                    "confidence": 1.132096895162249e-05
+                },
+                {
+                    "name": "ask_general",
+                    "confidence": 9.633497029426508e-06
+                },
+                {
+                    "name": "ask_state",
+                    "confidence": 9.523270819045138e-06
+                }
+            ],
+            "response_selector": {
+                "all_retrieval_intents": [],
+                "default": {
+                    "response": {
+                        "responses": null,
+                        "confidence": 0.0,
+                        "intent_response_key": null,
+                        "utter_action": "utter_None"
+                    },
+                    "ranking": []
+                }
+            }
+        },
+        "input_channel": "rest",
+        "message_id": "b2d31190eaca4483b43294fd7d9d307e"
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083286.8023326,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "use_text_for_featurization": false
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083286.8023455,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "resp_done_it",
+        "policy": "RulePolicy",
+        "confidence": 1.0,
+        "action_text": null,
+        "hide_rule_turn": true
+    },
+    {
+        "event": "action",
+        "timestamp": 1680083286.8023553,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "name": "action_listen",
+        "policy": null,
+        "confidence": null,
+        "action_text": null,
+        "hide_rule_turn": false
+    },
+    {
+        "event": "user",
+        "timestamp": 1680083286.8023574,
+        "metadata": {
+            "model_id": "587e1fd6814d4d2296b59240a5c66775",
+            "assistant_id": "20230323-162328-slim-designer"
+        },
+        "text": "whats next",
+        "parse_data": {
+            "intent": {
+                "true_label": "ask_next_step",
+                "confidence": 1,
+                "name": "ask_next_step"
+            },
+            "entities": [],
+            "text": "whats next",
+            "message_id": null,
+            "metadata": {}
+        },
+        "input_channel": null,
+        "message_id": null
+    },
+    {
+        "event": "user_featurization",
+        "timestamp": 1680083286.8047926,
+        "use_text_for_featurization": false
+    }
+]
