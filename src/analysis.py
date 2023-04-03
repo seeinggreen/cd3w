@@ -93,7 +93,7 @@ user_to_id = {
 
 for metric, types in all_results.items():
     metric_col = (
-        f"mean {'goal-conditioned succcess' if 'gc' in metric else 'binary success'}"
+        f"{'goal-conditioned success' if 'gc' in metric else 'binary success'} mean"
     )
     df_users = (
         pd.DataFrame.from_dict(user_results[metric], orient="index")
@@ -241,7 +241,7 @@ questionnaire_quant_df["userID"] = questionnaire_quant_df["gameID"].apply(
 
 questionnaire_quant_df["start"] = pd.to_datetime(questionnaire_quant_df["start"])
 questionnaire_quant_df["finish"] = pd.to_datetime(questionnaire_quant_df["finish"])
-questionnaire_quant_df["duration"] = (
+questionnaire_quant_df["duration (s)"] = (
     questionnaire_quant_df["finish"] - questionnaire_quant_df["start"]
 ).astype("timedelta64[s]")
 
@@ -288,12 +288,14 @@ def plot_results(df, metric, agg, bot):
 
     plt.figure()
     plot = sns.barplot(
-        data=df.drop([f"{metric}_std"], axis=1), x=x, y=f"{metric} mean", hue=hue
+        data=df.drop([f"{metric} std"], axis=1), x=x, y=f"{metric} mean", hue=hue
     )
-    plt.savefig(f"{os.path.abspath('')}/results/{metric}{'_aggr' if agg else ''}.pdf")
+    plt.savefig(
+        f"{os.path.abspath('')}/results/{metric.split()[0]}{'_aggr' if agg else ''}.pdf"
+    )
 
 
-for metric in ["nlu", "naturalness", "helpfulness", "satisfaction", "duration"]:
+for metric in ["nlu", "naturalness", "helpfulness", "satisfaction", "duration (s)"]:
     for agg in [True, False]:
         if agg:
             for bot in [True, False]:
