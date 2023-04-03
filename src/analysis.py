@@ -257,203 +257,57 @@ questionnaire_quant_merged_df["bot"] = questionnaire_quant_merged_df["variant"].
     lambda x: "b1" if x in ["5", "6"] else ("b2" if x in ["7", "8"] else "b3")
 )
 
-# NLU
-questionnaire_quant_merged_nlu_df = (
-    questionnaire_quant_merged_df[["bot", "level", "nlu"]]
-    .groupby(["bot", "level"], as_index=False)
-    .agg({"nlu": ["mean", "std"]})
-)
-questionnaire_quant_merged_nlu_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_nlu_df.columns
-]
-print(questionnaire_quant_merged_nlu_df)
-plt.figure()
-plot7 = sns.barplot(
-    data=questionnaire_quant_merged_nlu_df.drop(["nlu_std"], axis=1),
-    x="bot",
-    y="nlu_mean",
-    hue="level",
-)
-plt.savefig(f"{os.path.abspath('')}/results/nlu.pdf")
 
-questionnaire_quant_merged_nlu_aggr_bot_df = (
-    questionnaire_quant_merged_df[["bot", "level", "nlu"]]
-    .groupby(["bot"], as_index=False)
-    .agg({"nlu": ["mean", "std"]})
-)
-questionnaire_quant_merged_nlu_aggr_bot_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_nlu_aggr_bot_df.columns
-]
-print(questionnaire_quant_merged_nlu_aggr_bot_df)
-plt.figure()
-plot8 = sns.barplot(
-    data=questionnaire_quant_merged_nlu_aggr_bot_df.drop(["nlu_std"], axis=1),
-    x="bot",
-    y="nlu_mean",
-)
-plt.savefig(f"{os.path.abspath('')}/results/nlu_aggr.pdf")
-
-questionnaire_quant_merged_nlu_aggr_level_df = (
-    questionnaire_quant_merged_df[["bot", "level", "nlu"]]
-    .groupby(["level"], as_index=False)
-    .agg({"nlu": ["mean", "std"]})
-)
-questionnaire_quant_merged_nlu_aggr_level_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_nlu_aggr_level_df.columns
-]
-print(questionnaire_quant_merged_nlu_aggr_level_df)
-
-# Naturalness
-questionnaire_quant_merged_naturalness_df = (
-    questionnaire_quant_merged_df[["bot", "level", "naturalness"]]
-    .groupby(["bot", "level"], as_index=False)
-    .agg({"naturalness": ["mean", "std"]})
-)
-questionnaire_quant_merged_naturalness_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_naturalness_df.columns
-]
-print(questionnaire_quant_merged_naturalness_df)
-plt.figure()
-plot9 = sns.barplot(
-    data=questionnaire_quant_merged_naturalness_df.drop(["naturalness_std"], axis=1),
-    x="bot",
-    y="naturalness_mean",
-    hue="level",
-)
-plt.savefig(f"{os.path.abspath('')}/results/naturalness.pdf")
-
-questionnaire_quant_merged_naturalness_aggr_bot_df = (
-    questionnaire_quant_merged_df[["bot", "level", "naturalness"]]
-    .groupby(["bot"], as_index=False)
-    .agg({"naturalness": ["mean", "std"]})
-)
-questionnaire_quant_merged_naturalness_aggr_bot_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_naturalness_aggr_bot_df.columns
-]
-print(questionnaire_quant_merged_naturalness_aggr_bot_df)
-plot10 = sns.barplot(
-    data=questionnaire_quant_merged_naturalness_aggr_bot_df.drop(
-        ["naturalness_std"], axis=1
-    ),
-    x="bot",
-    y="naturalness_mean",
-)
-plt.savefig(f"{os.path.abspath('')}/results/naturalness_aggr.pdf")
-
-questionnaire_quant_merged_naturalness_aggr_level_df = (
-    questionnaire_quant_merged_df[["bot", "level", "naturalness"]]
-    .groupby(["level"], as_index=False)
-    .agg({"naturalness": ["mean", "std"]})
-)
-questionnaire_quant_merged_naturalness_aggr_level_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_naturalness_aggr_level_df.columns
-]
-print(questionnaire_quant_merged_naturalness_aggr_level_df)
+def aggr_multi_col(df):
+    df.columns = ["_".join(col_name).rstrip("_") for col_name in df.columns]
+    return df
 
 
-# Helpfulness
-questionnaire_quant_merged_helpfulness_df = (
-    questionnaire_quant_merged_df[["bot", "level", "helpfulness"]]
-    .groupby(["bot", "level"], as_index=False)
-    .agg({"helpfulness": ["mean", "std"]})
-)
-questionnaire_quant_merged_helpfulness_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_helpfulness_df.columns
-]
-print(questionnaire_quant_merged_helpfulness_df)
-plt.figure()
-plot11 = sns.barplot(
-    data=questionnaire_quant_merged_helpfulness_df.drop(["helpfulness_std"], axis=1),
-    x="bot",
-    y="helpfulness_mean",
-    hue="level",
-)
-plt.savefig(f"{os.path.abspath('')}/results/helpfulness.pdf")
-
-questionnaire_quant_merged_helpfulness_aggr_bot_df = (
-    questionnaire_quant_merged_df[["bot", "level", "helpfulness"]]
-    .groupby(["bot"], as_index=False)
-    .agg({"helpfulness": ["mean", "std"]})
-)
-questionnaire_quant_merged_helpfulness_aggr_bot_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_helpfulness_aggr_bot_df.columns
-]
-print(questionnaire_quant_merged_helpfulness_aggr_bot_df)
-plt.figure()
-plot12 = sns.barplot(
-    data=questionnaire_quant_merged_helpfulness_aggr_bot_df.drop(
-        ["helpfulness_std"], axis=1
-    ),
-    x="bot",
-    y="helpfulness_mean",
-)
-plt.savefig(f"{os.path.abspath('')}/results/helpfulness_aggr.pdf")
-
-questionnaire_quant_merged_helpfulness_aggr_level_df = (
-    questionnaire_quant_merged_df[["bot", "level", "helpfulness"]]
-    .groupby(["level"], as_index=False)
-    .agg({"helpfulness": ["mean", "std"]})
-)
-questionnaire_quant_merged_helpfulness_aggr_level_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_helpfulness_aggr_level_df.columns
-]
-print(questionnaire_quant_merged_helpfulness_aggr_level_df)
+def make_stats_df(df, metric, agg, bot):
+    df_cols = ["bot", "level", metric]
+    if agg:
+        if bot:
+            groupby_cols = ["bot"]
+        else:
+            groupby_cols = ["level"]
+    else:
+        groupby_cols = ["bot", "level"]
+    stats_df = (
+        df[df_cols].groupby(groupby_cols, as_index=False).agg({metric: ["mean", "std"]})
+    )
+    return aggr_multi_col(stats_df)
 
 
-# Satisfaction
-questionnaire_quant_merged_satisfaction_df = (
-    questionnaire_quant_merged_df[["bot", "level", "satisfaction"]]
-    .groupby(["bot", "level"], as_index=False)
-    .agg({"satisfaction": ["mean", "std"]})
-)
-questionnaire_quant_merged_satisfaction_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_satisfaction_df.columns
-]
-print(questionnaire_quant_merged_satisfaction_df)
-plot13 = sns.barplot(
-    data=questionnaire_quant_merged_satisfaction_df.drop(["satisfaction_std"], axis=1),
-    x="bot",
-    y="satisfaction_mean",
-    hue="level",
-)
-plt.savefig(f"{os.path.abspath('')}/results/satisfaction.pdf")
+def plot_results(df, metric, agg, bot):
+    if agg:
+        x = "bot"
+        hue = None
+    else:
+        if bot:
+            x = "bot"
+            hue = "level"
+        else:
+            x = "level"
+            hue = "bot"
 
-questionnaire_quant_merged_satisfaction_aggr_bot_df = (
-    questionnaire_quant_merged_df[["bot", "level", "satisfaction"]]
-    .groupby(["bot"], as_index=False)
-    .agg({"satisfaction": ["mean", "std"]})
-)
-questionnaire_quant_merged_satisfaction_aggr_bot_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_satisfaction_aggr_bot_df.columns
-]
-print(questionnaire_quant_merged_satisfaction_aggr_bot_df)
-plot14 = sns.barplot(
-    data=questionnaire_quant_merged_satisfaction_aggr_bot_df.drop(
-        ["satisfaction_std"], axis=1
-    ),
-    x="bot",
-    y="satisfaction_mean",
-)
-plt.savefig(f"{os.path.abspath('')}/results/satisfaction_aggr.pdf")
+    plt.figure()
+    plot = sns.barplot(
+        data=df.drop([f"{metric}_std"], axis=1), x=x, y=f"{metric}_mean", hue=hue
+    )
+    plt.savefig(f"{os.path.abspath('')}/results/{metric}{'_aggr' if agg else ''}.pdf")
 
-questionnaire_quant_merged_satisfaction_aggr_level_df = (
-    questionnaire_quant_merged_df[["bot", "level", "satisfaction"]]
-    .groupby(["level"], as_index=False)
-    .agg({"satisfaction": ["mean", "std"]})
-)
-questionnaire_quant_merged_satisfaction_aggr_level_df.columns = [
-    "_".join(col_name).rstrip("_")
-    for col_name in questionnaire_quant_merged_satisfaction_aggr_level_df.columns
-]
-print(questionnaire_quant_merged_satisfaction_aggr_level_df)
+
+for metric in ["nlu", "naturalness", "helpfulness", "satisfaction", "duration"]:
+    for agg in [True, False]:
+        if agg:
+            for bot in [True, False]:
+                stats_df = make_stats_df(
+                    questionnaire_quant_merged_df, metric, agg, bot
+                )
+                if bot:
+                    plot_results(stats_df, metric, agg, bot)
+                print(stats_df)
+        else:
+            stats_df = make_stats_df(questionnaire_quant_merged_df, metric, agg, bot)
+            plot_results(stats_df, metric, agg, bot)
+            print(stats_df)
