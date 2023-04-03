@@ -13,6 +13,7 @@ python-socketio-client = "*"
 sqlalchemy = "*"
 pandas = "*"
 matplotlib = "*"
+seaborn = "*"
 
 [dev-packages]
 
