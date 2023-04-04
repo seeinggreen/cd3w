@@ -1,0 +1,111 @@
+﻿ID,Start time,Completion time,Email,Name,Please provide the ID for the game you just played. You can find this information in the excel sheet.,How well did LeaderBot understand you?,"If applicable, provide any specific examples of LeaderBot utterances that, in your opinion, showed a lack of understanding.",How natural were LeaderBot's instructions?,"If applicable, provide any specific examples of LeaderBot utterances that felt unnatural.",How helpful were LeaderBot's instructions?,"If applicable, provide examples of LeaderBot utterances that you found unhelpful.","Overall, how satisfied were you with the collaboration with LeaderBot?",What could LeaderBot have done better?
+1,3/29/23 13:40:05,3/29/23 13:41:42,anonymous,,TEST,4,,4,,4,,4,
+2,3/29/23 14:56:07,3/29/23 14:57:22,anonymous,,B1,4,,3,,5,,5,Natural language
+3,3/29/23 14:59:27,3/29/23 15:02:14,anonymous,,C1,3,"I don't understand, can you rephrase.",5,,4,,3,Help me better with clarification
+4,3/29/23 15:02:45,3/29/23 15:05:02,anonymous,,E1,4,,5,,5,,5,
+5,3/29/23 15:05:39,3/29/23 15:06:19,anonymous,,B2,3,,4,,5,,4,
+6,3/29/23 15:05:04,3/29/23 15:09:33,anonymous,,E2,4,,4,"the instructions were the same every time placing an object on a certain mat, so I can't tell if it was unnatural or not",5,,5,"add different instructions, otherwise everything is perfect, well done."
+7,3/29/23 15:15:55,3/29/23 15:18:04,anonymous,,B3,3,"(Follower) Thank you bye
+(Leader) I don't understand, can you rephrase.",4,,4,,3,LeaderBot seems a bit stiff in its understanding it looks like it get lost easily if some special keyword are not given
+8,3/29/23 15:21:36,3/29/23 15:22:18,anonymous,,C2,3,,3,,3,,3,
+9,3/29/23 15:17:22,3/29/23 15:22:30,anonymous,,D1,3,Its hard to say as I felt there was no real dialogue,1,it was just a list of actions for me to fill,5,,1,"It didn't feel like a conversation, it felt like it should have asked me for some more questions"
+10,3/29/23 15:20:32,3/29/23 15:24:41,anonymous,,F1,5,n/a,4,"Repeatedly specifying ""... on the mat"" and needing to request clarification.  (The first few times were very natural thought)",4,"Good, but did not adapt to repeated clarification.",4,Sometimes at random indicate the Matt.
+11,3/29/23 15:28:08,3/29/23 15:30:21,anonymous,,B4,3,"What should i do now?
+(LeaderBot) I don't understand, can you rephrase.",4,,4,,4,"Understand a wider variety of input
+"
+12,3/29/23 15:33:16,3/29/23 15:36:34,anonymous,,E2,3,"I noticed that the bot specifies the mat location, put when I ask it about object(apple, pan..etc) location it does not understand that and tells the mat location",4,,4,,4,
+13,3/29/23 15:35:40,3/29/23 15:36:35,anonymous,,C3,3,,3,,4,,3,
+14,3/29/23 15:33:41,3/29/23 15:37:05,anonymous,,F2,3,Acknowledging completion other than variations of done can cause issues.,4,Possible to clear/explicit to be natural.,5,n/a,4,"Allowed discussion on completion / comparing scenes.  Understood ""OK - moved the pan"" = done"
+15,3/29/23 15:37:23,3/29/23 15:39:41,anonymous,,A1,3,When I asked what is the next step,4,"When there were errors shown, it make the utterances not natural",4,,4,Maybe use natural language to identify objects and not object ID code
+16,3/29/23 15:38:31,3/29/23 15:42:03,anonymous,,D2,2,"It understood done, but I made a mistake and put the vase on the wrong square, and it was unable to correct me when it asked me to put another item there",1,,2,"I said the mat had a vase on it, that I accidently put there and it did not give me a command to correct me",2,It should be able to correct me
+17,3/29/23 15:40:07,3/29/23 15:43:17,anonymous,,B5,3,"(user) which orange mat
+(LeaderBot) Yes. The mat is orange",4,,2,"The LeaderBot was not giving details to identify the different mat by himself like in other games I played, I had to ask him and sometime that created confusion, like:
+(user) which orange mat
+(LeaderBot) Yes. The mat is orange
+Also mat that have similar color like Indigo and Violet are hard to differentiate",3,
+18,3/29/23 15:42:56,3/29/23 15:48:29,anonymous,,G1,3,There was an issue with placing objects onto the mat. ,4,"It could have been more specific. Instead of saying to place it on the mat everytime, would be more natural to have sometimes saying place it on the blue mat, sometime say place it on the mat and have the option to be as spicific as it can be as put it on the blue circle shaped mat.  ",5,,4,When I told the robot that I did place the apple on the mat it continued telling me to place it on the mat again. Although this is also due to the lack of my understanding as it was my first action.
+19,3/29/23 15:48:39,3/29/23 15:51:28,anonymous,,F3,4,Good when I type better.  eco variation comments from earlier survey.,4,Natural but stern control freak.,5,Too good.,4,It felt like the Leader could see my scene.
+20,3/29/23 15:51:42,3/29/23 15:52:49,anonymous,,E3,4,,4,,3,,4,
+21,3/29/23 15:50:37,3/29/23 15:52:53,anonymous,,A2,3,Didn't know when to start the game,4,"When I asked question such as do you have ""this item"", it either does not understand or gives me the color which is not What was asked.",4,When it ask to rephrase without any context to what to rephrase ,4,"Understand commands more, can refer to items in their natural form such as apple instead of #13 or #19"
+22,3/29/23 15:51:35,3/29/23 15:55:13,anonymous,,B6,3,"(LeaderBot) Put the white bread on the red square mat
+(user) which bread
+(LeaderBot) The white bread
+(user) where is it
+(LeaderBot)The white bread
+(user) where
+(LeaderBot)The white bread
+(user) which white bread
+(LeaderBot) I don't understand, can you rephrase.
+
+The ""white bread"" doesnt look different than the brown one, trying to use the location to differentiate them didnt work",4,,3,A bit of confusion with two similar orange square mat and white and brown bread,3,
+23,3/29/23 15:52:30,3/29/23 15:58:11,anonymous,,D3,3,"It was didn't correctly answer ""The purple one?""",3,,2,"Lets call purple, iris",3,
+24,3/29/23 16:00:35,3/29/23 16:01:18,anonymous,,C5,3,,3,,3,,3,
+25,3/29/23 15:59:13,3/29/23 16:03:32,anonymous,,H1,5,,5,,5,,4,"it was not able to differentiate between the lowercase and uppercase. 
+
+The dialogue manager could track the actions done before the Leaderbot's instruction."
+26,3/29/23 16:04:02,3/29/23 16:05:09,anonymous,,A3,4,,5,,5,,4,instead of asking for done after doing an action maybe ask for a request from the user for what it should be done next
+27,3/29/23 16:00:51,3/29/23 16:05:51,anonymous,,G2,5,,5,Compared to G1 this time the commands were better,5,,5,"It was difficult to see the pan that this is a pan bcs of the angle. I thought it's a plate. 
+
+More technical feedback, using the starting letter for the colour name for each mat where it's possible that would of been better. I.e. Iris mat could have been #I
+The red mats could have been #R1 #R2 "
+28,3/29/23 16:04:27,3/29/23 16:06:32,anonymous,,F4,4,,4,,5,Too good,4,* Unrelated to this question.  2 by objects skipped as not moving. 
+29,3/29/23 16:07:20,3/29/23 16:09:28,anonymous,,B7,4,"(user) Which square mat
+(LeaderBot) I don't understand, can you rephrase.",4,,4,,4,
+30,3/29/23 16:10:50,3/29/23 16:11:45,anonymous,,D4,4,,2,,2,,3,
+31,3/29/23 16:13:21,3/29/23 16:13:46,anonymous,,H2,5,,5,,5,,5,
+32,3/29/23 16:18:29,3/29/23 16:18:58,anonymous,,H3,5,,5,,5,,5,
+33,3/29/23 16:21:51,3/29/23 16:22:40,anonymous,,C7,2,,3,,3,,2,
+34,3/29/23 16:19:34,3/29/23 16:23:49,anonymous,,F5,3,Unable to clarify which of 3 square mats to place an object on.,4,As above.,4,As above,3,"as above.
+* unrelated comment.  The concentration of matching letters and numbers distracts from enjoying the bot, so there may be a risk of underestimating how good the bot is by subconsciously associating interface with bot. "
+35,3/29/23 16:19:00,3/29/23 16:24:05,anonymous,,B8,3,"LeaderBot seems to have a problem with this:
+(user) Theres already a white bread on the right middle top of the table
+(LeaderBot) The mat is on the right middle top of the table",4,,3,"I think thats due to Ithor but after trying to move an object on a mat where an object was already placed then moving the object after receiving an error message, the first object is not detected anymore. 
+(LeaderBot) Put the whole bread on the yellow circle mat at the right middle top of the table
+(user) put #14 on #S
+(IthorBot) Oops, that didn't work: Cannot place object (Bread2) here as there is already an object (Bread2Slice) in this slot (3,1).
+(user) put #15 on #R
+(LeaderBot) Image
+(user) put #14 on #S
+(IthorBot) Oops, that didn't work: ERROR: Specified object does not exist in scene",3,
+36,3/29/23 16:23:27,3/29/23 16:24:46,anonymous,,A4,2,"When asking for what type of mat, it gives confusing answer. Did not understand when i asked to see the scene again.",4,,3,,3,
+37,3/29/23 16:33:06,3/29/23 16:33:39,anonymous,,E6,4,,5,,4,,5,
+38,3/29/23 16:32:12,3/29/23 16:33:59,anonymous,,B9,4,"Good point the bot understand grammatical error
+(user) donz
+(LeaderBot) Put the brown bread on the iris square mat at the right bottom of the table",4,,4,,5,
+39,3/29/23 16:20:14,3/29/23 16:35:00,anonymous,,G4,3,"You: Which is the indigo mat?
+LeaderBot: The indigo mat
+You: what's next to the indigo mat?
+LeaderBot: Put the only bread on the indigo mat
+
+",2,"You: Which is the indigo mat?
+LeaderBot: The indigo mat
+You: what's next to the indigo mat?
+LeaderBot: Put the only bread on the indigo mat
+
+",3,,4,
+40,3/29/23 16:33:50,3/29/23 16:35:09,anonymous,,H4,5,,5,,5,,5,H4-The scene crashed and could not see the form after /done command
+41,3/29/23 16:35:37,3/29/23 16:36:28,anonymous,,C7,3,"Oops, that didn't work: ERROR: Specified object does not exist in scene",3,,3,,3,
+42,3/29/23 16:36:05,3/29/23 16:38:11,anonymous,,D5,4,The brown bread was unclear,3,,4,,3,
+43,3/29/23 16:39:27,3/29/23 16:40:08,anonymous,,H5,5,,5,,4,,5,
+44,3/29/23 16:34:49,3/29/23 16:40:21,anonymous,,A5,3,Didnt want to move the item as it did not recognize even when the item was present,4,,4,Error Messages dont really provide follow up help on the error ,4,
+45,3/29/23 16:44:47,3/29/23 16:45:02,anonymous,,E7,4,,5,,4,,5,
+46,3/29/23 16:46:20,3/29/23 16:46:57,anonymous,,C8,3,,3,,3,,2,
+47,3/29/23 16:37:03,3/29/23 16:47:51,anonymous,,F6,5,Out of scope attempt a a joke on a colour I do not know well.,4,"I would say did not get my sense of humour, but maybe that is proof it is natural.",4,* Done well: The leader recovered and provided clarification on an unclear colour once asked to describe by location.,4,n/a
+48,3/29/23 16:47:20,3/29/23 16:49:31,anonymous,,H6,4,error - The sliced red apple was put on specified mat,5,,5,,5,
+49,3/29/23 16:55:06,3/29/23 16:55:27,anonymous,,C9,3,,2,,3,,3,
+50,3/29/23 16:53:11,3/29/23 16:55:28,anonymous,,H7,5,,5,,4,It would be better it specifies colour and shapes as well for better understanding.,5,
+51,3/29/23 16:57:51,3/29/23 16:59:36,anonymous,,G5,3,"You: is the indigo dark or light??
+LeaderBot: Yes. The mat is indigo
+You: Is the indigo light?
+LeaderBot: Yes. The mat is indigo
+You: Is the indigo a dark colour?
+LeaderBot: Yes. The mat is indigo
+
+Didn't understand that I wanted to ask about which colour",2,Same reason as 3),3,,3,
+52,3/29/23 17:03:48,3/29/23 17:04:12,anonymous,,H8,5,,5,,5,,5,
+53,3/29/23 17:01:48,3/29/23 17:06:08,anonymous,,F7,5,"At this point I feel like the BOT has trained me to take the path of least resistance.  But that will also happen working with the same human player over time, so may be a positive.",4,"Maybe too many ""Put ...""",4,,4,* Good mix of explicit instructions and ones needing clarification.
+54,3/29/23 17:14:54,3/29/23 17:15:57,anonymous,,H9,5,,4,sometime it was replying for the colour of mat when I asked about the object colour.,5,,5,
+55,3/29/23 17:16:15,3/29/23 17:17:03,anonymous,,G6,5,,5,,5,,5,Everything went fine but SLURK broke half way through and 2 of my tasks weren't completed 
+56,3/29/23 17:17:11,3/29/23 17:19:16,anonymous,,F8,4,"Referencing via square instead of mat could not be understood, however that seemed natural to do in context.",4,,4,,4,
+57,3/29/23 17:23:17,3/29/23 17:24:03,anonymous,,F9,5,Well until it crashed.,4,,5,,5,
+58,3/29/23 17:17:09,3/29/23 17:24:10,anonymous,,G7,3,RASA ACTION died,3,RASA ACTION died,3,RASA ACTION died,3,RASA ACTION died I didn't execute any actions

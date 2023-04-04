@@ -52,10 +52,10 @@ class Metric(ABC):
         final_objects = {}
 
         for user, final_scene in self.final_scenes.items():
-            if user == "E5":
-                user == "malek"
+            if user in ["E", "E2", "E3", "E5"]:
+                new_user = "malek"
             else:
-                user = user.lower()
+                new_user = user.split(" ")[0].lower()
             error_log = []
             missing_pos_changes = 0
             missing_state_changes = 0
@@ -100,8 +100,11 @@ class Metric(ABC):
                     missing_pos_changes += 1
                     error_log.append(self._log_append(info))
 
-            self.missing_changes[user] = [missing_pos_changes, missing_state_changes]
-            self.error_logs[self.variant][user] = error_log
+            self.missing_changes[new_user] = [
+                missing_pos_changes,
+                missing_state_changes,
+            ]
+            self.error_logs[self.variant][new_user] = error_log
 
     @abstractmethod
     def compute_metric(self):
@@ -195,7 +198,10 @@ class Evaluator:
             with open(fn, encoding="utf-8") as json_file:
                 existing_data = json.load(json_file)
             if level_1 in existing_data:
-                existing_data[level_1][level_2] = data
+                if level_2 in existing_data[level_1]:
+                    existing_data[level_1][level_2].update(data)
+                else:
+                    existing_data[level_1][level_2] = data
             else:
                 existing_data[level_1] = {level_2: data}
         else:
@@ -211,12 +217,16 @@ if __name__ == "__main__":
             if level in ["l1", "l4", "l7"] and variant in [
                 f"v{i}" for i in range(5, 11)
             ]:
+                print(result_type)
                 print(level)
                 print(variant)
                 for bot_first_bool in [True, False]:
+                    print(bot_first_bool)
                     evaluator = Evaluator(
                         level, variant, result_type, bot_first_bool, "2023-03-29"
                     )
                     results, error_logs = evaluator.get_results()
+                    print(results)
+                    print("===" * 10)
                     evaluator.save(error_logs, logs=True)
                     evaluator.save(results)
