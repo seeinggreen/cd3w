@@ -11,7 +11,6 @@ all_files = r'^(\d{12})-(\d{6})_(l1|l4|l7)'
 
 
 def get_labels(list_of_files):
-    
     pred_labels = []
     true_labels = []
     log_directory = "output/rasa_logs/"
