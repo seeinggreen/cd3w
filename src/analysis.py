@@ -12,11 +12,13 @@ basepath = os.path.dirname(os.path.dirname(os.path.abspath("")))
 if not basepath in sys.path:
     sys.path.append(basepath)
 
+
 user_results = {}
 user_counts = {}
 all_results = {}
 all_results_aggr = {}
 all_results_aggr_means = {}
+all_results_aggr_std = {}
 all_counts = {}
 all_counts_aggr = {}
 for metric in ["success", "success_gc"]:
@@ -29,6 +31,7 @@ for metric in ["success", "success_gc"]:
     all_results[metric] = {}
     all_results_aggr[metric] = {}
     all_results_aggr_means[metric] = {}
+    all_results_aggr_std[metric] = {}
     all_counts[metric] = {}
     all_counts_aggr[metric] = {}
     for level_0 in results:
@@ -75,6 +78,9 @@ for metric in ["success", "success_gc"]:
         all_results_aggr_means[metric][type] = {
             key: np.mean(value) for key, value in all_results_aggr[metric][type].items()
         }
+        all_results_aggr_std[metric][type] = {
+            key: np.std(value) for key, value in all_results_aggr[metric][type].items()
+        }
     for user in user_results[metric]:
         user_results[metric][user] = (
             user_results[metric][user] / user_counts[metric][user]
@@ -107,8 +113,9 @@ for metric, types in all_results.items():
         .sort_values(by=["userID"])
         .replace(user_to_id)
     )
+    print(df_users)
     plt.figure()
-    plot1 = sns.barplot(data=df_users, x="userID", y=metric_col)
+    sns.barplot(data=df_users, x="userID", y=metric_col)
     plt.savefig(f"{os.path.abspath('')}/results/{metric}_users.pdf")
 
     df_user_counts = (
@@ -121,10 +128,11 @@ for metric, types in all_results.items():
             }
         )
         .sort_values(by=["userID"])
-        # .replace(user_to_id)
+        .replace(user_to_id)
     )
+    print(df_user_counts)
     plt.figure()
-    plot2 = sns.barplot(data=df_user_counts, x="userID", y="experiment count")
+    sns.barplot(data=df_user_counts, x="userID", y="experiment count")
     plt.savefig(f"{os.path.abspath('')}/results/counts_users.pdf")
 
     for level_0 in types:
@@ -139,14 +147,15 @@ for metric, types in all_results.items():
             .rename(columns={"level_0": level_0, "level_1": level_1})
             .sort_values(by=[level_0, level_1])
         )
+        print(df_results)
         plt.figure()
-        plot3 = sns.barplot(
+        sns.barplot(
             data=df_results,
             x=level_0,
             y=metric_col,
             hue=level_1,
         )
-        plt.savefig(f"{os.path.abspath('')}/results/{metric}_{type}.pdf")
+        plt.savefig(f"{os.path.abspath('')}/results/{metric}_{level_0}.pdf")
 
         df_results_aggr_means = (
             pd.DataFrame.from_dict(
@@ -161,13 +170,29 @@ for metric, types in all_results.items():
             )
             .sort_values(by=[level_0])
         )
+        print(df_results_aggr_means)
         plt.figure()
-        plot4 = sns.barplot(
+        sns.barplot(
             data=df_results_aggr_means,
             x=level_0,
             y=metric_col,
         )
-        plt.savefig(f"{os.path.abspath('')}/results/{metric}_{type}_aggr.pdf")
+        plt.savefig(f"{os.path.abspath('')}/results/{metric}_{level_0}_aggr.pdf")
+
+        df_results_aggr_std = (
+            pd.DataFrame.from_dict(
+                all_results_aggr_std[metric][level_0], orient="index"
+            )
+            .reset_index()
+            .rename(
+                columns={
+                    "index": level_0,
+                    0: metric_col.replace("mean", "std"),
+                }
+            )
+            .sort_values(by=[level_0])
+        )
+        print(df_results_aggr_std)
 
         df_counts = (
             pd.DataFrame.from_dict(all_counts[metric][level_0], orient="index")
@@ -176,10 +201,9 @@ for metric, types in all_results.items():
             .rename(columns={"level_0": level_0, "level_1": level_1})
             .sort_values(by=[level_0, level_1])
         )
+        print(df_counts)
         plt.figure()
-        plot5 = sns.barplot(
-            data=df_counts, x=level_0, y="experiment count", hue=level_1
-        )
+        sns.barplot(data=df_counts, x=level_0, y="experiment count", hue=level_1)
         plt.savefig(f"{os.path.abspath('')}/results/counts.pdf")
 
         df_counts_aggr = (
@@ -192,9 +216,10 @@ for metric, types in all_results.items():
             .rename(columns={"index": level_0})
             .sort_values(by=[level_0])
         )
+        print(df_counts_aggr)
         plt.figure()
-        plot6 = sns.barplot(data=df_counts_aggr, x=level_0, y="experiment count")
-        plt.savefig(f"{os.path.abspath('')}/results/counts_aggr.pdf")
+        sns.barplot(data=df_counts_aggr, x=level_0, y="experiment count")
+        plt.savefig(f"{os.path.abspath('')}/results/counts_{level_0}_aggr.pdf")
 
 experiment_schedule_df = (
     pd.read_csv(
@@ -285,9 +310,8 @@ def plot_results(df, metric, agg, bot):
         else:
             x = "level"
             hue = "bot"
-
     plt.figure()
-    plot = sns.barplot(
+    sns.barplot(
         data=df.drop([f"{metric} std"], axis=1), x=x, y=f"{metric} mean", hue=hue
     )
     plt.savefig(
@@ -297,17 +321,10 @@ def plot_results(df, metric, agg, bot):
 
 for metric in ["nlu", "naturalness", "helpfulness", "satisfaction", "duration (s)"]:
     for agg in [True, False]:
-        if agg:
-            for bot in [True, False]:
-                stats_df = make_stats_df(
-                    questionnaire_quant_merged_df, metric, agg, bot
-                )
-                if bot:
-                    plot_results(stats_df, metric, agg, bot)
-                print(stats_df)
-        else:
+        for bot in [True, False]:
             stats_df = make_stats_df(questionnaire_quant_merged_df, metric, agg, bot)
-            plot_results(stats_df, metric, agg, bot)
+            if bot:
+                plot_results(stats_df, metric, agg, bot)
             print(stats_df)
 
 
