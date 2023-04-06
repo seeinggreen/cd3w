@@ -1,1 +1,686 @@
-{"2023-03-29": {"Laurent": [{"user": "Laurent", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Laurent", "message": "yes"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "which apple?"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Laurent", "message": "which mat"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Laurent", "message": "which mat"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Laurent", "message": "which color"}, {"user": "LeaderBot", "message": "The mat is blue"}, {"user": "Laurent", "command": "put #2 on #A"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Laurent", "command": "put #6 on #N"}, {"user": "Laurent", "message": "anything else"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "Laurent", "message": "which bread?"}, {"user": "LeaderBot", "message": "The brown bread"}, {"user": "Laurent", "message": "sliced?"}, {"user": "LeaderBot", "message": "No. The bread is whole"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The yellow mat"}, {"user": "Laurent", "message": "the whole bread is already on the yellow mat\\"}, {"user": "LeaderBot", "message": "Yes. The bread is whole"}, {"user": "Laurent", "command": "put #14 on #S"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the cup on the mat"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Laurent", "message": "which square mat?"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "Laurent", "message": "which color"}, {"user": "LeaderBot", "message": "The mat is violet"}, {"user": "Laurent", "message": "no"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Laurent", "message": "no"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Laurent", "message": "no violet"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Laurent", "command": "put #7 on #K"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the vase on the mat"}, {"user": "Laurent", "message": "which may?"}, {"user": "LeaderBot", "message": "The red vase"}, {"user": "Laurent", "message": "which mat?"}, {"user": "LeaderBot", "message": "The iris mat"}, {"user": "Laurent", "command": "put #13 on #M"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Laurent", "command": "done"}], "Adam": [{"user": "Adam", "message": "Hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Adam", "message": "Yes sir"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Adam", "command": "ready"}, {"user": "LeaderBot", "command": "ready"}, {"user": "Adam", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Adam", "message": "yes"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Adam", "message": "which apple"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Adam", "message": "what color is the apple"}, {"user": "LeaderBot", "message": "The apple is red"}, {"user": "Adam", "message": "what mat"}, {"user": "LeaderBot", "message": "The blue mat"}, {"user": "Adam", "message": "which blue mat"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Adam", "message": "which shape mat"}, {"user": "LeaderBot", "message": "The mat is square"}, {"user": "Adam", "command": "put #2 on #A"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "Adam", "message": "which apple"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "Adam", "message": "what color apple"}, {"user": "LeaderBot", "message": "The apple is yellow"}, {"user": "Adam", "message": "which map"}, {"user": "LeaderBot", "message": "The far left bottom mat"}, {"user": "Adam", "command": "put #6 on #N"}, {"user": "Adam", "message": "done"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "Adam", "message": "which bread"}, {"user": "LeaderBot", "message": "The brown bread"}, {"user": "Adam", "message": "the sliced or unsliced bread"}, {"user": "LeaderBot", "message": "No. The bread is whole"}, {"user": "Adam", "message": "which mat"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Adam", "message": "what color circle map"}, {"user": "LeaderBot", "message": "The mat is yellow"}, {"user": "Adam", "message": "where is the mat"}, {"user": "LeaderBot", "message": "The yellow mat"}, {"user": "Adam", "message": "where is the map"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "Adam", "message": "the top or bottom mat?"}, {"user": "LeaderBot", "message": "The mat is on the left middle top of the table"}, {"user": "Adam", "command": "done"}], "rishav": [{"user": "rishav", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "rishav", "message": "yes"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "rishav", "message": "which one?"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "rishav", "message": "which mat"}, {"user": "LeaderBot", "message": "The blue mat"}, {"user": "rishav", "message": "which shape"}, {"user": "LeaderBot", "message": "The mat is square"}, {"user": "rishav", "message": "what is colour of apple"}, {"user": "LeaderBot", "message": "The apple is red"}, {"user": "rishav", "command": "put #2 on #A"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the apple on the mat"}, {"user": "rishav", "message": "which apple"}, {"user": "LeaderBot", "message": "The sliced apple"}, {"user": "rishav", "message": "what colour "}, {"user": "LeaderBot", "message": "The mat is blue"}, {"user": "rishav", "message": "what is colour of apple"}, {"user": "LeaderBot", "message": "The apple is yellow"}, {"user": "rishav", "command": "put #6 on #A"}, {"user": "rishav", "command": "put #6 on #N"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "rishav", "message": "which mat"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "rishav", "message": "what colour?"}, {"user": "LeaderBot", "message": "The mat is yellow"}, {"user": "rishav", "message": "which bread"}, {"user": "LeaderBot", "message": "The brown bread"}, {"user": "rishav", "command": "put #14 on #R"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the bread on the mat"}, {"user": "rishav", "message": "which bread"}, {"user": "LeaderBot", "message": "The brown bread"}, {"user": "rishav", "message": "which mat"}, {"user": "LeaderBot", "message": "The circle mat"}, {"user": "rishav", "message": "what is colour of the mat"}, {"user": "LeaderBot", "message": "The mat is yellow"}, {"user": "rishav", "message": "where is the mat"}, {"user": "LeaderBot", "message": "The left middle centre mat"}, {"user": "rishav", "command": "put #14 on #S"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the cup on the mat"}, {"user": "rishav", "message": "which mat"}, {"user": "LeaderBot", "message": "The far right top mat"}, {"user": "rishav", "command": "put #7 on #K"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Put the vase on the mat"}, {"user": "rishav", "message": "which vase"}, {"user": "LeaderBot", "message": "The red vase"}, {"user": "rishav", "message": "on which mat"}, {"user": "LeaderBot", "message": "The iris mat"}, {"user": "rishav", "message": "where is it"}, {"user": "LeaderBot", "message": "The red vase"}, {"user": "rishav", "message": "where is the mat"}, {"user": "LeaderBot", "message": "The square mat"}, {"user": "rishav", "message": "what is the colour of the mat"}, {"user": "LeaderBot", "message": "The mat is iris"}, {"user": "rishav", "command": "put #22 on #M"}, {"user": "rishav", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "rishav", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "C": [
+            {
+                "user": "C",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "C",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "C",
+                "message": "which apple?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "C",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "C",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "C",
+                "message": "which color"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is blue"
+            },
+            {
+                "user": "C",
+                "command": "put #2 on #A"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "C",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "C",
+                "command": "put #6 on #N"
+            },
+            {
+                "user": "C",
+                "message": "anything else"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "C",
+                "message": "which bread?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The brown bread"
+            },
+            {
+                "user": "C",
+                "message": "sliced?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "No. The bread is whole"
+            },
+            {
+                "user": "C",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The yellow mat"
+            },
+            {
+                "user": "C",
+                "message": "the whole bread is already on the yellow mat\\"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The bread is whole"
+            },
+            {
+                "user": "C",
+                "command": "put #14 on #S"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the cup on the mat"
+            },
+            {
+                "user": "C",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "C",
+                "message": "which square mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "C",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "C",
+                "message": "which color"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is violet"
+            },
+            {
+                "user": "C",
+                "message": "no"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "C",
+                "message": "no"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "C",
+                "message": "no violet"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "C",
+                "command": "put #7 on #K"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the vase on the mat"
+            },
+            {
+                "user": "C",
+                "message": "which may?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red vase"
+            },
+            {
+                "user": "C",
+                "message": "which mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The iris mat"
+            },
+            {
+                "user": "C",
+                "command": "put #13 on #M"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "C",
+                "command": "done"
+            }
+        ],
+        "A": [
+            {
+                "user": "A",
+                "message": "Hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "A",
+                "message": "Yes sir"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "A",
+                "command": "ready"
+            },
+            {
+                "user": "LeaderBot",
+                "command": "ready"
+            },
+            {
+                "user": "A",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "A",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "A",
+                "message": "which apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "A",
+                "message": "what color is the apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is red"
+            },
+            {
+                "user": "A",
+                "message": "what mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The blue mat"
+            },
+            {
+                "user": "A",
+                "message": "which blue mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "A",
+                "message": "which shape mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is square"
+            },
+            {
+                "user": "A",
+                "command": "put #2 on #A"
+            },
+            {
+                "user": "A",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "A",
+                "message": "which apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "A",
+                "message": "what color apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is yellow"
+            },
+            {
+                "user": "A",
+                "message": "which map"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The far left bottom mat"
+            },
+            {
+                "user": "A",
+                "command": "put #6 on #N"
+            },
+            {
+                "user": "A",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "A",
+                "message": "which bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The brown bread"
+            },
+            {
+                "user": "A",
+                "message": "the sliced or unsliced bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "No. The bread is whole"
+            },
+            {
+                "user": "A",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "A",
+                "message": "what color circle map"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is yellow"
+            },
+            {
+                "user": "A",
+                "message": "where is the mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The yellow mat"
+            },
+            {
+                "user": "A",
+                "message": "where is the map"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "A",
+                "message": "the top or bottom mat?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is on the left middle top of the table"
+            },
+            {
+                "user": "A",
+                "command": "done"
+            }
+        ],
+        "H": [
+            {
+                "user": "H",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "H",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "H",
+                "message": "which one?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "H",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The blue mat"
+            },
+            {
+                "user": "H",
+                "message": "which shape"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is square"
+            },
+            {
+                "user": "H",
+                "message": "what is colour of apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is red"
+            },
+            {
+                "user": "H",
+                "command": "put #2 on #A"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the apple on the mat"
+            },
+            {
+                "user": "H",
+                "message": "which apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The sliced apple"
+            },
+            {
+                "user": "H",
+                "message": "what colour "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is blue"
+            },
+            {
+                "user": "H",
+                "message": "what is colour of apple"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The apple is yellow"
+            },
+            {
+                "user": "H",
+                "command": "put #6 on #A"
+            },
+            {
+                "user": "H",
+                "command": "put #6 on #N"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "H",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "H",
+                "message": "what colour?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is yellow"
+            },
+            {
+                "user": "H",
+                "message": "which bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The brown bread"
+            },
+            {
+                "user": "H",
+                "command": "put #14 on #R"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the bread on the mat"
+            },
+            {
+                "user": "H",
+                "message": "which bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The brown bread"
+            },
+            {
+                "user": "H",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The circle mat"
+            },
+            {
+                "user": "H",
+                "message": "what is colour of the mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is yellow"
+            },
+            {
+                "user": "H",
+                "message": "where is the mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The left middle centre mat"
+            },
+            {
+                "user": "H",
+                "command": "put #14 on #S"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the cup on the mat"
+            },
+            {
+                "user": "H",
+                "message": "which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The far right top mat"
+            },
+            {
+                "user": "H",
+                "command": "put #7 on #K"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the vase on the mat"
+            },
+            {
+                "user": "H",
+                "message": "which vase"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red vase"
+            },
+            {
+                "user": "H",
+                "message": "on which mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The iris mat"
+            },
+            {
+                "user": "H",
+                "message": "where is it"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The red vase"
+            },
+            {
+                "user": "H",
+                "message": "where is the mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The square mat"
+            },
+            {
+                "user": "H",
+                "message": "what is the colour of the mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is iris"
+            },
+            {
+                "user": "H",
+                "command": "put #22 on #M"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "H",
+                "command": "done"
+            }
+        ]
+    }
+}

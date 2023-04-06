@@ -52,8 +52,8 @@ class Metric(ABC):
         final_objects = {}
 
         for user, final_scene in self.final_scenes.items():
-            if user in ["E", "E2", "E3", "E5"]:
-                new_user = "malek"
+            if user in ["E2", "E3", "E5"]:
+                new_user = "E"
             else:
                 new_user = user.split(" ")[0].lower()
             error_log = []

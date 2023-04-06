@@ -1,1 +1,402 @@
-{"2023-03-29": {"Bart": [{"user": "Bart", "message": "Hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Bart", "message": "Yes"}, {"user": "LeaderBot", "message": "Put the white egg on the orange square mat at the left top of the table"}, {"user": "Bart", "command": "put #17 on #G"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the green cup on the orange circle mat at the left centre of the table"}, {"user": "Bart", "command": "put #7 on #T"}, {"user": "Bart", "message": "Done"}, {"user": "LeaderBot", "message": "Put the red vase on the green circle mat at the right top of the table"}, {"user": "Bart", "command": "put #22 on #V"}, {"user": "Bart", "message": "Done"}, {"user": "LeaderBot", "message": "Put the brown bread on the blue square mat at the right bottom of the table"}, {"user": "Bart", "command": "put #15 on #A"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the black pan on the red square mat at the far right top of the table"}, {"user": "Bart", "command": "put #19 on #D"}, {"user": "Bart", "message": "Good whats the next task"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Bart", "message": "I've done it"}, {"user": "LeaderBot", "message": "Put the blue bowl on the indigo circle mat at the far right centre of the table"}, {"user": "Bart", "command": "put #9 on #Y"}, {"user": "Bart", "message": "Else"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Bart", "message": "Thank you bye"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Bart", "message": "Bye"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Bart", "command": "done"}], "Mike": [{"user": "Mike", "message": "Hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Mike", "message": "Yes, let's go"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Mike", "message": "sure"}, {"user": "LeaderBot", "message": "Put the white egg on the orange square mat at the left top of the table"}, {"user": "Mike", "command": "put #17 on #G"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the green cup on the orange circle mat at the left centre of the table"}, {"user": "Mike", "command": "put #7 on #T"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the red vase on the green circle mat at the right top of the table"}, {"user": "Mike", "command": "put #22 on #V"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the brown bread on the blue square mat at the right bottom of the table"}, {"user": "Mike", "command": "put #15 on #A"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the black pan on the red square mat at the far right top of the table"}, {"user": "Mike", "command": "put #19 on #D"}, {"user": "Mike", "message": "OK - moved the pan"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "I have moved it"}, {"user": "LeaderBot", "message": "Put the blue bowl on the indigo circle mat at the far right centre of the table"}, {"user": "Mike", "command": "put #9 on #Y"}, {"user": "Mike", "message": "moved"}, {"user": "LeaderBot", "message": "Tell me when you're done"}, {"user": "Mike", "message": "I am done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Mike", "command": "done"}], "ben": [{"user": "ben", "message": "im ready"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "ben", "message": "start"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "ben", "command": "start"}, {"user": "ben", "command": "ready"}, {"user": "LeaderBot", "command": "ready"}, {"user": "ben", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "ben", "message": "yes"}, {"user": "LeaderBot", "message": "Put the white egg on the orange square mat at the left top of the table"}, {"user": "ben", "command": "put #17 on #G"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the green cup on the orange circle mat at the left centre of the table"}, {"user": "ben", "command": "put #7 on #T"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the red vase on the green circle mat at the right top of the table"}, {"user": "ben", "command": "put #22 on #D"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the brown bread on the blue square mat at the right bottom of the table"}, {"user": "ben", "message": "the sliced or the loaf"}, {"user": "LeaderBot", "message": "Yes. The bread is sliced"}, {"user": "ben", "command": "put #13 on #A"}, {"user": "ben", "command": "put #15 on #A"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the black pan on the red square mat at the far right top of the table"}, {"user": "ben", "message": "there is a vase there"}, {"user": "LeaderBot", "message": "The black pan"}, {"user": "ben", "message": "the red square has a vase on it"}, {"user": "LeaderBot", "message": "Yes. The mat is square"}, {"user": "ben", "message": "the mat is full"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "ben", "command": "put #22 on #V"}, {"user": "ben", "command": "put #19 on #D"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the blue bowl on the indigo circle mat at the far right centre of the table"}, {"user": "ben", "command": "put #9 on #Y"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "ben", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "B": [
+            {
+                "user": "B",
+                "message": "Hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "B",
+                "message": "Yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white egg on the orange square mat at the left top of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #17 on #G"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green cup on the orange circle mat at the left centre of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #7 on #T"
+            },
+            {
+                "user": "B",
+                "message": "Done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the red vase on the green circle mat at the right top of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #22 on #V"
+            },
+            {
+                "user": "B",
+                "message": "Done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bread on the blue square mat at the right bottom of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #15 on #A"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the black pan on the red square mat at the far right top of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #19 on #D"
+            },
+            {
+                "user": "B",
+                "message": "Good whats the next task"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "B",
+                "message": "I've done it"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the blue bowl on the indigo circle mat at the far right centre of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #9 on #Y"
+            },
+            {
+                "user": "B",
+                "message": "Else"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "B",
+                "message": "Thank you bye"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "B",
+                "message": "Bye"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "B",
+                "command": "done"
+            }
+        ],
+        "F": [
+            {
+                "user": "F",
+                "message": "Hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "F",
+                "message": "Yes, let's go"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "F",
+                "message": "sure"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white egg on the orange square mat at the left top of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #17 on #G"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green cup on the orange circle mat at the left centre of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #7 on #T"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the red vase on the green circle mat at the right top of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #22 on #V"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bread on the blue square mat at the right bottom of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #15 on #A"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the black pan on the red square mat at the far right top of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #19 on #D"
+            },
+            {
+                "user": "F",
+                "message": "OK - moved the pan"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "I have moved it"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the blue bowl on the indigo circle mat at the far right centre of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #9 on #Y"
+            },
+            {
+                "user": "F",
+                "message": "moved"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Tell me when you're done"
+            },
+            {
+                "user": "F",
+                "message": "I am done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "F",
+                "command": "done"
+            }
+        ],
+        "D": [
+            {
+                "user": "D",
+                "message": "im ready"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "D",
+                "message": "start"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "D",
+                "command": "start"
+            },
+            {
+                "user": "D",
+                "command": "ready"
+            },
+            {
+                "user": "LeaderBot",
+                "command": "ready"
+            },
+            {
+                "user": "D",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "D",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white egg on the orange square mat at the left top of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #17 on #G"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green cup on the orange circle mat at the left centre of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #7 on #T"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the red vase on the green circle mat at the right top of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #22 on #D"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bread on the blue square mat at the right bottom of the table"
+            },
+            {
+                "user": "D",
+                "message": "the sliced or the loaf"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The bread is sliced"
+            },
+            {
+                "user": "D",
+                "command": "put #13 on #A"
+            },
+            {
+                "user": "D",
+                "command": "put #15 on #A"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the black pan on the red square mat at the far right top of the table"
+            },
+            {
+                "user": "D",
+                "message": "there is a vase there"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The black pan"
+            },
+            {
+                "user": "D",
+                "message": "the red square has a vase on it"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is square"
+            },
+            {
+                "user": "D",
+                "message": "the mat is full"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "D",
+                "command": "put #22 on #V"
+            },
+            {
+                "user": "D",
+                "command": "put #19 on #D"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the blue bowl on the indigo circle mat at the far right centre of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #9 on #Y"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "D",
+                "command": "done"
+            }
+        ]
+    }
+}

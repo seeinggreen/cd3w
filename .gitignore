@@ -146,3 +146,5 @@ src/chatbot/models/*
 !src/chatbot/models/models.md
 
 src/chatbot/.rasa/cache/*
+
+.DS_Store

@@ -1,1 +1,512 @@
-{"2023-03-29": {"Laurent": [{"user": "Laurent", "message": "ayt"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Laurent", "message": "I see my table"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Laurent", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Laurent", "message": "yes"}, {"user": "LeaderBot", "message": "Put the only bread on the red square mat"}, {"user": "Laurent", "command": "put #14 on #C"}, {"user": "Laurent", "message": "I've put the bread on the red square mat"}, {"user": "LeaderBot", "message": "Yes. The mat is square"}, {"user": "Laurent", "message": "anything else"}, {"user": "LeaderBot", "message": "Put the only plate on the red circle mat"}, {"user": "Laurent", "command": "put #9 on #P"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the only egg on the iris mat"}, {"user": "Laurent", "message": "explain iris "}, {"user": "LeaderBot", "message": "Tell me when you're done"}, {"user": "Laurent", "message": "I do not see the iris color"}, {"user": "LeaderBot", "message": "The mat is iris"}, {"user": "Laurent", "command": "put #17 on #M"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the only apple on the blue mat"}, {"user": "Laurent", "command": "put #3 on #N"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the only bowl on the green mat"}, {"user": "Laurent", "command": "put #9 on #J"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the only pan on the yellow mat"}, {"user": "Laurent", "command": "put #18 on #R"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Laurent", "command": "done"}], "E3": [{"user": "E3", "message": "hey"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "E3", "message": "no"}, {"user": "LeaderBot", "message": "Let me know when ready"}, {"user": "E3", "message": "I'm ready"}, {"user": "LeaderBot", "message": "Put the only bread on the red square mat"}, {"user": "E3", "command": "put #14 on #C"}, {"user": "E3", "message": "DONE"}, {"user": "LeaderBot", "message": "Put the only plate on the red circle mat"}, {"user": "E3", "command": "put #21 on #P"}, {"user": "E3", "message": "DONE"}, {"user": "LeaderBot", "message": "Put the only egg on the iris mat"}, {"user": "E3", "message": "WHERE IS THE IRIS MAT"}, {"user": "LeaderBot", "message": "The iris mat"}, {"user": "E3", "message": "where is the iris mat"}, {"user": "LeaderBot", "message": "The iris mat"}, {"user": "E3", "message": "where?"}, {"user": "LeaderBot", "message": "The only egg"}, {"user": "E3", "command": "put #10 on #R"}, {"user": "E3", "message": "DONE"}, {"user": "LeaderBot", "message": "Put the only apple on the blue mat"}, {"user": "E3", "message": "put #3 on #N"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "E3", "command": "put #3 on #N"}, {"user": "E3", "message": "DONE"}, {"user": "LeaderBot", "message": "Put the only bowl on the green mat"}, {"user": "E3", "command": "put #10 on #J"}, {"user": "E3", "command": "put  #9 on #J"}, {"user": "E3", "message": "DONE"}, {"user": "LeaderBot", "message": "Put the only pan on the yellow mat"}, {"user": "E3", "message": "WHERE IS THE YELLOW MAT"}, {"user": "LeaderBot", "message": "Yes. The mat is yellow"}, {"user": "E3", "command": "put #18 on #R"}, {"user": "E3", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "E3", "command": "done"}], "Peter": [{"user": "Peter", "message": "What should I do?"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Peter", "message": "What next?"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Peter", "message": "Hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Peter", "message": "Yes"}, {"user": "LeaderBot", "message": "Put the only bread on the red square mat"}, {"user": "Peter", "command": "put #14 on #C"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the only plate on the red circle mat"}, {"user": "Peter", "command": "put #21 on #P"}, {"user": "Peter", "message": "next?"}, {"user": "LeaderBot", "message": "Put the only plate on the red circle mat"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the only egg on the iris mat"}, {"user": "Peter", "command": "put #17 on #M"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the only apple on the blue mat"}, {"user": "Peter", "command": "put #3 on #J"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the only bowl on the green mat"}, {"user": "Peter", "command": "put #3 on #N"}, {"user": "Peter", "message": "what colour is the bowl?"}, {"user": "LeaderBot", "message": "The bowl is blue"}, {"user": "Peter", "command": "put #9 on #J"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Put the only pan on the yellow mat"}, {"user": "Peter", "command": "put #18 on #R"}, {"user": "Peter", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Peter", "command": "done"}], "rishav ranjan": [{"user": "rishav ranjan", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "rishav ranjan", "message": "yes"}, {"user": "LeaderBot", "message": "Put the only bread on the red square mat"}, {"user": "rishav ranjan", "command": "put #15 on #C"}, {"user": "rishav ranjan", "command": "put #14 on #C"}, {"user": "rishav ranjan", "message": "done"}, {"user": "LeaderBot", "message": "Put the only plate on the red circle mat"}, {"user": "rishav ranjan", "command": "put #21 on #P"}, {"user": "rishav ranjan", "message": "done"}, {"user": "LeaderBot", "message": "Put the only egg on the iris mat"}, {"user": "rishav ranjan", "command": "put #17 on #J"}, {"user": "rishav ranjan", "message": "done"}, {"user": "LeaderBot", "message": "Put the only apple on the blue mat"}, {"user": "rishav ranjan", "command": "put #3 on #N"}, {"user": "rishav ranjan", "message": "done"}, {"user": "LeaderBot", "message": "Put the only bowl on the green mat"}, {"user": "rishav ranjan", "command": "put #9 on #M"}, {"user": "rishav ranjan", "message": "done"}, {"user": "LeaderBot", "message": "Put the only pan on the yellow mat"}, {"user": "rishav ranjan", "command": "put #18 on #R"}, {"user": "rishav ranjan", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "rishav ranjan", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "C": [
+            {
+                "user": "C",
+                "message": "ayt"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "C",
+                "message": "I see my table"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "C",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "C",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bread on the red square mat"
+            },
+            {
+                "user": "C",
+                "command": "put #14 on #C"
+            },
+            {
+                "user": "C",
+                "message": "I've put the bread on the red square mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is square"
+            },
+            {
+                "user": "C",
+                "message": "anything else"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only plate on the red circle mat"
+            },
+            {
+                "user": "C",
+                "command": "put #9 on #P"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the iris mat"
+            },
+            {
+                "user": "C",
+                "message": "explain iris "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Tell me when you're done"
+            },
+            {
+                "user": "C",
+                "message": "I do not see the iris color"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is iris"
+            },
+            {
+                "user": "C",
+                "command": "put #17 on #M"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the blue mat"
+            },
+            {
+                "user": "C",
+                "command": "put #3 on #N"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the green mat"
+            },
+            {
+                "user": "C",
+                "command": "put #9 on #J"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only pan on the yellow mat"
+            },
+            {
+                "user": "C",
+                "command": "put #18 on #R"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "C",
+                "command": "done"
+            }
+        ],
+        "E3": [
+            {
+                "user": "E3",
+                "message": "hey"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "E3",
+                "message": "no"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Let me know when ready"
+            },
+            {
+                "user": "E3",
+                "message": "I'm ready"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bread on the red square mat"
+            },
+            {
+                "user": "E3",
+                "command": "put #14 on #C"
+            },
+            {
+                "user": "E3",
+                "message": "DONE"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only plate on the red circle mat"
+            },
+            {
+                "user": "E3",
+                "command": "put #21 on #P"
+            },
+            {
+                "user": "E3",
+                "message": "DONE"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the iris mat"
+            },
+            {
+                "user": "E3",
+                "message": "WHERE IS THE IRIS MAT"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The iris mat"
+            },
+            {
+                "user": "E3",
+                "message": "where is the iris mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The iris mat"
+            },
+            {
+                "user": "E3",
+                "message": "where?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The only egg"
+            },
+            {
+                "user": "E3",
+                "command": "put #10 on #R"
+            },
+            {
+                "user": "E3",
+                "message": "DONE"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the blue mat"
+            },
+            {
+                "user": "E3",
+                "message": "put #3 on #N"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "E3",
+                "command": "put #3 on #N"
+            },
+            {
+                "user": "E3",
+                "message": "DONE"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the green mat"
+            },
+            {
+                "user": "E3",
+                "command": "put #10 on #J"
+            },
+            {
+                "user": "E3",
+                "command": "put  #9 on #J"
+            },
+            {
+                "user": "E3",
+                "message": "DONE"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only pan on the yellow mat"
+            },
+            {
+                "user": "E3",
+                "message": "WHERE IS THE YELLOW MAT"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The mat is yellow"
+            },
+            {
+                "user": "E3",
+                "command": "put #18 on #R"
+            },
+            {
+                "user": "E3",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "E3",
+                "command": "done"
+            }
+        ],
+        "G": [
+            {
+                "user": "G",
+                "message": "What should I do?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "G",
+                "message": "What next?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "G",
+                "message": "Hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "G",
+                "message": "Yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bread on the red square mat"
+            },
+            {
+                "user": "G",
+                "command": "put #14 on #C"
+            },
+            {
+                "user": "G",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only plate on the red circle mat"
+            },
+            {
+                "user": "G",
+                "command": "put #21 on #P"
+            },
+            {
+                "user": "G",
+                "message": "next?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only plate on the red circle mat"
+            },
+            {
+                "user": "G",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the iris mat"
+            },
+            {
+                "user": "G",
+                "command": "put #17 on #M"
+            },
+            {
+                "user": "G",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the blue mat"
+            },
+            {
+                "user": "G",
+                "command": "put #3 on #J"
+            },
+            {
+                "user": "G",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the green mat"
+            },
+            {
+                "user": "G",
+                "command": "put #3 on #N"
+            },
+            {
+                "user": "G",
+                "message": "what colour is the bowl?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The bowl is blue"
+            },
+            {
+                "user": "G",
+                "command": "put #9 on #J"
+            },
+            {
+                "user": "G",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only pan on the yellow mat"
+            },
+            {
+                "user": "G",
+                "command": "put #18 on #R"
+            },
+            {
+                "user": "G",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "G",
+                "command": "done"
+            }
+        ],
+        "H": [
+            {
+                "user": "H",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "H",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bread on the red square mat"
+            },
+            {
+                "user": "H",
+                "command": "put #15 on #C"
+            },
+            {
+                "user": "H",
+                "command": "put #14 on #C"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only plate on the red circle mat"
+            },
+            {
+                "user": "H",
+                "command": "put #21 on #P"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the iris mat"
+            },
+            {
+                "user": "H",
+                "command": "put #17 on #J"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the blue mat"
+            },
+            {
+                "user": "H",
+                "command": "put #3 on #N"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the green mat"
+            },
+            {
+                "user": "H",
+                "command": "put #9 on #M"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only pan on the yellow mat"
+            },
+            {
+                "user": "H",
+                "command": "put #18 on #R"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "H",
+                "command": "done"
+            }
+        ]
+    }
+}

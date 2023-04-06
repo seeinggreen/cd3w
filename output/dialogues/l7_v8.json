@@ -1,1 +1,204 @@
-{"2023-03-29": {"Bart": [{"user": "Bart", "message": "Yo"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Bart", "message": "Yes"}, {"user": "LeaderBot", "message": "Put the green apple on the square mat"}, {"user": "Bart", "command": "put #3 on #G"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the yellow apple on the orange circle mat"}, {"user": "Bart", "command": "put #5 on #T"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the whole bread on the yellow circle mat at the right middle top of the table"}, {"user": "Bart", "command": "put #14 on #S"}, {"user": "Bart", "message": "Theres already a white bread on the right middle top of the table"}, {"user": "LeaderBot", "message": "The mat is on the right middle top of the table"}, {"user": "Bart", "command": "put #15 on #R"}, {"user": "Bart", "command": "put #14 on #S"}, {"user": "Bart", "command": "put #14 on #S"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the whole bread on the yellow circle mat at the right middle centre of the table"}, {"user": "Bart", "command": "put #14 on #S"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the only bowl on the indigo mat"}, {"user": "Bart", "command": "put #11 on #X"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the only vase on the violet mat"}, {"user": "Bart", "command": "put #22 on #Y"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Bart", "command": "done"}], "Mike": [{"user": "Mike", "message": "Hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Mike", "message": "yes"}, {"user": "LeaderBot", "message": "Put the green apple on the square mat"}, {"user": "Mike", "command": "put #3 on #G"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the yellow apple on the orange circle mat"}, {"user": "Mike", "command": "put #5 on #T"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "I have finished"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "complete"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "complete"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "B": [
+            {
+                "user": "B",
+                "message": "Yo"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "B",
+                "message": "Yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green apple on the square mat"
+            },
+            {
+                "user": "B",
+                "command": "put #3 on #G"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the yellow apple on the orange circle mat"
+            },
+            {
+                "user": "B",
+                "command": "put #5 on #T"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the whole bread on the yellow circle mat at the right middle top of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #14 on #S"
+            },
+            {
+                "user": "B",
+                "message": "Theres already a white bread on the right middle top of the table"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is on the right middle top of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #15 on #R"
+            },
+            {
+                "user": "B",
+                "command": "put #14 on #S"
+            },
+            {
+                "user": "B",
+                "command": "put #14 on #S"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the whole bread on the yellow circle mat at the right middle centre of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #14 on #S"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the indigo mat"
+            },
+            {
+                "user": "B",
+                "command": "put #11 on #X"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only vase on the violet mat"
+            },
+            {
+                "user": "B",
+                "command": "put #22 on #Y"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "B",
+                "command": "done"
+            }
+        ],
+        "F": [
+            {
+                "user": "F",
+                "message": "Hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "F",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green apple on the square mat"
+            },
+            {
+                "user": "F",
+                "command": "put #3 on #G"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the yellow apple on the orange circle mat"
+            },
+            {
+                "user": "F",
+                "command": "put #5 on #T"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "I have finished"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "complete"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "complete"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "command": "done"
+            }
+        ]
+    }
+}
