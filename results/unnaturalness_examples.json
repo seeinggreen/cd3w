@@ -1,18 +1,1 @@
-{
-    "('b1', 'F1')": "Repeatedly specifying \"... on the mat\" and needing to request clarification.  (The first few times were very natural thought)",
-    "('b1', 'G1')": "It could have been more specific. Instead of saying to place it on the mat everytime, would be more natural to have sometimes saying place it on the blue mat, sometime say place it on the mat and have the option to be as spicific as it can be as put it on the blue circle shaped mat.  ",
-    "('b1', 'A2')": "When I asked question such as do you have \"this item\", it either does not understand or gives me the color which is not What was asked.",
-    "('b1', 'F5')": "As above.",
-    "('b1', 'G5')": "Same reason as 3)",
-    "('b1', 'F7')": "Maybe too many \"Put ...\"",
-    "('b1', 'H9')": "sometime it was replying for the colour of mat when I asked about the object colour.",
-    "('b2', 'D1')": "it was just a list of actions for me to fill",
-    "('b2', 'A1')": "When there were errors shown, it make the utterances not natural",
-    "('b2', 'F3')": "Natural but stern control freak.",
-    "('b2', 'G2')": "Compared to G1 this time the commands were better",
-    "('b2', 'G4')": "You: Which is the indigo mat?\nLeaderBot: The indigo mat\nYou: what's next to the indigo mat?\nLeaderBot: Put the only bread on the indigo mat\n\n",
-    "('b2', 'F6')": "I would say did not get my sense of humour, but maybe that is proof it is natural.",
-    "('b2', 'G7')": "RASA ACTION died",
-    "('b3', 'E2')": "the instructions were the same every time placing an object on a certain mat, so I can't tell if it was unnatural or not",
-    "('b3', 'F2')": "Possible to clear\/explicit to be natural."
-}
+{"('b1', 'F1')":"Repeatedly specifying \"... on the mat\" and needing to request clarification.  (The first few times were very natural thought)","('b1', 'G1')":"It could have been more specific. Instead of saying to place it on the mat everytime, would be more natural to have sometimes saying place it on the blue mat, sometime say place it on the mat and have the option to be as spicific as it can be as put it on the blue circle shaped mat.  ","('b1', 'A2')":"When I asked question such as do you have \"this item\", it either does not understand or gives me the color which is not What was asked.","('b1', 'F5')":"As above.","('b1', 'G5')":"Same reason as 3)","('b1', 'F7')":"Maybe too many \"Put ...\"","('b1', 'H9')":"sometime it was replying for the colour of mat when I asked about the object colour.","('b2', 'D1')":"it was just a list of actions for me to fill","('b2', 'A1')":"When there were errors shown, it make the utterances not natural","('b2', 'F3')":"Natural but stern control freak.","('b2', 'G2')":"Compared to G1 this time the commands were better","('b2', 'G4')":"You: Which is the indigo mat?\nLeaderBot: The indigo mat\nYou: what's next to the indigo mat?\nLeaderBot: Put the only bread on the indigo mat\n\n","('b2', 'F6')":"I would say did not get my sense of humour, but maybe that is proof it is natural.","('b2', 'G7')":"RASA ACTION died","('b3', 'E2')":"the instructions were the same every time placing an object on a certain mat, so I can't tell if it was unnatural or not","('b3', 'F2')":"Possible to clear\/explicit to be natural."}
