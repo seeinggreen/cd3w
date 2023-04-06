@@ -1,1 +1,482 @@
-{"2023-03-29": {"Bart": [{"user": "Bart", "message": "Hello"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Bart", "message": "Lets go"}, {"user": "LeaderBot", "message": "Put the white bread on the red square mat"}, {"user": "Bart", "message": "which bread"}, {"user": "LeaderBot", "message": "The white bread"}, {"user": "Bart", "message": "where is it"}, {"user": "LeaderBot", "message": "The white bread"}, {"user": "Bart", "message": "where"}, {"user": "LeaderBot", "message": "The white bread"}, {"user": "Bart", "message": "which white bread"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Bart", "command": "put #13 on #C"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the brown bread on the red circle mat"}, {"user": "Bart", "command": "put #15 on #P"}, {"user": "Bart", "message": "done "}, {"user": "LeaderBot", "message": "Put the only egg on the orange square mat at the left middle centre of the table"}, {"user": "Bart", "command": "put #16 on #G"}, {"user": "Bart", "message": "ok"}, {"user": "LeaderBot", "message": "Tell me when you're done"}, {"user": "Bart", "message": "i4a"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Bart", "message": "I am"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Bart", "message": "yes"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Bart", "message": "I'm dobe"}, {"user": "LeaderBot", "message": "no?"}, {"user": "Bart", "message": "I'm done"}, {"user": "LeaderBot", "message": "Put the only apple on the orange square mat at the right middle centre of the table"}, {"user": "Bart", "message": "Is the apple sliced"}, {"user": "LeaderBot", "message": "Yes. The apple is sliced"}, {"user": "Bart", "command": "put #6 on #H"}, {"user": "Bart", "message": "Done"}, {"user": "LeaderBot", "message": "Put the only vase on the violet mat"}, {"user": "Bart", "command": "put #23 on #Z"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Put the only bowl on the iris mat"}, {"user": "Bart", "command": "put #10 on #X"}, {"user": "Bart", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Bart", "command": "done"}], "ben": [{"user": "ben", "message": "hi#"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "ben", "message": "yes"}, {"user": "LeaderBot", "message": "Put the white bread on the red square mat"}, {"user": "ben", "message": "how thick is the bread you want me to move?"}, {"user": "LeaderBot", "message": "The bread is sliced"}, {"user": "ben", "message": "how thick"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "ben", "message": "what slice"}, {"user": "LeaderBot", "message": "Yes. The bread is sliced"}, {"user": "ben", "message": "what shpe is it"}, {"user": "LeaderBot", "message": "The white bread"}, {"user": "ben", "command": "put #13 on #C"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the brown bread on the red circle mat"}, {"user": "ben", "message": "is it sliced"}, {"user": "LeaderBot", "message": "Yes. The bread is sliced"}, {"user": "ben", "command": "put #15 on #P"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the only egg on the orange square mat at the left middle centre of the table"}, {"user": "ben", "command": "put #16 on #G"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the only apple on the orange square mat at the right middle centre of the table"}, {"user": "ben", "command": "put #6 on #H"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the only vase on the violet mat"}, {"user": "ben", "message": "the top or bottom one"}, {"user": "LeaderBot", "message": "The mat is on the right top of the table"}, {"user": "ben", "command": "put #23 on #X"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Put the only bowl on the iris mat"}, {"user": "ben", "command": "put #10 on #Z"}, {"user": "ben", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "ben", "command": "done"}], "Mike": [{"user": "Mike", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Mike", "message": "yes"}, {"user": "LeaderBot", "message": "Put the white bread on the red square mat"}, {"user": "Mike", "message": "are you cold?"}, {"user": "LeaderBot", "message": "The mat is red"}, {"user": "Mike", "message": "which white bread"}, {"user": "LeaderBot", "message": "I don't understand, can you rephrase."}, {"user": "Mike", "message": "which bread"}, {"user": "LeaderBot", "message": "The white bread"}, {"user": "Mike", "message": "where I the bread"}, {"user": "LeaderBot", "message": "Put the white bread on the red square mat"}, {"user": "Mike", "command": "put #13 on #C"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the brown bread on the red circle mat"}, {"user": "Mike", "command": "put #12 on #P"}, {"user": "Mike", "command": "put #15 on #P"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the only egg on the orange square mat at the left middle centre of the table"}, {"user": "Mike", "message": "which matt"}, {"user": "LeaderBot", "message": "The orange square mat at the left middle centre of the table"}, {"user": "Mike", "command": "put #15 on #G"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the only apple on the orange square mat at the right middle centre of the table"}, {"user": "Mike", "command": "put #6 on #H"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the only vase on the violet mat"}, {"user": "Mike", "command": "put #23 on #X"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Put the only bowl on the iris mat"}, {"user": "Mike", "message": "Who is Iris :-P"}, {"user": "LeaderBot", "message": "The bowl is whole"}, {"user": "Mike", "message": "where is the mat"}, {"user": "LeaderBot", "message": "The iris mat"}, {"user": "Mike", "message": "left or right"}, {"user": "LeaderBot", "message": "The mat is on the far right centre of the table"}, {"user": "Mike", "command": "put #10 on #Z"}, {"user": "Mike", "message": "done"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Mike", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "B": [
+            {
+                "user": "B",
+                "message": "Hello"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "B",
+                "message": "Lets go"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white bread on the red square mat"
+            },
+            {
+                "user": "B",
+                "message": "which bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The white bread"
+            },
+            {
+                "user": "B",
+                "message": "where is it"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The white bread"
+            },
+            {
+                "user": "B",
+                "message": "where"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The white bread"
+            },
+            {
+                "user": "B",
+                "message": "which white bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "B",
+                "command": "put #13 on #C"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bread on the red circle mat"
+            },
+            {
+                "user": "B",
+                "command": "put #15 on #P"
+            },
+            {
+                "user": "B",
+                "message": "done "
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the orange square mat at the left middle centre of the table"
+            },
+            {
+                "user": "B",
+                "command": "put #16 on #G"
+            },
+            {
+                "user": "B",
+                "message": "ok"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Tell me when you're done"
+            },
+            {
+                "user": "B",
+                "message": "i4a"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "B",
+                "message": "I am"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "B",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "B",
+                "message": "I'm dobe"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "no?"
+            },
+            {
+                "user": "B",
+                "message": "I'm done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the orange square mat at the right middle centre of the table"
+            },
+            {
+                "user": "B",
+                "message": "Is the apple sliced"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The apple is sliced"
+            },
+            {
+                "user": "B",
+                "command": "put #6 on #H"
+            },
+            {
+                "user": "B",
+                "message": "Done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only vase on the violet mat"
+            },
+            {
+                "user": "B",
+                "command": "put #23 on #Z"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the iris mat"
+            },
+            {
+                "user": "B",
+                "command": "put #10 on #X"
+            },
+            {
+                "user": "B",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "B",
+                "command": "done"
+            }
+        ],
+        "D": [
+            {
+                "user": "D",
+                "message": "hi#"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "D",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white bread on the red square mat"
+            },
+            {
+                "user": "D",
+                "message": "how thick is the bread you want me to move?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The bread is sliced"
+            },
+            {
+                "user": "D",
+                "message": "how thick"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "D",
+                "message": "what slice"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The bread is sliced"
+            },
+            {
+                "user": "D",
+                "message": "what shpe is it"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The white bread"
+            },
+            {
+                "user": "D",
+                "command": "put #13 on #C"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bread on the red circle mat"
+            },
+            {
+                "user": "D",
+                "message": "is it sliced"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The bread is sliced"
+            },
+            {
+                "user": "D",
+                "command": "put #15 on #P"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the orange square mat at the left middle centre of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #16 on #G"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the orange square mat at the right middle centre of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #6 on #H"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only vase on the violet mat"
+            },
+            {
+                "user": "D",
+                "message": "the top or bottom one"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is on the right top of the table"
+            },
+            {
+                "user": "D",
+                "command": "put #23 on #X"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the iris mat"
+            },
+            {
+                "user": "D",
+                "command": "put #10 on #Z"
+            },
+            {
+                "user": "D",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "D",
+                "command": "done"
+            }
+        ],
+        "F": [
+            {
+                "user": "F",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "F",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white bread on the red square mat"
+            },
+            {
+                "user": "F",
+                "message": "are you cold?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is red"
+            },
+            {
+                "user": "F",
+                "message": "which white bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "I don't understand, can you rephrase."
+            },
+            {
+                "user": "F",
+                "message": "which bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The white bread"
+            },
+            {
+                "user": "F",
+                "message": "where I the bread"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the white bread on the red square mat"
+            },
+            {
+                "user": "F",
+                "command": "put #13 on #C"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bread on the red circle mat"
+            },
+            {
+                "user": "F",
+                "command": "put #12 on #P"
+            },
+            {
+                "user": "F",
+                "command": "put #15 on #P"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only egg on the orange square mat at the left middle centre of the table"
+            },
+            {
+                "user": "F",
+                "message": "which matt"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The orange square mat at the left middle centre of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #15 on #G"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only apple on the orange square mat at the right middle centre of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #6 on #H"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only vase on the violet mat"
+            },
+            {
+                "user": "F",
+                "command": "put #23 on #X"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the only bowl on the iris mat"
+            },
+            {
+                "user": "F",
+                "message": "Who is Iris :-P"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The bowl is whole"
+            },
+            {
+                "user": "F",
+                "message": "where is the mat"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The iris mat"
+            },
+            {
+                "user": "F",
+                "message": "left or right"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The mat is on the far right centre of the table"
+            },
+            {
+                "user": "F",
+                "command": "put #10 on #Z"
+            },
+            {
+                "user": "F",
+                "message": "done"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "F",
+                "command": "done"
+            }
+        ]
+    }
+}

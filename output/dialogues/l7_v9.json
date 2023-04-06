@@ -1,1 +1,152 @@
-{"2023-03-29": {"Laurent": [{"user": "Laurent", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "Laurent", "message": "yes"}, {"user": "LeaderBot", "message": "Put the green cup on the blue square mat at the left centre of the table"}, {"user": "Laurent", "message": "it is already there"}, {"user": "LeaderBot", "message": "Put the orange cup on the blue circle mat at the left middle top of the table"}, {"user": "Laurent", "command": "put #8 on #N"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the green whole apple on the orange circle mat at the right middle top of the table"}, {"user": "Laurent", "command": "put #3 on #T"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the green sliced apple on the orange circle mat at the right middle centre of the table"}, {"user": "Laurent", "command": "put #4 on #U "}, {"user": "Laurent", "message": "ANYTHING ELSE?"}, {"user": "LeaderBot", "message": "Put the brown bowl on the indigo square mat at the far right top of the table"}, {"user": "Laurent", "command": "put #10 on #L"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Put the silver pan on the violet square mat at the far right bottom of the table"}, {"user": "Laurent", "command": "put #18 on #K"}, {"user": "Laurent", "message": "anything else?"}, {"user": "LeaderBot", "message": "Congratulations. We are done with the game. Thanks for playing"}, {"user": "Laurent", "command": "done"}], "rishav": [{"user": "rishav", "message": "hi"}, {"user": "LeaderBot", "message": "Hey! Ready to start the game?"}, {"user": "rishav", "message": "yes"}, {"user": "LeaderBot", "message": "Put the green cup on the blue square mat at the left centre of the table"}, {"user": "rishav", "message": "where is the green cup?"}, {"user": "LeaderBot", "message": "Yes. The cup is green"}, {"user": "rishav", "message": "where is it?"}, {"user": "LeaderBot", "message": "The green cup"}, {"user": "rishav", "command": "put #7 on #table"}, {"user": "rishav", "command": "put #7 on left centre of #table"}, {"user": "rishav", "message": "done"}, {"user": "rishav", "message": "done"}, {"user": "rishav", "message": "hi"}, {"user": "rishav", "command": "done"}]}}
+{
+    "2023-03-29": {
+        "C": [
+            {
+                "user": "C",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "C",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green cup on the blue square mat at the left centre of the table"
+            },
+            {
+                "user": "C",
+                "message": "it is already there"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the orange cup on the blue circle mat at the left middle top of the table"
+            },
+            {
+                "user": "C",
+                "command": "put #8 on #N"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green whole apple on the orange circle mat at the right middle top of the table"
+            },
+            {
+                "user": "C",
+                "command": "put #3 on #T"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green sliced apple on the orange circle mat at the right middle centre of the table"
+            },
+            {
+                "user": "C",
+                "command": "put #4 on #U "
+            },
+            {
+                "user": "C",
+                "message": "ANYTHING ELSE?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the brown bowl on the indigo square mat at the far right top of the table"
+            },
+            {
+                "user": "C",
+                "command": "put #10 on #L"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the silver pan on the violet square mat at the far right bottom of the table"
+            },
+            {
+                "user": "C",
+                "command": "put #18 on #K"
+            },
+            {
+                "user": "C",
+                "message": "anything else?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Congratulations. We are done with the game. Thanks for playing"
+            },
+            {
+                "user": "C",
+                "command": "done"
+            }
+        ],
+        "H": [
+            {
+                "user": "H",
+                "message": "hi"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Hey! Ready to start the game?"
+            },
+            {
+                "user": "H",
+                "message": "yes"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Put the green cup on the blue square mat at the left centre of the table"
+            },
+            {
+                "user": "H",
+                "message": "where is the green cup?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "Yes. The cup is green"
+            },
+            {
+                "user": "H",
+                "message": "where is it?"
+            },
+            {
+                "user": "LeaderBot",
+                "message": "The green cup"
+            },
+            {
+                "user": "H",
+                "command": "put #7 on #table"
+            },
+            {
+                "user": "H",
+                "command": "put #7 on left centre of #table"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "H",
+                "message": "done"
+            },
+            {
+                "user": "H",
+                "message": "hi"
+            },
+            {
+                "user": "H",
+                "command": "done"
+            }
+        ]
+    }
+}

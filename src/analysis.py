@@ -86,17 +86,6 @@ for metric in ["success", "success_gc"]:
             user_results[metric][user] / user_counts[metric][user]
         )
 
-user_to_id = {
-    "adam": "A",
-    "bart": "B",
-    "ben": "D",
-    "laurent": "C",
-    "malek": "E",
-    "mike": "F",
-    "peter": "G",
-    "rishav": "H",
-}
-
 for metric, types in all_results.items():
     metric_col = (
         f"{'goal-conditioned success' if 'gc' in metric else 'binary success'} mean"
@@ -111,7 +100,6 @@ for metric, types in all_results.items():
             }
         )
         .sort_values(by=["userID"])
-        .replace(user_to_id)
     )
     print(df_users)
     plt.figure()
@@ -128,7 +116,6 @@ for metric, types in all_results.items():
             }
         )
         .sort_values(by=["userID"])
-        .replace(user_to_id)
     )
     print(df_user_counts)
     plt.figure()
